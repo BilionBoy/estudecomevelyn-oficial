@@ -8,14 +8,12 @@ default: &default
   password: <%= ENV["WIP_ESTUDECOMEVELYN_DATABASE_PASSWORD"] %>
   host: localhost # Altere conforme a configuração do seu PostgreSQL
   port: 5432 # Altere se o PostgreSQL estiver em uma porta diferente
-  timeout: 5000
 
 development:
   <<: *default
   database: wip_estudecomevelyn_development
-  # Se necessário, descomente e configure username e password
-  # username: wip_user
-  # password: <%= ENV["WIP_PROJECTS_DATABASE_PASSWORD"] %>
+  username: dhiogoandre
+  password: <%= ENV["WIP_ESTUDECOMEVELYN_DATABASE_PASSWORD"] %>
 
 test:
   <<: *default

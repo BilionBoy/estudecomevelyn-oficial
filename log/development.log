@@ -20002,3 +20002,1321 @@ Processing by AdminController#index as HTML
 Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-03-18 18:48:26 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-03-18 18:48:30 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-18 18:48:30 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-18 18:48:33 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+  [1m[35m (120.6ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (122.5ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (125.2ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (147.8ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (120.4ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (119.3ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (124.3ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (119.8ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (293.0ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (99.6ms)[0m  [1m[35mCREATE DATABASE "wip_evelyn_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2025-03-18 18:55:33 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-03-18 18:55:34 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-03-18 18:55:51 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-03-18 18:55:51 -0400
+Started GET "/" for ::1 at 2025-03-18 18:55:52 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-03-18 18:55:52 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-03-18 18:55:55 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-03-18 18:56:35 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-03-18 18:56:35 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-03-18 18:56:37 -0400
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+):
+
+Causes:
+PG::ConnectionBad (connection to server at "127.0.0.1", port 5432 failed: fe_sendauth: no password supplied
+)
+  
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:69:in `rescue in new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:982:in `connect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:994:in `reconnect'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:662:in `block in reconnect!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:661:in `reconnect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:763:in `block in verify!'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:754:in `verify!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `connect!'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:977:in `block in with_raw_connection'
+activesupport (7.2.2.1) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1099:in `quoted_scope'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1076:in `data_source_sql'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:54:in `block in create_table'
+activerecord (7.2.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `with_connection'
+activerecord (7.2.2.1) lib/active_record/schema_migration.rb:53:in `create_table'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1434:in `initialize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `new'
+activerecord (7.2.2.1) lib/active_record/migration.rb:1282:in `open'
+activerecord (7.2.2.1) lib/active_record/migration.rb:776:in `block (2 levels) in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (7.2.2.1) lib/active_record/migration.rb:775:in `block in pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `each'
+activerecord (7.2.2.1) lib/active_record/migration.rb:774:in `pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:753:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+  [1m[35m (137.2ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (52.1ms)[0m  [1m[35mCREATE DATABASE "wip_estudecomevelyn_development" ENCODING = 'unicode'[0m
+  [1m[35m (52.0ms)[0m  [1m[35mCREATE DATABASE "wip_evelyn_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1617354026306706765)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-03-18 22:57:53.888603', '2025-03-18 22:57:53.888608') RETURNING "key"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1617354026306706765)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-03-18 18:58:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 647.8ms | GC: 126.6ms)
+Completed 200 OK in 692ms (Views: 651.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 126.6ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-03-18 18:58:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:02:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:03:04 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | GC: 9.3ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.3ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:03:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:03:05 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:03:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:03:58 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-18 19:05:58 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-18 19:08:22 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | GC: 0.3ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:08:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:09:20 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:09:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:09:22 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:09:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:10:39 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.6ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:10:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:10:57 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.7ms)
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:10:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:11:39 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:11:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
+Started GET "/" for ::1 at 2025-03-18 19:13:58 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | GC: 0.4ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 2025-03-18 19:13:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
+  
