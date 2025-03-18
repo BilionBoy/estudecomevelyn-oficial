@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get 'home/index'
+  root 'admin#index'
+  get 'admin/index'
 
   # Rotas Scaffold
 
