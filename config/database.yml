@@ -5,7 +5,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: dhiogoandre
-  password: <%= ENV["WIP_ESTUDECOMEVELYN_DATABASE_PASSWORD"] %>
+  password: "hauntmex3" # Definido diretamente aqui
   host: localhost # Altere conforme a configuração do seu PostgreSQL
   port: 5432 # Altere se o PostgreSQL estiver em uma porta diferente
 
@@ -13,7 +13,7 @@ development:
   <<: *default
   database: wip_estudecomevelyn_development
   username: dhiogoandre
-  password: <%= ENV["WIP_ESTUDECOMEVELYN_DATABASE_PASSWORD"] %>
+  password: "hauntmex3" # Definido diretamente aqui
 
 test:
   <<: *default
@@ -26,6 +26,6 @@ production:
   <<: *default
   database: wip_evelyn_production
   username: dhiogoandre
-  password: <%= ENV["WIP_EVELYN_DATABASE_PASSWORD"] %>
+  password: "hauntmex" # Definido diretamente aqui
   host: <%= ENV["DATABASE_HOST"] %> # Defina o host para produção, por exemplo: "localhost" ou o IP do servidor
   port: <%= ENV["DATABASE_PORT"] %> # Se necessário, defina a porta para produção
