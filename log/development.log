@@ -26192,3 +26192,364 @@ Processing by GTipoUsuariosController#index as HTML
 Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-03-20 13:30:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | GC: 1.6ms)
+Completed 200 OK in 88ms (Views: 42.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 37.6ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-20 13:30:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/v1/funcoes" for ::1 at 2025-03-20 13:31:47 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/v1/funcoes"):
+  
+Started GET "/v1/funcoes" for ::1 at 2025-03-20 13:31:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/v1/funcoes"):
+  
+Started GET "/favicon.ico" for ::1 at 2025-03-20 13:31:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/v1" for ::1 at 2025-03-20 13:31:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/v1"):
+  
+Started GET "/" for ::1 at 2025-03-20 13:31:52 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-03-20 13:32:09 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.5ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-03-20 13:36:46 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index_home_path' for an instance of #<Class:0x00007bafc2909e38>):
+
+Causes:
+NameError (undefined local variable or method `index_home_path' for an instance of #<Class:0x00007bafc2909e38>)
+     6:       </button>
+     7:     </div>
+     8:     <div class="navbar-brand flex-0 flex-sm-1 py-0">
+     9:       <%= link_to index_home_path, class: 'd-flex align-items-center text-decoration-none text-white gap-2' do %>
+    10:         <img src="/layout/assets/img/LETTERING-IMG.png" style="height: 55px">
+    11:         <img src="/layout/assets/img/LETTERING-LOGO.png" style="height: 35px">
+    12:       <% end %>
+  
+app/views/shared/_navbar.html.erb:9
+app/views/layouts/application.html.erb:38
+Started GET "/" for ::1 at 2025-03-20 13:37:05 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index_home_path' for an instance of #<Class:0x00007bafc2909e38>):
+
+Causes:
+NameError (undefined local variable or method `index_home_path' for an instance of #<Class:0x00007bafc2909e38>)
+     6:       </button>
+     7:     </div>
+     8:     <div class="navbar-brand flex-0 flex-sm-1 py-0">
+     9:       <%= link_to index_home_path, class: 'd-flex align-items-center text-decoration-none text-white gap-2' do %>
+    10:         <img src="/layout/assets/img/LETTERING-IMG.png" style="height: 55px">
+    11:         <img src="/layout/assets/img/LETTERING-LOGO.png" style="height: 35px">
+    12:       <% end %>
+  
+app/views/shared/_navbar.html.erb:9
+app/views/layouts/application.html.erb:38
+Started GET "/" for ::1 at 2025-03-20 13:37:06 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `home_path' for an instance of #<Class:0x00007bafc28c8c08>):
+
+Causes:
+NameError (undefined local variable or method `home_path' for an instance of #<Class:0x00007bafc28c8c08>)
+     6:       </button>
+     7:     </div>
+     8:     <div class="navbar-brand flex-0 flex-sm-1 py-0">
+     9:       <%= link_to home_path, class: 'd-flex align-items-center text-decoration-none text-white gap-2' do %>
+    10:         <img src="/layout/assets/img/LETTERING-IMG.png" style="height: 55px">
+    11:         <img src="/layout/assets/img/LETTERING-LOGO.png" style="height: 35px">
+    12:       <% end %>
+  
+app/views/shared/_navbar.html.erb:9
+app/views/layouts/application.html.erb:38
+Started GET "/" for ::1 at 2025-03-20 13:37:40 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 5.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `blog_home_path' for an instance of #<Class:0x00007bafc4eb9390>):
+
+Causes:
+NameError (undefined local variable or method `blog_home_path' for an instance of #<Class:0x00007bafc4eb9390>)
+     6:       </button>
+     7:     </div>
+     8:     <div class="navbar-brand flex-0 flex-sm-1 py-0">
+     9:       <%= link_to blog_home_path, class: 'd-flex align-items-center text-decoration-none text-white gap-2' do %>
+    10:         <img src="/layout/assets/img/LETTERING-IMG.png" style="height: 55px">
+    11:         <img src="/layout/assets/img/LETTERING-LOGO.png" style="height: 35px">
+    12:       <% end %>
+  
+app/views/shared/_navbar.html.erb:9
+app/views/layouts/application.html.erb:38
+Started GET "/r" for ::1 at 2025-03-20 13:38:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/r"):
+  
+Started GET "/r" for ::1 at 2025-03-20 13:38:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/r"):
+  
+Started GET "/" for ::1 at 2025-03-20 13:38:19 -0400
+Processing by AdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/home/index" for ::1 at 2025-03-20 13:38:20 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-20 13:39:04 -0400
+  
+ActionController::RoutingError (uninitialized constant AdminController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant AdminController)
+NameError (uninitialized constant AdminController)
+  
+Started GET "/" for ::1 at 2025-03-20 13:39:16 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.1ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/home/index" for ::1 at 2025-03-20 13:39:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2025-03-20 13:40:47 -0400
+  
+NoMethodError (undefined method `reource' for an instance of ActionDispatch::Routing::Mapper):
+  
+config/routes.rb:14:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/home/index" for ::1 at 2025-03-20 13:40:54 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2025-03-20 13:41:07 -0400
+  
+NoMethodError (undefined method `reources' for an instance of ActionDispatch::Routing::Mapper):
+  
+config/routes.rb:12:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/home/index" for ::1 at 2025-03-20 13:41:14 -0400
+  
+NoMethodError (undefined method `reources' for an instance of ActionDispatch::Routing::Mapper):
+  
+config/routes.rb:12:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/home/index" for ::1 at 2025-03-20 13:41:29 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2025-03-20 13:41:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/home/index"):
+  
+Started GET "/home/index" for ::1 at 2025-03-20 13:41:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/home/index"):
+  
+Started GET "/" for ::1 at 2025-03-20 13:42:01 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `home_index_path' for an instance of #<Class:0x00007bafc20dd5c0>):
+
+Causes:
+NameError (undefined local variable or method `home_index_path' for an instance of #<Class:0x00007bafc20dd5c0>)
+     6:       </button>
+     7:     </div>
+     8:     <div class="navbar-brand flex-0 flex-sm-1 py-0">
+     9:       <%= link_to home_index_path, class: 'd-flex align-items-center text-decoration-none text-white gap-2' do %>
+    10:         <img src="/layout/assets/img/LETTERING-IMG.png" style="height: 55px">
+    11:         <img src="/layout/assets/img/LETTERING-LOGO.png" style="height: 35px">
+    12:       <% end %>
+  
+app/views/shared/_navbar.html.erb:9
+app/views/layouts/application.html.erb:38
+Started GET "/" for ::1 at 2025-03-20 13:42:45 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 13:42:47 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 13:43:19 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.8ms | GC: 0.2ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-20 13:45:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:23
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 13.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 16.4ms | ActiveRecord: 19.1ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 13:45:49 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-20 13:45:56 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:23
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 13:46:02 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
