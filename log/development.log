@@ -26741,3 +26741,65 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/home" for ::1 at 2025-03-20 13:57:42 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.1ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/styles.css" for ::1 at 2025-03-20 13:57:42 -0400
+Started GET "/img/NovoBanner.png" for ::1 at 2025-03-20 13:57:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/styles.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for ::1 at 2025-03-20 14:00:13 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 14:00:44 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 1.6ms | GC: 0.9ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.5ms | GC: 0.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 14:01:05 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 14:01:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2025-03-20 14:01:42 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 6.7ms | GC: 3.8ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.8ms)
+
+

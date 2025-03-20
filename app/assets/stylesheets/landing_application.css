@@ -1,0 +1,111 @@
+:root {
+  --primary: #e42278;
+  --primary-light: #f5d3dd;
+  --primary-dark: #ed7bab;
+  --secondary: #9c27b0;
+  --dark: #1a1a2e;
+  --light: #ffffff;
+  --gray: #8a8a8a;
+  --gray-light: #f8f9fa;
+  --gray-dark: #343a40;
+  --success: #28a745;
+  --pink: #ff3e96;
+  --brown: #6d4c41;
+  --green: #2e8b57;
+  --light-gray: #f8f8f8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --shadow: 0 10px 30px rgba(255, 61, 127, 0.1);
+  --shadow-dark: 0 15px 40px rgba(26, 26, 46, 0.1);
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --border-radius: 16px;
+  --border-radius-sm: 8px;
+}
+:root {
+  --bs-primary: var(--primary);
+  --bs-primary-rgb: 255, 61, 127;
+}
+
+/* Sistema de tipografia melhorado */
+body {
+  padding-top: 76px;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.7;
+  color: var(--dark);
+  overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-4,
+.display-5 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.lead {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: "Caveat", cursive;
+  font-size: 1.8rem;
+  color: black;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.nav-link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
