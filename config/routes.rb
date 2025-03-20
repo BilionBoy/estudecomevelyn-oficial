@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :g_tipo_usuarios
   root 'admin#index'
   get 'admin/index'
 

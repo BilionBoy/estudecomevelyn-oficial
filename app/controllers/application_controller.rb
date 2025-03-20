@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
   def set_layout_by_controller
     if devise_controller?
       self.class.layout "devise_application"
-    elsif controller_name == "admin"
-      self.class.layout "application"
+    elsif controller_name == "home"
+      self.class.layout "home_application"
     else
-      self.class.layout "home"
+      self.class.layout "application"
     end
   end
 end
