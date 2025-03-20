@@ -1,31 +1,25 @@
-# config/database.yml
-
 default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: dhiogoandre
-  password: "hauntmex3" # Definido diretamente aqui
-  host: localhost # Altere conforme a configuração do seu PostgreSQL
-  port: 5432 # Altere se o PostgreSQL estiver em uma porta diferente
 
 development:
   <<: *default
-  database: wip_estudecomevelyn_development
-  username: dhiogoandre
-  password: "hauntmex3" # Definido diretamente aqui
+  database: evelynlettering_development
+  username: <%= ENV['DB_USERNAME'] || "letteringdigital" %>
+  password: <%= ENV['DB_PASSWORD'] || "Dhiogo1123581321345589" %>
+  host: <%= ENV['DB_HOST'] || "localhost" %>
 
 test:
   <<: *default
-  database: wip_evelyn_test
-  # Se necessário, descomente e configure username e password
-  # username: wip_user
-  # password: <%= ENV["WIP_PROJECTS_DATABASE_PASSWORD"] %>
+  database: evelynlettering_test
+  username: <%= ENV['DB_USERNAME'] || "letteringdigital" %>
+  password: <%= ENV['DB_PASSWORD'] || "Dhiogo1123581321345589" %>
+  host: <%= ENV['DB_HOST'] || "localhost" %>
 
 production:
   <<: *default
-  database: wip_evelyn_production
-  username: dhiogoandre
-  password: "hauntmex" # Definido diretamente aqui
-  host: <%= ENV["DATABASE_HOST"] %> # Defina o host para produção, por exemplo: "localhost" ou o IP do servidor
-  port: <%= ENV["DATABASE_PORT"] %> # Se necessário, defina a porta para produção
+  database: <%= ENV['DB_NAME'] || "evelynlettering_production" %>
+  username: <%= ENV['DB_USERNAME'] || "letteringdigital" %>
+  password: <%= ENV['DB_PASSWORD'] || "Dhiogo1123581321345589" %>
+  host: <%= ENV['DB_HOST'] || "db" %>
