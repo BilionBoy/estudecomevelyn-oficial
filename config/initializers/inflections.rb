@@ -1,5 +1,7 @@
 # config/initializers/inflections.rb
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.irregular 'self_table_name ', 'self_plural_names'
+  inflect.irregular 'g_usuario', 'g_usuarios'
+  inflect.irregular 'g_tipo_usuario', 'g_tipo_usuarios'
 end
+

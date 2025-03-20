@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
-  root 'admin#index'
-  get 'admin/index'
+  root 'g_admin#index'
+  
+  # Rotas do e-commerce
+  resources :home, only: [:index] do
+    collection do
+      get :produtos
+      get :cursos
+      get :blog
+    end
+  end
 
   # Rotas Scaffold
+  resources :g_tipo_usuarios,          only: %i[index show new create edit update destroy]
 
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+
+  # Verificar estado da aplicação
   get 'up' => 'rails/health#show', as: :rails_health_check
 end
