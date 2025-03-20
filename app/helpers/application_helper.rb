@@ -1,6 +1,10 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def uppercase(text)
+    text.to_s.upcase
+  end
+  
   def btn_submit(form)
     text = form.object.new_record? ? 'Incluir' : 'Atualizar'
     icon_class = 'ph-paper-plane-tilt ms-1'
