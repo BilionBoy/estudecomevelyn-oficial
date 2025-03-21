@@ -26,9 +26,6 @@
   --bs-primary-rgb: 255, 61, 127;
 }
 
-.container {
-  overflow: hidden; /* Para garantir que nada ultrapasse */
-}
 /* Sistema de tipografia melhorado */
 body {
   overflow: auto;
@@ -294,10 +291,73 @@ header {
 .hero-subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: var(--gray);
+  color: rgb(255, 248, 248);
+}
+
+.hero-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0d111a;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-img {
   position: relative;
   z-index: 1;
+}
+
+/* Hero Section - ATUALIZADO */
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(120vh - 76px); /* Increased from 100vh to 120vh */
+  overflow: hidden;
+  padding: 60px 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Make sure the background image covers the increased height */
+.hero-bg-image {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.btn-hero-primary {
+  padding: 12px 30px;
+  background-color: #ff4088;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-hero-primary:hover {
+  background-color: #e02f73; /* Cor ao passar o mouse */
+  transform: translateY(-3px); /* Efeito de leve subida */
+  box-shadow: 0 5px 15px rgba(255, 64, 136, 0.3); /* Sombra */
+}
+
+.highlight {
+  color: #ff4088;
+  font-weight: 700;
 }
