@@ -27633,3 +27633,920 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:33:55 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.1ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:33:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:26 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.1ms | GC: 0.4ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:34:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.6ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.6ms | GC: 0.6ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:34:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:45 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 3.0ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "NovoBanner.png" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "NovoBanner.png" is not present in the asset pipeline.
+)
+    1: <div class="div d-none d-lg-block">
+    2:   <%= link_to image_tag("NovoBanner.png", class: "group-2-7-img"), root_path %>
+    3: </div>
+  
+app/views/home/index.html.erb:2
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:34:54 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/img/NovoBanner.png" for 127.0.0.1 at 2025-03-21 00:34:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:35:01 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:35:01 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.1ms | GC: 0.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/img/NovoBanner.png"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:35:31 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:35:58 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:36:05 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.9ms | GC: 0.3ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:36:08 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-21 00:37:01 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:46:24 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 3.3ms | GC: 2.3ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.4ms | GC: 2.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+
+
+  
+ActionView::Template::Error (The asset "layout/assets/img/NovoBanner.png" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "layout/assets/img/NovoBanner.png" is not present in the asset pipeline.
+)
+    1: <div class="div d-none d-lg-block">
+    2:   <%= image_tag "layout/assets/img/NovoBanner.png", class: "group-2-7-img" %>
+    3: </div>
+    4: <!-- HOME SECTION -->
+    5: <section id="home" class="hero">
+  
+app/views/home/index.html.erb:2
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:46:30 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:47:21 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:47:34 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:47:36 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:47:36 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:47:46 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.0ms | GC: 0.5ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:48:46 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:49:58 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.8ms | GC: 0.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:49:59 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:49:59 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:00 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:03 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.5ms | GC: 2.3ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:05 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:13 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:18 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:20 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:21 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.4ms | GC: 0.9ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:31 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:50:43 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:52:29 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:53:00 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:53:24 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:53:43 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:53:44 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 00:53:44 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:00:21 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:00:21 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:00:51 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:00:57 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:01:11 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:03:32 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.4ms | GC: 0.6ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:03:43 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.8ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:03:55 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:04:08 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:04:27 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:05:16 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.5ms | GC: 0.1ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:05:39 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:05:40 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.5ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:05:48 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 1.5ms | GC: 0.8ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.2ms | GC: 0.9ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.4ms | GC: 4.4ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:05:59 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:06:24 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <title>Template</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Metadados  -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <% # Dependências CSS %>
+<link rel="stylesheet" href="/assets/stylesheets/landing_application.css">    <% # App JS do projeto %>
+    <link href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css" rel="stylesheet"/>
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/lucide@0.1.0/dist/lucide.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  </head>
+  <body class="">
+    <%= render "shared/home/navbar" %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:11: syntax error, unexpected '<'
+    <link href="https://unpkg.com/...
+    ^
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:19: unknown regexp option - h
+...er.append=( render "shared/home/navbar" ); @output_buffer.sa...
+...                          ^~~~~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:23: unknown regexp options - cd
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5...
+                        ^~~~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:23: `@5' is not allowed as an instance variable name
+...cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundl...
+...                              ^
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:23: unexpected fraction part after numeric literal
+...sdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min...
+...                             ^~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:27: unterminated string meets end of file
+          end
+             ^
+)
+1:    <!DOCTYPE html>
+2:    <html lang="pt">
+3:      <head>
+4:        <title>Template</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <!-- Metadados  -->
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <% # Dependências CSS %>
+10:    <link rel="stylesheet" href="/assets/stylesheets/landing_application.css">    <% # App JS do projeto %>
+11:        <link href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css" rel="stylesheet"/>
+12:        <!-- Fontes melhoradas para um visual mais suave e feminino -->
+13:        <link rel="preconnect" href="https://fonts.googleapis.com" />
+14:        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+15:        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/lucide@0.1.0/dist/lucide.min.css"/>
+16:        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+17:      </head>
+18:      <body class="">
+19:        <%= render "shared/home/navbar" %>
+20:        <div class="container-fluid">
+21:          <%= yield %>
+22:        </div>
+23:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+24:      </body>
+25:    </html>
+  
+app/views/layouts/home_application.erb:11: syntax error, unexpected '<'
+app/views/layouts/home_application.erb:19: unknown regexp option - h
+app/views/layouts/home_application.erb:23: unknown regexp options - cd
+app/views/layouts/home_application.erb:23: `@5' is not allowed as an instance variable name
+app/views/layouts/home_application.erb:23: unexpected fraction part after numeric literal
+app/views/layouts/home_application.erb:27: unterminated string meets end of file
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:06:25 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.3ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <title>Template</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Metadados  -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <% # Dependências CSS %>
+<link rel="stylesheet" href="/assets/stylesheets/landing_application.css">    <% # App JS do projeto %>
+    <link href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css" rel="stylesheet"/>
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/lucide@0.1.0/dist/lucide.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  </head>
+  <body class="">
+    <%= render "shared/home/navbar" %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:11: syntax error, unexpected '<'
+    <link href="https://unpkg.com/...
+    ^
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:19: unknown regexp option - h
+...er.append=( render "shared/home/navbar" ); @output_buffer.sa...
+...                          ^~~~~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:23: unknown regexp options - cd
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5...
+                        ^~~~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:23: `@5' is not allowed as an instance variable name
+...cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundl...
+...                              ^
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:23: unexpected fraction part after numeric literal
+...sdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min...
+...                             ^~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:27: unterminated string meets end of file
+          end
+             ^
+)
+1:    <!DOCTYPE html>
+2:    <html lang="pt">
+3:      <head>
+4:        <title>Template</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <!-- Metadados  -->
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <% # Dependências CSS %>
+10:    <link rel="stylesheet" href="/assets/stylesheets/landing_application.css">    <% # App JS do projeto %>
+11:        <link href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css" rel="stylesheet"/>
+12:        <!-- Fontes melhoradas para um visual mais suave e feminino -->
+13:        <link rel="preconnect" href="https://fonts.googleapis.com" />
+14:        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+15:        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/lucide@0.1.0/dist/lucide.min.css"/>
+16:        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+17:      </head>
+18:      <body class="">
+19:        <%= render "shared/home/navbar" %>
+20:        <div class="container-fluid">
+21:          <%= yield %>
+22:        </div>
+23:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+24:      </body>
+25:    </html>
+  
+app/views/layouts/home_application.erb:11: syntax error, unexpected '<'
+app/views/layouts/home_application.erb:19: unknown regexp option - h
+app/views/layouts/home_application.erb:23: unknown regexp options - cd
+app/views/layouts/home_application.erb:23: `@5' is not allowed as an instance variable name
+app/views/layouts/home_application.erb:23: unexpected fraction part after numeric literal
+app/views/layouts/home_application.erb:27: unterminated string meets end of file
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:06:34 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <title>Template</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Metadados  -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <% # Dependências CSS %>
+    <link rel="stylesheet" href="/assets/stylesheets/landing_application.css">    <% # App JS do projeto %>
+    <!-- Fontes melhoradas para um visual mais suave e feminino -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/lucide@0.1.0/dist/lucide.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  </head>
+  <body class="">
+    <%= render "shared/home/navbar" %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:11: syntax error, unexpected '<'
+    <!-- Fontes melhoradas para um...
+    ^
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:18: unknown regexp option - h
+...er.append=( render "shared/home/navbar" ); @output_buffer.sa...
+...                          ^~~~~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:22: unknown regexp options - cd
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5...
+                        ^~~~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:22: `@5' is not allowed as an instance variable name
+...cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundl...
+...                              ^
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:22: unexpected fraction part after numeric literal
+...sdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min...
+...                             ^~
+/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/layouts/home_application.erb:26: unterminated string meets end of file
+          end
+             ^
+)
+1:    <!DOCTYPE html>
+2:    <html lang="pt">
+3:      <head>
+4:        <title>Template</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <!-- Metadados  -->
+7:        <%= csrf_meta_tags %>
+8:        <%= csp_meta_tag %>
+9:        <% # Dependências CSS %>
+10:        <link rel="stylesheet" href="/assets/stylesheets/landing_application.css">    <% # App JS do projeto %>
+11:        <!-- Fontes melhoradas para um visual mais suave e feminino -->
+12:        <link rel="preconnect" href="https://fonts.googleapis.com" />
+13:        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+14:        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/lucide@0.1.0/dist/lucide.min.css"/>
+15:        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+16:      </head>
+17:      <body class="">
+18:        <%= render "shared/home/navbar" %>
+19:        <div class="container-fluid">
+20:          <%= yield %>
+21:        </div>
+22:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+23:      </body>
+24:    </html>
+  
+app/views/layouts/home_application.erb:11: syntax error, unexpected '<'
+app/views/layouts/home_application.erb:18: unknown regexp option - h
+app/views/layouts/home_application.erb:22: unknown regexp options - cd
+app/views/layouts/home_application.erb:22: `@5' is not allowed as an instance variable name
+app/views/layouts/home_application.erb:22: unexpected fraction part after numeric literal
+app/views/layouts/home_application.erb:26: unterminated string meets end of file
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:06:52 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/landing_application.css"):
+  
+Started GET "/home" for 127.0.0.1 at 2025-03-21 01:07:12 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.9ms | GC: 0.4ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.8ms | GC: 0.4ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
