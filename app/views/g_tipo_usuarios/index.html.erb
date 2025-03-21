@@ -1,20 +1,30 @@
-<%= render "shared/context_nav", title: t("activerecord.models.#{GTipoUsuario.model_name.i18n_key}.other"), new_path: new_g_tipo_usuario_path do  %>
+<%= render "shared/context_nav", title: t("activerecord.models.#{GTipoUsuario.model_name.i18n_key}.other"), new_path: new_g_tipo_usuario_path do %>
   <span class="breadcrumb-item active"><%= t("activerecord.models.#{GTipoUsuario.model_name.i18n_key}.other") %></span>
 <% end %>
-<div class="card">
-  <div class="card-header d-flex">
-    <%= search_form_for @q, html: { class: "d-flex gap-2" , autocomplete: "off"} do |f| %>
-      <%= f.search_field :nome_cont, class: "form-control", placeholder: "Pesquisar" %>
-      <%= f.button(type: 'submit', class: 'btn btn-info') { tag.i(class: 'ph-magnifying-glass') } %>
-      <%= link_to  tag.i(class: 'ph-x-circle'), g_tipo_usuarios_path, class: "btn btn-light" if params[:q] %>
+<div class="admin-card">
+  <div class="admin-card-header">
+    <%= search_form_for @q, html: { class: "admin-search-form", autocomplete: "off" } do |f| %>
+      <div class="admin-input-group">
+        <%= f.search_field :nome_cont, class: "admin-form-control", placeholder: "Pesquisar" %>
+        <div class="admin-input-group-append">
+          <%= f.button(type: 'submit', class: 'admin-btn admin-btn-primary') do %>
+            <i class="ph-magnifying-glass"></i>
+          <% end %>
+          <% if params[:q] %>
+            <%= link_to g_tipo_usuarios_path, class: "admin-btn admin-btn-light" do %>
+              <i class="ph-x-circle"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
-  <div class="card-body">
-    <div class= "table-responsive">
-      <table class="table table-sm table-bordered table-striped">
+  <div class="admin-card-body">
+    <div class="admin-table-responsive">
+      <table class="admin-table">
         <thead>
           <tr>
-            <th class="text-center">Ações</th>
+            <th class="admin-text-center" style="width: 100px !important;">Ações</th>
             <th><%= sort_link(@q, :nome, t("activerecord.attributes.g_tipo_usuario.nome")) %></th>
             <th><%= sort_link(@q, :descricao, t("activerecord.attributes.g_tipo_usuario.descricao")) %></th>
           </tr>
@@ -22,33 +32,413 @@
         <tbody>
           <% @g_tipo_usuarios.each do |g_tipo_usuario| %>
             <tr>
-              <td class="text-center">
-                <div class="dropdown-toggle">
-                  <a href="#" class="text-body dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <td class="admin-text-center">
+                <div class="admin-dropdown">
+                  <a href="#" class="admin-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="ph-gear"></i>
                   </a>
-                  <div class="dropdown-menu" style="">
-                    <div class="dropdown-header">Opções</div>
-                    <%= link_to edit_g_tipo_usuario_path(g_tipo_usuario), class: "dropdown-item" do %>
-                      <i class="ph-pen me-2"></i> Editar
+                  <div class="admin-dropdown-menu">
+                    <div class="admin-dropdown-header">Opções</div>
+                    <%= link_to edit_g_tipo_usuario_path(g_tipo_usuario), class: "admin-dropdown-item" do %>
+                      <i class="ph-pen admin-me-2"></i> Editar
                     <% end %>
                     <%= form_for g_tipo_usuario, method: :delete do |f| %>
-                      <a class="dropdown-item hand-pointer " data-confirm-delete="<%= g_tipo_usuario_path(g_tipo_usuario) %>" data-csrf-token="<%= form_authenticity_token %>">
-                        <i class="ph-trash-simple me-2"></i>Excluir
+                      <a class="admin-dropdown-item admin-hand-pointer" data-confirm-delete="<%= g_tipo_usuario_path(g_tipo_usuario) %>" data-csrf-token="<%= form_authenticity_token %>">
+                        <i class="ph-trash-simple admin-me-2"></i>Excluir
                       </a>
                     <% end %>
-                    <td><%= g_tipo_usuario.nome %></td>
-                    <td><%= g_tipo_usuario.descricao %></td>
                   </div>
                 </div>
               </td>
+              <td><%= g_tipo_usuario.nome %></td>
+              <td><%= g_tipo_usuario.descricao %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
   </div>
-  <div class="card-footer">
-    <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
+  <div class="admin-card-footer">
+    <div class="admin-pagination">
+      <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="admin-btn admin-btn-outline-secondary admin-btn-sm admin-mx-1"').html_safe %>
+    </div>
   </div>
 </div>
+<style>
+  /* Variáveis de cores baseadas no template mostrado */
+  :root {
+    --admin-primary: #ff3d7f !important;
+    --admin-primary-light: #ff6b9c !important;
+    --admin-primary-dark: #e31b5f !important;
+    --admin-primary-hover: #ff5a8f !important;
+    --admin-primary-transparent: rgba(255, 61, 127, 0.1) !important;
+  }
+
+  /* Estilo para o card */
+  .admin-card {
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    border: none !important;
+    margin-bottom: 1.5rem !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    background-color: #ffffff !important;
+    overflow: hidden !important;
+  }
+
+  .admin-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .admin-card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 1.25rem 1.5rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
+
+  .admin-card-title {
+    font-size: 1.125rem !important;
+    margin: 0 !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+  }
+
+  .admin-card-body {
+    padding: 1.5rem !important;
+  }
+
+  .admin-card-footer {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 1rem 1.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Estilo para a tabela */
+  .admin-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 0 !important;
+  }
+
+  .admin-table th {
+    text-align: left !important;
+    padding: 0.75rem 1rem !important;
+    font-weight: 600 !important;
+    color: #6c757d !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    background-color: #f8f9fa !important;
+    white-space: nowrap !important;
+  }
+
+  .admin-table td {
+    padding: 0.75rem 1rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    vertical-align: middle !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .admin-table tr:hover td {
+    background-color: rgba(255, 61, 127, 0.02) !important;
+  }
+
+  .admin-table-responsive {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Estilo para botões */
+  .admin-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.625rem 1.25rem !important;
+    border-radius: 0.375rem !important;
+    font-weight: 500 !important;
+    transition: all 0.15s ease !important;
+    border: none !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .admin-btn:active {
+    transform: scale(0.98) !important;
+  }
+
+  .admin-btn-sm {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .admin-btn-primary {
+    background-color: var(--admin-primary) !important;
+    border-color: var(--admin-primary) !important;
+    color: white !important;
+    box-shadow: 0 2px 5px rgba(255, 61, 127, 0.3) !important;
+  }
+
+  .admin-btn-primary:hover {
+    background-color: var(--admin-primary-hover) !important;
+    border-color: var(--admin-primary-hover) !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(255, 61, 127, 0.4) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .admin-btn-light {
+    background-color: #f8f9fa !important;
+    border-color: #f8f9fa !important;
+    color: #212529 !important;
+  }
+
+  .admin-btn-light:hover {
+    background-color: #e2e6ea !important;
+    border-color: #dae0e5 !important;
+    color: #212529 !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .admin-btn-outline-secondary {
+    background-color: transparent !important;
+    border: 1px solid #6c757d !important;
+    color: #6c757d !important;
+  }
+
+  .admin-btn-outline-secondary:hover {
+    background-color: #6c757d !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Estilo para dropdown */
+  .admin-dropdown {
+    position: relative !important;
+    display: inline-block !important;
+  }
+
+  .admin-dropdown-toggle {
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    color: #6c757d !important;
+    transition: all 0.15s ease !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+  }
+
+  .admin-dropdown-toggle:hover {
+    background-color: var(--admin-primary-transparent) !important;
+    color: var(--admin-primary) !important;
+  }
+
+  .admin-dropdown-menu {
+    position: absolute !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    min-width: 10rem !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 0.5rem 0 !important;
+    background-color: white !important;
+    display: none !important;
+  }
+
+  .admin-dropdown-toggle[aria-expanded="true"] + .admin-dropdown-menu {
+    display: block !important;
+  }
+
+  .admin-dropdown-header {
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #6c757d !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+  }
+
+  .admin-dropdown-item {
+    display: block !important;
+    padding: 0.5rem 1rem !important;
+    color: #212529 !important;
+    transition: all 0.15s ease !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    text-align: left !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .admin-dropdown-item:hover {
+    background-color: var(--admin-primary-transparent) !important;
+    color: var(--admin-primary) !important;
+  }
+
+  .admin-dropdown-item i {
+    margin-right: 0.5rem !important;
+  }
+
+  /* Estilo para formulário de pesquisa */
+  .admin-search-form {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .admin-form-control {
+    border-radius: 0.375rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    width: 100% !important;
+    min-width: 200px !important;
+  }
+
+  .admin-form-control:focus {
+    outline: none !important;
+    border-color: var(--admin-primary-light) !important;
+    box-shadow: 0 0 0 3px rgba(255, 61, 127, 0.1) !important;
+  }
+
+  .admin-input-group {
+    display: flex !important;
+    position: relative !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .admin-input-group-append {
+    display: flex !important;
+    margin-left: -1px !important;
+  }
+
+  .admin-input-group-append .admin-btn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .admin-input-group .admin-form-control {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  /* Utilitários */
+  .admin-text-center {
+    text-align: center !important;
+  }
+
+  .admin-me-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .admin-mx-1 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+
+  .admin-hand-pointer {
+    cursor: pointer !important;
+  }
+
+  .admin-pagination {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+  }
+
+  /* Animação de ripple para botões */
+  @keyframes admin-ripple {
+    to {
+      transform: scale(70) !important;
+      opacity: 0 !important;
+    }
+  }
+
+  /* Adiciona o efeito de ripple aos botões */
+  .admin-btn::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    pointer-events: none !important;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% !important;
+    transform: scale(10, 10) !important;
+    opacity: 0 !important;
+    transition: transform 0.5s, opacity 1s !important;
+  }
+
+  .admin-btn:active::after {
+    transform: scale(0, 0) !important;
+    opacity: 0.3 !important;
+    transition: 0s !important;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Adiciona o efeito de ripple aos botões
+    const buttons = document.querySelectorAll(".admin-btn");
+    buttons.forEach((button) => {
+      button.addEventListener("mousedown", function(e) {
+        const x = e.clientX - this.getBoundingClientRect().left;
+        const y = e.clientY - this.getBoundingClientRect().top;
+        const ripple = document.createElement("span");
+        ripple.style.position = "absolute";
+        ripple.style.width = "1px";
+        ripple.style.height = "1px";
+        ripple.style.borderRadius = "50%";
+        ripple.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+        ripple.style.transform = "scale(0)";
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        ripple.style.animation = "admin-ripple 0.6s linear";
+        this.appendChild(ripple);
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Adiciona funcionalidade aos dropdowns
+    const dropdownToggles = document.querySelectorAll(".admin-dropdown-toggle");
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", function(e) {
+        e.preventDefault();
+        const expanded = this.getAttribute("aria-expanded") === "true" || false;
+        this.setAttribute("aria-expanded", !expanded);
+
+        // Fecha outros dropdowns
+        dropdownToggles.forEach((otherToggle) => {
+          if (otherToggle !== toggle) {
+            otherToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Fecha dropdown ao clicar fora
+        document.addEventListener("click", function closeDropdown(event) {
+          if (!toggle.contains(event.target)) {
+            toggle.setAttribute("aria-expanded", "false");
+            document.removeEventListener("click", closeDropdown);
+          }
+        });
+      });
+    });
+  });
+</script>
