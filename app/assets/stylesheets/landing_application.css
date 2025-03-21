@@ -109,3 +109,107 @@ header {
 .nav-link:hover {
   color: var(--primary) !important;
 }
+
+.nav-link.active {
+  color: var(--primary) !important;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  background: var(--light);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-dark);
+}
+
+.card-img-top {
+  height: 240px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+.card-text {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+/* Badges & Buttons */
+.badge {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 61, 127, 0.4);
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+  color: var(--primary);
+}
+
+.btn-light:hover {
+  background: var(--light);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-link {
+  color: var(--gray);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.btn-link:hover {
+  color: var(--primary);
+  background-color: rgba(255, 61, 127, 0.1);
+}
