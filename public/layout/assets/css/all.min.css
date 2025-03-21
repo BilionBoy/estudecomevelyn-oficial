@@ -8,7 +8,7 @@
   --body-line-height-lg: 1.375;
   --body-line-height-sm: 1.8334;
   --body-line-height-xs: 2.2;
-  --component-active-bg: #0c83ff;
+  --component-active-bg: #e42278;
   --component-active-bg-rgb: 12, 131, 255;
   --component-active-color: #fff;
   --focus-ring-box-shadow: 0 0 0 0.125rem rgba(12, 131, 255, 0.25);
@@ -26,6 +26,9 @@
   --box-shadow-lg: 0 6px 12px rgba(0, 0, 0, 0.15);
   --transition-base-timer: 0.15s;
   --transition-collapse-timer: 0.3s;
+  --gray: #8a8a8a;
+  --gray-light: #f8f9fa;
+  --gray-dark: #343a40;
   --gray-100: #f9fafb;
   --gray-200: #f3f4f6;
   --gray-300: #e5e7eb;
@@ -37,17 +40,19 @@
   --gray-900: #1f2937;
   --indigo: #5c6bc0;
   --purple: #8e70c1;
-  --pink: #f35c86;
+  --pink: #ff3e96;
   --teal: #26a69a;
   --yellow: #ffd648;
-  --primary: #0c83ff;
-  --secondary: #247297;
+  --primary: #e42278;
+  --primary-light: #f5d3dd;
+  --primary-dark: #ed7bab
+  --secondary: #9c27b0;
   --success: #059669;
   --info: #049aad;
   --warning: #f58646;
   --danger: #ef4444;
   --light: #f3f4f6;
-  --dark: #252b36;
+  --dark: #1a1a2e;
   --black: #000;
   --white: #fff;
   --indigo-rgb: 92, 107, 192;
@@ -93,7 +98,7 @@
   --border-radius-xl: 1rem;
   --border-radius-2xl: 2rem;
   --border-radius-pill: 50rem;
-  --link-color: #0c83ff;
+  --link-color: #e42278;
   --link-hover-color: #0962bf;
   --code-color: #f35c86;
   --highlight-bg: rgba(0, 0, 0, 0.15);
@@ -9664,8 +9669,10 @@ fieldset:disabled .btn {
   background-color: rgba(var(--yellow-rgb), var(--bg-opacity)) !important;
 }
 .bg-primary {
-  --bg-opacity: 1;
-  background-color: rgba(var(--primary-rgb), var(--bg-opacity)) !important;
+  opacity: 1;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
 }
 .bg-secondary {
   --bg-opacity: 1;

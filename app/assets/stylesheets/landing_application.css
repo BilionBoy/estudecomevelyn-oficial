@@ -26,8 +26,12 @@
   --bs-primary-rgb: 255, 61, 127;
 }
 
+.container {
+  overflow: hidden; /* Para garantir que nada ultrapasse */
+}
 /* Sistema de tipografia melhorado */
 body {
+  overflow: auto;
   padding-top: 76px;
   font-family: "Quicksand", sans-serif;
   line-height: 1.7;
@@ -178,11 +182,17 @@ header {
 }
 
 .btn-primary {
+  --bg-opacity: 1;
   background-color: var(--primary);
   border-color: var(--primary);
   box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
 }
 
+.bg-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(255, 61, 127, 0.3);
+}
 .btn-primary:hover {
   background-color: var(--primary-dark);
   border-color: var(--primary-dark);
