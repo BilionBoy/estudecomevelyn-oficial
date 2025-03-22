@@ -7,45 +7,171 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <% # Dependências CSS %>
-    <%= stylesheet_link_tag "/layout/assets/fonts/inter/inter.css",                                         "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "/layout/assets/icons/icomoon/styles.min.css",                                  "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "/layout/assets/css/all.min.css",                                               "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "/layout/assets/css/animate.min.css",                                           "data-turbo-track": "reload" %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"  />
+    <link href="https://unpkg.com/lucide-static@0.344.0/font/lucide.css"  rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <%= stylesheet_link_tag "admin_application",                                                            "data-turbo-track": "reload" %>
     <% # App JS do projeto %>
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.min.js",                                     "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.mask.min.js",                                "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.maskMoney.min.js",                           "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/bootstrap/bootstrap.bundle.min.js",                        "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/notifications/sweet_alert.min.js",                  "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/forms/selects/select2.min.js",                      "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/forms/wizards/steps.min.js",                        "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/datatables.min.js",               "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/extensions/responsive.min.js",    "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/datepicker.min.js",                         "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/daterangepicker.js",                        "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/app.js",                                                   "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/custom.js",                                                "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/notifications/noty.min.js",                         "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "cocoon",                                                                     "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/litepicker.js",                             "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/forms/selects/bootstrap_multiselect.js",            "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/extensions/fixed_columns.min.js", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/visualization/echarts/echarts.min.js",              "data-turbo-track": "reload" %>
   </head>
-  <body class="">
-    <!-- Main navbar -->
-    <%= render "shared/navbar" %>
-    <!-- Page content -->
-    <div class="page-content">
-      <!-- Main sidebar -->
-      <%= render "shared/sidebar/sidebar" %>
-      <!-- /main sidebar -->
-      <div class="content-wrapper">
-        <div class="content-inner">
-          <%= yield :context_nav %>
-          <div class="content">
-            <%= yield %>
-          </div>
-        </body>
-      </html>
+  <body>
+    <%= yield %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Elements
+        const sidebar = document.getElementById("sidebar");
+        const sidebarToggle = document.getElementById("sidebar-toggle");
+        const mobileToggle = document.getElementById("mobile-toggle");
+        const sidebarOverlay = document.getElementById("sidebar-overlay");
+        const mobileTooltip = document.getElementById("mobile-tooltip");
+
+        // Função para salvar o estado do sidebar no localStorage
+        function saveSidebarState(isCollapsed) {
+          localStorage.setItem("sidebarCollapsed", isCollapsed.toString());
+        }
+
+        // Função para obter o estado salvo do sidebar
+        function getSavedSidebarState() {
+          return localStorage.getItem("sidebarCollapsed") === "true";
+        }
+
+        // Toggle sidebar com persistência
+        function toggleSidebar() {
+          sidebar.classList.toggle("collapsed");
+          sidebarOverlay.classList.toggle("active");
+          document.body.style.overflow = sidebar.classList.contains("collapsed")
+            ? "auto"
+            : "hidden";
+          saveSidebarState(sidebar.classList.contains("collapsed"));
+        }
+
+        // Event listeners
+        sidebarToggle.addEventListener("click", toggleSidebar);
+        mobileToggle.addEventListener("click", toggleSidebar);
+        sidebarOverlay.addEventListener("click", toggleSidebar);
+
+        // Mobile tooltip for sidebar items
+        const sidebarLinks = document.querySelectorAll(".sidebar-menu-link");
+        if (window.innerWidth < 992) {
+          sidebarLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              const tooltipText = this.getAttribute("data-tooltip");
+              mobileTooltip.textContent = tooltipText;
+              mobileTooltip.style.display = "block";
+
+              setTimeout(() => {
+                mobileTooltip.style.display = "none";
+              }, 2000);
+
+              toggleSidebar();
+            });
+          });
+        }
+
+        // Handle resize events
+        window.addEventListener("resize", function () {
+          const savedState = getSavedSidebarState();
+          if (window.innerWidth >= 992) {
+            if (savedState !== null) {
+              if (savedState) {
+                sidebar.classList.add("collapsed");
+              } else {
+                sidebar.classList.remove("collapsed");
+              }
+            } else {
+              sidebar.classList.remove("collapsed");
+            }
+            sidebarOverlay.classList.remove("active");
+            document.body.style.overflow = "auto";
+          } else {
+            if (savedState !== null) {
+              if (savedState) {
+                sidebar.classList.add("collapsed");
+              } else {
+                sidebar.classList.remove("collapsed");
+              }
+            } else {
+              sidebar.classList.add("collapsed");
+            }
+          }
+        });
+
+        // Initialize sidebar state based on saved state and screen size
+        const savedState = getSavedSidebarState();
+        if (savedState !== null) {
+          if (savedState) {
+            sidebar.classList.add("collapsed");
+          } else {
+            sidebar.classList.remove("collapsed");
+          }
+
+          if (window.innerWidth < 992 && !savedState) {
+            sidebarOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+          }
+        } else {
+          if (window.innerWidth < 992) {
+            sidebar.classList.add("collapsed");
+            saveSidebarState(true);
+          } else {
+            sidebar.classList.remove("collapsed");
+            saveSidebarState(false);
+          }
+        }
+
+        // Add keydown event for accessibility
+        document.addEventListener("keydown", function (e) {
+          if (
+            e.key === "Escape" &&
+            !sidebar.classList.contains("collapsed") &&
+            window.innerWidth < 992
+          ) {
+            toggleSidebar();
+          }
+        });
+
+        // Add ripple effect to buttons
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((button) => {
+          button.addEventListener("mousedown", function (e) {
+            const x = e.clientX - this.getBoundingClientRect().left;
+            const y = e.clientY - this.getBoundingClientRect().top;
+            const ripple = document.createElement("span");
+            ripple.style.position = "absolute";
+            ripple.style.width = "1px";
+            ripple.style.height = "1px";
+            ripple.style.borderRadius = "50%";
+            ripple.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+            ripple.style.transform = "scale(0)";
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            ripple.style.animation = "ripple 0.6s linear";
+            this.style.position = "relative";
+            this.style.overflow = "hidden";
+            this.appendChild(ripple);
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          });
+        });
+
+        // Add ripple animation style
+        document.head.insertAdjacentHTML(
+          "beforeend",
+          `
+          <style>
+            @keyframes ripple {
+              to {
+                transform: scale(70);
+                opacity: 0;
+              }
+            }
+          </style>
+          `
+        );
+      });
+    </script>
+  </body>
+</html>
