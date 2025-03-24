@@ -1,2 +1,663 @@
-<h1>GAdmin#index</h1>
-<p>Find me in app/views/g_admin/index.html.erb</p>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+ <!-- Sidebar -->
+      <aside class="sidebar collapsed" id="sidebar">
+        <div class="sidebar-header">
+          <a href="admin.html" class="sidebar-logo">
+            <i class="lucide-pen-tool"></i>
+            <span>Admin Panel</span>
+          </a>
+          <button
+            class="sidebar-toggle"
+            id="sidebar-toggle"
+            aria-label="Fechar menu"
+          >
+            <i class="lucide-x"></i>
+          </button>
+        </div>
+        <div class="sidebar-content">
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Principal</div>
+            <ul class="sidebar-menu">
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Dashboard"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-layout-dashboard"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Dashboard</span>
+                  <span class="tooltip top">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-produtos.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Produtos"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-shopping-bag"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Produtos</span>
+                  <span class="sidebar-menu-badge">24</span>
+                  <span class="tooltip top">Produtos</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-cursos.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Cursos"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-book-open"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Cursos</span>
+                  <span class="sidebar-menu-badge">9</span>
+                  <span class="tooltip top">Cursos</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-clientes.html"
+                  class="sidebar-menu-link active has-tooltip"
+                  data-tooltip="Clientes"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-users"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Clientes</span>
+                  <span class="tooltip top">Clientes</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-vendas.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Vendas"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-shopping-cart"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Vendas</span>
+                  <span class="tooltip top">Vendas</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Marketing</div>
+            <ul class="sidebar-menu">
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-email.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Email Marketing"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-mail"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Email Marketing</span>
+                  <span class="tooltip top">Email Marketing</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-campanhas.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Campanhas"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-megaphone"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Campanhas</span>
+                  <span class="tooltip top">Campanhas</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-cupons.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Cupons"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-percent"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Cupons</span>
+                  <span class="tooltip top">Cupons</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Conteúdo</div>
+            <ul class="sidebar-menu">
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-blog.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Blog"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-file-text"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Blog</span>
+                  <span class="tooltip top">Blog</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-midia.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Mídia"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-image"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Mídia</span>
+                  <span class="tooltip top">Mídia</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-comentarios.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Comentários"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-message-square"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Comentários</span>
+                  <span class="sidebar-menu-badge">5</span>
+                  <span class="tooltip top">Comentários</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-section-title">Configurações</div>
+            <ul class="sidebar-menu">
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-configuracoes.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Geral"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-settings"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Geral</span>
+                  <span class="tooltip top">Geral</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-pagamentos.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Pagamentos"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-credit-card"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Pagamentos</span>
+                  <span class="tooltip top">Pagamentos</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a
+                  href="admin-usuarios.html"
+                  class="sidebar-menu-link has-tooltip"
+                  data-tooltip="Usuários"
+                >
+                  <span class="sidebar-menu-icon"
+                    ><i class="lucide-users"></i
+                  ></span>
+                  <span class="sidebar-menu-text">Usuários</span>
+                  <span class="tooltip top">Usuários</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-footer">
+          <div class="sidebar-user">
+            <img
+              src="https://randomuser.me/api/portraits/women/32.jpg"
+              alt="Admin User"
+              class="sidebar-user-avatar"
+            />
+            <div class="sidebar-user-info">
+              <div class="sidebar-user-name">Ana Martins</div>
+              <div class="sidebar-user-role">Administradora</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+<!-- Mobile Tooltip -->
+<div class="mobile-tooltip" id="mobile-tooltip"></div>
+
+ <!-- Main Content -->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+          <button
+            class="mobile-toggle"
+            id="mobile-toggle"
+            aria-label="Abrir menu"
+          >
+            <i class="lucide-menu"></i>
+          </button>
+          <h1 class="header-title">Clientes</h1>
+          <div class="header-search">
+            <input
+              type="text"
+              class="header-search-input"
+              placeholder="Buscar clientes..."
+            />
+            <i class="lucide-search header-search-icon"></i>
+          </div>
+          <div class="header-actions">
+            <button class="header-action-btn" aria-label="Notificações">
+              <i class="lucide-bell"></i>
+              <span class="header-action-badge">3</span>
+            </button>
+            <button class="header-action-btn" aria-label="Mensagens">
+              <i class="lucide-mail"></i>
+              <span class="header-action-badge">5</span>
+            </button>
+            <div class="header-user">
+              <img
+                src="https://randomuser.me/api/portraits/women/32.jpg"
+                alt="Admin User"
+                class="header-user-avatar"
+              />
+              <div class="header-user-info">
+                <div class="header-user-name">Ana Martins</div>
+                <div class="header-user-role">Administradora</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Content -->
+        <div class="content">
+          <div class="filters-bar">
+            <div class="filter-group">
+              <span class="filter-label">Status:</span>
+              <select class="filter-select">
+                <option value="">Todos</option>
+                <option value="active">Ativos</option>
+                <option value="inactive">Inativos</option>
+                <option value="new">Novos</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Tipo:</span>
+              <select class="filter-select">
+                <option value="">Todos</option>
+                <option value="customer">Cliente</option>
+                <option value="student">Aluno</option>
+                <option value="subscriber">Assinante</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <span class="filter-label">Ordenar por:</span>
+              <select class="filter-select">
+                <option value="newest">Mais recentes</option>
+                <option value="oldest">Mais antigos</option>
+                <option value="name-asc">Nome: A-Z</option>
+                <option value="name-desc">Nome: Z-A</option>
+                <option value="purchases">Mais compras</option>
+              </select>
+            </div>
+            <div class="filter-spacer"></div>
+            <button class="btn btn-primary">
+              <i class="lucide-plus"></i> Novo Cliente
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Lista de Clientes</h2>
+              <div>
+                <button class="btn btn-sm btn-secondary">
+                  <i class="lucide-filter"></i> Filtros
+                </button>
+                <button class="btn btn-sm btn-secondary">
+                  <i class="lucide-download"></i> Exportar
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Cliente</th>
+                      <th>Email</th>
+                      <th>Telefone</th>
+                      <th>Data de Cadastro</th>
+                      <th>Compras</th>
+                      <th>Valor Total</th>
+                      <th>Status</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="client-info">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/68.jpg"
+                            alt="Mariana Silva"
+                            class="client-avatar"
+                          />
+                          <div>
+                            <div class="client-name">Mariana Silva</div>
+                            <div class="client-email">
+                              mariana.silva@email.com
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>mariana.silva@email.com</td>
+                      <td>(11) 98765-4321</td>
+                      <td>15/03/2023</td>
+                      <td>5</td>
+                      <td>R$ 897,00</td>
+                      <td>
+                        <span class="status-badge success"
+                          ><i class="lucide-check"></i> Ativo</span
+                        >
+                      </td>
+                      <td>
+                        <div class="d-flex gap-1">
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Editar"
+                          >
+                            <i class="lucide-edit"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Ver detalhes"
+                          >
+                            <i class="lucide-eye"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-danger"
+                            aria-label="Excluir"
+                          >
+                            <i class="lucide-trash-2"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-info">
+                          <img
+                            src="https://randomuser.me/api/portraits/men/45.jpg"
+                            alt="Carlos Oliveira"
+                            class="client-avatar"
+                          />
+                          <div>
+                            <div class="client-name">Carlos Oliveira</div>
+                            <div class="client-email">
+                              carlos.oliveira@email.com
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>carlos.oliveira@email.com</td>
+                      <td>(21) 99876-5432</td>
+                      <td>10/03/2023</td>
+                      <td>3</td>
+                      <td>R$ 547,00</td>
+                      <td>
+                        <span class="status-badge success"
+                          ><i class="lucide-check"></i> Ativo</span
+                        >
+                      </td>
+                      <td>
+                        <div class="d-flex gap-1">
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Editar"
+                          >
+                            <i class="lucide-edit"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Ver detalhes"
+                          >
+                            <i class="lucide-eye"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-danger"
+                            aria-label="Excluir"
+                          >
+                            <i class="lucide-trash-2"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-info">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/33.jpg"
+                            alt="Juliana Mendes"
+                            class="client-avatar"
+                          />
+                          <div>
+                            <div class="client-name">Juliana Mendes</div>
+                            <div class="client-email">
+                              juliana.mendes@email.com
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>juliana.mendes@email.com</td>
+                      <td>(31) 98765-1234</td>
+                      <td>05/03/2023</td>
+                      <td>7</td>
+                      <td>R$ 1.247,00</td>
+                      <td>
+                        <span class="status-badge success"
+                          ><i class="lucide-check"></i> Ativo</span
+                        >
+                      </td>
+                      <td>
+                        <div class="d-flex gap-1">
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Editar"
+                          >
+                            <i class="lucide-edit"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Ver detalhes"
+                          >
+                            <i class="lucide-eye"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-danger"
+                            aria-label="Excluir"
+                          >
+                            <i class="lucide-trash-2"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-info">
+                          <img
+                            src="https://randomuser.me/api/portraits/men/22.jpg"
+                            alt="Pedro Santos"
+                            class="client-avatar"
+                          />
+                          <div>
+                            <div class="client-name">Pedro Santos</div>
+                            <div class="client-email">
+                              pedro.santos@email.com
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>pedro.santos@email.com</td>
+                      <td>(41) 99876-4321</td>
+                      <td>01/03/2023</td>
+                      <td>2</td>
+                      <td>R$ 347,00</td>
+                      <td>
+                        <span class="status-badge warning"
+                          ><i class="lucide-alert-circle"></i> Inativo</span
+                        >
+                      </td>
+                      <td>
+                        <div class="d-flex gap-1">
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Editar"
+                          >
+                            <i class="lucide-edit"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Ver detalhes"
+                          >
+                            <i class="lucide-eye"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-danger"
+                            aria-label="Excluir"
+                          >
+                            <i class="lucide-trash-2"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-info">
+                          <img
+                            src="https://randomuser.me/api/portraits/women/56.jpg"
+                            alt="Fernanda Lima"
+                            class="client-avatar"
+                          />
+                          <div>
+                            <div class="client-name">Fernanda Lima</div>
+                            <div class="client-email">
+                              fernanda.lima@email.com
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>fernanda.lima@email.com</td>
+                      <td>(51) 98765-9876</td>
+                      <td>25/02/2023</td>
+                      <td>4</td>
+                      <td>R$ 697,00</td>
+                      <td>
+                        <span class="status-badge success"
+                          ><i class="lucide-check"></i> Ativo</span
+                        >
+                      </td>
+                      <td>
+                        <div class="d-flex gap-1">
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Editar"
+                          >
+                            <i class="lucide-edit"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-secondary"
+                            aria-label="Ver detalhes"
+                          >
+                            <i class="lucide-eye"></i>
+                          </button>
+                          <button
+                            class="btn btn-sm btn-icon btn-danger"
+                            aria-label="Excluir"
+                          >
+                            <i class="lucide-trash-2"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Estatísticas de Clientes</h2>
+              <button class="btn btn-sm btn-primary">
+                <i class="lucide-bar-chart"></i> Relatório Completo
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-icon primary">
+                    <i class="lucide-users"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value">1.245</div>
+                    <div class="stat-label">Total de Clientes</div>
+                    <div class="stat-change positive">
+                      <i class="lucide-trending-up"></i> 8% desde o mês passado
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon success">
+                    <i class="lucide-user-plus"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value">87</div>
+                    <div class="stat-label">Novos Clientes</div>
+                    <div class="stat-change positive">
+                      <i class="lucide-trending-up"></i> 12% desde o mês passado
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon warning">
+                    <i class="lucide-repeat"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value">68%</div>
+                    <div class="stat-label">Taxa de Retenção</div>
+                    <div class="stat-change positive">
+                      <i class="lucide-trending-up"></i> 3% desde o mês passado
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon danger">
+                    <i class="lucide-dollar-sign"></i>
+                  </div>
+                  <div class="stat-content">
+                    <div class="stat-value">R$ 287</div>
+                    <div class="stat-label">Valor Médio por Cliente</div>
+                    <div class="stat-change positive">
+                      <i class="lucide-trending-up"></i> 5% desde o mês passado
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
