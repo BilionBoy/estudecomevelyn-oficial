@@ -3,22 +3,9 @@
   <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">
     <i class="lucide-menu"></i>
   </button>
-  <h1 class="header-title">Clientes</h1>
-  <div class="header-search">
-    <input type="text" class="header-search-input" placeholder="Buscar clientes..." />
-    <i class="lucide-search header-search-icon"></i>
-  </div>
   <div class="header-actions">
-    <button class="header-action-btn" aria-label="Notificações">
-      <i class="lucide-bell"></i>
-      <span class="header-action-badge">3</span>
-    </button>
-    <button class="header-action-btn" aria-label="Mensagens">
-      <i class="lucide-mail"></i>
-      <span class="header-action-badge">5</span>
-    </button>
     <div class="header-user">
-      <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Admin User" class="header-user-avatar"/>
+      <%=image_tag "https://randomuser.me/api/portraits/women/32.jpg", alt: "Admin User", class: "header-user-avatar" %>
       <div class="header-user-info">
         <div class="header-user-name">Ana Martins</div>
         <div class="header-user-role">Administradora</div>

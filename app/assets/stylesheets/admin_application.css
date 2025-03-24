@@ -315,7 +315,6 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
-
 .mobile-toggle {
   margin-right: 1rem;
   background: transparent;
@@ -340,91 +339,11 @@ a:hover {
   transform: scale(0.95);
 }
 
-.header-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.header-search {
-  margin-left: 2rem;
-  position: relative;
-  max-width: 400px;
-  width: 100%;
-  display: none;
-}
-
-.header-search-input {
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--border-radius);
-  background-color: var(--gray-light);
-  transition: var(--transition);
-}
-
-.header-search-input:focus {
-  outline: none;
-  border-color: var(--primary-light);
-  background-color: var(--light);
-  box-shadow: 0 0 0 3px rgba(255, 61, 127, 0.1);
-}
-
-.header-search-icon {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gray);
-  pointer-events: none;
-}
-
 .header-actions {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.header-action-btn {
-  background: transparent;
-  border: none;
-  color: var(--gray-dark);
-  cursor: pointer;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-sm);
-  transition: var(--transition-fast);
-  position: relative;
-}
-
-.header-action-btn:hover {
-  background-color: var(--primary-transparent);
-  color: var(--primary);
-}
-
-.header-action-btn:active {
-  transform: scale(0.95);
-}
-
-.header-action-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: var(--danger);
-  color: white;
-  font-size: 0.7rem;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(220, 53, 69, 0.3);
-  z-index: 5;
 }
 
 .header-user {
@@ -1499,11 +1418,11 @@ a:hover {
        Responsive Styles
        ========================================= */
 
- @media (min-width: 992px) {
-   .sidebar.collapsed {
-     transform: none;
-   }
- }
+@media (min-width: 992px) {
+  .sidebar.collapsed {
+    transform: none;
+  }
+}
 @media (min-width: 576px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1569,4 +1488,3 @@ a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
