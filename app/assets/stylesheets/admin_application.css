@@ -581,11 +581,6 @@ a:hover {
   transform: translateY(-1px);
 }
 
-.btn-secondary {
-  background-color: var(--gray-light);
-  color: var(--gray-dark);
-}
-
 .btn-secondary:hover {
   background-color: var(--gray);
   color: white;

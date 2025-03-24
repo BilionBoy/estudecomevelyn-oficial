@@ -1,14 +1,29 @@
 <div class="card">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <h2 class="card-title">Lista de Tipos de Usuários</h2>
+    <h2 class="card-title">Usuários</h2>
     <div>
-      <button class="btn btn-sm btn-secondary">
-        <i class="lucide-filter"></i> Filtros
-      </button>
-      <button class="btn btn-sm btn-secondary">
-        <i class="lucide-download"></i> Exportar
-      </button>
+      <%= link_to new_g_tipo_usuario_path, class: "btn btn-sm btn-primary" do %>
+        <i class="lucide-user-plus"></i> Incluir Novo Cliente
+      <% end %>
     </div>
+  </div>
+  <!-- Filtro Ransack -->
+  <div class="card-body">
+    <%= search_form_for @q, url: g_tipo_usuarios_path, method: :get, html: { class: "mb-3" } do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.label :nome_cont, "Nome" %>
+          <%= f.search_field :nome_cont, class: "form-control", placeholder: "Pesquisar por nome" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.label :descricao_cont, "Descrição" %>
+          <%= f.search_field :descricao_cont, class: "form-control", placeholder: "Pesquisar por descrição" %>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <%= f.submit "Filtrar", class: "btn btn-sm btn-primary" %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -44,6 +59,10 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+    <!-- Paginação -->
+    <div class="card-footer">
+      <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
     </div>
   </div>
 </div>
