@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_g_usuario!
   include Pagy::Backend # Inclui Pagy para uso no Backend
 
   before_action :set_layout_by_controller

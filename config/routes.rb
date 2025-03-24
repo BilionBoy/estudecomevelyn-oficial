@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :g_usuarios
   root 'g_admin#index'
   
   # Rotas do e-commerce
