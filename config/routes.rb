@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :g_usuarios
   resources :g_tipo_usuarios
   root 'g_admin#index'
   
