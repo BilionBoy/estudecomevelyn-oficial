@@ -39613,3 +39613,313 @@ Processing by GTipoUsuariosController#index as HTML
 Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/g_tipo_usuarios/1/edit" for ::1 at 2025-03-24 13:12:43 -0400
+Processing by GTipoUsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 4.7ms | GC: 0.8ms)
+  Rendered g_tipo_usuarios/edit.html.erb within layouts/application (Duration: 5.1ms | GC: 0.8ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.8ms)
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:12:44 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 1.2ms)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/g_tipo_usuarios?page=4" for ::1 at 2025-03-24 13:12:48 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mGTipoUsuario Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 18]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 9.3ms | GC: 0.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.4ms)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started DELETE "/g_tipo_usuarios/44" for ::1 at 2025-03-24 13:12:51 -0400
+Processing by GTipoUsuariosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"44"}
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mGTipoUsuario Destroy (1.4ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 44]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/g_tipo_usuarios
+Completed 302 Found in 21ms (ActiveRecord: 12.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:12:51 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started DELETE "/g_tipo_usuarios/28" for ::1 at 2025-03-24 13:12:53 -0400
+Processing by GTipoUsuariosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"28"}
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mGTipoUsuario Destroy (11.9ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 28]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/g_tipo_usuarios
+Completed 302 Found in 25ms (ActiveRecord: 14.2ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:12:53 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started DELETE "/g_tipo_usuarios/29" for ::1 at 2025-03-24 13:12:54 -0400
+Processing by GTipoUsuariosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"29"}
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mGTipoUsuario Destroy (1.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 29]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/g_tipo_usuarios
+Completed 302 Found in 20ms (ActiveRecord: 12.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:12:54 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.1ms)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started DELETE "/g_tipo_usuarios/30" for ::1 at 2025-03-24 13:12:55 -0400
+Processing by GTipoUsuariosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"30"}
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mGTipoUsuario Destroy (1.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 30]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/g_tipo_usuarios
+Completed 302 Found in 19ms (ActiveRecord: 11.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:12:55 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.7ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.7ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started DELETE "/g_tipo_usuarios/31" for ::1 at 2025-03-24 13:12:56 -0400
+Processing by GTipoUsuariosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"31"}
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mGTipoUsuario Destroy (2.9ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 31]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/g_tipo_usuarios
+Completed 302 Found in 23ms (ActiveRecord: 13.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:12:56 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.5ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 15]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 16]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.5ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 17]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.2ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 18]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.7ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 32]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.4ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 33]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 34]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (3.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (1.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 35]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (1.1ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 36]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (1.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 37]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (1.2ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 38]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.5ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.9ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 39]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.5ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 40]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.6ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 41]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.3ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 42]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGTipoUsuario Destroy (0.2ms)[0m  [1m[31mDELETE FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1[0m  [["id", 43]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (3.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.9ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" = $1 AND "g_tipo_usuarios"."descricao" = $2 LIMIT $3[0m  [["nome", "faker"], ["descricao", "dhio"], ["LIMIT", 1]]
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-24 13:13:30 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
