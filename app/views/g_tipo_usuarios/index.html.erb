@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h2 class="card-title">Lista de Tipos de Usuários</h2>
+    <div>
+      <button class="btn btn-sm btn-secondary">
+        <i class="lucide-filter"></i> Filtros
+      </button>
+      <button class="btn btn-sm btn-secondary">
+        <i class="lucide-download"></i> Exportar
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Data de Criação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @g_tipo_usuarios.each do |g_tipo_usuario| %>
+            <tr>
+              <td><%= g_tipo_usuario.nome %></td>
+              <td><%= g_tipo_usuario.descricao %></td>
+              <td><%= l(g_tipo_usuario.created_at, format: :short) %></td>
+              <td>
+                <div class="d-flex gap-1">
+                  <%= link_to edit_g_tipo_usuario_path(g_tipo_usuario), class: "btn btn-sm btn-icon btn-secondary", aria: { label: "Editar" } do %>
+                    <i class="lucide-edit"></i>
+                  <% end %>
+                  <%= link_to g_tipo_usuario_path(g_tipo_usuario), class: "btn btn-sm btn-icon btn-secondary", aria: { label: "Ver detalhes" } do %>
+                    <i class="lucide-eye"></i>
+                  <% end %>
+                  <%= link_to g_tipo_usuario_path(g_tipo_usuario), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm btn-icon btn-danger", aria: { label: "Excluir" } do %>
+                    <i class="lucide-trash-2"></i>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
