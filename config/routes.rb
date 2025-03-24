@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :g_usuarios
-  resources :g_tipo_usuarios
   root 'g_admin#index'
   
   # Rotas do e-commerce
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get :blog
     end
   end
-
+  
   # Rotas Scaffold
   resources :g_tipo_usuarios,          only: %i[index show new create edit update destroy]
 
