@@ -43480,3 +43480,67 @@ FOREIGN KEY ("g_tipo_usuario_id")
   [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7124619585715369815)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 19:09:58 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 20.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | GC: 0.0ms)
+Completed 200 OK in 84ms (Views: 28.5ms | ActiveRecord: 49.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_usuarios" for 127.0.0.1 at 2025-03-24 19:10:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/g_usuarios"):
+  
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 19:10:13 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 14.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | GC: 0.4ms)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/g_tipo_usuarios/new" for 127.0.0.1 at 2025-03-24 19:10:15 -0400
+Processing by GTipoUsuariosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 5.7ms | GC: 1.2ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 77.4ms | GC: 44.1ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 81.7ms | GC: 46.6ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.6ms | GC: 1.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 91.7ms | GC: 51.1ms)
+Completed 200 OK in 107ms (Views: 102.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 58.7ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 19:10:16 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 14.5ms | GC: 7.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | GC: 9.6ms)
+Completed 200 OK in 37ms (Views: 22.6ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 15.4ms)
+
+
