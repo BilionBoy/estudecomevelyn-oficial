@@ -30319,3 +30319,84 @@ Processing by GAdminController#index as HTML
 Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for ::1 at 2025-03-23 21:14:29 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `shared' for an instance of #<Class:0x000076c2a95a8678>):
+
+Causes:
+NameError (undefined local variable or method `shared' for an instance of #<Class:0x000076c2a95a8678>)
+    16:     <% # App JS do projeto %>
+    17:   </head>
+    18:   <body>
+    19:     <%=render = shared/sidebar/sidebar %>
+    20:     <div class="admin-layout">
+    21:       <%= yield %>
+    22:     </div>
+  
+app/views/layouts/application.html.erb:19
+Started GET "/" for ::1 at 2025-03-23 21:14:40 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-23 21:15:10 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.3ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 6.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/sidebar/_sidebar  with {:locale=>[:"pt-BR", :pt], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :axlsx]}.
+
+Searched in:
+  * "/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-7.2.2.1/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-7.2.2.1/app/views"
+):
+
+Causes:
+ActionView::MissingTemplate (Missing partial shared/sidebar/_sidebar  with {:locale=>[:"pt-BR", :pt], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :axlsx]}.
+
+Searched in:
+  * "/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-7.2.2.1/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-7.2.2.1/app/views"
+)
+    16:     <% # App JS do projeto %>
+    17:   </head>
+    18:   <body>
+    19:     <%= render  'shared/sidebar/sidebar '%>
+    20:     <div class="admin-layout">
+    21:       <%= yield %>
+    22:     </div>
+  
+app/views/layouts/application.html.erb:19
+Started GET "/" for ::1 at 2025-03-23 21:15:29 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
