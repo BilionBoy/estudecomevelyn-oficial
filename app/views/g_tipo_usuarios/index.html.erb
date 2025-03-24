@@ -43,16 +43,21 @@
               <td><%= g_tipo_usuario.descricao %></td>
               <td><%= l(g_tipo_usuario.created_at, format: :short) %></td>
               <td>
-                <div class="d-flex gap-1">
-                  <%= link_to edit_g_tipo_usuario_path(g_tipo_usuario), class: "btn btn-sm btn-icon btn-secondary", aria: { label: "Editar" } do %>
-                    <i class="lucide-edit"></i>
-                  <% end %>
-                  <%= link_to g_tipo_usuario_path(g_tipo_usuario), class: "btn btn-sm btn-icon btn-secondary", aria: { label: "Ver detalhes" } do %>
-                    <i class="lucide-eye"></i>
-                  <% end %>
-                  <%= link_to g_tipo_usuario_path(g_tipo_usuario), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm btn-icon btn-danger", aria: { label: "Excluir" } do %>
-                    <i class="lucide-trash-2"></i>
-                  <% end %>
+                <div class="dropdown">
+                  <a href="#" class="dropdown-toggle d-flex align-items-center text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="ph-gear"></i> <!-- Ícone de engrenagem -->
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-header">Opções</div>
+                    <%= link_to edit_g_tipo_usuario_path(g_tipo_usuario), class: "dropdown-item d-flex align-items-center" do %>
+                      <i class="ph-pen me-2"></i> <!-- Ícone de edição -->
+                      <span>Editar</span>
+                    <% end %>
+                    <%= button_to g_tipo_usuario_path(g_tipo_usuario), method: :delete, data: { confirm: "Tem certeza que deseja excluir este tipo de usuário?" }, class: "dropdown-item d-flex align-items-center", form: { class: 'd-inline' } do %>
+                      <i class="ph-trash-simple me-2"></i> <!-- Ícone de lixeira -->
+                      <span>Excluir</span>
+                    <% end %>
+                  </div>
                 </div>
               </td>
             </tr>

@@ -6,20 +6,20 @@
     </div>
     <div class="card-body">
       <div id="<%= dom_id @g_tipo_usuario %>">
-          <p>
-            <strong>Nome:</strong>
-            <%= @g_tipo_usuario.nome %>
-          </p>
-          <p>
-            <strong>Descricao:</strong>
-            <%= @g_tipo_usuario.descricao %>
-          </p>
+        <p>
+          <strong>Nome:</strong>
+          <%= @g_tipo_usuario.nome %>
+        </p>
+        <p>
+          <strong>Descricao:</strong>
+          <%= @g_tipo_usuario.descricao %>
+        </p>
       </div>
     </div>
     <div class="card-footer border-0 d-flex justify-content-between">
       <div>
         <%= link_to edit_g_tipo_usuario_path(@g_tipo_usuario), class: "btn btn-primary" do %>
-        <i class="bi bi-pencil-square"></i> Editar
+          <i class="bi bi-pencil-square"></i> Editar
         <% end %>
         <%= link_to "Voltar", g_tipo_usuarios_path, class: "btn btn-secondary" %>
       </div>
