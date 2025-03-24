@@ -13,17 +13,18 @@
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="row">
-        <div class="col-12">
+        <div class="col-6">
           <%= f.input :nome, input_html: {  value: uppercase(@g_tipo_usuario.nome),  style: "text-transform: uppercase;",  oninput: "this.value = this.value.toUpperCase();"  }, placeholder: "Nome" %>
         </div>
-        <div class="col-12">
+        <div class="col-12 col-md-6">
           <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
         </div>
       </div>
     </div>
-    <div class="card-footer">
-      <%= btn_submit(f) %>
-      <%= link_to "Voltar", g_tipo_usuarios_path, class: "btn btn-light" %>
-    </div>
   </div>
+  <div class="card-footer">
+    <%= btn_submit(f) %>
+    <%= link_to "Voltar", g_tipo_usuarios_path, class: "btn btn-light" %>
+  </div>
+</div>
 <% end %>
