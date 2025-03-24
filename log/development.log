@@ -42418,3 +42418,574 @@ Processing by GTipoUsuariosController#index as HTML
 Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.9ms)
 
 
+  [1m[35m (203.7ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_development" ENCODING = 'unicode'[0m
+  [1m[35m (359.2ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_development" ENCODING = 'unicode'[0m
+  [1m[35m (106.6ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2025-03-24 18:38:34 -0400
+Started GET "/" for 127.0.0.1 at 2025-03-24 18:38:34 -0400
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250324134708_create_g_tipo_usuarios.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250324134708_create_g_tipo_usuarios.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-24 18:38:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250324134708_create_g_tipo_usuarios.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-03-24 18:38:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250324134708_create_g_tipo_usuarios.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-24 18:38:41 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250324134708_create_g_tipo_usuarios.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2025-03-24 18:38:42 -0400
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (12.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-03-24 22:38:42.801418', '2025-03-24 22:38:42.801423') RETURNING "key"[0m
+Migrating to CreateGTipoUsuarios (20250324134708)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE TABLE "g_tipo_usuarios" ("id" bigserial primary key, "nome" character varying NOT NULL, "descricao" text, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250324134708') RETURNING "version"[0m
+  [1m[36mTRANSACTION (18.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-03-24 18:38:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 628.0ms | GC: 17.4ms)
+Completed 200 OK in 650ms (Views: 633.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 17.4ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-24 18:38:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:38:55 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 16.6ms | GC: 0.2ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | GC: 0.2ms)
+Completed 200 OK in 82ms (Views: 23.8ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 5.2ms)
+
+
+Started GET "/g_tipo_usuarios/new" for 127.0.0.1 at 2025-03-24 18:38:59 -0400
+Processing by GTipoUsuariosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.3ms | GC: 0.1ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 86.1ms | GC: 0.7ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 87.5ms | GC: 1.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 94.8ms | GC: 1.0ms)
+Completed 200 OK in 128ms (Views: 96.4ms | ActiveRecord: 7.7ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:39:00 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.5ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/g_tipo_usuarios/new" for 127.0.0.1 at 2025-03-24 18:39:02 -0400
+Processing by GTipoUsuariosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 12.0ms | GC: 0.5ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 12.9ms | GC: 0.5ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | GC: 0.5ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:39:06 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (1.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 23.7ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios?q%5Bnome_cont%5D=ADMIN+&q%5Bdescricao_cont%5D=Administrador+do+Sistema&commit=Filtrar" for 127.0.0.1 at 2025-03-24 18:39:35 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"q"=>{"nome_cont"=>"ADMIN ", "descricao_cont"=>"Administrador do Sistema"}, "commit"=>"Filtrar"}
+  [1m[36mGTipoUsuario Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios" WHERE ("g_tipo_usuarios"."nome" ILIKE '%ADMIN%' AND "g_tipo_usuarios"."descricao" ILIKE '%Administrador do Sistema%')[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE ("g_tipo_usuarios"."nome" ILIKE '%ADMIN%' AND "g_tipo_usuarios"."descricao" ILIKE '%Administrador do Sistema%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 10.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios/new" for 127.0.0.1 at 2025-03-24 18:39:39 -0400
+Processing by GTipoUsuariosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 7.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 5.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 21.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:39:50 -0400
+Processing by GTipoUsuariosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_tipo_usuario"=>{"nome"=>"ADMIN ", "descricao"=>"Administrador do Sistema"}, "button"=>""}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:22:in `create'
+  [1m[36mGTipoUsuario Create (7.8ms)[0m  [1m[32mINSERT INTO "g_tipo_usuarios" ("nome", "descricao", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "ADMIN "], ["descricao", "Administrador do Sistema"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-03-24 22:39:50.185198"], ["updated_at", "2025-03-24 22:39:50.185198"]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/g_tipo_usuarios
+Completed 302 Found in 53ms (ActiveRecord: 16.1ms (1 query, 0 cached) | GC: 25.8ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:39:50 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (1.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 16.4ms | GC: 0.8ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | GC: 0.8ms)
+Completed 200 OK in 35ms (Views: 27.8ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-24 18:39:58 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-24 18:40:01 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios/1/edit" for 127.0.0.1 at 2025-03-24 18:46:14 -0400
+Processing by GTipoUsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGTipoUsuario Load (0.5ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 18.0ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/edit.html.erb within layouts/application (Duration: 24.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | GC: 0.0ms)
+Completed 200 OK in 123ms (Views: 32.2ms | ActiveRecord: 13.8ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:46:15 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 15.9ms | GC: 1.5ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | GC: 1.5ms)
+Completed 200 OK in 34ms (Views: 24.0ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:46:18 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (1.9ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 14.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 2.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-03-24 18:46:19 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:46:25 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 17.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 33.8ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-24 18:46:33 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.9ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 54.9ms | GC: 37.5ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | GC: 37.5ms)
+Completed 200 OK in 72ms (Views: 63.0ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 37.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-24 18:46:57 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateGUsuarios (20250324225115)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "g_usuarios" ("id" bigserial primary key, "nome" character varying, "email" character varying NOT NULL, "password_digest" character varying, "tipo_usuario_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE INDEX "index_g_usuarios_on_tipo_usuario_id" ON "g_usuarios" ("tipo_usuario_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250324225115') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
