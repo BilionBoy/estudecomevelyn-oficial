@@ -42418,3 +42418,424 @@ Processing by GTipoUsuariosController#index as HTML
 Completed 200 OK in 18ms (Views: 10.3ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-03-24 16:29:11 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.2ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-03-24 16:29:15 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-24 16:39:12 -0400
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-03-24 16:39:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-03-25 15:45:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GAdminController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | GC: 22.6ms)
+Completed 200 OK in 87ms (Views: 69.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 22.6ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-25 15:45:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-25 15:45:53 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 10.9ms | GC: 0.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.4ms)
+Completed 200 OK in 53ms (Views: 9.9ms | ActiveRecord: 26.4ms (2 queries, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/g_tipo_usuarios/new" for 127.0.0.1 at 2025-03-25 15:45:56 -0400
+Processing by GTipoUsuariosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 17.3ms | GC: 0.8ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 18.1ms | GC: 0.8ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 0.8ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-25 15:45:57 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-25 15:46:24 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 8.7ms | GC: 0.9ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.9ms)
+Completed 200 OK in 27ms (Views: 9.9ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 9.5ms)
+
+
+Started GET "/g_tipo_usuarios/new" for 127.0.0.1 at 2025-03-25 15:46:27 -0400
+Processing by GTipoUsuariosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 4.0ms | GC: 0.3ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.3ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.3ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-25 15:46:28 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios/1/edit" for 127.0.0.1 at 2025-03-25 15:46:30 -0400
+Processing by GTipoUsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:48:in `set_g_tipo_usuario'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 2.5ms | GC: 0.4ms)
+  Rendered g_tipo_usuarios/edit.html.erb within layouts/application (Duration: 2.8ms | GC: 0.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.4ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-03-25 15:46:31 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/g_tipo_usuarios?q%5Bnome_cont%5D=ad&q%5Bdescricao_cont%5D=&commit=Filtrar" for 127.0.0.1 at 2025-03-25 15:46:34 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"q"=>{"nome_cont"=>"ad", "descricao_cont"=>""}, "commit"=>"Filtrar"}
+  [1m[36mGTipoUsuario Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ad%'[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.9ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ad%' LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios?q%5Bnome_cont%5D=ad&q%5Bdescricao_cont%5D=&commit=Filtrar" for 127.0.0.1 at 2025-03-25 15:46:36 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"q"=>{"nome_cont"=>"ad", "descricao_cont"=>""}, "commit"=>"Filtrar"}
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ad%'[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ad%' LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios?q%5Bnome_cont%5D=ad&q%5Bdescricao_cont%5D=&commit=Filtrar" for 127.0.0.1 at 2025-03-25 15:46:36 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"q"=>{"nome_cont"=>"ad", "descricao_cont"=>""}, "commit"=>"Filtrar"}
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ad%'[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ad%' LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.4ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/g_tipo_usuarios?q%5Bnome_cont%5D=ol&q%5Bdescricao_cont%5D=&commit=Filtrar" for 127.0.0.1 at 2025-03-25 15:46:39 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"q"=>{"nome_cont"=>"ol", "descricao_cont"=>""}, "commit"=>"Filtrar"}
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ol%'[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."nome" ILIKE '%ol%' LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/g_tipo_usuarios?q%5Bnome_cont%5D=&q%5Bdescricao_cont%5D=&commit=Filtrar" for 127.0.0.1 at 2025-03-25 15:46:42 -0400
+Processing by GTipoUsuariosController#index as HTML
+  Parameters: {"q"=>{"nome_cont"=>"", "descricao_cont"=>""}, "commit"=>"Filtrar"}
+  [1m[36mGTipoUsuario Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DeviseCreateUsers (20250325195527)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "g_tipo_usuario_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_553e739efc"
+FOREIGN KEY ("g_tipo_usuario_id")
+  REFERENCES "g_tipo_usuarios" ("id")
+)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE INDEX "index_users_on_g_tipo_usuario_id" ON "users" ("g_tipo_usuario_id")[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250325195527') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-25 15:57:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mGTipoUsuario Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 0.1ms)
+Completed 200 OK in 23ms (Views: 7.6ms | ActiveRecord: 11.7ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-03-25 15:57:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/g_tipo_usuarios" for ::1 at 2025-03-25 15:57:46 -0400
+Processing by GTipoUsuariosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-03-25 15:57:46 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for an instance of #<Class:0x0000725976fba3c8>):
+
+Causes:
+NoMethodError (undefined method `session_path' for an instance of #<Class:0x0000725976fba3c8>)
+    1: <h2>Log in</h2>
+    2: 
+    3: <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="form-inputs">
+    5:     <%= f.input :email,
+    6:                 required: false,
+  
+app/views/devise/sessions/new.html.erb:3
+Started GET "/users/sign_in" for ::1 at 2025-03-25 15:58:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 3.0ms | GC: 2.5ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.2ms | GC: 2.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.9ms (0 queries, 0 cached) | GC: 9.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for an instance of #<Class:0x000072596f0a9bb0>):
+
+Causes:
+NoMethodError (undefined method `session_path' for an instance of #<Class:0x000072596f0a9bb0>)
+    1: <h2>Log in</h2>
+    2: <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    3:   <div class="form-inputs">
+    4:     <%= f.input :email,
+    5:                 required: false,
+  
+app/views/devise/sessions/new.html.erb:2
+Started GET "/users/sign_in" for ::1 at 2025-03-25 15:59:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 6.4ms | GC: 1.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.5ms | GC: 1.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.8ms (0 queries, 0 cached) | GC: 11.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_registration_path' for an instance of #<Class:0x0000725974034ba8>):
+
+Causes:
+NoMethodError (undefined method `new_registration_path' for an instance of #<Class:0x0000725974034ba8>)
+    3: <% end %>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    6:   <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+    7: <% end %>
+    8: 
+    9: <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  
+app/views/devise/shared/_links.html.erb:6
+app/views/devise/sessions/new.html.erb:17
+Started GET "/users/sign_in" for ::1 at 2025-03-25 15:59:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_password_path' for an instance of #<Class:0x000072596ea77760>):
+
+Causes:
+NoMethodError (undefined method `new_password_path' for an instance of #<Class:0x000072596ea77760>)
+     7: <% end %>
+     8: 
+     9: <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    10:   <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+    11: <% end %>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  
+app/views/devise/shared/_links.html.erb:10
+app/views/devise/sessions/new.html.erb:17
+Started GET "/users/sign_in" for ::1 at 2025-03-25 16:00:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "devise.css" is not present in the asset pipeline.
+):
+
+Causes:
+Sprockets::Rails::Helper::AssetNotFound (The asset "devise.css" is not present in the asset pipeline.
+)
+    11:     <%= stylesheet_link_tag "/layout/assets/icons/phosphor/styles.min.css", "data-turbo-track": "reload" %>
+    12:     <%= stylesheet_link_tag "/layout/assets/css/all.min.css",               "data-turbo-track": "reload" %>
+    13:     <%= stylesheet_link_tag "/layout/assets/css/animate.min.css",           "data-turbo-track": "reload" %>
+    14:     <%= stylesheet_link_tag "devise",                                       "data-turbo-track": "reload" %>
+    15:     <%= javascript_importmap_tags %>
+    16:     <% # App JS do projeto %>
+    17:   </head>
+  
+app/views/layouts/devise_application.html.erb:14
+Started GET "/users/sign_in" for ::1 at 2025-03-25 16:00:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 18.0ms | GC: 4.1ms)
+Completed 200 OK in 25ms (Views: 19.3ms | ActiveRecord: 2.3ms (0 queries, 0 cached) | GC: 4.1ms)
+
+
