@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 class GTipoUsuariosController < ApplicationController
   before_action :set_g_tipo_usuario, only: %i[show edit update destroy]
-
   rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
 
   def index

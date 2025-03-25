@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :blog
     end
   end
-
+  
   # Rotas Scaffold
   resources :g_tipo_usuarios,          only: %i[index show new create edit update destroy]
 
