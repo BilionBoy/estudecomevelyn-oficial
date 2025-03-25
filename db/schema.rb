@@ -25,7 +25,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_25_000055) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "nome", null: false
     t.string "email", default: "", null: false
+    t.bigint "g_tipo_usuario_id", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -33,6 +35,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_25_000055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["g_tipo_usuario_id"], name: "index_users_on_g_tipo_usuario_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "users", "g_tipo_usuarios"
 end

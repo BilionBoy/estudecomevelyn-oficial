@@ -1,12 +1,57 @@
-<h2>Log in</h2>
-<%= simple_form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
-    <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="login-image">
+  <div class="row justify-content-center mb-3 mt-5" style="padding-top: 70px;">
+    <div class="col text-center">
+      <img src="/layout/assets/img/sgis.png" style="height: 100px;">
+    </div>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="row justify-content-center mt-5" style="padding-top: 10px; padding-bottom: 50px;">
+    <div class="col-xl-3 col-lg-5 col-md-6 col-sm-8">
+      <div class="card border-0 shadow shadow-sm">
+        <%= simple_form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
+          <div class="card-body">
+            <%= render "shared/notice" %>
+            <!-- Input para o e-mail -->
+            <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email", class: "form-control" } %>
+            <!-- Input para a senha -->
+            <div class="form-control-feedback form-control-feedback-start">
+              <%= f.input :password, required: true, input_html: { autocomplete: "current-password", class: "password-field form-control" } %>
+              <div class="form-control-feedback-icon">
+                <i class="toggle-password ph-eye mt-4" toggle=".password-field"></i>
+              </div>
+            </div>
+            <!-- Lembre-se de mim -->
+            <% if devise_mapping.rememberable? %>
+              <%= f.input :remember_me, as: :boolean, label: "Lembrar-me", input_html: { class: "form-check-input" } %>
+            <% end %>
+          </div>
+          <!-- Botão de login -->
+          <div class="card-footer">
+            <%= f.button :submit, "Entrar", class: "btn btn-primary w-100 hand-pointer" %>
+          </div>
+        <% end %>
+        <!-- Links para recuperação de senha e cadastro -->
+        <div class="text-center">
+          <%= render "devise/shared/links" %>
+          <br>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
-<%= render "devise/shared/links" %>
+  <div class="row">
+    <div class="col text-center">
+      <img src="/layout/assets/img/logo-login.png" style="height: 90px">
+    </div>
+  </div>
+</div>
+<script>
+  // Script para mostrar/esconder a senha
+  $('.toggle-password').click(function() {
+    $(this).toggleClass('ph-eye ph-eye-slash');
+    var input = $($(this).attr('toggle'));
+    if (input.attr('type') == 'password') {
+      input.attr('type', 'text');
+    } else {
+      input.attr('type', 'password');
+    }
+  });
+</script>
