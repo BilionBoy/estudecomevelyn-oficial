@@ -6,5 +6,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
-  belongs_to :g_tipo_usuario
 end
