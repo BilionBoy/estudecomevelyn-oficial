@@ -5,7 +5,8 @@ class User < ApplicationRecord
   belongs_to :g_tipo_usuario
          
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
-  validates :nome,  presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :nome,              presence: true
+  validates :email,             presence: true, uniqueness: true
+  validates :g_tipo_usuario_id, presence: true 
 
 end

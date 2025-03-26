@@ -1,64 +1,45 @@
-<div class="login-image">
-  <div class="row justify-content-center mb-3 mt-5" style="padding-top: 70px;">
-    <div class="col text-center">
-      <img src="/layout/assets/img/sgis.png" style="height: 100px;">
+<h2>Sign up</h2>
+<%= simple_form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <!-- Nome -->
+    <div class="field">
+      <%= f.label :nome, class: 'form-label' %>
+      <%= f.text_field :nome, autofocus: true, autocomplete: "name", class: 'form-control' %>
+    </div>
+    <!-- Email -->
+    <div class="field">
+      <%= f.label :email, class: 'form-label' %>
+      <%= f.email_field :email, required: true, autofocus: true, input_html: { autocomplete: "email" }, class: 'form-control' %>
+    </div>
+    <!-- Senha -->
+    <div class="field">
+      <%= f.label :password, class: 'form-label' %>
+      <%= f.password_field :password, required: true, hint: "#{@minimum_password_length} characters minimum", input_html: { autocomplete: "new-password" }, class: 'form-control' %>
+    </div>
+    <!-- Confirmação de Senha -->
+    <div class="field">
+      <%= f.label :password_confirmation, class: 'form-label' %>
+      <%= f.password_field :password_confirmation, required: true, input_html: { autocomplete: "new-password" }, class: 'form-control' %>
+    </div>
+    <!-- Tipo de Usuário -->
+    <div class="field">
+      <%= f.label :g_tipo_usuario_id, "Tipo de Usuário", class: 'form-label' %>
+      <%= f.select :g_tipo_usuario_id, GTipoUsuario.all.collect { |t| [t.nome, t.id] }, include_blank: "Selecione um tipo", class: 'form-control' %>
     </div>
   </div>
-  <div class="row justify-content-center mt-5" style="padding-top: 10px; padding-bottom: 50px;">
-    <div class="col-xl-3 col-lg-5 col-md-6 col-sm-8">
-      <div class="card border-0 shadow shadow-sm">
-        <div class="card-header text-center">
-          <h2 class="h4">Sign up</h2>
-        </div>
-        <%= simple_form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-          <div class="card-body">
-            <%= render "shared/notice" %>
-            <%= f.error_notification %>
-            <!-- Input para o e-mail -->
-            <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email", class: "form-control" } %>
-            <!-- Input para a senha -->
-            <div class="form-control-feedback form-control-feedback-start">
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password", class: "password-field form-control" } %>
-              <div class="form-control-feedback-icon">
-                <i class="toggle-password ph-eye mt-4" toggle=".password-field"></i>
-              </div>
-            </div>
-            <!-- Confirmação de senha -->
-            <div class="form-control-feedback form-control-feedback-start">
-              <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "password-field form-control" } %>
-              <div class="form-control-feedback-icon">
-                <i class="toggle-password ph-eye mt-4" toggle=".password-field"></i>
-              </div>
-            </div>
-          </div>
-          <!-- Botão de cadastro -->
-          <div class="card-footer">
-            <%= f.button :submit, "Sign up", class: "btn btn-primary w-100 hand-pointer" %>
-          </div>
-        <% end %>
-        <!-- Links para login e recuperação de senha -->
-        <div class="text-center">
-          <%= render "devise/shared/links" %>
-          <br>
-        </div>
-      </div>
-    </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
   </div>
-  <div class="row">
-    <div class="col text-center">
-      <img src="/layout/assets/img/logo-login.png" style="height: 90px">
-    </div>
+<% end %>
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
-</div>
-<script>
-  // Script para mostrar/esconder a senha
-  $('.toggle-password').click(function() {
-    $(this).toggleClass('ph-eye ph-eye-slash');
-    var input = $($(this).attr('toggle'));
-    if (input.attr('type') == 'password') {
-      input.attr('type', 'text');
-    } else {
-      input.attr('type', 'password');
-    }
-  });
-</script>
+<% end %>
+<%= render "devise/shared/links" %>
