@@ -50127,3 +50127,5 @@ ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.
   
 ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
   
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_development" ENCODING = 'unicode'[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_test" ENCODING = 'unicode'[0m
