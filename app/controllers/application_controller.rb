@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user! # Autentica o usuário antes de qualquer ação
-  include DeviseParams
   include Pagy::Backend # Inclui Pagy para uso no Backend
 
   layout :set_layout_by_controller

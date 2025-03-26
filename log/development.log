@@ -51448,3 +51448,331 @@ Processing by Devise::RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Content in 223ms (Views: 4.7ms | ActiveRecord: 1.7ms (3 queries, 1 cached) | GC: 8.1ms)
 
 
+  [1m[35m (349.2ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_development" ENCODING = 'unicode'[0m
+  [1m[35m (98.3ms)[0m  [1m[35mCREATE DATABASE "evelynlettering_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateGTipoUsuarios (20250324134708)
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (13.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250324134708') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20250325000055)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (68.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nome" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "g_tipo_usuario_id" bigint NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_553e739efc"
+FOREIGN KEY ("g_tipo_usuario_id")
+  REFERENCES "g_tipo_usuarios" ("id")
+)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_g_tipo_usuario_id" ON "users" ("g_tipo_usuario_id")[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250325000055') RETURNING "version"[0m
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-03-26 19:27:44 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant ApplicationController::DeviseParams):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/g_admin_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2025-03-26 19:27:46 -0400
+  
+NameError (uninitialized constant ApplicationController::DeviseParams):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/g_admin_controller.rb:1:in `<main>'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-03-26 19:27:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-03-26 19:28:04 -0400
+Processing by GAdminController#index as HTML
+Completed 401 Unauthorized in 32ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-03-26 19:28:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered shared/_notice.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 16.0ms | GC: 6.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 380.3ms | GC: 175.9ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 2763.3ms | GC: 295.0ms)
+Completed 200 OK in 3067ms (Views: 2772.8ms | ActiveRecord: 68.5ms (0 queries, 0 cached) | GC: 295.9ms)
+
+
+Started GET "/layout/assets/img/sgis.png" for 127.0.0.1 at 2025-03-26 19:28:08 -0400
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:28:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started GET "/users/password/new" for 127.0.0.1 at 2025-03-26 19:28:16 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/devise_application (Duration: 30.3ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 46.9ms | GC: 0.0ms)
+Completed 200 OK in 64ms (Views: 57.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 19:28:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (16.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:28:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 13.0ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 227.1ms | GC: 14.4ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 241.9ms | GC: 14.4ms)
+Completed 200 OK in 265ms (Views: 233.1ms | ActiveRecord: 27.3ms (1 query, 0 cached) | GC: 14.4ms)
+
+
+Started GET "/layout/assets/img/sgis.png" for 127.0.0.1 at 2025-03-26 19:28:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.png"):
+  
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:28:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2025-03-26 19:28:36 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Teste", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :nome, :g_tipo_usuario_id. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f786ab4eda0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Teste", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (18.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.8ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:28:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 12.0ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 149.8ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 181.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 750ms (Views: 186.7ms | ActiveRecord: 20.6ms (3 queries, 1 cached) | GC: 9.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-03-26 19:28:55 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Teste", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :nome, :g_tipo_usuario_id. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f78696ded98>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Teste", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (6.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:28:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 58.0ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 73.8ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 458ms (Views: 75.0ms | ActiveRecord: 13.7ms (3 queries, 1 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-03-26 19:30:28 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"daada", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :nome, :g_tipo_usuario_id. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f786962e6a0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"daada", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (47.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (13.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.8ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:28:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 104.5ms | GC: 3.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 192.4ms | GC: 3.2ms)
+Completed 422 Unprocessable Content in 1400ms (Views: 212.6ms | ActiveRecord: 233.4ms (3 queries, 1 cached) | GC: 38.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-03-26 19:33:04 -0400
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-03-26 19:33:09 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered shared/_notice.html.erb (Duration: 8.8ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 7.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 166.4ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 354.7ms | GC: 8.1ms)
+Completed 200 OK in 829ms (Views: 380.0ms | ActiveRecord: 244.3ms (0 queries, 0 cached) | GC: 14.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered shared/_notice.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 36.2ms | GC: 0.4ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 117.1ms | GC: 3.6ms)
+Completed 200 OK in 184ms (Views: 120.9ms | ActiveRecord: 10.6ms (0 queries, 0 cached) | GC: 6.9ms)
+
+
+Started GET "/layout/assets/img/sgis.png" for 127.0.0.1 at 2025-03-26 19:33:10 -0400
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:33:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started GET "/users/password/new" for 127.0.0.1 at 2025-03-26 19:33:12 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/devise_application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/devise_application (Duration: 34.7ms | GC: 5.3ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 48.6ms | GC: 5.3ms)
+Completed 200 OK in 145ms (Views: 55.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 19:33:12 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (5.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:28:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 106.8ms | GC: 0.8ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 123.3ms | GC: 1.5ms)
+Completed 200 OK in 129ms (Views: 112.0ms | ActiveRecord: 12.8ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/layout/assets/img/sgis.png" for 127.0.0.1 at 2025-03-26 19:33:13 -0400
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:33:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started GET "/users" for 127.0.0.1 at 2025-03-26 19:34:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 19:34:35 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (3.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:27:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 8.4ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 263.9ms | GC: 43.8ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 405.5ms | GC: 47.3ms)
+Completed 200 OK in 633ms (Views: 402.7ms | ActiveRecord: 135.9ms (1 query, 0 cached) | GC: 47.3ms)
+
+
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:34:37 -0400
+Started GET "/layout/assets/img/sgis.png" for 127.0.0.1 at 2025-03-26 19:34:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 19:34:51 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (1.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:24:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 4.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 87.1ms | GC: 2.8ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 1358.4ms | GC: 1201.7ms)
+Completed 200 OK in 1481ms (Views: 1411.9ms | ActiveRecord: 14.5ms (1 query, 0 cached) | GC: 1272.8ms)
+
+
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:34:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 19:35:01 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.9ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:24:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 65.7ms | GC: 2.6ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 102.2ms | GC: 4.2ms)
+Completed 200 OK in 149ms (Views: 103.9ms | ActiveRecord: 18.7ms (1 query, 0 cached) | GC: 18.6ms)
+
+
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:35:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started POST "/users" for 127.0.0.1 at 2025-03-26 19:35:18 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"André Dhiogo", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :nome, :g_tipo_usuario_id. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f786ac92c70>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"André Dhiogo", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:24:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 84.8ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 123.0ms | GC: 23.3ms)
+Completed 422 Unprocessable Content in 623ms (Views: 123.7ms | ActiveRecord: 10.1ms (3 queries, 1 cached) | GC: 23.3ms)
+
+
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:35:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 19:39:01 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (3.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:24:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 8.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 316.3ms | GC: 1.6ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 1189.0ms | GC: 723.1ms)
+Completed 200 OK in 2150ms (Views: 1574.6ms | ActiveRecord: 206.6ms (1 query, 0 cached) | GC: 886.2ms)
+
+
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:39:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+Started POST "/users" for 127.0.0.1 at 2025-03-26 19:44:51 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Dhioogo", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :nome, :g_tipo_usuario_id. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f78696bde90>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Dhioogo", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "g_tipo_usuario_id"=>"1"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (54.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (3.8ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:24:in `collect'
+  Rendered devise/shared/_links.html.erb (Duration: 12.0ms | GC: 0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 194.9ms | GC: 2.9ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 985.6ms | GC: 689.9ms)
+Completed 422 Unprocessable Content in 2987ms (Views: 1194.7ms | ActiveRecord: 471.0ms (3 queries, 1 cached) | GC: 787.4ms)
+
+
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 19:44:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+  [1m[36mGTipoUsuario Pluck (2.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios"."id", "g_tipo_usuarios"."nome" FROM "g_tipo_usuarios"[0m
+  [1m[36mGTipoUsuario Pluck (6.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios"."id", "g_tipo_usuarios"."nome" FROM "g_tipo_usuarios"[0m
