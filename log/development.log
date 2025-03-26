@@ -50287,3 +50287,22 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-03-26 12:49:23 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  Rendered shared/_notice.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 12.4ms | GC: 2.7ms)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/layout/assets/img/sgis.png" for 127.0.0.1 at 2025-03-26 12:49:23 -0400
+Started GET "/layout/assets/img/logo-login.png" for 127.0.0.1 at 2025-03-26 12:49:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/logo-login.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/layout/assets/img/sgis.png"):
+  
