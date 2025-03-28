@@ -154,6 +154,70 @@ a:hover {
   transform: scale(0.95);
 }
 
+/* Correções para os links de navegação */
+
+/* Garantir que todos os links do menu tenham o mesmo estilo */
+.sidebar-menu-item {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: var(--gray-dark);
+  transition: var(--transition-fast);
+  position: relative;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.sidebar-menu-link:hover {
+  background-color: var(--primary-transparent);
+  color: var(--primary);
+  border-left-color: var(--primary-light);
+  text-decoration: none;
+}
+
+.sidebar-menu-link.active {
+  background-color: var(--primary-transparent);
+  color: var(--primary);
+  font-weight: 500;
+  border-left-color: var(--primary);
+}
+
+/* Garantir que os ícones sejam exibidos corretamente */
+.sidebar-menu-icon {
+  margin-right: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+/* Remover qualquer estilo de lista que possa estar interferindo */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Corrigir especificamente os links de Gerenciar Usuários e Funções */
+.sidebar-menu-item a[href="/gerenciar-usuarios"],
+.sidebar-menu-item a[href="/gerenciar-funcoes"] {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-left: 3px solid transparent;
+}
+
+/* Garantir que não haja bullets ou outros marcadores */
+.sidebar-menu-item {
+  list-style-type: none;
+}
+
 .sidebar-content {
   padding: 1.5rem 0;
   height: calc(100vh - var(--header-height) - 80px);

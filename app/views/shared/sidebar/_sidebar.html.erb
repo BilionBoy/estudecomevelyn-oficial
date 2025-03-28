@@ -20,6 +20,11 @@
             <span class="tooltip top">Dashboard</span>
           </a>
         </li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Gestão</div>
+      <ul class="sidebar-menu">
         <li class="sidebar-menu-item">
           <a href="<%= root_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos">
             <span class="sidebar-menu-icon"><i class="ph-bag"></i></span>
@@ -36,12 +41,16 @@
             <span class="tooltip top">Cursos</span>
           </a>
         </li>
-        <li class="sidebar-menu-item">
-          <a href="<%= root_path %>" class="sidebar-menu-link active has-tooltip" data-tooltip="Clientes">
+        <li class="sidebar-menu-item has-submenu">
+          <a href="#" class="sidebar-menu-link has-tooltip" data-tooltip="Clientes">
             <span class="sidebar-menu-icon"><i class="ph-users"></i></span>
             <span class="sidebar-menu-text">Clientes</span>
             <span class="tooltip top">Clientes</span>
           </a>
+          <ul class="sidebar-submenu">
+            <li><a href="<%= users_path %>">Gerenciar Usuários</a></li>
+            <li><a href="<%= g_tipo_usuarios_path %>">Gerenciar Funções</a></li>
+          </ul>
         </li>
         <li class="sidebar-menu-item">
           <a href="<%= root_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Vendas">
@@ -115,7 +124,7 @@
           </a>
         </li>
         <li class="sidebar-menu-item">
-          <a href="<%= root_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Usuários">
+          <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Usuários">
             <span class="sidebar-menu-icon"><i class="ph-users"></i></span>
             <span class="sidebar-menu-text">Usuários</span>
             <span class="tooltip top">Usuários</span>
@@ -134,5 +143,3 @@
     </div>
   </div>
 </aside>
-<!-- Mobile Tooltip -->
-<div class="mobile-tooltip" id="mobile-tooltip"></div>
