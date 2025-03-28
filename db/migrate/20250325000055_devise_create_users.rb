@@ -4,8 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.2]
   def change
     create_table :users do |t|
       ## Informações do Cliente
-      t.string :nome, null: false
-      t.string :email, null: false, default: ""
+      t.string :nome,               null: false
+      t.string :email,              null: false, default: ""
       t.references :g_tipo_usuario, null: false, foreign_key: { to_table: :g_tipo_usuarios }
 
       ## Devise Autenticação
