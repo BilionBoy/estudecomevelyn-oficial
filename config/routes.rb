@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   # Rotas Scaffold
   resources :g_tipo_usuarios
-  resources :users,          only: %i[index show edit update destroy]
+  resources :users,              only: %i[index show edit update destroy]
   
   # Rotas do e-commerce
   resources :home, only: [:index] do
