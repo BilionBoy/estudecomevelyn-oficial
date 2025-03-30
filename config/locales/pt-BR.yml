@@ -7,7 +7,6 @@ pt-BR:
       one: "Página"
       other: "Páginas"
     prev: "Anterior"
-
   activerecord:
     models:
       user:
