@@ -315,29 +315,6 @@ a:hover {
   background-color: var(--primary-dark);
 }
 
-.sidebar-footer {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: var(--light);
-}
-
-.sidebar-user {
-  display: flex;
-  align-items: center;
-}
-
-.sidebar-user-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 0.75rem;
-  border: 2px solid var(--primary-transparent);
-}
-
 .sidebar-user-name {
   font-weight: 600;
   font-size: 0.95rem;

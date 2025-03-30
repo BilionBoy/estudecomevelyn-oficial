@@ -5,7 +5,7 @@
       <i class="ph-pen"></i>
       <span>Admin Panel</span>
     </a>
-    <button class="sidebar-toggle d-block d-lg-none"  id="sidebar-toggle" aria-label="Fechar menu">
+    <button class="sidebar-toggle d-block d-lg-none" id="sidebar-toggle" aria-label="Fechar menu">
       <i class="ph-x"></i>
     </button>
   </div>
@@ -28,6 +28,7 @@
             <span class="tooltip top">Produtos</span>
           </a>
         </li>
+        <div class="sidebar-section-title">Usuários</div>
         <li class="sidebar-menu-item">
           <a href="<%= root_path %>" class="sidebar-menu-link active has-tooltip" data-tooltip="Clientes">
             <span class="sidebar-menu-icon"><i class="ph-users"></i></span>
@@ -35,17 +36,23 @@
             <span class="tooltip top">Clientes</span>
           </a>
         </li>
-        <div class="sidebar-section">
-          <div class="sidebar-section-title">Marketing</div>
-          <div class="sidebar-footer">
-            <div class="sidebar-user">
-              <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Admin User" class="sidebar-user-avatar" />
-              <div class="sidebar-user-info">
-                <div class="sidebar-user-name">Evelyn Barros</div>
-                <div class="sidebar-user-role">Administradora</div>
-              </div>
-            </div>
-          </div>
-        </aside>
-        <!-- Mobile Tooltip -->
-        <div class="mobile-tooltip" id="mobile-tooltip"></div>
+        <li class="sidebar-menu-item">
+          <a href="<%= g_tipo_usuarios_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Tipos de Usuários">
+            <span class="sidebar-menu-icon"><i class="ph-user-circle"></i></span>
+            <span class="sidebar-menu-text">Tipos de Usuários</span>
+            <span class="tooltip top">Tipos de Usuários</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Gerenciar Usuários">
+            <span class="sidebar-menu-icon"><i class="ph-address-book"></i></span>
+            <span class="sidebar-menu-text">Gerenciar Usuários</span>
+            <span class="tooltip top">Gerenciar Usuários</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+<!-- Mobile Tooltip -->
+<div class="mobile-tooltip" id="mobile-tooltip"></div>
