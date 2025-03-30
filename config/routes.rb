@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :segmentos
   resources :users,              only: %i[index show edit update destroy]
   root 'g_admin#index'
-  
+
   # Rotas do e-commerce
   resources :home, only: [:index] do
     collection do
