@@ -6,8 +6,8 @@
   <div class="header-actions">
     <div class="header-user">
       <div class="header-user-info">
-        <div class="header-user-name">Evelyn Barros</div>
-        <div class="header-user-role">Administradora</div>
+        <div class="header-user-name"><%= current_user.nome%></div>
+        <div class="header-user-role"><%= current_user.g_tipo_usuario.nome %></div>
       </div>
       <div class="header-user-logout">
         <!-- Logout Button -->
