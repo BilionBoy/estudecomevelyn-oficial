@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_30_085054) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "g_categorias", force: :cascade do |t|
+    t.string "nome", null: false
+    t.string "slug", null: false
+    t.text "descricao"
+    t.bigint "segmento_id"
+    t.datetime "deleted_at"
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["segmento_id"], name: "index_g_categorias_on_segmento_id"
+    t.index ["slug"], name: "index_g_categorias_on_slug", unique: true
+  end
 
   create_table "g_tipo_usuarios", force: :cascade do |t|
     t.string "nome", null: false
@@ -49,5 +63,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_30_085054) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "g_categorias", "segmentos"
   add_foreign_key "users", "g_tipo_usuarios"
 end

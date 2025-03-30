@@ -1,0 +1,2 @@
+module GCategoriasHelper
+end

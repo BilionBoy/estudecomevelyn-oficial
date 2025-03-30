@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   # Autenticação
   devise_for :users, controllers: { registrations: 'users/registrations' }
   # Rotas Scaffold
-  resources :g_tipo_usuarios
-  resources :segmentos
   resources :users,              only: %i[index show edit update destroy]
+  resources :g_tipo_usuarios
+  resources :g_categorias
+  resources :segmentos
   root 'g_admin#index'
 
   # Rotas do e-commerce
