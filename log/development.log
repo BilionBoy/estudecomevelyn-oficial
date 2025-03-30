@@ -54726,3 +54726,91 @@ Processing by SegmentosController#index as HTML
 Completed 200 OK in 18ms (Views: 9.4ms | ActiveRecord: 3.1ms (3 queries, 0 cached) | GC: 0.3ms)
 
 
+Started GET "/g_categorias/new" for ::1 at 2025-03-30 14:45:46 -0400
+Processing by GCategoriasController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered g_categorias/_form.html.erb (Duration: 3.9ms | GC: 0.4ms)
+  Rendered g_categorias/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.9ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.0ms (1 query, 0 cached) | GC: 10.3ms)
+
+
+  
+ActionView::Template::Error (Association :segmento not found):
+
+Causes:
+RuntimeError (Association :segmento not found)
+    32:         
+    33:         
+    34:           <div class="col-12">
+    35:             <%= f.association :segmento, input_html: { class: "capitalize"}, placeholder: "Segmento"  %>
+    36:           </div>
+    37:         
+    38:         
+  
+app/views/g_categorias/_form.html.erb:35
+app/views/g_categorias/_form.html.erb:6
+app/views/g_categorias/new.html.erb:1
+Started GET "/g_categorias/new" for ::1 at 2025-03-30 14:46:37 -0400
+Processing by GCategoriasController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mSegmento Load (0.3ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos"[0m
+  ↳ app/views/g_categorias/_form.html.erb:35
+  Rendered g_categorias/_form.html.erb (Duration: 18.9ms | GC: 3.8ms)
+  Rendered g_categorias/new.html.erb within layouts/application (Duration: 19.4ms | GC: 3.8ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | GC: 4.3ms)
+Completed 200 OK in 36ms (Views: 21.3ms | ActiveRecord: 5.5ms (2 queries, 0 cached) | GC: 4.3ms)
+
+
+Started GET "/g_categorias/new" for ::1 at 2025-03-30 14:47:05 -0400
+Processing by GCategoriasController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered g_categorias/_form.html.erb (Duration: 3.4ms | GC: 0.2ms)
+  Rendered g_categorias/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of Symbol):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of Symbol)
+    23:           <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
+    24:         </div>
+    25:         <div class="col-12">
+    26:           <%= f.association :segmento.nome, input_html: { class: "capitalize"}, placeholder: "Segmento"  %>
+    27:         </div>
+    28:         <div class="col-12">
+    29:           <%= f.input :created_at, input_html: { class: "capitalize"}, placeholder: "Created at"  %>
+  
+app/views/g_categorias/_form.html.erb:26
+app/views/g_categorias/_form.html.erb:5
+app/views/g_categorias/new.html.erb:1
+Started GET "/g_categorias/new" for ::1 at 2025-03-30 14:47:37 -0400
+Processing by GCategoriasController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mSegmento Load (0.3ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos"[0m
+  ↳ app/views/g_categorias/_form.html.erb:26
+  Rendered g_categorias/_form.html.erb (Duration: 16.6ms | GC: 4.4ms)
+  Rendered g_categorias/new.html.erb within layouts/application (Duration: 17.1ms | GC: 4.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 4.7ms)
+Completed 200 OK in 33ms (Views: 18.4ms | ActiveRecord: 5.7ms (2 queries, 0 cached) | GC: 4.7ms)
+
+

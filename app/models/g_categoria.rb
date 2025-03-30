@@ -2,7 +2,7 @@
 
 class GCategoria < ApplicationRecord
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
-  belongs_to :segmentos
+  belongs_to :segmento
 
   validates :nome, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true
