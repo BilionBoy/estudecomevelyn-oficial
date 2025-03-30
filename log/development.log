@@ -55316,3 +55316,189 @@ Processing by GAdminController#index as HTML
 Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 0.9ms)
 
 
+Started GET "/" for ::1 at 2025-03-30 15:03:58 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 8.0ms | ActiveRecord: 4.3ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-03-30 15:04:19 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.2ms)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 4.0ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-03-30 15:04:21 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-30 15:04:28 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 4.6ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Header -->
+<header class="header">
+  <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">
+    <i class="lucide-menu"></i>
+  </button>
+  <div class="header-actions">
+    <div class="header-user">
+      <div class="header-user-info">
+        <div class="header-user-name"><%= current_user.nome %></div>
+        <div class="header-user-role"><%= current_user.g_tipo_usuario.nome %></div>
+      </div>
+      <div class="header-user-logout">
+        <!--> <%=  "Sair", destroy_user_session_path, method: :delete, data: { confirm: "Tem certeza que deseja sair?" }, class: "logout-link" %> <!-->
+      </div>
+    </div>
+  </div>
+</header>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/shared/_navbar.html.erb:13: syntax error, unexpected ',', expecting ')'
+...output_buffer.append=(  "Sair", destroy_user_session_path, m...
+...                              ^
+)
+1:    <!-- Header -->
+2:    <header class="header">
+3:      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">
+4:        <i class="lucide-menu"></i>
+5:      </button>
+6:      <div class="header-actions">
+7:        <div class="header-user">
+8:          <div class="header-user-info">
+9:            <div class="header-user-name"><%= current_user.nome %></div>
+10:            <div class="header-user-role"><%= current_user.g_tipo_usuario.nome %></div>
+11:          </div>
+12:          <div class="header-user-logout">
+13:            <!--> <%=  "Sair", destroy_user_session_path, method: :delete, data: { confirm: "Tem certeza que deseja sair?" }, class: "logout-link" %> <!-->
+14:          </div>
+15:        </div>
+16:      </div>
+17:    </header>
+  
+app/views/shared/_navbar.html.erb:13: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.erb:27
+Started GET "/" for ::1 at 2025-03-30 15:04:28 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Header -->
+<header class="header">
+  <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">
+    <i class="lucide-menu"></i>
+  </button>
+  <div class="header-actions">
+    <div class="header-user">
+      <div class="header-user-info">
+        <div class="header-user-name"><%= current_user.nome %></div>
+        <div class="header-user-role"><%= current_user.g_tipo_usuario.nome %></div>
+      </div>
+      <div class="header-user-logout">
+        <!--> <%=  "Sair", destroy_user_session_path, method: :delete, data: { confirm: "Tem certeza que deseja sair?" }, class: "logout-link" %> <!-->
+      </div>
+    </div>
+  </div>
+</header>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/shared/_navbar.html.erb:13: syntax error, unexpected ',', expecting ')'
+...output_buffer.append=(  "Sair", destroy_user_session_path, m...
+...                              ^
+)
+1:    <!-- Header -->
+2:    <header class="header">
+3:      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">
+4:        <i class="lucide-menu"></i>
+5:      </button>
+6:      <div class="header-actions">
+7:        <div class="header-user">
+8:          <div class="header-user-info">
+9:            <div class="header-user-name"><%= current_user.nome %></div>
+10:            <div class="header-user-role"><%= current_user.g_tipo_usuario.nome %></div>
+11:          </div>
+12:          <div class="header-user-logout">
+13:            <!--> <%=  "Sair", destroy_user_session_path, method: :delete, data: { confirm: "Tem certeza que deseja sair?" }, class: "logout-link" %> <!-->
+14:          </div>
+15:        </div>
+16:      </div>
+17:    </header>
+  
+app/views/shared/_navbar.html.erb:13: syntax error, unexpected ',', expecting ')'
+app/views/layouts/application.html.erb:27
+Started GET "/" for ::1 at 2025-03-30 15:04:35 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 7.7ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-03-30 15:04:35 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
