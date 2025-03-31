@@ -15,6 +15,12 @@ pt-BR:
       g_tipo_usuario:
         one: "Tipo de Usuário"
         other: "Tipos de Usuários"
+      segmento:
+        one: "Segmento"
+        other: "Segmentos"
+      g_categoria:
+        one: "Categoria"
+        other: "Categorias"
     attributes:
       user:
         nome: "Nome"
@@ -26,6 +32,14 @@ pt-BR:
       g_tipo_usuario:
         papel: "Papel"
         descricao: "Descrição"
+      segmento:
+        nome: "Nome"
+        descricao: "Descrição"
+      g_categoria:
+        nome: "Nome"
+        descricao: "Descrição"
+        
+
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"
