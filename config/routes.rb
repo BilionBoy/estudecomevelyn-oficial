@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :g_tipo_usuarios
   resources :g_categorias
   resources :segmentos
-  root 'g_admin#index'
+  root 'home#index'
 
   # Rotas do e-commerce
   resources :home, only: [:index] do
