@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Autenticação
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
   # Rotas Scaffold
   resources :users,              only: %i[index show edit update destroy]
   resources :g_tipo_usuarios

@@ -40,14 +40,84 @@
             <i class="lucide-shopping-cart"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">0</span>
           </button>
-          <button class="btn btn-primary rounded-pill d-none d-lg-block">
-            Entrar
-          </button>
+          <% if user_signed_in? %>
+            <div class="dropdown">
+              <button class="btn btn-primary rounded-pill d-none d-lg-block dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_user.email.split('@').first %>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li><%= link_to "Minha Conta", edit_user_registration_path, class: "dropdown-item" %></li>
+                <li><%= link_to "Meus Pedidos", "#", class: "dropdown-item" %></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item text-danger" %></li>
+              </ul>
+            </div>
+          <% else %>
+            <button class="btn btn-primary rounded-pill d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Entrar
+            </button>
+          <% end %>
         </div>
       </div>
     </div>
   </nav>
 </header>
+<!-- Modal de Login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="loginModalLabel">Entrar na sua conta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center mb-4">
+          <%= image_tag('/layout/assets/img/LogoEstudeComEvelyn.png', alt: 'Logo', style: 'max-width: 150px;') %>
+          <p class="mt-3 text-muted">Acesse sua conta para continuar</p>
+        </div>
+        <div id="login-error-message" class="alert alert-danger d-none"></div>
+        <%= form_with(url: user_session_path, method: :post, id: "login-form", class: "login-form") do |f| %>
+          <div class="mb-3">
+            <%= f.label :email, "Email", class: "form-label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "seu@email.com", name: "user[email]" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, "Senha", class: "form-label" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Sua senha", name: "user[password]" %>
+          </div>
+          <div class="mb-3 form-check">
+            <%= f.check_box :remember_me, class: "form-check-input", name: "user[remember_me]", id: "user_remember_me" %>
+            <%= f.label :remember_me, "Lembrar de mim", class: "form-check-label", for: "user_remember_me" %>
+          </div>
+          <div class="d-grid gap-2 mb-3">
+            <%= f.submit "Entrar", class: "btn btn-primary rounded-pill", id: "login-button" %>
+          </div>
+        <% end %>
+        <div class="text-center mt-3">
+          <p><%= link_to "Esqueceu sua senha?", new_user_password_path, class: "text-decoration-none" %></p>
+          <p>Não tem uma conta? <%= link_to "Cadastre-se", new_user_registration_path, class: "text-decoration-none fw-bold" %></p>
+        </div>
+        <% if defined?(User) && User.respond_to?(:omniauth_providers) && User.omniauth_providers.any? %>
+          <div class="social-login mt-4">
+            <p class="text-center text-muted mb-3">Ou entre com</p>
+            <div class="d-flex justify-content-center gap-3">
+              <% if User.omniauth_providers.include?(:google_oauth2) %>
+                <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-outline-secondary rounded-pill", method: :post do %>
+                  <i class="lucide-google"></i> Google
+                <% end %>
+              <% end %>
+              <% if User.omniauth_providers.include?(:facebook) %>
+                <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-outline-secondary rounded-pill", method: :post do %>
+                  <i class="lucide-facebook"></i> Facebook
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
   // Ativar link de navegação com base na seção visível
   document.addEventListener("DOMContentLoaded", function () {
@@ -91,5 +161,145 @@
         }
       });
     });
+
+    // Configurar o formulário de login para usar AJAX
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const loginButton = document.getElementById('login-button');
+        const errorMessage = document.getElementById('login-error-message');
+
+        // Desabilitar o botão e mostrar loading
+        loginButton.disabled = true;
+        loginButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Entrando...';
+
+        // Limpar mensagens de erro anteriores
+        errorMessage.classList.add('d-none');
+        errorMessage.textContent = '';
+
+        // Obter o token CSRF
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        // Enviar o formulário via AJAX
+        fetch(loginForm.action, {
+          method: 'POST',
+          body: new FormData(loginForm),
+          headers: {
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRF-Token': csrfToken
+          },
+          credentials: 'same-origin'
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.json().then(data => {
+              if (data.success) {
+                // Login bem-sucedido, redirecionar para o painel
+                window.location.href = '<%= root_path %>';
+              } else {
+                throw new Error('Falha na autenticação');
+              }
+            });
+          } else if (response.status === 401) {
+            // Credenciais inválidas
+            return response.json().then(data => {
+              throw new Error(data.error || 'Email ou senha inválidos');
+            });
+          } else {
+            throw new Error('Erro no servidor');
+          }
+        })
+        .catch(error => {
+          // Mostrar mensagem de erro
+          errorMessage.textContent = error.message || 'Ocorreu um erro ao tentar fazer login. Por favor, tente novamente.';
+          errorMessage.classList.remove('d-none');
+
+          // Resetar o botão
+          loginButton.disabled = false;
+          loginButton.innerHTML = 'Entrar';
+
+          console.error('Erro de login:', error);
+        });
+      });
+    }
   });
 </script>
+<style>
+  /* Estilos para o Modal de Login */
+  #loginModal .modal-content {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 15px 40px rgba(26, 26, 46, 0.1);
+  }
+
+  #loginModal .modal-title {
+    font-family: "Playfair Display", serif;
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  #loginModal .modal-body {
+    padding: 1.5rem 2rem;
+  }
+
+  #loginModal .form-control {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e1e1e1;
+    transition: all 0.3s ease;
+  }
+
+  #loginModal .form-control:focus {
+    border-color: #e42278;
+    box-shadow: 0 0 0 0.25rem rgba(228, 34, 120, 0.25);
+  }
+
+  #loginModal .btn-primary {
+    background-color: #e42278;
+    border-color: #e42278;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(228, 34, 120, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  #loginModal .btn-primary:hover {
+    background-color: #ed7bab;
+    border-color: #ed7bab;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(228, 34, 120, 0.4);
+  }
+
+  #loginModal a {
+    color: #e42278;
+    transition: all 0.3s ease;
+  }
+
+  #loginModal a:hover {
+    color: #ed7bab;
+    text-decoration: underline !important;
+  }
+
+  #loginModal .form-check-input:checked {
+    background-color: #e42278;
+    border-color: #e42278;
+  }
+
+  #loginModal .social-login .btn {
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
+  }
+
+  #loginModal .social-login .btn:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+  }
+
+  #login-error-message {
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+</style>
