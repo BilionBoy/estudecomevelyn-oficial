@@ -21,6 +21,9 @@ pt-BR:
       g_categoria:
         one: "Categoria"
         other: "Categorias"
+      i_produto:
+        one: "Produto"
+        other: "Produtos"
     attributes:
       user:
         nome: "Nome"
@@ -38,7 +41,14 @@ pt-BR:
       g_categoria:
         nome: "Nome"
         descricao: "Descrição"
-        
+      i_produto:
+        nome: "Nome"
+        descricao: "Descrição"
+        preco: "Preço"
+        g_categoria: "Categoria"
+        arquivo_url: "Arquivo"
+        imagem_url: "Imagem"
+        status: "Status"
 
     errors:
       messages:
