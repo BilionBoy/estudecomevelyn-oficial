@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :i_produtos
   # Autenticação
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
   # Rotas Scaffold

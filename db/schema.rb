@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_04_032753) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +36,24 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "i_produtos", force: :cascade do |t|
+    t.string "nome"
+    t.string "slug"
+    t.text "descricao"
+    t.decimal "preco", precision: 10, scale: 2
+    t.bigint "g_categoria_id", null: false
+    t.string "arquivo_url"
+    t.string "imagem_url"
+    t.string "status"
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["g_categoria_id"], name: "index_i_produtos_on_g_categoria_id"
+    t.index ["slug"], name: "index_i_produtos_on_slug", unique: true
   end
 
   create_table "segmentos", force: :cascade do |t|
@@ -64,5 +82,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
   end
 
   add_foreign_key "g_categorias", "segmentos"
+  add_foreign_key "i_produtos", "g_categorias"
   add_foreign_key "users", "g_tipo_usuarios"
 end
