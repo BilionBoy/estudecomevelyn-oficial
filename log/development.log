@@ -59772,3 +59772,1061 @@ enum :status, {:inativo=>0, :ativo=>1}
 Completed 200 OK in 34ms (Views: 16.1ms | ActiveRecord: 6.7ms (3 queries, 0 cached) | GC: 0.6ms)
 
 
+Started GET "/i_produtos/new" for 127.0.0.1 at 2025-04-03 23:43:35 -0400
+Processing by IProdutosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias"[0m
+  ↳ app/views/i_produtos/_form.html.erb:29
+  Rendered i_produtos/_form.html.erb (Duration: 6.8ms | GC: 0.0ms)
+  Rendered i_produtos/new.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.0ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `g_admin_index_path' for an instance of #<Class:0x000070312f4b7b40>):
+
+Causes:
+NameError (undefined local variable or method `g_admin_index_path' for an instance of #<Class:0x000070312f4b7b40>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= g_admin_index_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/i_produtos/new" for 127.0.0.1 at 2025-04-03 23:43:45 -0400
+Processing by IProdutosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.8ms | GC: 0.1ms)
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias"[0m
+  ↳ app/views/i_produtos/_form.html.erb:29
+  Rendered i_produtos/_form.html.erb (Duration: 8.0ms | GC: 0.4ms)
+  Rendered i_produtos/new.html.erb within layouts/application (Duration: 8.4ms | GC: 0.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.6ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index_g_admin_path' for an instance of #<Class:0x000070312f86cee8>):
+
+Causes:
+NameError (undefined local variable or method `index_g_admin_path' for an instance of #<Class:0x000070312f86cee8>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= index_g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/i_produtos/new" for 127.0.0.1 at 2025-04-03 23:43:46 -0400
+Processing by IProdutosController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias"[0m
+  ↳ app/views/i_produtos/_form.html.erb:29
+  Rendered i_produtos/_form.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  Rendered i_produtos/new.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index_g_admin_path' for an instance of #<Class:0x000070312f86cee8>):
+
+Causes:
+NameError (undefined local variable or method `index_g_admin_path' for an instance of #<Class:0x000070312f86cee8>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= index_g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/i_produtos/new" for 127.0.0.1 at 2025-04-03 23:43:51 -0400
+Processing by IProdutosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias"[0m
+  ↳ app/views/i_produtos/_form.html.erb:29
+  Rendered i_produtos/_form.html.erb (Duration: 7.4ms | GC: 0.2ms)
+  Rendered i_produtos/new.html.erb within layouts/application (Duration: 7.9ms | GC: 0.2ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.6ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f5a3360>):
+
+Causes:
+NameError (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f5a3360>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/i_produtos/" for 127.0.0.1 at 2025-04-03 23:43:54 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.5ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 6.7ms | GC: 1.9ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 1.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f5a3360>):
+
+Causes:
+NameError (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f5a3360>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/" for 127.0.0.1 at 2025-04-03 23:43:56 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:44:00 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f5a3360>):
+
+Causes:
+NameError (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f5a3360>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:45:56 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 3.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.8ms (3 queries, 0 cached) | GC: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f07d340>):
+
+Causes:
+NameError (undefined local variable or method `g_admin_path' for an instance of #<Class:0x000070312f07d340>)
+    14:       <div class="sidebar-section-title">Principal</div>
+    15:       <ul class="sidebar-menu">
+    16:         <li class="sidebar-menu-item">
+    17:           <a href="<%= g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+    18:             <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+    19:             <span class="sidebar-menu-text">Dashboard</span>
+    20:             <span class="tooltip top">Dashboard</span>
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:23
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:47:11 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 10.6ms | ActiveRecord: 6.4ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-03 23:47:12 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-03 23:47:13 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 3.5ms | GC: 0.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.8ms | GC: 0.5ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:47:15 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-04-03 23:47:16 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:17
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mCACHE GTipoUsuario Load (0.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.5ms (4 queries, 1 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-03 23:47:17 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 2.6ms | GC: 0.1ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.3ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-03 23:47:19 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:47:20 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 2.9ms (4 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/" for ::1 at 2025-04-03 23:48:14 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-04-03 23:49:43 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-03 23:50:40 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 9.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.4ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:50:43 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.7ms)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 2.6ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-03 23:50:45 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-03 23:50:46 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:50:48 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:50:49 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-03 23:50:50 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-03 23:50:50 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 5.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2025-04-03 23:50:51 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.1ms | GC: 0.7ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:50:55 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:51:00 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.3ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.3ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 1.0ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:51:23 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.4ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.6ms)
+Completed 200 OK in 31ms (Views: 12.0ms | ActiveRecord: 6.0ms (4 queries, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:51:24 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.1ms)
+Completed 200 OK in 15ms (Views: 7.5ms | ActiveRecord: 2.6ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:51:52 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.8ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 1.2ms)
+Completed 200 OK in 29ms (Views: 13.7ms | ActiveRecord: 6.4ms (4 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:51:54 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:51:57 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:52:31 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 0.1ms)
+Completed 200 OK in 28ms (Views: 11.8ms | ActiveRecord: 7.1ms (4 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:52:33 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:53:03 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 7.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.4ms)
+Completed 200 OK in 26ms (Views: 11.1ms | ActiveRecord: 5.9ms (4 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:53:04 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:06 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.3ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 8.4ms | ActiveRecord: 3.1ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:53:10 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.5ms)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:18 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 9.0ms | GC: 1.6ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 8.1ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | GC: 3.3ms)
+Completed 200 OK in 57ms (Views: 17.7ms | ActiveRecord: 9.0ms (4 queries, 0 cached) | GC: 25.4ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:19 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.3ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.3ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:53:20 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.2ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:20 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:23 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.9ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 7.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | GC: 1.4ms)
+Completed 200 OK in 36ms (Views: 14.6ms | ActiveRecord: 7.0ms (4 queries, 0 cached) | GC: 6.6ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:28 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 12.0ms | ActiveRecord: 6.4ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:53:29 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.5ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.5ms)
+Completed 200 OK in 21ms (Views: 7.0ms | ActiveRecord: 1.9ms (4 queries, 0 cached) | GC: 5.6ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:53:30 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.4ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:53:31 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-04-03 23:53:33 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:44
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.1ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.1ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-04-03 23:53:34 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 4.0ms | GC: 1.3ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 1.3ms)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-04-03 23:53:34 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:17
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mCACHE GTipoUsuario Load (0.0ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.5ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:53:35 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-03 23:53:36 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  Rendered home/index.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 9.8ms | GC: 6.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 12.4ms | GC: 6.2ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 6.2ms)
+
+
+Started GET "/g_tipo_usuarios" for 127.0.0.1 at 2025-04-03 23:53:56 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:40
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.5ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.5ms)
+Completed 200 OK in 23ms (Views: 10.3ms | ActiveRecord: 4.6ms (4 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-04-03 23:53:57 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:4)
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:49
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.0ms)
+
+

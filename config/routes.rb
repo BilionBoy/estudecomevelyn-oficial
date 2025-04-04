@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  resources :i_produtos
-  # Autenticação
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
+  get 'g_admin', to: 'g_admin#index', as: :g_admin
+  root 'home#index'
+  
   # Rotas Scaffold
   resources :users,              only: %i[index show edit update destroy]
   resources :g_tipo_usuarios
   resources :g_categorias
   resources :segmentos
-  root 'home#index'
+  resources :i_produtos
 
   # Rotas do e-commerce
   resources :home, only: [:index] do
