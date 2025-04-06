@@ -21,9 +21,6 @@
         </div>
         <div class="col-md-4 d-flex align-items-end">
           <%= f.submit "Filtrar", class: "btn btn-sm btn-primary" %>
-          <%= link_to i_produtos_path, class: "btn btn-sm btn-light ms-2" do %>
-            <i class="ph-x-circle"></i> Limpar
-          <% end %>
         </div>
       </div>
     <% end %>
@@ -85,7 +82,7 @@
     <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
   </div>
 </div>
-<!-- Estilo extra opcional -->
+<!-- Estilo -->
 <style>
   .table-responsive {
     height: 400px;
