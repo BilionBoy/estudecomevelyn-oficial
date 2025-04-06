@@ -2,7 +2,7 @@
   <span class="breadcrumb-item"><%= link_to t("activerecord.models.#{IProduto.model_name.i18n_key}.other"), i_produtos_path, class: "text-dark" %></span>
   <span class="breadcrumb-item active"><%= t("helpers.submit.#{params[:action]}") %></span>
 <% end %>
-<%= simple_form_for(@i_produto) do |f| %>
+<%= simple_form_for(@i_produto, html: { multipart: true }) do |f| %>
   <div class="card">
     <div class="card-header">
       <h5 class="my-0">
@@ -26,13 +26,13 @@
           <%= f.input :preco, input_html: { class: "capitalize"}, placeholder: "Preco"  %>
         </div>
         <div class="col-5">
-          <%= f.association :g_categoria, input_html: { class: "capitalize"}, placeholder: "G categoria"  %>
+          <%= f.input :g_categoria_id, collection: GCategoria.all.map { |c| [c.nome, c.id] }, prompt: "Selecione a categoria", input_html: { class: "capitalize" } %>
         </div>
         <div class="col-7">
-          <%= f.input :arquivo_url, input_html: { class: "capitalize"}, placeholder: "Arquivo url"  %>
+          <%= f.input :arquivo, as: :file, label: "Arquivo do Produto" %>
         </div>
         <div class="col-5">
-          <%= f.input :imagem_url, input_html: { class: "capitalize"}, placeholder: "Imagem url"  %>
+          <%= f.input :imagem, as: :file, label: "Imagem de Capa" %>
         </div>
         <div class="col-5">
           <%= f.input :status, collection: IProduto.statuses.map { |k, _| [k.titleize, k] }, prompt: "Selecione o status" %>

@@ -48,12 +48,11 @@ class IProdutosController < ApplicationController
     @i_produto = IProduto.find_by(id: params[:id])
     return redirect_to i_produtos_path, alert: t('messages.not_found') unless @i_produto
   end
-
   def i_produto_params
     permitted_attributes = IProduto.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
-    params.require(:i_produto).permit(permitted_attributes.map(&:to_sym))
+    params.require(:i_produto).permit(*permitted_attributes.map(&:to_sym), :arquivo, :imagem)
   end
-
+  
   def handle_not_found
     redirect_to i_produtos_path, alert: t('messages.not_found')
   end

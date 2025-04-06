@@ -1,4 +1,7 @@
 class IProduto < ApplicationRecord
+  has_one_attached :arquivo
+  has_one_attached :imagem
+  
   belongs_to :g_categoria
 
   enum status: { inativo: 0, ativo: 1 }
