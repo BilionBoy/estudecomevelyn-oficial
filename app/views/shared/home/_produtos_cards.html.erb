@@ -1,0 +1,64 @@
+<div class="row g-4">
+  <% produtos.each do |produto| %>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 product-card">
+        <!-- Badge (simulado baseado na data de criação) -->
+        <% if produto.created_at && produto.created_at >= 30.days.ago %>
+          <span class="badge bg-success product-badge">NOVO</span>
+        <% elsif rand(10) > 7 %> <!-- Simulando alguns produtos com desconto -->
+          <span class="badge bg-danger product-badge">-<%= rand(10..30) %>%</span>
+        <% end %>
+        <!-- Botões de ação -->
+        <div class="product-actions">
+          <a href="#" class="product-action-btn">
+            <i class="lucide-heart"></i>
+          </a>
+          <a href="<%= i_produto_path(produto) %>" class="product-action-btn">
+            <i class="lucide-eye"></i>
+          </a>
+        </div>
+        <!-- Imagem do produto -->
+        <% if produto.imagem.attached? %>
+          <%= image_tag url_for(produto.imagem), class: "card-img-top", alt: produto.nome %>
+        <% else %>
+          <div class="card-img-top d-flex align-items-center justify-content-center bg-light">
+            <i class="lucide-image text-muted" style="font-size: 3rem;"></i>
+          </div>
+        <% end %>
+        <div class="card-body">
+          <!-- Categoria e avaliação -->
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <% if produto.g_categoria.present? %>
+              <span class="badge bg-primary"><%= produto.g_categoria.nome %></span>
+            <% else %>
+              <span class="badge bg-primary">Geral</span>
+            <% end %>
+            <div class="product-rating">
+              <div class="stars">
+                <% 5.times do |i| %>
+                  <i class="lucide-star"></i>
+                <% end %>
+              </div>
+              <span class="count">(<%= rand(10..50) %>)</span>
+            </div>
+          </div>
+          <!-- Título e descrição -->
+          <h5 class="card-title"><%= produto.nome %></h5>
+          <p class="card-text"><%= truncate(produto.descricao, length: 100) %></p>
+          <!-- Preço (com desconto simulado para alguns produtos) -->
+          <div class="product-price">
+            <% if rand(10) > 7 %> <!-- Simulando alguns produtos com preço original -->
+              <% preco_original = produto.preco * (1 + rand(0.1..0.3)) %>
+              <span class="original-price">R$ <%= number_to_currency(preco_original, unit: "", separator: ",", delimiter: ".") %></span>
+            <% end %>
+            <span>R$ <%= number_to_currency(produto.preco, unit: "", separator: ",", delimiter: ".") %></span>
+          </div>
+          <!-- Botão de adicionar ao carrinho -->
+          <button class="btn btn-primary rounded-pill w-100">
+            Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

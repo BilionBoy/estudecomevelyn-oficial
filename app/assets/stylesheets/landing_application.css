@@ -29,8 +29,8 @@
 }
 
 /* =========================
-     TIPOGRAFIA
-     ========================= */
+       TIPOGRAFIA
+       ========================= */
 /* Corpo do texto com Poppins Regular ou Lato Regular */
 body {
   overflow: auto;
@@ -43,7 +43,7 @@ body {
   overflow-x: hidden;
   letter-spacing: 0.01em;
   scroll-behavior: smooth;
-  background-color: var(--light); /* Mantém o “Branco Suave” como fundo geral */
+  background-color: var(--light); /* Mantém o "Branco Suave" como fundo geral */
 }
 
 /* Títulos e Cabeçalhos com Poppins Bold ou Montserrat Bold */
@@ -79,8 +79,8 @@ h6,
 }
 
 /* =========================
-     HEADER E NAVBAR
-     ========================= */
+       HEADER E NAVBAR
+       ========================= */
 header {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.95) !important;
@@ -143,8 +143,8 @@ header {
 }
 
 /* =========================
-     CARDS
-     ========================= */
+       CARDS
+       ========================= */
 .card {
   border: none;
   border-radius: var(--border-radius);
@@ -190,8 +190,8 @@ header {
 }
 
 /* =========================
-     BADGES & BUTTONS
-     ========================= */
+       BADGES & BUTTONS
+       ========================= */
 .badge {
   font-family: "Poppins", "Montserrat", sans-serif;
   padding: 0.5em 1em;
@@ -250,8 +250,8 @@ header {
 }
 
 /* =========================
-     SEÇÃO DESTAQUE (HERO)
-     ========================= */
+       SEÇÃO DESTAQUE (HERO)
+       ========================= */
 
 #hero {
   min-height: calc(100vh - 76px); /* ou 120vh, se for o caso */
@@ -551,3 +551,216 @@ header {
   }
 }
 
+/* Seção de Produtos */
+/* Product Card */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(228, 34, 120, 0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(13, 17, 26, 0.1);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.product-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover .product-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.product-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-action-btn:hover {
+  background-color: #e42278;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.card-img-top {
+  height: 240px;
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a2e;
+  line-height: 1.3;
+}
+
+.card-text {
+  color: #8a8a8a;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+}
+
+.product-rating .stars {
+  color: #ffc107;
+  margin-right: 0.5rem;
+  display: flex;
+}
+
+.product-rating .count {
+  color: #8a8a8a;
+  font-size: 0.9rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e42278;
+  margin-bottom: 1rem;
+}
+
+.product-price .original-price {
+  text-decoration: line-through;
+  color: #8a8a8a;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+}
+
+/* Filter Buttons */
+.filter-btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  color: #1a1a2e;
+  border-radius: 30px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-decoration: none;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #e42278;
+  color: #ffffff;
+  border-color: #e42278;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 180px;
+  }
+}
+.section-title p {
+  font-family: "Poppins", "Lato", sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.product-card .card-title,
+.card-title {
+  font-family: "Poppins", "Montserrat", sans-serif !important;
+  font-weight: 600 !important;
+}
+
+.product-card .card-text,
+.card-text {
+  font-family: "Poppins", "Lato", sans-serif !important;
+}
+
+.product-price {
+  font-family: "Poppins", "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Botões de filtro */
+.filter-btn {
+  font-family: "Poppins", "Montserrat", sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* Título principal da seção */
+.section-title h2,
+h2.section-title,
+.container h2 {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  font-size: 2.5rem !important;
+  color: #1a1a2e !important;
+  text-align: center !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Subtítulo da seção */
+.section-title p,
+p.section-subtitle,
+.container h2 + p {
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+  color: #8a8a8a !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+}
