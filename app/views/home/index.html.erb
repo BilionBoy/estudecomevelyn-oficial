@@ -24,6 +24,7 @@
     </div>
   </div>
 </section>
+<!-- Produtos SECTION -->
 <section class="py-5 bg-light">
   <div class="container">
     <div class="text-center mb-5">
@@ -32,7 +33,7 @@
     </div>
     <div class="mb-4 d-flex flex-wrap justify-content-center gap-2">
       <% @g_categorias.each do |categoria| %>
-        <%= link_to categoria.nome, root_path(categoria: categoria.slug), class: "btn btn-outline-primary rounded-pill px-3 py-1" %>
+        <%= link_to categoria.nome, root_path(categoria: categoria.slug), class: "btn btn-primary rounded-pill px-3 py-1" %>
       <% end %>
     </div>
     <div class="row">
@@ -48,7 +49,7 @@
               <h5 class="card-title"><%= produto.nome %></h5>
               <p class="card-text text-muted"><%= truncate(produto.descricao, length: 100) %></p>
               <p class="fw-bold mb-2">R$ <%= number_to_currency(produto.preco, unit: "", separator: ",", delimiter: ".") %></p>
-              <%= link_to "Ver Produto", i_produto_path(produto), class: "btn btn-outline-primary mt-auto rounded-pill" %>
+              <%= link_to "Ver Produto", i_produto_path(produto), class: "btn btn-primary mt-auto rounded-pill" %>
             </div>
           </div>
         </div>
@@ -59,3 +60,4 @@
     </div>
   </div>
 </section>
+<style></style>
