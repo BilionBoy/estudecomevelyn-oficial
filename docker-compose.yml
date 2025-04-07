@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: estudecomevelyn_app
+    restart: always
+    depends_on:
+      - db
+    environment:
+      RAILS_ENV: production
+      DATABASE_URL: postgres://blog_user:blog_pass@db:5432/blog_production
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: db
+    volumes:
+      - ./storage:/rails/storage
+      - ./log:/rails/log
+      - ./tmp:/rails/tmp
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    command:
+      [
+        "sh",
+        "-c",
+        "./bin/rails assets:precompile && ./bin/rails server -b 0.0.0.0",
+      ]
+
+  db:
+    image: postgres:latest
+    container_name: terrasemflores_db
+    restart: always
+    environment:
+      POSTGRES_USER: blog_user
+      POSTGRES_PASSWORD: blog_pass
+      POSTGRES_DB: blog_production
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
