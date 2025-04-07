@@ -23,10 +23,7 @@ services:
       - "3000:3000"
     env_file:
       - .env
-    command: >
-      sh -c "./bin/rails assets:precompile &&
-             ./bin/rails db:migrate &&
-             ./bin/rails server -b 0.0.0.0"
+    command: ["sh", "-c", "./bin/rails assets:precompile && ./bin/rails server -b 0.0.0.0"]
 
   db:
     image: postgres:latest
