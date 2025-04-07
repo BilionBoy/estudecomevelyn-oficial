@@ -3,13 +3,13 @@ version: "3.8"
 services:
   app:
     build: .
-    container_name: estudecomevelyn_app
+    container_name: evelynlettering_app
     restart: always
     depends_on:
       - db
     environment:
       RAILS_ENV: production
-      DATABASE_URL: postgres://blog_user:blog_pass@db:5432/blog_production
+      DATABASE_URL: postgres://letteringdigital:Dhiogo1123581321345589@db:5432/evelynlettering_production
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       DB_NAME: ${DB_NAME}
       DB_USERNAME: ${DB_USERNAME}
@@ -23,21 +23,19 @@ services:
       - "3000:3000"
     env_file:
       - .env
-    command:
-      [
-        "sh",
-        "-c",
-        "./bin/rails assets:precompile && ./bin/rails server -b 0.0.0.0",
-      ]
+    command: >
+      sh -c "./bin/rails assets:precompile &&
+             ./bin/rails db:migrate &&
+             ./bin/rails server -b 0.0.0.0"
 
   db:
     image: postgres:latest
-    container_name: terrasemflores_db
+    container_name: evelynlettering_db
     restart: always
     environment:
-      POSTGRES_USER: blog_user
-      POSTGRES_PASSWORD: blog_pass
-      POSTGRES_DB: blog_production
+      POSTGRES_USER: letteringdigital
+      POSTGRES_PASSWORD: Dhiogo1123581321345589
+      POSTGRES_DB: evelynlettering_production
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
