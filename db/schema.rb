@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_05_235715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "g_categorias", force: :cascade do |t|
     t.string "nome", null: false
@@ -36,6 +64,24 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "i_produtos", force: :cascade do |t|
+    t.string "nome"
+    t.string "slug"
+    t.text "descricao"
+    t.decimal "preco", precision: 10, scale: 2
+    t.bigint "g_categoria_id", null: false
+    t.string "arquivo_url"
+    t.string "imagem_url"
+    t.integer "status", default: 1
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["g_categoria_id"], name: "index_i_produtos_on_g_categoria_id"
+    t.index ["slug"], name: "index_i_produtos_on_slug", unique: true
   end
 
   create_table "segmentos", force: :cascade do |t|
@@ -63,6 +109,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_30_091328) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "g_categorias", "segmentos"
+  add_foreign_key "i_produtos", "g_categorias"
   add_foreign_key "users", "g_tipo_usuarios"
 end

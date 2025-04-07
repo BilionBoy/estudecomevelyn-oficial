@@ -1,0 +1,91 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h2 class="card-title"><%= t("activerecord.models.#{IProduto.model_name.i18n_key}.other") %></h2>
+    <div>
+      <%= link_to new_i_produto_path, class: "btn btn-sm btn-primary" do %>
+        <i class="lucide-plus-circle"></i> Incluir 
+      <% end %>
+    </div>
+  </div>
+  <!-- Filtro Ransack -->
+  <div class="card-body">
+    <%= search_form_for @q, url: i_produtos_path, method: :get, html: { class: "mb-3" } do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.label :nome_cont, "Nome" %>
+          <%= f.search_field :nome_cont, class: "form-control", placeholder: "Pesquisar por nome" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.label :descricao_cont, "Descrição" %>
+          <%= f.search_field :descricao_cont, class: "form-control", placeholder: "Pesquisar por descrição" %>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <%= f.submit "Filtrar", class: "btn btn-sm btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- Tabela de Produtos -->
+  <div class="card-body">
+    <div class="table-responsive" style="height: 400px; overflow-y: auto;">
+      <table class="table table-sm table-bordered table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">Ações</th>
+            <th><%= sort_link(@q, :nome, t("activerecord.attributes.i_produto.nome")) %></th>
+            <th><%= sort_link(@q, :slug, t("activerecord.attributes.i_produto.slug")) %></th>
+            <th><%= sort_link(@q, :descricao, t("activerecord.attributes.i_produto.descricao")) %></th>
+            <th><%= sort_link(@q, :preco, t("activerecord.attributes.i_produto.preco")) %></th>
+            <th><%= t("activerecord.models.g_categoria.one") %></th>
+            <th><%= sort_link(@q, :arquivo_url, t("activerecord.attributes.i_produto.arquivo_url")) %></th>
+            <th><%= sort_link(@q, :imagem_url, t("activerecord.attributes.i_produto.imagem_url")) %></th>
+            <th><%= sort_link(@q, :status, t("activerecord.attributes.i_produto.status")) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @i_produtos.each do |i_produto| %>
+            <tr>
+              <td class="text-center">
+                <div class="dropdown">
+                  <a href="#" class="dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="ph-gear"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-header">Opções</div>
+                    <%= link_to edit_i_produto_path(i_produto), class: "dropdown-item" do %>
+                      <i class="ph-pen me-2"></i> Editar
+                    <% end %>
+                    <%= form_for i_produto, method: :delete do |f| %>
+                      <a class="dropdown-item" data-confirm-delete="<%= i_produto_path(i_produto) %>" data-csrf-token="<%= form_authenticity_token %>">
+                        <i class="ph-trash-simple me-2"></i> Excluir
+                      </a>
+                    <% end %>
+                  </div>
+                </div>
+              </td>
+              <td><%= i_produto.nome %></td>
+              <td><%= i_produto.slug %></td>
+              <td><%= truncate(i_produto.descricao, length: 60) %></td>
+              <td>R$ <%= number_to_currency(i_produto.preco, unit: "", separator: ",", delimiter: ".") %></td>
+              <td><%= i_produto.g_categoria&.nome %></td>
+              <td><%= i_produto.arquivo_url.presence || "-" %></td>
+              <td><%= i_produto.imagem_url.presence || "-" %></td>
+              <td><%= i_produto.status.capitalize %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Paginação -->
+  <div class="card-footer">
+    <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
+  </div>
+</div>
+<!-- Estilo -->
+<style>
+  .table-responsive {
+    height: 400px;
+    overflow-y: auto;
+  }
+</style>

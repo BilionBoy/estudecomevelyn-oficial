@@ -1,0 +1,65 @@
+<div class="container">
+  <%= render "shared/notice" %>
+  <div class="card border-0 shadow shadow-sm">
+    <div class="card-header border-0 d-flex justify-content-between">
+      <span class="fs-4">Visualizar I Produto</span>
+    </div>
+    <div class="card-body">
+      <div id="<%= dom_id @i_produto %>">
+          <p>
+            <strong>Nome:</strong>
+            <%= @i_produto.nome %>
+          </p>
+          <p>
+            <strong>Slug:</strong>
+            <%= @i_produto.slug %>
+          </p>
+          <p>
+            <strong>Descricao:</strong>
+            <%= @i_produto.descricao %>
+          </p>
+          <p>
+            <strong>Preco:</strong>
+            <%= @i_produto.preco %>
+          </p>
+          <p>
+            <strong>G Categoria:</strong>
+            <%= @i_produto.g_categoria %>
+          </p>
+          <p>
+            <strong>Arquivo Url:</strong>
+            <%= @i_produto.arquivo_url %>
+          </p>
+          <p>
+            <strong>Imagem Url:</strong>
+            <%= @i_produto.imagem_url %>
+          </p>
+          <p>
+            <strong>Status:</strong>
+            <%= @i_produto.status %>
+          </p>
+          <p>
+            <strong>Deleted At:</strong>
+            <%= @i_produto.deleted_at %>
+          </p>
+          <p>
+            <strong>Created By:</strong>
+            <%= @i_produto.created_by %>
+          </p>
+          <p>
+            <strong>Updated By:</strong>
+            <%= @i_produto.updated_by %>
+          </p>
+      </div>
+    </div>
+    <div class="card-footer border-0 d-flex justify-content-between">
+      <div>
+        <%= link_to edit_i_produto_path(@i_produto), class: "btn btn-primary" do %>
+        <i class="bi bi-pencil-square"></i> Editar
+        <% end %>
+        <%= link_to "Voltar", i_produtos_path, class: "btn btn-secondary" %>
+      </div>
+      <%= button_to "Deletar", @i_produto, method: :delete, class: "btn btn-outline-danger border-0" %>
+    </div>
+  </div>
+</div>

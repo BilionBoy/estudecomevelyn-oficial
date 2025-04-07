@@ -1,0 +1,47 @@
+<%= render "shared/context_nav", title: t("activerecord.models.#{IProduto.model_name.i18n_key}.other") do  %>
+  <span class="breadcrumb-item"><%= link_to t("activerecord.models.#{IProduto.model_name.i18n_key}.other"), i_produtos_path, class: "text-dark" %></span>
+  <span class="breadcrumb-item active"><%= t("helpers.submit.#{params[:action]}") %></span>
+<% end %>
+<%= simple_form_for(@i_produto, html: { multipart: true }) do |f| %>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="my-0">
+        <%= @i_produto.new_record? ? "Incluir " : "Editar " %><%= t("activerecord.models.#{IProduto.model_name.i18n_key}.one") %>
+      </h5>
+    </div>
+    <div class="card-body">
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="row">
+        <div class="col-7">
+          <%= f.input :nome, input_html: { class: "capitalize"}, placeholder: "Nome"  %>
+        </div>
+        <div class="col-5">
+          <%= f.input :slug, input_html: { class: "capitalize"}, placeholder: "Slug"  %>
+        </div>
+        <div class="col-12">
+          <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
+        </div>
+        <div class="col-7">
+          <%= f.input :preco, input_html: { class: "capitalize"}, placeholder: "Preco"  %>
+        </div>
+        <div class="col-5">
+          <%= f.input :g_categoria_id, collection: GCategoria.all.map { |c| [c.nome, c.id] }, prompt: "Selecione a categoria", input_html: { class: "capitalize" } %>
+        </div>
+        <div class="col-7">
+          <%= f.input :arquivo, as: :file, label: "Arquivo do Produto" %>
+        </div>
+        <div class="col-5">
+          <%= f.input :imagem, as: :file, label: "Imagem de Capa" %>
+        </div>
+        <div class="col-5">
+          <%= f.input :status, collection: IProduto.statuses.map { |k, _| [k.titleize, k] }, prompt: "Selecione o status" %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= btn_submit(f) %>
+      <%= link_to "Voltar", i_produtos_path, class: "btn btn-light" %>
+    </div>
+  </div>
+<% end %>
