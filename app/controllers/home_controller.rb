@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :produtos, :cursos, :blog]
+  skip_before_action :authenticate_user!, only: [:index, :papelaria, :cursos, :blog]
 
   def index
     @g_categorias = GCategoria.all
@@ -23,7 +23,9 @@ class HomeController < ApplicationController
     end
   end
 
-  def produtos
+  def papelaria
+    @produtos = IProduto.includes(:categoria).where(status: 1).order(created_at: :desc)
+
   end
 
   def cursos

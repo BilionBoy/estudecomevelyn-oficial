@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :i_promocoes
-  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
+  
   get 'g_admin', to: 'g_admin#index', as: :g_admin
   root 'home#index'
   
@@ -10,17 +10,12 @@ Rails.application.routes.draw do
   resources :g_categorias
   resources :segmentos
   resources :i_produtos
+  resources :i_promocoes
 
+  # Rotas do e-commerce (mais amigáveis)
+  get '/papelaria', to: 'home#papelaria', as: :papelaria
+  get '/blog',      to: 'home#blog', as: :blog
 
-  # Rotas do e-commerce
-  resources :home, only: [:index] do
-    collection do
-      get :produtos
-      get :cursos
-      get :blog
-    end
-  end
-  
   # Verificar estado da aplicação
   get 'up' => 'rails/health#show', as: :rails_health_check
 end

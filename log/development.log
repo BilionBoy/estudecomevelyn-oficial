@@ -71094,3 +71094,918 @@ Processing by IPromocoesController#new as HTML
 Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/home" for 127.0.0.1 at 2025-04-09 02:58:49 -0400
+Processing by HomeController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 33.5ms | GC: 1.3ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 34.3ms | GC: 1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 39.5ms | GC: 1.3ms)
+Completed 200 OK in 52ms (Views: 33.3ms | ActiveRecord: 8.0ms (9 queries, 1 cached) | GC: 2.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--a56dc3ba5ed75aeef6d1e171c35510a8a88999d4/calice-de-fogo.webp" for 127.0.0.1 at 2025-04-09 02:58:49 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-09 02:58:49 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--a56dc3ba5ed75aeef6d1e171c35510a8a88999d4", "filename"=>"calice-de-fogo"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: kr0wcxh6l2wwzukw6zqbjtfv9435 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--196e81275ceafd4d94c2470e63b0f48bfac2bc7f/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--196e81275ceafd4d94c2470e63b0f48bfac2bc7f/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--196e81275ceafd4d94c2470e63b0f48bfac2bc7f/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-09 02:58:49 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: ueyn00nna9550ig28pa87gymy90v (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40ODhaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb75729ac21bf0eb8c4558d66a558a08c0af255e/calice-de-fogo.webp)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40ODhaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb75729ac21bf0eb8c4558d66a558a08c0af255e/calice-de-fogo.webp
+Completed 302 Found in 17ms (ActiveRecord: 5.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40ODhaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb75729ac21bf0eb8c4558d66a558a08c0af255e/calice-de-fogo.webp" for 127.0.0.1 at 2025-04-09 02:58:49 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"calice-de-fogo"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-09 02:58:50 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 13.3ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 13.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 21.1ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 19.5ms | ActiveRecord: 3.4ms (9 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40ODhaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb75729ac21bf0eb8c4558d66a558a08c0af255e/calice-de-fogo.webp" for 127.0.0.1 at 2025-04-09 02:58:50 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--196e81275ceafd4d94c2470e63b0f48bfac2bc7f/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-09 02:58:50 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"calice-de-fogo"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-09 02:58:51 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 7.8ms | GC: 0.5ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 8.2ms | GC: 0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.7ms | GC: 0.8ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 1.5ms (9 queries, 1 cached) | GC: 0.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40ODhaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb75729ac21bf0eb8c4558d66a558a08c0af255e/calice-de-fogo.webp" for 127.0.0.1 at 2025-04-09 02:58:51 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzowMzo0OS40NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--196e81275ceafd4d94c2470e63b0f48bfac2bc7f/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-09 02:58:51 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"calice-de-fogo"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-09 03:03:32 -0400
+Processing by HomeController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+AbstractController::ActionNotFound (The produtos action could not be found for the :authenticate_user!
+callback on HomeController, but it is listed in the controller's
+:only option.
+
+Raising for missing callback actions is a new default in Rails 7.1, if you'd
+like to turn this off you can delete the option from the environment configurations
+or set `config.action_controller.raise_on_missing_callback_actions` to `false`.
+):
+  
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:62:in `match?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:391:in `block in inverted_lambda'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `all?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-04-09 03:03:33 -0400
+Processing by HomeController#index as HTML
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+AbstractController::ActionNotFound (The produtos action could not be found for the :authenticate_user!
+callback on HomeController, but it is listed in the controller's
+:only option.
+
+Raising for missing callback actions is a new default in Rails 7.1, if you'd
+like to turn this off you can delete the option from the environment configurations
+or set `config.action_controller.raise_on_missing_callback_actions` to `false`.
+):
+  
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:62:in `match?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:391:in `block in inverted_lambda'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `all?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-04-09 03:04:00 -0400
+Processing by HomeController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+AbstractController::ActionNotFound (The produtos action could not be found for the :authenticate_user!
+callback on HomeController, but it is listed in the controller's
+:only option.
+
+Raising for missing callback actions is a new default in Rails 7.1, if you'd
+like to turn this off you can delete the option from the environment configurations
+or set `config.action_controller.raise_on_missing_callback_actions` to `false`.
+):
+  
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:62:in `match?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:391:in `block in inverted_lambda'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `all?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-04-09 03:04:36 -0400
+Processing by HomeController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+AbstractController::ActionNotFound (The produtos action could not be found for the :authenticate_user!
+callback on HomeController, but it is listed in the controller's
+:only option.
+
+Raising for missing callback actions is a new default in Rails 7.1, if you'd
+like to turn this off you can delete the option from the environment configurations
+or set `config.action_controller.raise_on_missing_callback_actions` to `false`.
+):
+  
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:62:in `match?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:391:in `block in inverted_lambda'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `all?'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:178:in `call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.11) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.11) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-04-09 03:04:59 -0400
+Processing by HomeController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 28.9ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 33.4ms | GC: 3.4ms)
+  Rendered layout layouts/home_application.erb (Duration: 33.6ms | GC: 3.4ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 9.2ms (8 queries, 1 cached) | GC: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `produtos_home_index_path' for an instance of #<Class:0x00007d24c3a69568>):
+
+Causes:
+NameError (undefined local variable or method `produtos_home_index_path' for an instance of #<Class:0x00007d24c3a69568>)
+    33:     </div>
+    34:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @i_produtos } %>
+    35:     <div class="text-center mt-5">
+    36:       <%= link_to "Ver Todos os manuais", produtos_home_index_path, class: "btn btn-primary rounded-pill px-4 py-2" %>
+    37:     </div>
+    38:   </div>
+    39: </section>
+  
+app/views/home/index.html.erb:36
+Started GET "/" for 127.0.0.1 at 2025-04-09 03:05:42 -0400
+Processing by HomeController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 50.8ms | GC: 21.5ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 52.5ms | GC: 22.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_navbar.html.erb:43
+  Rendered shared/home/_navbar.html.erb (Duration: 9.3ms | GC: 0.8ms)
+  Rendered layout layouts/home_application.erb (Duration: 63.5ms | GC: 23.2ms)
+Completed 200 OK in 88ms (Views: 56.5ms | ActiveRecord: 11.5ms (9 queries, 1 cached) | GC: 35.6ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--a56dc3ba5ed75aeef6d1e171c35510a8a88999d4/calice-de-fogo.webp" for 127.0.0.1 at 2025-04-09 03:05:42 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-09 03:05:42 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--a56dc3ba5ed75aeef6d1e171c35510a8a88999d4", "filename"=>"calice-de-fogo"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: kr0wcxh6l2wwzukw6zqbjtfv9435 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzoxMDo0Mi4zNzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2d885ec16cb9278613691d041a066fa88b6f07e/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzoxMDo0Mi4zNzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2d885ec16cb9278613691d041a066fa88b6f07e/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg
+[36m  Disk Storage (0.1ms) [0m[34mGenerated URL for file at key: ueyn00nna9550ig28pa87gymy90v (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzoxMDo0Mi4zNzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--ebed20c037f6fbc667c8d98f82012dbf0a78bb4a/calice-de-fogo.webp)[0m
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzoxMDo0Mi4zNzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--ebed20c037f6fbc667c8d98f82012dbf0a78bb4a/calice-de-fogo.webp
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzoxMDo0Mi4zNzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2d885ec16cb9278613691d041a066fa88b6f07e/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-09 03:05:42 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ1ZXluMDBubmE5NTUwaWcyOHBhODdneW15OTB2IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2FsaWNlLWRlLWZvZ28ud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2NhbGljZS1kZS1mb2dvLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0wOVQwNzoxMDo0Mi4zNzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--ebed20c037f6fbc667c8d98f82012dbf0a78bb4a/calice-de-fogo.webp" for 127.0.0.1 at 2025-04-09 03:05:42 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"calice-de-fogo"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:05:43 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.2ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.4ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/__notice with {:locale=>[:"pt-BR", :pt], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :axlsx]}.
+
+Searched in:
+  * "/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-7.2.2.1/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-7.2.2.1/app/views"
+):
+
+Causes:
+ActionView::MissingTemplate (Missing partial shared/__notice with {:locale=>[:"pt-BR", :pt], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :axlsx]}.
+
+Searched in:
+  * "/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-7.2.2.1/app/views"
+  * "/home/dhiogo/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-7.2.2.1/app/views"
+)
+    1: <!-- app/views/home/papelaria.html.erb -->
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/_notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+  
+app/views/home/papelaria.html.erb:4
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:07:32 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column i_produtos.ativo does not exist
+LINE 1: SELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."...
+                                                      ^
+):
+
+Causes:
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column i_produtos.ativo does not exist
+LINE 1: SELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."...
+                                                      ^
+)
+PG::UndefinedColumn (ERROR:  column i_produtos.ativo does not exist
+LINE 1: SELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."...
+                                                      ^
+)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:07:34 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column i_produtos.ativo does not exist
+LINE 1: SELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."...
+                                                      ^
+):
+
+Causes:
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column i_produtos.ativo does not exist
+LINE 1: SELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."...
+                                                      ^
+)
+PG::UndefinedColumn (ERROR:  column i_produtos.ativo does not exist
+LINE 1: SELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."...
+                                                      ^
+)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:09:07 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:11:49 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 7.3ms | GC: 1.6ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.6ms | GC: 1.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 1.9ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:11:50 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:11:59 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.7ms | GC: 0.3ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 6.4ms | GC: 0.6ms)
+  Rendered layout layouts/home_application.erb (Duration: 6.6ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-09 03:12:14 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 5.5ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.7ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
