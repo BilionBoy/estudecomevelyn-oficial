@@ -1,0 +1,37 @@
+<div class="container">
+  <%= render "shared/notice" %>
+  <div class="card border-0 shadow shadow-sm">
+    <div class="card-header border-0 d-flex justify-content-between">
+      <span class="fs-4">Visualizar I Promocao</span>
+    </div>
+    <div class="card-body">
+      <div id="<%= dom_id @i_promocao %>">
+          <p>
+            <strong>Nome:</strong>
+            <%= @i_promocao.nome %>
+          </p>
+          <p>
+            <strong>Descricao:</strong>
+            <%= @i_promocao.descricao %>
+          </p>
+          <p>
+            <strong>Ativo:</strong>
+            <%= @i_promocao.ativo %>
+          </p>
+          <p>
+            <strong>Slug:</strong>
+            <%= @i_promocao.slug %>
+          </p>
+      </div>
+    </div>
+    <div class="card-footer border-0 d-flex justify-content-between">
+      <div>
+        <%= link_to edit_i_promocao_path(@i_promocao), class: "btn btn-primary" do %>
+        <i class="bi bi-pencil-square"></i> Editar
+        <% end %>
+        <%= link_to "Voltar", i_promocoes_path, class: "btn btn-secondary" %>
+      </div>
+      <%= button_to "Deletar", @i_promocao, method: :delete, class: "btn btn-outline-danger border-0" %>
+    </div>
+  </div>
+</div>

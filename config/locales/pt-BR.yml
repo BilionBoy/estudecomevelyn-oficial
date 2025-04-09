@@ -24,6 +24,9 @@ pt-BR:
       i_produto:
         one: "Produto"
         other: "Produtos"
+      i_promocao:
+        one: "Promoção"
+        other: "Promoções"
     attributes:
       user:
         nome: "Nome"
@@ -49,6 +52,11 @@ pt-BR:
         arquivo_url: "Arquivo"
         imagem_url: "Imagem"
         status: "Status"
+      i_promocao:
+        nome: "Nome"
+        descricao: "Descrição"
+        ativo: "Ativo"
+        slug: "Slug"
 
     errors:
       messages:

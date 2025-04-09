@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :i_promocoes
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
   get 'g_admin', to: 'g_admin#index', as: :g_admin
   root 'home#index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :g_categorias
   resources :segmentos
   resources :i_produtos
+
 
   # Rotas do e-commerce
   resources :home, only: [:index] do

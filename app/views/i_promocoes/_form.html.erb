@@ -1,0 +1,45 @@
+
+<%= render "shared/context_nav", title: t("activerecord.models.#{IPromocao.model_name.i18n_key}.other") do  %>
+<span class="breadcrumb-item"><%= link_to t("activerecord.models.#{IPromocao.model_name.i18n_key}.other"), i_promocoes_path, class: "text-dark" %></span>
+<span class="breadcrumb-item active"><%= t("helpers.submit.#{params[:action]}") %></span>
+<% end %>
+<%= simple_form_for(@i_promocao) do |f| %>
+<div class="card">
+  <div class="card-header">
+    <h5 class="my-0">
+      <%= @i_promocao.new_record? ? "Incluir " : "Editar " %><%= t("activerecord.models.#{IPromocao.model_name.i18n_key}.one") %>
+    </h5>
+  </div>
+  <div class="card-body">
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="row">
+      
+        
+          <div class="col-12">
+            <%= f.input :nome, input_html: { class: "capitalize"}, placeholder: "Nome"  %>
+          </div>
+        
+        
+          <div class="col-12">
+            <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
+          </div>
+        
+        
+          <div class="col-12">
+            <%= f.input :ativo, input_html: { class: "capitalize"}, placeholder: "Ativo"  %>
+          </div>
+        
+        
+          <div class="col-12">
+            <%= f.input :slug, input_html: { class: "capitalize"}, placeholder: "Slug"  %>
+          </div>
+        
+    </div>
+  </div>
+  <div class="card-footer">
+    <%= btn_submit(f) %>
+    <%= link_to "Voltar", i_promocoes_path, class: "btn btn-light" %>
+  </div>
+</div>
+<% end %>
