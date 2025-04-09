@@ -49,10 +49,7 @@
                     <%= link_to edit_g_tipo_usuario_path(g_tipo_usuario), class: "dropdown-item" do %>
                       <i class="ph-pen me-2"></i> Editar
                     <% end %>
-                    <%= form_for g_tipo_usuario, method: :delete do |f| %>
-                      <a class="dropdown-item" data-confirm-delete="<%= g_tipo_usuario_path(g_tipo_usuario) %>" data-csrf-token="<%= form_authenticity_token %>">
-                        <i class="ph-trash-simple me-2"></i> Excluir
-                      </a>
+                    <%= button_to g_tipo_usuario_path(g_tipo_usuario), method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class: "dropdown-item text-danger" do %>     <i class="ph-trash-simple me-2"></i> Excluir
                     <% end %>
                   </div>
                 </div>

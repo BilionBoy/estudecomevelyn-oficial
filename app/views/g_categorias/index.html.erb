@@ -53,10 +53,7 @@
                     <%= link_to edit_g_categoria_path(g_categoria), class: "dropdown-item" do %>
                       <i class="ph-pen me-2"></i> Editar
                     <% end %>
-                    <%= form_for g_categoria, method: :delete do |f| %>
-                      <a class="dropdown-item" data-confirm-delete="<%= g_categoria_path(g_categoria) %>" data-csrf-token="<%= form_authenticity_token %>">
-                        <i class="ph-trash-simple me-2"></i> Excluir
-                      </a>
+                    <%= button_to g_categoria_path(g_categoria), method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class: "dropdown-item text-danger" do %>     <i class="ph-trash-simple me-2"></i> Excluir
                     <% end %>
                   </div>
                 </div>
