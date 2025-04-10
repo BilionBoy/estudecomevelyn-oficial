@@ -42,12 +42,14 @@ class IProdutosController < ApplicationController
     end   
   end
 
+
   private
 
   def set_i_produto
-    @i_produto = IProduto.find_by(id: params[:id])
+    @i_produto = IProduto.find_by(slug: params[:id])
     return redirect_to i_produtos_path, alert: t('messages.not_found') unless @i_produto
   end
+
   def i_produto_params
     permitted_attributes = IProduto.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
     params.require(:i_produto).permit(*permitted_attributes.map(&:to_sym), :arquivo, :imagem)
