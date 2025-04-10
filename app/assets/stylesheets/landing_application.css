@@ -138,10 +138,6 @@ header {
   color: var(--primary) !important;
 }
 
-.nav-link.active {
-  color: var(--primary) !important;
-}
-
 /* =========================
        CARDS
        ========================= */
