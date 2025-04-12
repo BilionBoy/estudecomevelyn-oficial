@@ -74345,3 +74345,4340 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:16:58 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.7ms | GC: 0.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.2ms | GC: 5.5ms)
+Completed 200 OK in 20ms (Views: 11.6ms | ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 5.5ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:18:32 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:19:00 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:19:19 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 5.2ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:19:23 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 31.5ms | GC: 5.8ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 32.2ms | GC: 5.8ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.4ms | GC: 0.3ms)
+  Rendered layout layouts/home_application.erb (Duration: 34.9ms | GC: 6.1ms)
+Completed 200 OK in 39ms (Views: 28.6ms | ActiveRecord: 7.0ms (5 queries, 0 cached) | GC: 6.1ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:19:23 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: kr0wcxh6l2wwzukw6zqbjtfv9435 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoyNDoyMy44MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--df66e63d4fe59d2f22101aaf9dae9ac9bea047dc/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoyNDoyMy44MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--df66e63d4fe59d2f22101aaf9dae9ac9bea047dc/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoyNDoyMy44MzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--df66e63d4fe59d2f22101aaf9dae9ac9bea047dc/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:19:23 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:19:24 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 1.7ms | GC: 1.4ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 4.0ms | GC: 3.4ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 14.3ms | GC: 12.8ms)
+  Rendered layout layouts/home_application.erb (Duration: 22.8ms | GC: 19.4ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 19.4ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:19:44 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.6ms | GC: 0.4ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 5.1ms | GC: 0.6ms)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:20:07 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.5ms | GC: 0.2ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.9ms | GC: 0.2ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.9ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 5.2ms | ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:20:07 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:20:10 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.7ms | GC: 0.3ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.1ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:20:29 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:20:59 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:21:19 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.8ms | GC: 0.4ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.3ms | GC: 0.4ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.9ms | GC: 0.7ms)
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:21:19 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:21:47 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.2ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:23:21 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:157
+  Rendered shared/_notice.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 7.1ms | GC: 0.2ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.2ms | GC: 0.4ms)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:23:57 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  user agent stylesheet
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:171: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      /* Page Header */
+3:      .page-header {
+4:        background-color: var(--light-gray);
+5:        padding: 5rem 0 3rem;
+6:        position: relative;
+7:        overflow: hidden;
+8:      }
+9:    
+10:      .page-header::before {
+11:        content: "";
+12:        position: absolute;
+13:        top: 0;
+14:        right: 0;
+15:        width: 100%;
+16:        height: 100%;
+17:        background: linear-gradient(
+18:          135deg,
+19:          rgba(255, 61, 127, 0.05) 0%,
+20:          rgba(156, 39, 176, 0.05) 100%
+21:        );
+22:        z-index: 0;
+23:      }
+24:    
+25:      .page-header-content {
+26:        position: relative;
+27:        z-index: 1;
+28:      }
+29:    
+30:      .page-title {
+31:        font-size: 3rem;
+32:        margin-bottom: 1rem;
+33:        color: var(--dark);
+34:      }
+35:    
+36:      .breadcrumb {
+37:        background: transparent;
+38:        padding: 0;
+39:        margin-bottom: 0;
+40:      }
+41:    
+42:      .breadcrumb-item a {
+43:        color: var(--primary);
+44:        text-decoration: none;
+45:      }
+46:    
+47:      .breadcrumb-item.active {
+48:        color: var(--gray);
+49:      }
+50:      }
+51:      @media (max-width: 768px) {
+52:        .page-title {
+53:            font-size: 2rem;
+54:        }
+55:      }
+56:      @media (max-width: 991.98px) {
+57:        .page-title {
+58:            font-size: 2.5rem;
+59:        }
+60:      }
+61:      .page-title {
+62:        font-size: 3rem;
+63:        margin-bottom: 1rem;
+64:        color: var(--dark);
+65:      }
+66:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+67:        font-family: "Playfair Display", serif;
+68:        font-weight: 600;
+69:        letter-spacing: -0.02em;
+70:        line-height: 1.3;
+71:      }
+72:      .h1, h1 {
+73:        font-size: calc(1.375rem + 1.5vw);
+74:      }
+75:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+76:        margin-top: 0;
+77:        margin-bottom: .5rem;
+78:        font-weight: 500;
+79:        line-height: 1.2;
+80:        color: var(--bs-heading-color);
+81:      }
+82:      *, ::after, ::before {
+83:        box-sizing: border-box;
+84:      }
+85:      user agent stylesheet
+86:      :-webkit-any(article, aside, nav, section) h1 {
+87:        font-size: 1.5em;
+88:        margin-block-start: 0.83em;
+89:        margin-block-end: 0.83em;
+90:      }
+91:      user agent stylesheet
+92:      h1 {
+93:        display: block;
+94:        font-size: 2em;
+95:        margin-block-start: 0.67em;
+96:        margin-block-end: 0.67em;
+97:        margin-inline-start: 0px;
+98:        margin-inline-end: 0px;
+99:        font-weight: bold;
+100:        unicode-bidi: isolate;
+101:    
+102:        .lead {
+103:        font-family: "Montserrat", sans-serif;
+104:        font-weight: 300;
+105:        letter-spacing: 0.01em;
+106:        line-height: 1.6;
+107:      }
+108:      .lead {
+109:        font-size: 1.25rem;
+110:        font-weight: 300;
+111:      }
+112:      p {
+113:        margin-top: 0;
+114:        margin-bottom: 1rem;
+115:      }
+116:      .breadcrumb-item a {
+117:        color: var(--primary);
+118:        text-decoration: none;
+119:      }
+120:      li {
+121:        display: list-item;
+122:        text-align: -webkit-match-parent;
+123:        unicode-bidi: isolate;
+124:      }
+125:      }
+126:    </style>
+127:    <!-- Page Header -->
+128:    <section class="page-header">
+129:      <div class="container">
+130:        <div class="row">
+131:          <div class="col-lg-8 page-header-content">
+132:            <nav aria-label="breadcrumb">
+133:              <ol class="breadcrumb">
+134:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+135:                <li class="breadcrumb-item active" aria-current="page">
+136:                  Papelaria Digital
+137:                </li>
+138:              </ol>
+139:            </nav>
+140:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+141:            <p class="lead">
+142:              Recursos digitais premium para elevar sua arte ao próximo nível
+143:            </p>
+144:          </div>
+145:        </div>
+146:      </div>
+147:    </section>
+148:    <!-- Filters Section -->
+149:    <section class="py-2">
+150:      <div class="container">
+151:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+152:          <div>
+153:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+154:          </div>
+155:          <div class="d-flex flex-wrap">
+156:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+157:            <% GCategoria.order(:nome).each do |g_categoria| %>
+158:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+159:            <% end %>
+160:          </div>
+161:          <% if @produtos.present? %>
+162:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+163:          <% else %>
+164:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+165:          </div>
+166:        </div>
+167:      </section>
+168:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:171: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:23:57 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  user agent stylesheet
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:171: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      /* Page Header */
+3:      .page-header {
+4:        background-color: var(--light-gray);
+5:        padding: 5rem 0 3rem;
+6:        position: relative;
+7:        overflow: hidden;
+8:      }
+9:    
+10:      .page-header::before {
+11:        content: "";
+12:        position: absolute;
+13:        top: 0;
+14:        right: 0;
+15:        width: 100%;
+16:        height: 100%;
+17:        background: linear-gradient(
+18:          135deg,
+19:          rgba(255, 61, 127, 0.05) 0%,
+20:          rgba(156, 39, 176, 0.05) 100%
+21:        );
+22:        z-index: 0;
+23:      }
+24:    
+25:      .page-header-content {
+26:        position: relative;
+27:        z-index: 1;
+28:      }
+29:    
+30:      .page-title {
+31:        font-size: 3rem;
+32:        margin-bottom: 1rem;
+33:        color: var(--dark);
+34:      }
+35:    
+36:      .breadcrumb {
+37:        background: transparent;
+38:        padding: 0;
+39:        margin-bottom: 0;
+40:      }
+41:    
+42:      .breadcrumb-item a {
+43:        color: var(--primary);
+44:        text-decoration: none;
+45:      }
+46:    
+47:      .breadcrumb-item.active {
+48:        color: var(--gray);
+49:      }
+50:      }
+51:      @media (max-width: 768px) {
+52:        .page-title {
+53:            font-size: 2rem;
+54:        }
+55:      }
+56:      @media (max-width: 991.98px) {
+57:        .page-title {
+58:            font-size: 2.5rem;
+59:        }
+60:      }
+61:      .page-title {
+62:        font-size: 3rem;
+63:        margin-bottom: 1rem;
+64:        color: var(--dark);
+65:      }
+66:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+67:        font-family: "Playfair Display", serif;
+68:        font-weight: 600;
+69:        letter-spacing: -0.02em;
+70:        line-height: 1.3;
+71:      }
+72:      .h1, h1 {
+73:        font-size: calc(1.375rem + 1.5vw);
+74:      }
+75:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+76:        margin-top: 0;
+77:        margin-bottom: .5rem;
+78:        font-weight: 500;
+79:        line-height: 1.2;
+80:        color: var(--bs-heading-color);
+81:      }
+82:      *, ::after, ::before {
+83:        box-sizing: border-box;
+84:      }
+85:      user agent stylesheet
+86:      :-webkit-any(article, aside, nav, section) h1 {
+87:        font-size: 1.5em;
+88:        margin-block-start: 0.83em;
+89:        margin-block-end: 0.83em;
+90:      }
+91:      user agent stylesheet
+92:      h1 {
+93:        display: block;
+94:        font-size: 2em;
+95:        margin-block-start: 0.67em;
+96:        margin-block-end: 0.67em;
+97:        margin-inline-start: 0px;
+98:        margin-inline-end: 0px;
+99:        font-weight: bold;
+100:        unicode-bidi: isolate;
+101:    
+102:        .lead {
+103:        font-family: "Montserrat", sans-serif;
+104:        font-weight: 300;
+105:        letter-spacing: 0.01em;
+106:        line-height: 1.6;
+107:      }
+108:      .lead {
+109:        font-size: 1.25rem;
+110:        font-weight: 300;
+111:      }
+112:      p {
+113:        margin-top: 0;
+114:        margin-bottom: 1rem;
+115:      }
+116:      .breadcrumb-item a {
+117:        color: var(--primary);
+118:        text-decoration: none;
+119:      }
+120:      li {
+121:        display: list-item;
+122:        text-align: -webkit-match-parent;
+123:        unicode-bidi: isolate;
+124:      }
+125:      }
+126:    </style>
+127:    <!-- Page Header -->
+128:    <section class="page-header">
+129:      <div class="container">
+130:        <div class="row">
+131:          <div class="col-lg-8 page-header-content">
+132:            <nav aria-label="breadcrumb">
+133:              <ol class="breadcrumb">
+134:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+135:                <li class="breadcrumb-item active" aria-current="page">
+136:                  Papelaria Digital
+137:                </li>
+138:              </ol>
+139:            </nav>
+140:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+141:            <p class="lead">
+142:              Recursos digitais premium para elevar sua arte ao próximo nível
+143:            </p>
+144:          </div>
+145:        </div>
+146:      </div>
+147:    </section>
+148:    <!-- Filters Section -->
+149:    <section class="py-2">
+150:      <div class="container">
+151:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+152:          <div>
+153:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+154:          </div>
+155:          <div class="d-flex flex-wrap">
+156:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+157:            <% GCategoria.order(:nome).each do |g_categoria| %>
+158:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+159:            <% end %>
+160:          </div>
+161:          <% if @produtos.present? %>
+162:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+163:          <% else %>
+164:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+165:          </div>
+166:        </div>
+167:      </section>
+168:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:171: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:23:58 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  user agent stylesheet
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:171: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      /* Page Header */
+3:      .page-header {
+4:        background-color: var(--light-gray);
+5:        padding: 5rem 0 3rem;
+6:        position: relative;
+7:        overflow: hidden;
+8:      }
+9:    
+10:      .page-header::before {
+11:        content: "";
+12:        position: absolute;
+13:        top: 0;
+14:        right: 0;
+15:        width: 100%;
+16:        height: 100%;
+17:        background: linear-gradient(
+18:          135deg,
+19:          rgba(255, 61, 127, 0.05) 0%,
+20:          rgba(156, 39, 176, 0.05) 100%
+21:        );
+22:        z-index: 0;
+23:      }
+24:    
+25:      .page-header-content {
+26:        position: relative;
+27:        z-index: 1;
+28:      }
+29:    
+30:      .page-title {
+31:        font-size: 3rem;
+32:        margin-bottom: 1rem;
+33:        color: var(--dark);
+34:      }
+35:    
+36:      .breadcrumb {
+37:        background: transparent;
+38:        padding: 0;
+39:        margin-bottom: 0;
+40:      }
+41:    
+42:      .breadcrumb-item a {
+43:        color: var(--primary);
+44:        text-decoration: none;
+45:      }
+46:    
+47:      .breadcrumb-item.active {
+48:        color: var(--gray);
+49:      }
+50:      }
+51:      @media (max-width: 768px) {
+52:        .page-title {
+53:            font-size: 2rem;
+54:        }
+55:      }
+56:      @media (max-width: 991.98px) {
+57:        .page-title {
+58:            font-size: 2.5rem;
+59:        }
+60:      }
+61:      .page-title {
+62:        font-size: 3rem;
+63:        margin-bottom: 1rem;
+64:        color: var(--dark);
+65:      }
+66:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+67:        font-family: "Playfair Display", serif;
+68:        font-weight: 600;
+69:        letter-spacing: -0.02em;
+70:        line-height: 1.3;
+71:      }
+72:      .h1, h1 {
+73:        font-size: calc(1.375rem + 1.5vw);
+74:      }
+75:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+76:        margin-top: 0;
+77:        margin-bottom: .5rem;
+78:        font-weight: 500;
+79:        line-height: 1.2;
+80:        color: var(--bs-heading-color);
+81:      }
+82:      *, ::after, ::before {
+83:        box-sizing: border-box;
+84:      }
+85:      user agent stylesheet
+86:      :-webkit-any(article, aside, nav, section) h1 {
+87:        font-size: 1.5em;
+88:        margin-block-start: 0.83em;
+89:        margin-block-end: 0.83em;
+90:      }
+91:      user agent stylesheet
+92:      h1 {
+93:        display: block;
+94:        font-size: 2em;
+95:        margin-block-start: 0.67em;
+96:        margin-block-end: 0.67em;
+97:        margin-inline-start: 0px;
+98:        margin-inline-end: 0px;
+99:        font-weight: bold;
+100:        unicode-bidi: isolate;
+101:    
+102:        .lead {
+103:        font-family: "Montserrat", sans-serif;
+104:        font-weight: 300;
+105:        letter-spacing: 0.01em;
+106:        line-height: 1.6;
+107:      }
+108:      .lead {
+109:        font-size: 1.25rem;
+110:        font-weight: 300;
+111:      }
+112:      p {
+113:        margin-top: 0;
+114:        margin-bottom: 1rem;
+115:      }
+116:      .breadcrumb-item a {
+117:        color: var(--primary);
+118:        text-decoration: none;
+119:      }
+120:      li {
+121:        display: list-item;
+122:        text-align: -webkit-match-parent;
+123:        unicode-bidi: isolate;
+124:      }
+125:      }
+126:    </style>
+127:    <!-- Page Header -->
+128:    <section class="page-header">
+129:      <div class="container">
+130:        <div class="row">
+131:          <div class="col-lg-8 page-header-content">
+132:            <nav aria-label="breadcrumb">
+133:              <ol class="breadcrumb">
+134:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+135:                <li class="breadcrumb-item active" aria-current="page">
+136:                  Papelaria Digital
+137:                </li>
+138:              </ol>
+139:            </nav>
+140:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+141:            <p class="lead">
+142:              Recursos digitais premium para elevar sua arte ao próximo nível
+143:            </p>
+144:          </div>
+145:        </div>
+146:      </div>
+147:    </section>
+148:    <!-- Filters Section -->
+149:    <section class="py-2">
+150:      <div class="container">
+151:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+152:          <div>
+153:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+154:          </div>
+155:          <div class="d-flex flex-wrap">
+156:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+157:            <% GCategoria.order(:nome).each do |g_categoria| %>
+158:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+159:            <% end %>
+160:          </div>
+161:          <% if @produtos.present? %>
+162:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+163:          <% else %>
+164:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+165:          </div>
+166:        </div>
+167:      </section>
+168:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:171: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:25:00 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  user agent stylesheet
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:170: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      /* Page Header */
+3:      .page-header {
+4:        background-color: var(--light-gray);
+5:        padding: 5rem 0 3rem;
+6:        position: relative;
+7:        overflow: hidden;
+8:      }
+9:    
+10:      .page-header::before {
+11:        content: "";
+12:        position: absolute;
+13:        top: 0;
+14:        right: 0;
+15:        width: 100%;
+16:        height: 100%;
+17:        background: linear-gradient(
+18:          135deg,
+19:          rgba(255, 61, 127, 0.05) 0%,
+20:          rgba(156, 39, 176, 0.05) 100%
+21:        );
+22:        z-index: 0;
+23:      }
+24:    
+25:      .page-header-content {
+26:        position: relative;
+27:        z-index: 1;
+28:      }
+29:    
+30:      .page-title {
+31:        font-size: 3rem;
+32:        margin-bottom: 1rem;
+33:        color: var(--dark);
+34:      }
+35:    
+36:      .breadcrumb {
+37:        background: transparent;
+38:        padding: 0;
+39:        margin-bottom: 0;
+40:      }
+41:    
+42:      .breadcrumb-item a {
+43:        color: var(--primary);
+44:        text-decoration: none;
+45:      }
+46:    
+47:      .breadcrumb-item.active {
+48:        color: var(--gray);
+49:      }
+50:      @media (max-width: 768px) {
+51:        .page-title {
+52:            font-size: 2rem;
+53:        }
+54:      }
+55:      @media (max-width: 991.98px) {
+56:        .page-title {
+57:            font-size: 2.5rem;
+58:        }
+59:      }
+60:      .page-title {
+61:        font-size: 3rem;
+62:        margin-bottom: 1rem;
+63:        color: var(--dark);
+64:      }
+65:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+66:        font-family: "Playfair Display", serif;
+67:        font-weight: 600;
+68:        letter-spacing: -0.02em;
+69:        line-height: 1.3;
+70:      }
+71:      .h1, h1 {
+72:        font-size: calc(1.375rem + 1.5vw);
+73:      }
+74:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+75:        margin-top: 0;
+76:        margin-bottom: .5rem;
+77:        font-weight: 500;
+78:        line-height: 1.2;
+79:        color: var(--bs-heading-color);
+80:      }
+81:      *, ::after, ::before {
+82:        box-sizing: border-box;
+83:      }
+84:      user agent stylesheet
+85:      :-webkit-any(article, aside, nav, section) h1 {
+86:        font-size: 1.5em;
+87:        margin-block-start: 0.83em;
+88:        margin-block-end: 0.83em;
+89:      }
+90:      user agent stylesheet
+91:      h1 {
+92:        display: block;
+93:        font-size: 2em;
+94:        margin-block-start: 0.67em;
+95:        margin-block-end: 0.67em;
+96:        margin-inline-start: 0px;
+97:        margin-inline-end: 0px;
+98:        font-weight: bold;
+99:        unicode-bidi: isolate;
+100:    
+101:        .lead {
+102:        font-family: "Montserrat", sans-serif;
+103:        font-weight: 300;
+104:        letter-spacing: 0.01em;
+105:        line-height: 1.6;
+106:      }
+107:      .lead {
+108:        font-size: 1.25rem;
+109:        font-weight: 300;
+110:      }
+111:      p {
+112:        margin-top: 0;
+113:        margin-bottom: 1rem;
+114:      }
+115:      .breadcrumb-item a {
+116:        color: var(--primary);
+117:        text-decoration: none;
+118:      }
+119:      li {
+120:        display: list-item;
+121:        text-align: -webkit-match-parent;
+122:        unicode-bidi: isolate;
+123:      }
+124:      }
+125:    </style>
+126:    <!-- Page Header -->
+127:    <section class="page-header">
+128:      <div class="container">
+129:        <div class="row">
+130:          <div class="col-lg-8 page-header-content">
+131:            <nav aria-label="breadcrumb">
+132:              <ol class="breadcrumb">
+133:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+134:                <li class="breadcrumb-item active" aria-current="page">
+135:                  Papelaria Digital
+136:                </li>
+137:              </ol>
+138:            </nav>
+139:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+140:            <p class="lead">
+141:              Recursos digitais premium para elevar sua arte ao próximo nível
+142:            </p>
+143:          </div>
+144:        </div>
+145:      </div>
+146:    </section>
+147:    <!-- Filters Section -->
+148:    <section class="py-2">
+149:      <div class="container">
+150:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+151:          <div>
+152:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+153:          </div>
+154:          <div class="d-flex flex-wrap">
+155:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+156:            <% GCategoria.order(:nome).each do |g_categoria| %>
+157:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+158:            <% end %>
+159:          </div>
+160:          <% if @produtos.present? %>
+161:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+162:          <% else %>
+163:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+164:          </div>
+165:        </div>
+166:      </section>
+167:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:170: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:25:20 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:168: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      .page-header {
+3:        background-color: var(--light-gray);
+4:        padding: 5rem 0 3rem;
+5:        position: relative;
+6:        overflow: hidden;
+7:      }
+8:    
+9:      .page-header::before {
+10:        content: "";
+11:        position: absolute;
+12:        top: 0;
+13:        right: 0;
+14:        width: 100%;
+15:        height: 100%;
+16:        background: linear-gradient(
+17:          135deg,
+18:          rgba(255, 61, 127, 0.05) 0%,
+19:          rgba(156, 39, 176, 0.05) 100%
+20:        );
+21:        z-index: 0;
+22:      }
+23:    
+24:      .page-header-content {
+25:        position: relative;
+26:        z-index: 1;
+27:      }
+28:    
+29:      .page-title {
+30:        font-size: 3rem;
+31:        margin-bottom: 1rem;
+32:        color: var(--dark);
+33:      }
+34:    
+35:      .breadcrumb {
+36:        background: transparent;
+37:        padding: 0;
+38:        margin-bottom: 0;
+39:      }
+40:    
+41:      .breadcrumb-item a {
+42:        color: var(--primary);
+43:        text-decoration: none;
+44:      }
+45:    
+46:      .breadcrumb-item.active {
+47:        color: var(--gray);
+48:      }
+49:      @media (max-width: 768px) {
+50:        .page-title {
+51:            font-size: 2rem;
+52:        }
+53:      }
+54:      @media (max-width: 991.98px) {
+55:        .page-title {
+56:            font-size: 2.5rem;
+57:        }
+58:      }
+59:      .page-title {
+60:        font-size: 3rem;
+61:        margin-bottom: 1rem;
+62:        color: var(--dark);
+63:      }
+64:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+65:        font-family: "Playfair Display", serif;
+66:        font-weight: 600;
+67:        letter-spacing: -0.02em;
+68:        line-height: 1.3;
+69:      }
+70:      .h1, h1 {
+71:        font-size: calc(1.375rem + 1.5vw);
+72:      }
+73:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+74:        margin-top: 0;
+75:        margin-bottom: .5rem;
+76:        font-weight: 500;
+77:        line-height: 1.2;
+78:        color: var(--bs-heading-color);
+79:      }
+80:      *, ::after, ::before {
+81:        box-sizing: border-box;
+82:      }
+83:      user agent stylesheet
+84:      :-webkit-any(article, aside, nav, section) h1 {
+85:        font-size: 1.5em;
+86:        margin-block-start: 0.83em;
+87:        margin-block-end: 0.83em;
+88:      }
+89:      h1 {
+90:        display: block;
+91:        font-size: 2em;
+92:        margin-block-start: 0.67em;
+93:        margin-block-end: 0.67em;
+94:        margin-inline-start: 0px;
+95:        margin-inline-end: 0px;
+96:        font-weight: bold;
+97:        unicode-bidi: isolate;
+98:    
+99:        .lead {
+100:        font-family: "Montserrat", sans-serif;
+101:        font-weight: 300;
+102:        letter-spacing: 0.01em;
+103:        line-height: 1.6;
+104:      }
+105:      .lead {
+106:        font-size: 1.25rem;
+107:        font-weight: 300;
+108:      }
+109:      p {
+110:        margin-top: 0;
+111:        margin-bottom: 1rem;
+112:      }
+113:      .breadcrumb-item a {
+114:        color: var(--primary);
+115:        text-decoration: none;
+116:      }
+117:      li {
+118:        display: list-item;
+119:        text-align: -webkit-match-parent;
+120:        unicode-bidi: isolate;
+121:      }
+122:      }
+123:    </style>
+124:    <!-- Page Header -->
+125:    <section class="page-header">
+126:      <div class="container">
+127:        <div class="row">
+128:          <div class="col-lg-8 page-header-content">
+129:            <nav aria-label="breadcrumb">
+130:              <ol class="breadcrumb">
+131:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+132:                <li class="breadcrumb-item active" aria-current="page">
+133:                  Papelaria Digital
+134:                </li>
+135:              </ol>
+136:            </nav>
+137:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+138:            <p class="lead">
+139:              Recursos digitais premium para elevar sua arte ao próximo nível
+140:            </p>
+141:          </div>
+142:        </div>
+143:      </div>
+144:    </section>
+145:    <!-- Filters Section -->
+146:    <section class="py-2">
+147:      <div class="container">
+148:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+149:          <div>
+150:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+151:          </div>
+152:          <div class="d-flex flex-wrap">
+153:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+154:            <% GCategoria.order(:nome).each do |g_categoria| %>
+155:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+156:            <% end %>
+157:          </div>
+158:          <% if @produtos.present? %>
+159:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+160:          <% else %>
+161:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+162:          </div>
+163:        </div>
+164:      </section>
+165:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:168: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:25:31 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:168: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      .page-header {
+3:        background-color: var(--light-gray);
+4:        padding: 5rem 0 3rem;
+5:        position: relative;
+6:        overflow: hidden;
+7:      }
+8:    
+9:      .page-header::before {
+10:        content: "";
+11:        position: absolute;
+12:        top: 0;
+13:        right: 0;
+14:        width: 100%;
+15:        height: 100%;
+16:        background: linear-gradient(
+17:          135deg,
+18:          rgba(255, 61, 127, 0.05) 0%,
+19:          rgba(156, 39, 176, 0.05) 100%
+20:        );
+21:        z-index: 0;
+22:      }
+23:    
+24:      .page-header-content {
+25:        position: relative;
+26:        z-index: 1;
+27:      }
+28:    
+29:      .page-title {
+30:        font-size: 3rem;
+31:        margin-bottom: 1rem;
+32:        color: var(--dark);
+33:      }
+34:    
+35:      .breadcrumb {
+36:        background: transparent;
+37:        padding: 0;
+38:        margin-bottom: 0;
+39:      }
+40:    
+41:      .breadcrumb-item a {
+42:        color: var(--primary);
+43:        text-decoration: none;
+44:      }
+45:    
+46:      .breadcrumb-item.active {
+47:        color: var(--gray);
+48:      }
+49:      @media (max-width: 768px) {
+50:        .page-title {
+51:            font-size: 2rem;
+52:        }
+53:      }
+54:      @media (max-width: 991.98px) {
+55:        .page-title {
+56:            font-size: 2.5rem;
+57:        }
+58:      }
+59:      .page-title {
+60:        font-size: 3rem;
+61:        margin-bottom: 1rem;
+62:        color: var(--dark);
+63:      }
+64:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+65:        font-family: "Playfair Display", serif;
+66:        font-weight: 600;
+67:        letter-spacing: -0.02em;
+68:        line-height: 1.3;
+69:      }
+70:      .h1, h1 {
+71:        font-size: calc(1.375rem + 1.5vw);
+72:      }
+73:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+74:        margin-top: 0;
+75:        margin-bottom: .5rem;
+76:        font-weight: 500;
+77:        line-height: 1.2;
+78:        color: var(--bs-heading-color);
+79:      }
+80:      *, ::after, ::before {
+81:        box-sizing: border-box;
+82:      }
+83:      user agent stylesheet
+84:      :-webkit-any(article, aside, nav, section) h1 {
+85:        font-size: 1.5em;
+86:        margin-block-start: 0.83em;
+87:        margin-block-end: 0.83em;
+88:      }
+89:      h1 {
+90:        display: block;
+91:        font-size: 2em;
+92:        margin-block-start: 0.67em;
+93:        margin-block-end: 0.67em;
+94:        margin-inline-start: 0px;
+95:        margin-inline-end: 0px;
+96:        font-weight: bold;
+97:        unicode-bidi: isolate;
+98:      }
+99:        .lead {
+100:        font-family: "Montserrat", sans-serif;
+101:        font-weight: 300;
+102:        letter-spacing: 0.01em;
+103:        line-height: 1.6;
+104:      }
+105:      .lead {
+106:        font-size: 1.25rem;
+107:        font-weight: 300;
+108:      }
+109:      p {
+110:        margin-top: 0;
+111:        margin-bottom: 1rem;
+112:      }
+113:      .breadcrumb-item a {
+114:        color: var(--primary);
+115:        text-decoration: none;
+116:      }
+117:      li {
+118:        display: list-item;
+119:        text-align: -webkit-match-parent;
+120:        unicode-bidi: isolate;
+121:      }
+122:      }
+123:    </style>
+124:    <!-- Page Header -->
+125:    <section class="page-header">
+126:      <div class="container">
+127:        <div class="row">
+128:          <div class="col-lg-8 page-header-content">
+129:            <nav aria-label="breadcrumb">
+130:              <ol class="breadcrumb">
+131:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+132:                <li class="breadcrumb-item active" aria-current="page">
+133:                  Papelaria Digital
+134:                </li>
+135:              </ol>
+136:            </nav>
+137:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+138:            <p class="lead">
+139:              Recursos digitais premium para elevar sua arte ao próximo nível
+140:            </p>
+141:          </div>
+142:        </div>
+143:      </div>
+144:    </section>
+145:    <!-- Filters Section -->
+146:    <section class="py-2">
+147:      <div class="container">
+148:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+149:          <div>
+150:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+151:          </div>
+152:          <div class="d-flex flex-wrap">
+153:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+154:            <% GCategoria.order(:nome).each do |g_categoria| %>
+155:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+156:            <% end %>
+157:          </div>
+158:          <% if @produtos.present? %>
+159:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+160:          <% else %>
+161:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+162:          </div>
+163:        </div>
+164:      </section>
+165:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:168: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:25:37 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  user agent stylesheet
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:167: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      .page-header {
+3:        background-color: var(--light-gray);
+4:        padding: 5rem 0 3rem;
+5:        position: relative;
+6:        overflow: hidden;
+7:      }
+8:    
+9:      .page-header::before {
+10:        content: "";
+11:        position: absolute;
+12:        top: 0;
+13:        right: 0;
+14:        width: 100%;
+15:        height: 100%;
+16:        background: linear-gradient(
+17:          135deg,
+18:          rgba(255, 61, 127, 0.05) 0%,
+19:          rgba(156, 39, 176, 0.05) 100%
+20:        );
+21:        z-index: 0;
+22:      }
+23:    
+24:      .page-header-content {
+25:        position: relative;
+26:        z-index: 1;
+27:      }
+28:    
+29:      .page-title {
+30:        font-size: 3rem;
+31:        margin-bottom: 1rem;
+32:        color: var(--dark);
+33:      }
+34:    
+35:      .breadcrumb {
+36:        background: transparent;
+37:        padding: 0;
+38:        margin-bottom: 0;
+39:      }
+40:    
+41:      .breadcrumb-item a {
+42:        color: var(--primary);
+43:        text-decoration: none;
+44:      }
+45:    
+46:      .breadcrumb-item.active {
+47:        color: var(--gray);
+48:      }
+49:      @media (max-width: 768px) {
+50:        .page-title {
+51:            font-size: 2rem;
+52:        }
+53:      }
+54:      @media (max-width: 991.98px) {
+55:        .page-title {
+56:            font-size: 2.5rem;
+57:        }
+58:      }
+59:      .page-title {
+60:        font-size: 3rem;
+61:        margin-bottom: 1rem;
+62:        color: var(--dark);
+63:      }
+64:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+65:        font-family: "Playfair Display", serif;
+66:        font-weight: 600;
+67:        letter-spacing: -0.02em;
+68:        line-height: 1.3;
+69:      }
+70:      .h1, h1 {
+71:        font-size: calc(1.375rem + 1.5vw);
+72:      }
+73:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+74:        margin-top: 0;
+75:        margin-bottom: .5rem;
+76:        font-weight: 500;
+77:        line-height: 1.2;
+78:        color: var(--bs-heading-color);
+79:      }
+80:      *, ::after, ::before {
+81:        box-sizing: border-box;
+82:      }
+83:      user agent stylesheet
+84:      :-webkit-any(article, aside, nav, section) h1 {
+85:        font-size: 1.5em;
+86:        margin-block-start: 0.83em;
+87:        margin-block-end: 0.83em;
+88:      }
+89:      h1 {
+90:        display: block;
+91:        font-size: 2em;
+92:        margin-block-start: 0.67em;
+93:        margin-block-end: 0.67em;
+94:        margin-inline-start: 0px;
+95:        margin-inline-end: 0px;
+96:        font-weight: bold;
+97:        unicode-bidi: isolate;
+98:      }
+99:        .lead {
+100:        font-family: "Montserrat", sans-serif;
+101:        font-weight: 300;
+102:        letter-spacing: 0.01em;
+103:        line-height: 1.6;
+104:      }
+105:      .lead {
+106:        font-size: 1.25rem;
+107:        font-weight: 300;
+108:      }
+109:      p {
+110:        margin-top: 0;
+111:        margin-bottom: 1rem;
+112:      }
+113:      .breadcrumb-item a {
+114:        color: var(--primary);
+115:        text-decoration: none;
+116:      }
+117:      li {
+118:        display: list-item;
+119:        text-align: -webkit-match-parent;
+120:        unicode-bidi: isolate;
+121:      }
+122:    </style>
+123:    <!-- Page Header -->
+124:    <section class="page-header">
+125:      <div class="container">
+126:        <div class="row">
+127:          <div class="col-lg-8 page-header-content">
+128:            <nav aria-label="breadcrumb">
+129:              <ol class="breadcrumb">
+130:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+131:                <li class="breadcrumb-item active" aria-current="page">
+132:                  Papelaria Digital
+133:                </li>
+134:              </ol>
+135:            </nav>
+136:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+137:            <p class="lead">
+138:              Recursos digitais premium para elevar sua arte ao próximo nível
+139:            </p>
+140:          </div>
+141:        </div>
+142:      </div>
+143:    </section>
+144:    <!-- Filters Section -->
+145:    <section class="py-2">
+146:      <div class="container">
+147:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+148:          <div>
+149:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+150:          </div>
+151:          <div class="d-flex flex-wrap">
+152:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+153:            <% GCategoria.order(:nome).each do |g_categoria| %>
+154:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+155:            <% end %>
+156:          </div>
+157:          <% if @produtos.present? %>
+158:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+159:          <% else %>
+160:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+161:          </div>
+162:        </div>
+163:      </section>
+164:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:167: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:25:50 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:166: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      .page-header {
+3:        background-color: var(--light-gray);
+4:        padding: 5rem 0 3rem;
+5:        position: relative;
+6:        overflow: hidden;
+7:      }
+8:    
+9:      .page-header::before {
+10:        content: "";
+11:        position: absolute;
+12:        top: 0;
+13:        right: 0;
+14:        width: 100%;
+15:        height: 100%;
+16:        background: linear-gradient(
+17:          135deg,
+18:          rgba(255, 61, 127, 0.05) 0%,
+19:          rgba(156, 39, 176, 0.05) 100%
+20:        );
+21:        z-index: 0;
+22:      }
+23:    
+24:      .page-header-content {
+25:        position: relative;
+26:        z-index: 1;
+27:      }
+28:    
+29:      .page-title {
+30:        font-size: 3rem;
+31:        margin-bottom: 1rem;
+32:        color: var(--dark);
+33:      }
+34:    
+35:      .breadcrumb {
+36:        background: transparent;
+37:        padding: 0;
+38:        margin-bottom: 0;
+39:      }
+40:    
+41:      .breadcrumb-item a {
+42:        color: var(--primary);
+43:        text-decoration: none;
+44:      }
+45:    
+46:      .breadcrumb-item.active {
+47:        color: var(--gray);
+48:      }
+49:      @media (max-width: 768px) {
+50:        .page-title {
+51:            font-size: 2rem;
+52:        }
+53:      }
+54:      @media (max-width: 991.98px) {
+55:        .page-title {
+56:            font-size: 2.5rem;
+57:        }
+58:      }
+59:      .page-title {
+60:        font-size: 3rem;
+61:        margin-bottom: 1rem;
+62:        color: var(--dark);
+63:      }
+64:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+65:        font-family: "Playfair Display", serif;
+66:        font-weight: 600;
+67:        letter-spacing: -0.02em;
+68:        line-height: 1.3;
+69:      }
+70:      .h1, h1 {
+71:        font-size: calc(1.375rem + 1.5vw);
+72:      }
+73:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+74:        margin-top: 0;
+75:        margin-bottom: .5rem;
+76:        font-weight: 500;
+77:        line-height: 1.2;
+78:        color: var(--bs-heading-color);
+79:      }
+80:      *, ::after, ::before {
+81:        box-sizing: border-box;
+82:      }
+83:      :-webkit-any(article, aside, nav, section) h1 {
+84:        font-size: 1.5em;
+85:        margin-block-start: 0.83em;
+86:        margin-block-end: 0.83em;
+87:      }
+88:      h1 {
+89:        display: block;
+90:        font-size: 2em;
+91:        margin-block-start: 0.67em;
+92:        margin-block-end: 0.67em;
+93:        margin-inline-start: 0px;
+94:        margin-inline-end: 0px;
+95:        font-weight: bold;
+96:        unicode-bidi: isolate;
+97:      }
+98:        .lead {
+99:        font-family: "Montserrat", sans-serif;
+100:        font-weight: 300;
+101:        letter-spacing: 0.01em;
+102:        line-height: 1.6;
+103:      }
+104:      .lead {
+105:        font-size: 1.25rem;
+106:        font-weight: 300;
+107:      }
+108:      p {
+109:        margin-top: 0;
+110:        margin-bottom: 1rem;
+111:      }
+112:      .breadcrumb-item a {
+113:        color: var(--primary);
+114:        text-decoration: none;
+115:      }
+116:      li {
+117:        display: list-item;
+118:        text-align: -webkit-match-parent;
+119:        unicode-bidi: isolate;
+120:      }
+121:    </style>
+122:    <!-- Page Header -->
+123:    <section class="page-header">
+124:      <div class="container">
+125:        <div class="row">
+126:          <div class="col-lg-8 page-header-content">
+127:            <nav aria-label="breadcrumb">
+128:              <ol class="breadcrumb">
+129:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+130:                <li class="breadcrumb-item active" aria-current="page">
+131:                  Papelaria Digital
+132:                </li>
+133:              </ol>
+134:            </nav>
+135:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+136:            <p class="lead">
+137:              Recursos digitais premium para elevar sua arte ao próximo nível
+138:            </p>
+139:          </div>
+140:        </div>
+141:      </div>
+142:    </section>
+143:    <!-- Filters Section -->
+144:    <section class="py-2">
+145:      <div class="container">
+146:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+147:          <div>
+148:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+149:          </div>
+150:          <div class="d-flex flex-wrap">
+151:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+152:            <% GCategoria.order(:nome).each do |g_categoria| %>
+153:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+154:            <% end %>
+155:          </div>
+156:          <% if @produtos.present? %>
+157:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+158:          <% else %>
+159:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+160:          </div>
+161:        </div>
+162:      </section>
+163:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:166: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:26:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 1.5ms | GC: 0.4ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.6ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 4.7ms (0 queries, 0 cached) | GC: 18.6ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:166: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      .page-header {
+3:        background-color: var(--light-gray);
+4:        padding: 5rem 0 3rem;
+5:        position: relative;
+6:        overflow: hidden;
+7:      }
+8:    
+9:      .page-header::before {
+10:        content: "";
+11:        position: absolute;
+12:        top: 0;
+13:        right: 0;
+14:        width: 100%;
+15:        height: 100%;
+16:        background: linear-gradient(
+17:          135deg,
+18:          rgba(255, 61, 127, 0.05) 0%,
+19:          rgba(156, 39, 176, 0.05) 100%
+20:        );
+21:        z-index: 0;
+22:      }
+23:    
+24:      .page-header-content {
+25:        position: relative;
+26:        z-index: 1;
+27:      }
+28:    
+29:      .page-title {
+30:        font-size: 3rem;
+31:        margin-bottom: 1rem;
+32:        color: var(--dark);
+33:      }
+34:    
+35:      .breadcrumb {
+36:        background: transparent;
+37:        padding: 0;
+38:        margin-bottom: 0;
+39:      }
+40:    
+41:      .breadcrumb-item a {
+42:        color: var(--primary);
+43:        text-decoration: none;
+44:      }
+45:    
+46:      .breadcrumb-item.active {
+47:        color: var(--gray);
+48:      }
+49:      @media (max-width: 768px) {
+50:        .page-title {
+51:            font-size: 2rem;
+52:        }
+53:      }
+54:      @media (max-width: 991.98px) {
+55:        .page-title {
+56:            font-size: 2.5rem;
+57:        }
+58:      }
+59:      .page-title {
+60:        font-size: 3rem;
+61:        margin-bottom: 1rem;
+62:        color: var(--dark);
+63:      }
+64:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+65:        font-family: "Playfair Display", serif;
+66:        font-weight: 600;
+67:        letter-spacing: -0.02em;
+68:        line-height: 1.3;
+69:      }
+70:      .h1, h1 {
+71:        font-size: calc(1.375rem + 1.5vw);
+72:      }
+73:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+74:        margin-top: 0;
+75:        margin-bottom: .5rem;
+76:        font-weight: 500;
+77:        line-height: 1.2;
+78:        color: var(--bs-heading-color);
+79:      }
+80:      *, ::after, ::before {
+81:        box-sizing: border-box;
+82:      }
+83:      :-webkit-any(article, aside, nav, section) h1 {
+84:        font-size: 1.5em;
+85:        margin-block-start: 0.83em;
+86:        margin-block-end: 0.83em;
+87:      }
+88:      h1 {
+89:        display: block;
+90:        font-size: 2em;
+91:        margin-block-start: 0.67em;
+92:        margin-block-end: 0.67em;
+93:        margin-inline-start: 0px;
+94:        margin-inline-end: 0px;
+95:        font-weight: bold;
+96:        unicode-bidi: isolate;
+97:      }
+98:        .lead {
+99:        font-family: "Montserrat", sans-serif;
+100:        font-weight: 300;
+101:        letter-spacing: 0.01em;
+102:        line-height: 1.6;
+103:      }
+104:      .lead {
+105:        font-size: 1.25rem;
+106:        font-weight: 300;
+107:      }
+108:      p {
+109:        margin-top: 0;
+110:        margin-bottom: 1rem;
+111:      }
+112:      .breadcrumb-item a {
+113:        color: var(--primary);
+114:        text-decoration: none;
+115:      }
+116:      li {
+117:        display: list-item;
+118:        text-align: -webkit-match-parent;
+119:        unicode-bidi: isolate;
+120:      }
+121:    </style>
+122:    <!-- Page Header -->
+123:    <section class="page-header">
+124:      <div class="container">
+125:        <div class="row">
+126:          <div class="col-lg-8 page-header-content">
+127:            <nav aria-label="breadcrumb">
+128:              <ol class="breadcrumb">
+129:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+130:                <li class="breadcrumb-item active" aria-current="page">
+131:                  Papelaria Digital
+132:                </li>
+133:              </ol>
+134:            </nav>
+135:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+136:            <p class="lead">
+137:              Recursos digitais premium para elevar sua arte ao próximo nível
+138:            </p>
+139:          </div>
+140:        </div>
+141:      </div>
+142:    </section>
+143:    <!-- Filters Section -->
+144:    <section class="py-2">
+145:      <div class="container">
+146:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+147:          <div>
+148:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+149:          </div>
+150:          <div class="d-flex flex-wrap">
+151:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+152:            <% GCategoria.order(:nome).each do |g_categoria| %>
+153:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+154:            <% end %>
+155:          </div>
+156:          <% if @produtos.present? %>
+157:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+158:          <% else %>
+159:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+160:          </div>
+161:        </div>
+162:      </section>
+163:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:166: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:26:18 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+  @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  :-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+    .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:166: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      .page-header {
+3:        background-color: var(--light-gray);
+4:        padding: 5rem 0 3rem;
+5:        position: relative;
+6:        overflow: hidden;
+7:      }
+8:    
+9:      .page-header::before {
+10:        content: "";
+11:        position: absolute;
+12:        top: 0;
+13:        right: 0;
+14:        width: 100%;
+15:        height: 100%;
+16:        background: linear-gradient(
+17:          135deg,
+18:          rgba(255, 61, 127, 0.05) 0%,
+19:          rgba(156, 39, 176, 0.05) 100%
+20:        );
+21:        z-index: 0;
+22:      }
+23:    
+24:      .page-header-content {
+25:        position: relative;
+26:        z-index: 1;
+27:      }
+28:    
+29:      .page-title {
+30:        font-size: 3rem;
+31:        margin-bottom: 1rem;
+32:        color: var(--dark);
+33:      }
+34:    
+35:      .breadcrumb {
+36:        background: transparent;
+37:        padding: 0;
+38:        margin-bottom: 0;
+39:      }
+40:    
+41:      .breadcrumb-item a {
+42:        color: var(--primary);
+43:        text-decoration: none;
+44:      }
+45:    
+46:      .breadcrumb-item.active {
+47:        color: var(--gray);
+48:      }
+49:      @media (max-width: 768px) {
+50:        .page-title {
+51:            font-size: 2rem;
+52:        }
+53:      }
+54:      @media (max-width: 991.98px) {
+55:        .page-title {
+56:            font-size: 2.5rem;
+57:        }
+58:      }
+59:      .page-title {
+60:        font-size: 3rem;
+61:        margin-bottom: 1rem;
+62:        color: var(--dark);
+63:      }
+64:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+65:        font-family: "Playfair Display", serif;
+66:        font-weight: 600;
+67:        letter-spacing: -0.02em;
+68:        line-height: 1.3;
+69:      }
+70:      .h1, h1 {
+71:        font-size: calc(1.375rem + 1.5vw);
+72:      }
+73:      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+74:        margin-top: 0;
+75:        margin-bottom: .5rem;
+76:        font-weight: 500;
+77:        line-height: 1.2;
+78:        color: var(--bs-heading-color);
+79:      }
+80:      *, ::after, ::before {
+81:        box-sizing: border-box;
+82:      }
+83:      :-webkit-any(article, aside, nav, section) h1 {
+84:        font-size: 1.5em;
+85:        margin-block-start: 0.83em;
+86:        margin-block-end: 0.83em;
+87:      }
+88:      h1 {
+89:        display: block;
+90:        font-size: 2em;
+91:        margin-block-start: 0.67em;
+92:        margin-block-end: 0.67em;
+93:        margin-inline-start: 0px;
+94:        margin-inline-end: 0px;
+95:        font-weight: bold;
+96:        unicode-bidi: isolate;
+97:      }
+98:        .lead {
+99:        font-family: "Montserrat", sans-serif;
+100:        font-weight: 300;
+101:        letter-spacing: 0.01em;
+102:        line-height: 1.6;
+103:      }
+104:      .lead {
+105:        font-size: 1.25rem;
+106:        font-weight: 300;
+107:      }
+108:      p {
+109:        margin-top: 0;
+110:        margin-bottom: 1rem;
+111:      }
+112:      .breadcrumb-item a {
+113:        color: var(--primary);
+114:        text-decoration: none;
+115:      }
+116:      li {
+117:        display: list-item;
+118:        text-align: -webkit-match-parent;
+119:        unicode-bidi: isolate;
+120:      }
+121:    </style>
+122:    <!-- Page Header -->
+123:    <section class="page-header">
+124:      <div class="container">
+125:        <div class="row">
+126:          <div class="col-lg-8 page-header-content">
+127:            <nav aria-label="breadcrumb">
+128:              <ol class="breadcrumb">
+129:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+130:                <li class="breadcrumb-item active" aria-current="page">
+131:                  Papelaria Digital
+132:                </li>
+133:              </ol>
+134:            </nav>
+135:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+136:            <p class="lead">
+137:              Recursos digitais premium para elevar sua arte ao próximo nível
+138:            </p>
+139:          </div>
+140:        </div>
+141:      </div>
+142:    </section>
+143:    <!-- Filters Section -->
+144:    <section class="py-2">
+145:      <div class="container">
+146:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+147:          <div>
+148:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+149:          </div>
+150:          <div class="d-flex flex-wrap">
+151:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+152:            <% GCategoria.order(:nome).each do |g_categoria| %>
+153:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+154:            <% end %>
+155:          </div>
+156:          <% if @produtos.present? %>
+157:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+158:          <% else %>
+159:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+160:          </div>
+161:        </div>
+162:      </section>
+163:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:166: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:26:31 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 3.8ms | GC: 3.1ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.0ms | GC: 3.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.6ms (0 queries, 0 cached) | GC: 7.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <style>
+  /* Page Header */
+  .page-header {
+    background-color: var(--light-gray);
+    padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 61, 127, 0.05) 0%,
+      rgba(156, 39, 176, 0.05) 100%
+    );
+    z-index: 0;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .page-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb-item.active {
+    color: var(--gray);
+  }
+</style>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Papelaria Digital
+            </li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Papelaria Digital para Lettering</h1>
+        <p class="lead">
+          Recursos digitais premium para elevar sua arte ao próximo nível
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Filters Section -->
+<section class="py-2">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+      <div>
+        <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+      </div>
+      <div class="d-flex flex-wrap">
+        <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+        <% GCategoria.order(:nome).each do |g_categoria| %>
+          <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+        <% end %>
+      </div>
+      <% if @produtos.present? %>
+        <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+      <% else %>
+        <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/notice' %>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/projetos/github/estudecomevelyn-oficial/app/views/home/papelaria.html.erb:127: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <style>
+2:      /* Page Header */
+3:      .page-header {
+4:        background-color: var(--light-gray);
+5:        padding: 5rem 0 3rem;
+6:        position: relative;
+7:        overflow: hidden;
+8:      }
+9:    
+10:      .page-header::before {
+11:        content: "";
+12:        position: absolute;
+13:        top: 0;
+14:        right: 0;
+15:        width: 100%;
+16:        height: 100%;
+17:        background: linear-gradient(
+18:          135deg,
+19:          rgba(255, 61, 127, 0.05) 0%,
+20:          rgba(156, 39, 176, 0.05) 100%
+21:        );
+22:        z-index: 0;
+23:      }
+24:    
+25:      .page-header-content {
+26:        position: relative;
+27:        z-index: 1;
+28:      }
+29:    
+30:      .page-title {
+31:        font-size: 3rem;
+32:        margin-bottom: 1rem;
+33:        color: var(--dark);
+34:      }
+35:    
+36:      @media (max-width: 768px) {
+37:        .page-title {
+38:          font-size: 2rem;
+39:        }
+40:      }
+41:    
+42:      @media (max-width: 991.98px) {
+43:        .page-title {
+44:          font-size: 2.5rem;
+45:        }
+46:      }
+47:    
+48:      h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+49:        font-family: "Playfair Display", serif;
+50:        font-weight: 600;
+51:        letter-spacing: -0.02em;
+52:        line-height: 1.3;
+53:      }
+54:    
+55:      .lead {
+56:        font-family: "Montserrat", sans-serif;
+57:        font-weight: 300;
+58:        letter-spacing: 0.01em;
+59:        line-height: 1.6;
+60:        font-size: 1.25rem;
+61:      }
+62:    
+63:      p {
+64:        margin-top: 0;
+65:        margin-bottom: 1rem;
+66:      }
+67:    
+68:      .breadcrumb {
+69:        background: transparent;
+70:        padding: 0;
+71:        margin-bottom: 0;
+72:      }
+73:    
+74:      .breadcrumb-item a {
+75:        color: var(--primary);
+76:        text-decoration: none;
+77:      }
+78:    
+79:      .breadcrumb-item.active {
+80:        color: var(--gray);
+81:      }
+82:    </style>
+83:    <!-- Page Header -->
+84:    <section class="page-header">
+85:      <div class="container">
+86:        <div class="row">
+87:          <div class="col-lg-8 page-header-content">
+88:            <nav aria-label="breadcrumb">
+89:              <ol class="breadcrumb">
+90:                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+91:                <li class="breadcrumb-item active" aria-current="page">
+92:                  Papelaria Digital
+93:                </li>
+94:              </ol>
+95:            </nav>
+96:            <h1 class="page-title">Papelaria Digital para Lettering</h1>
+97:            <p class="lead">
+98:              Recursos digitais premium para elevar sua arte ao próximo nível
+99:            </p>
+100:          </div>
+101:        </div>
+102:      </div>
+103:    </section>
+104:    <!-- Filters Section -->
+105:    <section class="py-2">
+106:      <div class="container">
+107:        <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+108:          <div>
+109:            <h5 class="mb-3 mb-md-0">Filtrar por:</h5>
+110:          </div>
+111:          <div class="d-flex flex-wrap">
+112:            <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
+113:            <% GCategoria.order(:nome).each do |g_categoria| %>
+114:              <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
+115:            <% end %>
+116:          </div>
+117:          <% if @produtos.present? %>
+118:            <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+119:          <% else %>
+120:            <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+121:          </div>
+122:        </div>
+123:      </section>
+124:      <%= render 'shared/notice' %>
+  
+app/views/home/papelaria.html.erb:127: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:26:43 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.5ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:113
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:118
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:118
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 23.4ms | GC: 0.8ms)
+  Rendered shared/_notice.html.erb (Duration: 0.6ms | GC: 0.1ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 48.0ms | GC: 1.2ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 86.3ms | GC: 1.8ms)
+Completed 200 OK in 99ms (Views: 77.9ms | ActiveRecord: 11.8ms (5 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:26:44 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: kr0wcxh6l2wwzukw6zqbjtfv9435 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:26:44 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:26:55 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 7.1ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.4ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 1.2ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:26:55 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:27:12 -0400
+Processing by HomeController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 32.8ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 33.9ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 50.5ms | GC: 0.0ms)
+Completed 200 OK in 63ms (Views: 44.2ms | ActiveRecord: 9.6ms (5 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:27:12 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:27:12 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 7.3ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 7.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.6ms | GC: 0.6ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 1.5ms (5 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:27:12 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:27:14 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 8.0ms | GC: 0.3ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 8.5ms | GC: 0.3ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 12.0ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 1.3ms (5 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:27:14 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:27:16 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.5ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:67
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:72
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:72
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 3.7ms | GC: 0.2ms)
+  Rendered shared/_notice.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 10.0ms | GC: 0.2ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.5ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 13.2ms | GC: 0.4ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.2ms (5 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:27:16 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:27:53 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:81
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 18.8ms | GC: 0.3ms)
+  Rendered shared/_notice.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 36.7ms | GC: 0.5ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.8ms | GC: 0.1ms)
+  Rendered layout layouts/home_application.erb (Duration: 41.7ms | GC: 0.7ms)
+Completed 200 OK in 53ms (Views: 34.7ms | ActiveRecord: 10.6ms (5 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:27:53 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:27:56 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.5ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:81
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 1.2ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:27:56 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:28:21 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:81
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 6.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 11.0ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.9ms (5 queries, 0 cached) | GC: 7.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:28:21 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
