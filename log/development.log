@@ -78682,3 +78682,74 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:30:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 8.6ms | GC: 0.7ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 9.4ms | GC: 0.7ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.3ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 12.4ms | GC: 0.9ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 1.6ms (5 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:30:16 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:30:18 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/home/papelaria.html.erb:81
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:86
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 7.3ms | GC: 0.1ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.5ms | GC: 0.3ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.3ms | GC: 0.5ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.8ms (5 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDozMTo0NC4xNDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--312d80d4aaad1b4f0a836f3279eca1a5550676d3/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:30:18 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddFotoCategoriaToGCategorias (20250412043239)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "g_categorias" ADD "foto_categoria_id" bigint[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE INDEX "index_g_categorias_on_foto_categoria_id" ON "g_categorias" ("foto_categoria_id")[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE "g_categorias" ADD CONSTRAINT "fk_rails_3f08f70145"
+FOREIGN KEY ("foto_categoria_id")
+  REFERENCES "active_storage_attachments" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250412043239') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7124619585715369815)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
