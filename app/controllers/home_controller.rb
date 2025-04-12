@@ -24,7 +24,7 @@ class HomeController < ApplicationController
   end
 
   def papelaria
-    @produtos = IProduto.includes(:categoria).where(status: 1).order(created_at: :desc)
+    @produtos = IProduto.includes(:g_categoria).where(status: 1).order(created_at: :desc)
 
   end
 

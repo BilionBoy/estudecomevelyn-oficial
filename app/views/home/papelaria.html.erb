@@ -1,6 +1,6 @@
 <!-- app/views/home/papelaria.html.erb -->
 <div class="container py-4">
-  <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+  <h1 class="text-2xl font-bold mb-4 text-center">Papelaria Digital</h1>
   <%= render 'shared/notice' %>
   <% if @produtos.present? %>
     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>

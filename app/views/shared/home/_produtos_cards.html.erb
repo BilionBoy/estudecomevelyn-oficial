@@ -2,7 +2,6 @@
   <% produtos.each do |produto| %>
     <div class="col-lg-4 col-md-6 mb-4">
       <div class="card h-100 product-card">
-        <!-- Badge (simulado baseado na data de criação) -->
         <% if produto.created_at && produto.created_at >= 30.days.ago %>
           <span class="badge bg-success product-badge">NOVO</span>
         <% elsif rand(10) > 7 %> <!-- Simulando alguns produtos com desconto -->

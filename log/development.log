@@ -73760,3 +73760,588 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:08:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  [1m[36mIProduto Count (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:22
+  [1m[36mGCategoria Load (1.4ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:31
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 62.1ms | GC: 2.9ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 65.5ms | GC: 3.2ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 117.0ms | GC: 3.2ms)
+Completed 200 OK in 201ms (Views: 103.6ms | ActiveRecord: 34.5ms (5 queries, 0 cached) | GC: 21.6ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:08:23 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: kr0wcxh6l2wwzukw6zqbjtfv9435 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxMzoyMy41NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54db5081333805e322f0cf0af5c2066bf9d9a09d/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxMzoyMy41NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54db5081333805e322f0cf0af5c2066bf9d9a09d/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxMzoyMy41NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--54db5081333805e322f0cf0af5c2066bf9d9a09d/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:08:23 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-04-12 00:08:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:08:38 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 10.4ms | GC: 0.6ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.8ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:11:25 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 12.7ms | GC: 5.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 13.0ms | GC: 5.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 5.5ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:12:32 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 6.0ms | GC: 0.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 6.1ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::AssociationNotFoundError (Association named 'categoria' was not found on IProduto; perhaps you misspelled it?)
+    2: <div class="container py-4">
+    3:   <h1 class="text-2xl font-bold mb-4">Nossa Papelaria Digital</h1>
+    4:   <%= render 'shared/notice' %>
+    5:   <% if @produtos.present? %>
+    6:     <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @produtos } %>
+    7:   <% else %>
+    8:     <p class="text-gray-600">Nenhum produto disponível no momento.</p>
+  
+app/views/home/papelaria.html.erb:5
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:14:20 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 34.4ms | GC: 18.9ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 65.8ms | GC: 34.1ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 14.5ms | GC: 11.9ms)
+  Rendered layout layouts/home_application.erb (Duration: 83.6ms | GC: 47.5ms)
+Completed 200 OK in 93ms (Views: 78.0ms | ActiveRecord: 8.2ms (4 queries, 0 cached) | GC: 47.9ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:14:21 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--347dd758c5461a69c417649d81211c5dff5186f0", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: kr0wcxh6l2wwzukw6zqbjtfv9435 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:14:21 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:14:38 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 14.1ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 26.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 7.2ms | GC: 4.9ms)
+  Rendered layout layouts/home_application.erb (Duration: 35.2ms | GC: 4.9ms)
+Completed 200 OK in 46ms (Views: 30.4ms | ActiveRecord: 7.4ms (4 queries, 0 cached) | GC: 5.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:14:38 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:14:52 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 13.2ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 26.0ms | GC: 0.4ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 8.7ms | GC: 6.7ms)
+  Rendered layout layouts/home_application.erb (Duration: 36.3ms | GC: 7.1ms)
+Completed 200 OK in 46ms (Views: 31.1ms | ActiveRecord: 7.5ms (4 queries, 0 cached) | GC: 7.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:14:52 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:14:59 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.6ms | GC: 0.2ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 14.5ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 27.8ms | GC: 0.4ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 9.0ms | GC: 6.9ms)
+  Rendered layout layouts/home_application.erb (Duration: 38.4ms | GC: 7.2ms)
+Completed 200 OK in 49ms (Views: 32.6ms | ActiveRecord: 8.5ms (4 queries, 0 cached) | GC: 7.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:14:59 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:15:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.6ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 6.4ms | GC: 0.3ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 7.9ms | GC: 1.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.3ms | GC: 1.0ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 1.4ms (5 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:15:16 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 3.0ms | GC: 0.1ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 7.0ms | GC: 0.1ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layout layouts/home_application.erb (Duration: 9.4ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:16 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:15:16 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.1ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.0ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:16 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:15:17 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 7.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 6.4ms | GC: 5.2ms)
+  Rendered layout layouts/home_application.erb (Duration: 14.9ms | GC: 5.2ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 5.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:17 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:15:18 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.6ms | GC: 0.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 8.4ms | GC: 1.0ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.9ms (5 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:18 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:15:19 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.9ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:19 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:15:20 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 4.9ms | GC: 0.1ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 5.4ms | GC: 0.1ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 9.9ms | GC: 1.3ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.0ms (5 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:20 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:15:39 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 9.2ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:39 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-12 00:15:42 -0400
+Processing by HomeController#index as HTML
+  [1m[36mIProduto Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/home_controller.rb:19:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering home/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:30
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered home/index.html.erb within layouts/home_application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 7.9ms | GC: 0.6ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.0ms (5 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:42 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:15:47 -0400
+Processing by HomeController#papelaria as HTML
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 7.4ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 10.2ms | GC: 0.4ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:15:47 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:16:15 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.8ms | GC: 0.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 9.8ms | GC: 4.9ms)
+Completed 200 OK in 19ms (Views: 11.0ms | ActiveRecord: 1.4ms (0 queries, 0 cached) | GC: 4.9ms)
+
+
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-12 00:16:23 -0400
+Processing by HomeController#papelaria as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:7)
+  Rendering layout layouts/home_application.erb
+  Rendering home/papelaria.html.erb within layouts/home_application
+  Rendered shared/_notice.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC[0m  [["status", 1]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1[0m  [["id", 2]]
+  ↳ app/views/home/papelaria.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/home/_produtos_cards.html.erb:21
+  Rendered shared/home/_produtos_cards.html.erb (Duration: 22.9ms | GC: 6.6ms)
+  Rendered home/papelaria.html.erb within layouts/home_application (Duration: 34.9ms | GC: 6.6ms)
+  Rendered shared/home/_navbar.html.erb (Duration: 2.9ms | GC: 0.6ms)
+  Rendered layout layouts/home_application.erb (Duration: 39.8ms | GC: 7.1ms)
+Completed 200 OK in 50ms (Views: 35.3ms | ActiveRecord: 7.2ms (4 queries, 0 cached) | GC: 7.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJrcjB3Y3hoNmwyd3d6dWt3NnpxYmp0ZnY5NDM1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYWRlc2l2by1kZS1wYXJlZGUtZnJhc2UtbGV0dGVyaW5nLWFwcmVjaWUtYXMtcGVxdWVuYXMtY29pc2FzLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ2FkZXNpdm8tZGUtcGFyZWRlLWZyYXNlLWxldHRlcmluZy1hcHJlY2llLWFzLXBlcXVlbmFzLWNvaXNhcy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xMlQwNDoxOToyMS4wOTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fb3998b92460d7148bfff4f3323db7d2c95aee6/adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas.jpg" for 127.0.0.1 at 2025-04-12 00:16:23 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"adesivo-de-parede-frase-lettering-aprecie-as-pequenas-coisas"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
