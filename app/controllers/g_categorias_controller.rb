@@ -51,7 +51,7 @@ class GCategoriasController < ApplicationController
 
   def g_categoria_params
     permitted_attributes = GCategoria.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
-    params.require(:g_categoria).permit(permitted_attributes.map(&:to_sym))
+    params.require(:g_categoria).permit(permitted_attributes.map(&:to_sym), :foto_categoria)
   end
 
   def handle_not_found

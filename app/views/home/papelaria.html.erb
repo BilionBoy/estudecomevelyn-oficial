@@ -47,6 +47,75 @@
     margin-bottom: 0.75rem;
     color: var(--dark);
     line-height: 1.3;}
+
+     /* Product Categories */
+  .category-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+
+  .category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.6)
+    );
+    z-index: 1;
+    transition: var(--transition);
+  }
+
+  .category-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 1rem;
+    color: var(--light);
+  }
+
+  .category-title {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .category-count {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .category-card:hover .category-img {
+    transform: scale(1.1);
+  }
+
+  .category-card:hover .category-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 61, 127, 0.4),
+      rgba(156, 39, 176, 0.7)
+    );
+  }
 </style>
 <!-- Page Header -->
 <section class="page-header">
@@ -57,7 +126,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">
-              Papelaria Digital
+              Eve Notes
             </li>
           </ol>
         </nav>
@@ -66,6 +135,28 @@
           Recursos digitais premium para elevar sua arte ao próximo nível
         </p>
       </div>
+    </div>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <% @g_categorias.each do |categoria| %>
+        <div class="col-lg-3 col-md-6">
+          <div class="category-card position-relative overflow-hidden">
+            <% if categoria.foto_categoria.attached? %>
+              <%= image_tag categoria.foto_categoria.variant(resize_to_fill: [800, 500]), class: "category-img", alt: categoria.nome %>
+            <% else %>
+              <%= image_tag "https://via.placeholder.com/800x500", class: "category-img", alt: "Imagem não disponível" %>
+            <% end %>
+            <div class="category-overlay"></div>
+            <div class="category-content">
+              <h3 class="category-title"><%= categoria.nome %></h3>
+              <p class="category-count"><%= categoria.i_produtos.count %> produtos</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

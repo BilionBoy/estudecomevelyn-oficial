@@ -3,10 +3,8 @@ class HomeController < ApplicationController
 
   def index
     @g_categorias = GCategoria.all
-
     if params[:categoria].present?
       categoria = GCategoria.find_by(slug: params[:categoria])
-
       if categoria.present?
         @pagy, @i_produtos = pagy(
           categoria.i_produtos.where(status: :ativo).order(created_at: :desc),
@@ -24,9 +22,12 @@ class HomeController < ApplicationController
   end
 
   def papelaria
-    @produtos = IProduto.includes(:g_categoria).where(status: 1).order(created_at: :desc)
-
+    @produtos = IProduto.where(status: 1).order(created_at: :desc)
+    @g_categorias = GCategoria.order(:nome) # Não é necessário incluir :foto_categoria
   end
+  
+  
+  
 
   def cursos
   end
