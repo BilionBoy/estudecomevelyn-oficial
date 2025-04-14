@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class StoreController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :papelaria, :cursos, :blog]
 
   def index

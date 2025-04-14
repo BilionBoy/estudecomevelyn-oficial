@@ -15,7 +15,7 @@
         </p>
         <div class="d-flex gap-3">
           <%= link_to "Ver Papelaria Digital", root_path, class: "btn btn-primary btn-lg rounded-pill" %>
-          <%= link_to "Explorar Cursos", root_path, class: "btn btn-light btn-lg rounded-pill" %>
+          <%= link_to "Explorar Cursos",       root_path, class: "btn btn-light btn-lg rounded-pill" %>
         </div>
       </div>
       <div class="col-lg-6 hero-img mt-5 mt-lg-0">
@@ -31,12 +31,10 @@
       <h2 class="fw-bold">Papelaria Digital em Destaque</h2>
       <p class="text-muted">Recursos digitais premium para elevar sua arte</p>
     </div>
-    <%= render partial: 'shared/home/produtos_cards', locals: { produtos: @i_produtos } %>
+    <%= render partial: 'store/shared/produtos_cards', locals: { produtos: @i_produtos } %>
     <div class="text-center mt-5">
       <%= link_to "Ver Todos os manuais",papelaria_path, class: "btn btn-primary rounded-pill px-4 py-2" %>
     </div>
   </div>
 </section>
-<style>
-  
-</style>
+<style></style>

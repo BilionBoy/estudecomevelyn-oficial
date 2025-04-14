@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def set_layout_by_controller
     if devise_controller?
       "devise_application"
-    elsif controller_name == "home"
+    elsif controller_name == "store"
       "home_application"
     else
       "application"
