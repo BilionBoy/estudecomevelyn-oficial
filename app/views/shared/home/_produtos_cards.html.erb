@@ -1,6 +1,6 @@
 <div class="row g-4">
   <% produtos.each do |produto| %>
-    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="col-lg-4 col-md-6 mb-4 product-item" data-categoria="<%= produto.g_categoria&.slug %>">
       <div class="card h-100 product-card">
         <% if produto.created_at && produto.created_at >= 30.days.ago %>
           <span class="badge bg-success product-badge">NOVO</span>
@@ -61,3 +61,44 @@
     </div>
   <% end %>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+  const productCards = document.querySelectorAll(".product-item[data-categoria]");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remover classe 'active' de todos os botões e aplicar no clicado
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const categoriaSelecionada = btn.dataset.categoria;
+
+        productCards.forEach((card) => {
+          const categoriaDoProduto = card.dataset.categoria;
+
+          // Se for "todos", mostra todos os produtos
+          if (categoriaSelecionada === "todos" || categoriaSelecionada === categoriaDoProduto) {
+            card.style.display = "block";  // Exibe o produto
+          } else {
+            card.style.display = "none";   // Esconde o produto
+          }
+        });
+      });
+    });
+
+    // Certifique-se de que os produtos estão sendo exibidos inicialmente
+    const activeFilter = document.querySelector(".filter-btn.active");
+    const categoriaInicial = activeFilter ? activeFilter.dataset.categoria : "todos";
+
+    productCards.forEach((card) => {
+      const categoriaDoProduto = card.dataset.categoria;
+
+      if (categoriaInicial === "todos" || categoriaInicial === categoriaDoProduto) {
+        card.style.display = "block";  // Exibe o produto
+      } else {
+        card.style.display = "none";   // Esconde o produto
+      }
+    });
+  });
+</script>

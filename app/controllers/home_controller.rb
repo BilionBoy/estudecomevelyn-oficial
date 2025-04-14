@@ -22,13 +22,30 @@ class HomeController < ApplicationController
   end
 
   def papelaria
-    @produtos = IProduto.where(status: 1).order(created_at: :desc)
-    @g_categorias = GCategoria.order(:nome) # Não é necessário incluir :foto_categoria
+    @g_categorias = GCategoria.order(:nome)
+  
+    if params[:categoria].present?
+      categoria = GCategoria.find_by(slug: params[:categoria])
+      if categoria.present?
+        @pagy, @produtos = pagy(
+          categoria.i_produtos.where(status: :ativo).order(created_at: :desc),
+          items: 6
+        )
+      else
+        @produtos = []
+      end
+    else
+      @pagy, @produtos = pagy(
+        IProduto.where(status: :ativo).order(created_at: :desc),
+        items: 6
+      )
+    end
+  
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
-  
-  
-  
-
   def cursos
   end
 

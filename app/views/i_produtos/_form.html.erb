@@ -32,6 +32,11 @@
           <%= f.input :arquivo, as: :file, label: "Arquivo do Produto" %>
         </div>
         <div class="col-5">
+          <% if f.object.imagem.attached? %>
+            <%= image_tag url_for(f.object.imagem), alt: "Imagem de Capa", class: "img-thumbnail mb-2" %>
+          <% else %>
+            <p>Não há imagem cadastrada.</p>
+          <% end %>
           <%= f.input :imagem, as: :file, label: "Imagem de Capa" %>
         </div>
         <div class="col-5">
