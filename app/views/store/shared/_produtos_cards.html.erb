@@ -53,7 +53,7 @@
             <span>R$ <%= number_to_currency(produto.preco, unit: "", separator: ",", delimiter: ".") %></span>
           </div>
           <!-- Botão de adicionar ao carrinho -->
-          <button class="btn btn-primary rounded-pill w-100">
+          <button class="btn btn-primary rounded-pill w-100" data-produto-id="<%= produto.id %>" onclick="adicionarAoCarrinho(this)">
             Adicionar ao Carrinho
           </button>
         </div>
@@ -101,4 +101,20 @@
       }
     });
   });
+    function adicionarAoCarrinho(button) {
+    const produtoId = button.dataset.produtoId;
+
+    fetch(`/carrinho/add?produto_id=${produtoId}`, {
+      method: 'POST',
+      headers: {
+        'X-CSRF-Token': '<%= form_authenticity_token %>'
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Adicionar lógica de resposta aqui
+      alert('Produto adicionado ao carrinho');
+    })
+    .catch(error => console.error('Erro:', error));
+  }
 </script>
