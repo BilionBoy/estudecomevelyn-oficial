@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_09_064922) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_15_040351) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,6 +84,19 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_09_064922) do
     t.index ["slug"], name: "index_i_produtos_on_slug", unique: true
   end
 
+  create_table "i_promocao_produtos", force: :cascade do |t|
+    t.bigint "i_promocao_id"
+    t.bigint "i_produto_id"
+    t.decimal "preco_promocional", precision: 10, scale: 2
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["i_produto_id"], name: "index_i_promocao_produtos_on_i_produto_id"
+    t.index ["i_promocao_id"], name: "index_i_promocao_produtos_on_i_promocao_id"
+  end
+
   create_table "i_promocoes", force: :cascade do |t|
     t.string "nome"
     t.text "descricao"
@@ -125,5 +138,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_09_064922) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "g_categorias", "segmentos"
   add_foreign_key "i_produtos", "g_categorias"
+  add_foreign_key "i_promocao_produtos", "i_produtos"
+  add_foreign_key "i_promocao_produtos", "i_promocoes"
   add_foreign_key "users", "g_tipo_usuarios"
 end

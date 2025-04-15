@@ -116,5 +116,34 @@
       alert('Produto adicionado ao carrinho');
     })
     .catch(error => console.error('Erro:', error));
+
+    function adicionarAoCarrinho(buttonElement) {
+  // Pegando o ID do produto diretamente do atributo data-produto-id
+  const produtoId = buttonElement.getAttribute('data-produto-id');
+
+  if (!produtoId) {
+    console.error("ID do produto não encontrado.");
+    alert("Erro: ID do produto não encontrado.");
+    return;
+  }
+
+  // Enviar a requisição para adicionar ao carrinho
+  fetch(`/carrinho/add?produto_id=${produtoId}`, {
+    method: 'POST',
+    headers: {
+      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log("Produto adicionado:", data);
+    alert("Produto adicionado ao carrinho!");
+  })
+  .catch(err => {
+    console.error("Erro:", err);
+    alert("Erro ao adicionar ao carrinho.");
+  });
   }
 </script>

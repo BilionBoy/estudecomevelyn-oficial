@@ -6,10 +6,9 @@ FROM ruby:3.3.5-slim
 # Instala dependências do sistema
 RUN apt-get update -qq && \
     apt-get install -y nodejs npm postgresql-client libpq-dev \
-    ffmpeg && \
+    ffmpeg libvips42 && \
     npm install -g yarn && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
 # Define o diretório de trabalho
 WORKDIR /app
 

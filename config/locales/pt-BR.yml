@@ -27,6 +27,9 @@ pt-BR:
       i_promocao:
         one: "Promoção"
         other: "Promoções"
+      i_promocao_produto:
+        one: "Promoção Produto"
+        other: "Promoções Produtos"
     attributes:
       user:
         nome: "Nome"
@@ -57,7 +60,9 @@ pt-BR:
         descricao: "Descrição"
         ativo: "Ativo"
         slug: "Slug"
-
+      i_promocao_produto:
+        i_produto: "Produto"
+        i_promocao: "Promoção"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"
