@@ -1,7 +1,9 @@
 class IProduto < ApplicationRecord
   has_one_attached :arquivo
   has_one_attached :imagem
-  
+  has_many :i_promocoes, through: :i_promocao_produtos
+  has_many :i_promocao_produtos 
+
   belongs_to :g_categoria
 
   enum status: { inativo: 0, ativo: 1 }

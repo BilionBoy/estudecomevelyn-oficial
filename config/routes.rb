@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :i_promocao_produtos
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
 
   # Admin
@@ -10,12 +11,7 @@ Rails.application.routes.draw do
   get '/blog',      to: 'store#blog',      as: :blog
   get '/cursos',    to: 'store#cursos',    as: :cursos
 
-  # Carrinho
-  resource :carrinho, only: [:index] do
-    post   :add,    to: 'store/carrinho#add',    as: :add
-    delete :remove, to: 'store/carrinho#remove', as: :remove
-    delete :clear,  to: 'store/carrinho#clear',  as: :clear
-  end
+ 
 
   # Rotas Scaffold
   resources :users, only: %i[index show edit update destroy]
