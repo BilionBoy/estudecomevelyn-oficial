@@ -90501,3 +90501,241 @@ Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | G
 
 
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:9)
+  [1m[36mIProduto Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:17:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (1.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 62.8ms | GC: 2.3ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 64.5ms | GC: 2.3ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 6.7ms | GC: 0.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 136.3ms | GC: 23.3ms)
+Completed 200 OK in 237ms (Views: 123.5ms | ActiveRecord: 36.2ms (5 queries, 0 cached) | GC: 50.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+Processing by StoreController#index as HTML
+  [1m[36mIProduto Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:17:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.5ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 16.2ms | GC: 1.7ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 17.5ms | GC: 1.7ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--6208b7fff27927515298adc521e9cc740e62cfdd/tec.jpg" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+  Rendered layout layouts/home_application.erb (Duration: 24.5ms | GC: 1.7ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 2.4ms (5 queries, 0 cached) | GC: 1.7ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--6208b7fff27927515298adc521e9cc740e62cfdd", "filename"=>"tec"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: gd213jycxdvb3k5ktc5syukpa6eu (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoxOS41MDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--a7539862d589b234ccbbf9e67483a23a8f780888/tec.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoxOS41MDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--a7539862d589b234ccbbf9e67483a23a8f780888/tec.jpg
+Completed 302 Found in 29ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 14.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoxOS41MDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--a7539862d589b234ccbbf9e67483a23a8f780888/tec.jpg" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tec"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoxOS41MDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--a7539862d589b234ccbbf9e67483a23a8f780888/tec.jpg" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tec"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-04-15 16:29:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/papelaria" for 127.0.0.1 at 2025-04-15 16:29:22 -0400
+Processing by StoreController#papelaria as HTML
+  [1m[36mIProduto Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:38:in `papelaria'
+  Rendering layout layouts/home_application.erb
+  Rendering store/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.5ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/store/papelaria.html.erb:144
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "GCategoria"], ["name", "foto_categoria"], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:147
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:148
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."g_categoria_id" = $1[0m  [["g_categoria_id", 2]]
+  ↳ app/views/store/papelaria.html.erb:155
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "GCategoria"], ["name", "foto_categoria"], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:147
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:148
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."g_categoria_id" = $1[0m  [["g_categoria_id", 8]]
+  ↳ app/views/store/papelaria.html.erb:155
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."nome" ASC[0m
+  ↳ app/views/store/papelaria.html.erb:172
+  [1m[36mIProduto Load (0.5ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/papelaria.html.erb:177
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 7.5ms | GC: 0.0ms)
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered store/papelaria.html.erb within layouts/home_application (Duration: 24.9ms | GC: 0.6ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 27.7ms | GC: 0.6ms)
+Completed 200 OK in 31ms (Views: 24.9ms | ActiveRecord: 3.6ms (13 queries, 1 cached) | GC: 0.6ms)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTcsInB1ciI6ImJsb2JfaWQifX0=--a3b3eb929ffb934f5a8e08e9fb27ff4aa12e9cf4/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOls4MDAsNTAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--c95e9636df434084c541066986fa47c8fa80ad84/TR.webp" for 127.0.0.1 at 2025-04-15 16:29:22 -0400
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTksInB1ciI6ImJsb2JfaWQifX0=--27e7f20ee743da3c6db7865e5f14dd19fe01cebd/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwicmVzaXplX3RvX2ZpbGwiOls4MDAsNTAwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--c95e9636df434084c541066986fa47c8fa80ad84/a.webp" for 127.0.0.1 at 2025-04-15 16:29:22 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoxOS41MDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--a7539862d589b234ccbbf9e67483a23a8f780888/tec.jpg" for 127.0.0.1 at 2025-04-15 16:29:22 -0400
+Processing by ActiveStorage::Representations::RedirectController#show as WEBP
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTksInB1ciI6ImJsb2JfaWQifX0=--27e7f20ee743da3c6db7865e5f14dd19fe01cebd", "variation_key"=>"[FILTERED]", "filename"=>"a"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tec"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::Representations::RedirectController#show as WEBP
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTcsInB1ciI6ImJsb2JfaWQifX0=--a3b3eb929ffb934f5a8e08e9fb27ff4aa12e9cf4", "variation_key"=>"[FILTERED]", "filename"=>"TR"}
+  [1m[36mActiveStorage::VariantRecord Load (1.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 19], ["variation_digest", "80ZRnaMEBAu321gfVfoWREGT6Ho="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 3zo9xher0f4h53m56trimq5o64ep (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIzem85eGhlcjBmNGg1M201NnRyaW1xNW82NGVwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYS53ZWJwXCI7IGZpbGVuYW1lKj1VVEYtOCcnYS53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMTVUMjA6MzQ6MjIuOTU3WiIsInB1ciI6ImJsb2Jfa2V5In19--28442be4ae28467646d722006e6a6304e393c2b0/a.webp)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIzem85eGhlcjBmNGg1M201NnRyaW1xNW82NGVwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYS53ZWJwXCI7IGZpbGVuYW1lKj1VVEYtOCcnYS53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMTVUMjA6MzQ6MjIuOTU3WiIsInB1ciI6ImJsb2Jfa2V5In19--28442be4ae28467646d722006e6a6304e393c2b0/a.webp
+Completed 302 Found in 28ms (ActiveRecord: 7.9ms (4 queries, 0 cached) | GC: 2.1ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIzem85eGhlcjBmNGg1M201NnRyaW1xNW82NGVwIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYS53ZWJwXCI7IGZpbGVuYW1lKj1VVEYtOCcnYS53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMTVUMjA6MzQ6MjIuOTU3WiIsInB1ciI6ImJsb2Jfa2V5In19--28442be4ae28467646d722006e6a6304e393c2b0/a.webp" for 127.0.0.1 at 2025-04-15 16:29:22 -0400
+  [1m[36mActiveStorage::VariantRecord Load (1.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 17], ["variation_digest", "80ZRnaMEBAu321gfVfoWREGT6Ho="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: g1xgw9ueswua6lv8icfqm9mgupsm (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnMXhndzl1ZXN3dWE2bHY4aWNmcW05bWd1cHNtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiVFIud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ1RSLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoyMi45ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--ec45e1b54bdb599a00f26a534b48043b472f0e38/TR.webp)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnMXhndzl1ZXN3dWE2bHY4aWNmcW05bWd1cHNtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiVFIud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ1RSLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoyMi45ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--ec45e1b54bdb599a00f26a534b48043b472f0e38/TR.webp
+Completed 302 Found in 43ms (ActiveRecord: 6.0ms (4 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnMXhndzl1ZXN3dWE2bHY4aWNmcW05bWd1cHNtIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiVFIud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ1RSLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoyMi45ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--ec45e1b54bdb599a00f26a534b48043b472f0e38/TR.webp" for 127.0.0.1 at 2025-04-15 16:29:22 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"a"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"TR"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-04-15 16:29:29 -0400
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 200 OK in 190ms (Views: 0.1ms | ActiveRecord: 6.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-04-15 16:29:29 -0400
+Processing by StoreController#index as HTML
+  [1m[36mIProduto Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:17:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 11.0ms | GC: 0.0ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 11.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:43
+  Rendered store/shared/_navbar.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 18.0ms | GC: 0.9ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 2.4ms (6 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDozNDoxOS41MDhaIiwicHVyIjoiYmxvYl9rZXkifX0=--a7539862d589b234ccbbf9e67483a23a8f780888/tec.jpg" for 127.0.0.1 at 2025-04-15 16:29:29 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tec"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-04-15 16:35:18 -0400
+Processing by StoreController#index as HTML
+  [1m[36mIProduto Count (13.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:17:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.5ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 16.0ms | GC: 1.5ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 16.4ms | GC: 1.5ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 21.1ms | GC: 1.5ms)
+Completed 200 OK in 38ms (Views: 18.9ms | ActiveRecord: 19.8ms (5 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--6208b7fff27927515298adc521e9cc740e62cfdd/tec.jpg" for ::1 at 2025-04-15 16:35:18 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--6208b7fff27927515298adc521e9cc740e62cfdd", "filename"=>"tec"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: gd213jycxdvb3k5ktc5syukpa6eu (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDo0MDoxOC4zOThaIiwicHVyIjoiYmxvYl9rZXkifX0=--fc06a03e5d63da4d398ea4c515cf38d4a4f6e489/tec.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDo0MDoxOC4zOThaIiwicHVyIjoiYmxvYl9rZXkifX0=--fc06a03e5d63da4d398ea4c515cf38d4a4f6e489/tec.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xNVQyMDo0MDoxOC4zOThaIiwicHVyIjoiYmxvYl9rZXkifX0=--fc06a03e5d63da4d398ea4c515cf38d4a4f6e489/tec.jpg" for ::1 at 2025-04-15 16:35:18 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tec"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:9)
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
