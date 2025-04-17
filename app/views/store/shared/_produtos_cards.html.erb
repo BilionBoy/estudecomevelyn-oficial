@@ -62,88 +62,55 @@
   <% end %>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const filterButtons = document.querySelectorAll(".filter-btn");
-  const productCards = document.querySelectorAll(".product-item[data-categoria]");
+  document.addEventListener('DOMContentLoaded', () => {
+    /* --- elementos principais --- */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards  = document.querySelectorAll('.product-item[data-categoria]');
 
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        // Remover classe 'active' de todos os botões e aplicar no clicado
-        filterButtons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
+    /* --- cria (ou reaproveita) o placeholder "nenhum produto" --- */
+    let noProducts = document.getElementById('no-products');
+    if (!noProducts) {
+      noProducts = document.createElement('div');
+      noProducts.id        = 'no-products';
+      noProducts.textContent = 'Nenhum produto nessa categoria';
+      noProducts.className = 'd-flex justify-content-center align-items-center text-muted';
+      noProducts.style.minHeight = '200px';
+      noProducts.style.display   = 'none';
+      document.querySelector('.row.g-4')?.appendChild(noProducts);
+    }
 
-        const categoriaSelecionada = btn.dataset.categoria;
+    /* --- função que executa o filtro propriamente dito --- */
+    function aplicarFiltro(categoria) {
+      let algumVisivel = false;
 
-        productCards.forEach((card) => {
-          const categoriaDoProduto = card.dataset.categoria;
+      productCards.forEach(card => {
+        const categoriaCard = card.dataset.categoria;
+        const mostrar       = categoria === 'todos' || categoria === categoriaCard;
 
-          // Se for "todos", mostra todos os produtos
-          if (categoriaSelecionada === "todos" || categoriaSelecionada === categoriaDoProduto) {
-            card.style.display = "block";  // Exibe o produto
-          } else {
-            card.style.display = "none";   // Esconde o produto
-          }
-        });
+        card.style.display  = mostrar ? 'block' : 'none';
+        if (mostrar) algumVisivel = true;
+      });
+
+      /* Mostra a mensagem se nada ficou visível */
+      noProducts.style.display = algumVisivel ? 'none' : 'flex';
+    }
+
+    /* --- listeners dos botões de filtro --- */
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();   // impede o salto do link “#”
+
+        /* alterna a classe .active */
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        /* aplica o filtro escolhido */
+        aplicarFiltro(btn.dataset.categoria);
       });
     });
 
-    // Certifique-se de que os produtos estão sendo exibidos inicialmente
-    const activeFilter = document.querySelector(".filter-btn.active");
-    const categoriaInicial = activeFilter ? activeFilter.dataset.categoria : "todos";
-
-    productCards.forEach((card) => {
-      const categoriaDoProduto = card.dataset.categoria;
-
-      if (categoriaInicial === "todos" || categoriaInicial === categoriaDoProduto) {
-        card.style.display = "block";  // Exibe o produto
-      } else {
-        card.style.display = "none";   // Esconde o produto
-      }
-    });
+    /* --- filtro inicial ao carregar a página --- */
+    const activeBtn = document.querySelector('.filter-btn.active');
+    aplicarFiltro(activeBtn ? activeBtn.dataset.categoria : 'todos');
   });
-    function adicionarAoCarrinho(button) {
-    const produtoId = button.dataset.produtoId;
-
-    fetch(`/carrinho/add?produto_id=${produtoId}`, {
-      method: 'POST',
-      headers: {
-        'X-CSRF-Token': '<%= form_authenticity_token %>'
-      },
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Adicionar lógica de resposta aqui
-      alert('Produto adicionado ao carrinho');
-    })
-    .catch(error => console.error('Erro:', error));
-
-    function adicionarAoCarrinho(buttonElement) {
-  // Pegando o ID do produto diretamente do atributo data-produto-id
-  const produtoId = buttonElement.getAttribute('data-produto-id');
-
-  if (!produtoId) {
-    console.error("ID do produto não encontrado.");
-    alert("Erro: ID do produto não encontrado.");
-    return;
-  }
-
-  // Enviar a requisição para adicionar ao carrinho
-  fetch(`/carrinho/add?produto_id=${produtoId}`, {
-    method: 'POST',
-    headers: {
-      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
-  })
-  .then(res => res.json())
-  .then(data => {
-    console.log("Produto adicionado:", data);
-    alert("Produto adicionado ao carrinho!");
-  })
-  .catch(err => {
-    console.error("Erro:", err);
-    alert("Erro ao adicionar ao carrinho.");
-  });
-  }
 </script>
