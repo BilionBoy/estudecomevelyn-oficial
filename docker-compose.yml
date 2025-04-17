@@ -16,14 +16,14 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_HOST: db
     volumes:
-      - ./storage:/rails/storage
+      - ./storage:/app/storage
       - ./log:/rails/log
       - ./tmp:/rails/tmp
     ports:
       - "3000:3000"
     env_file:
       - .env
-    command: ["sh", "-c", "./bin/rails assets:precompile && ./bin/rails server -b 0.0.0.0"]
+    command: ["sh", "-c", "bundle exec rails db:migrate && bundle exec rails assets:precompile && bundle exec rails server -b 0.0.0.0"]
 
   db:
     image: postgres:latest

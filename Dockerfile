@@ -9,6 +9,7 @@ RUN apt-get update -qq && \
     ffmpeg libvips42 && \
     npm install -g yarn && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+    
 # Define o diretório de trabalho
 WORKDIR /app
 
