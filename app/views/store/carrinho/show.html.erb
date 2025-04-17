@@ -1,0 +1,26 @@
+<h2>Seu Carrinho</h2>
+<% if @itens.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @itens.each do |item| %>
+        <tr>
+          <td><%= item.i_produto.nome %></td>
+          <td><%= item.quantidade %></td>
+          <td>R$ <%= number_to_currency(item.subtotal, unit: '', separator: ',', delimiter: '.') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p><strong>Total:</strong> R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></p>
+  <%= link_to "Finalizar Compra", "#", class: "botao-finalizar" %>
+<% else %>
+  <p>Seu carrinho está vazio.</p>
+<% end %>
+<%= link_to "Continuar Comprando", produtos_path, class: "botao-continuar" %>

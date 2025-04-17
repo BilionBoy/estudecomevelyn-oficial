@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get '/blog',      to: 'store#blog',      as: :blog
   get '/cursos',    to: 'store#cursos',    as: :cursos
   
-  
+  # Carrinho de Compras
+  resource :carrinho, only: [:show, :create] do
+    resources :itens, only: [:create, :update, :destroy]
+  end
   
   # Rotas Scaffold
   resources :users, only: %i[index show edit update destroy]
