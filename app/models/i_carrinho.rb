@@ -16,9 +16,8 @@ class ICarrinho < ApplicationRecord
     item.quantidade = (item.quantidade || 0) + quantidade
     item.preco_unitario = produto.preco.to_d
     item.subtotal = (item.quantidade * item.preco_unitario).round(2)
-  
-  
     item.save!
+    
     item
   rescue => e
     Rails.logger.error "Falha ao adicionar item: #{e.message}\n#{e.backtrace.join("\n")}"

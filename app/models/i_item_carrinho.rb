@@ -2,18 +2,9 @@ class IItemCarrinho < ApplicationRecord
   belongs_to :i_carrinho
   belongs_to :i_produto
 
-  validates :quantidade, 
-    numericality: { 
-      only_integer: true,
-      greater_than: 0,
-      message: "deve ser um número inteiro maior que zero"
-    }
+  validates :quantidade,numericality: {  only_integer: true, greater_than: 0, message: "deve ser um número inteiro maior que zero"}
 
-  validates :preco_unitario,
-    numericality: {
-      greater_than: 0,
-      message: "deve ser maior que zero"
-    }
+  validates :preco_unitario, numericality: { greater_than: 0,message: "deve ser maior que zero"}
 
   before_validation :set_preco_from_product
 

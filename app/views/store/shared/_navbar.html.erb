@@ -42,9 +42,8 @@
           <% else %>
             <% total_itens = 0 %>
           <% end %>
-          <%= link_to store_carrinho_path, class: "btn btn-link position-relative" do %>
-            <i class="lucide-shopping-cart"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+          <%= link_to store_carrinho_path, class: "btn btn-link position-relative" do %> <i class="lucide-shopping-cart"></i>
+            <span id="carrinho-contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
               <%= total_itens %>
             </span>
           <% end %>
@@ -235,79 +234,3 @@
     }
   });
 </script>
-<style>
-  /* Estilos para o Modal de Login */
-  #loginModal .modal-content {
-    border-radius: 16px;
-    border: none;
-    box-shadow: 0 15px 40px rgba(26, 26, 46, 0.1);
-  }
-
-  #loginModal .modal-title {
-    font-family: "Playfair Display", serif;
-    color: #1a1a2e;
-    font-weight: 600;
-  }
-
-  #loginModal .modal-body {
-    padding: 1.5rem 2rem;
-  }
-
-  #loginModal .form-control {
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    border: 1px solid #e1e1e1;
-    transition: all 0.3s ease;
-  }
-
-  #loginModal .form-control:focus {
-    border-color: #e42278;
-    box-shadow: 0 0 0 0.25rem rgba(228, 34, 120, 0.25);
-  }
-
-  #loginModal .btn-primary {
-    background-color: #e42278;
-    border-color: #e42278;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    box-shadow: 0 4px 14px rgba(228, 34, 120, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  #loginModal .btn-primary:hover {
-    background-color: #ed7bab;
-    border-color: #ed7bab;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(228, 34, 120, 0.4);
-  }
-
-  #loginModal a {
-    color: #e42278;
-    transition: all 0.3s ease;
-  }
-
-  #loginModal a:hover {
-    color: #ed7bab;
-    text-decoration: underline !important;
-  }
-
-  #loginModal .form-check-input:checked {
-    background-color: #e42278;
-    border-color: #e42278;
-  }
-
-  #loginModal .social-login .btn {
-    padding: 0.5rem 1.25rem;
-    transition: all 0.3s ease;
-  }
-
-  #loginModal .social-login .btn:hover {
-    background-color: #f5f5f5;
-    transform: translateY(-2px);
-  }
-
-  #login-error-message {
-    font-size: 0.9rem;
-    border-radius: 8px;
-  }
-</style>
