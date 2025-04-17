@@ -7,10 +7,10 @@ class ICarrinho < ApplicationRecord
   
   def adicionar_item(produto, quantidade)
     item = i_itens_carrinhos.find_or_initialize_by(i_produto: produto)
-    item.quantidade += quantidade
-    item.preco_unitario = produto.preco
+    item.quantidade = (item.quantidade || 0) + quantidade.to_i
+    item.preco_unitario = produto.preco.to_f
     item.subtotal = item.quantidade * item.preco_unitario
-    item.save
+    item.save!
   end
 
   def total

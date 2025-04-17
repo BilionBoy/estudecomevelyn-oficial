@@ -1,17 +1,28 @@
+# app/controllers/store/carrinho_controller.rb
 class Store::CarrinhoController < ApplicationController
-  before_action :set_carrinho, only: [:show, :adicionar_item]
+  before_action :set_carrinho, only: [:show, :adicionar]
 
   def show
     @itens = @carrinho.i_itens_carrinhos
     @total = @carrinho.total
   end
 
-  def adicionar_item
+  def adicionar
     produto = IProduto.find(params[:produto_id])
-    quantidade = params[:quantidade].to_i
-    @carrinho.adicionar_item(produto, quantidade)
+    carrinho = current_user.i_carrinhos.find_or_create_by(status: 'ativo')
 
-    redirect_to carrinho_path, notice: 'Produto adicionado ao carrinho.'
+    item = carrinho.i_itens_carrinhos.find_or_initialize_by(i_produto: produto)
+    item.quantidade ||= 0
+    item.quantidade += 1
+    item.save!
+
+    total_itens = carrinho.i_itens_carrinhos.sum(:quantidade)
+
+    respond_to do |format|
+      format.json { render json: { success: true, total_itens: total_itens } }
+    end
+  rescue => e
+    render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
 
   private

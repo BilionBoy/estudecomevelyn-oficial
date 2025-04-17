@@ -1,6 +1,13 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def total_itens_no_carrinho
+    return 0 unless user_signed_in?
+
+    carrinho = current_user.i_carrinhos.find_by(status: 'ativo')
+    carrinho&.i_itens_carrinhos&.sum(:quantidade) || 0
+  end
+
   def uppercase(text)
     text.to_s.upcase
   end

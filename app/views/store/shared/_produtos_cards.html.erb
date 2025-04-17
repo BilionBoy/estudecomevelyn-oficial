@@ -63,54 +63,104 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    /* --- elementos principais --- */
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards  = document.querySelectorAll('.product-item[data-categoria]');
+  /* --- Filtro de produtos --- */
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const productCards  = document.querySelectorAll('.product-item[data-categoria]');
 
-    /* --- cria (ou reaproveita) o placeholder "nenhum produto" --- */
-    let noProducts = document.getElementById('no-products');
-    if (!noProducts) {
-      noProducts = document.createElement('div');
-      noProducts.id        = 'no-products';
-      noProducts.textContent = 'Nenhum produto nessa categoria';
-      noProducts.className = 'd-flex justify-content-center align-items-center text-muted';
-      noProducts.style.minHeight = '200px';
-      noProducts.style.display   = 'none';
-      document.querySelector('.row.g-4')?.appendChild(noProducts);
-    }
+  /* --- Cria (ou reaproveita) o placeholder "nenhum produto" --- */
+  let noProducts = document.getElementById('no-products');
+  if (!noProducts) {
+    noProducts = document.createElement('div');
+    noProducts.id        = 'no-products';
+    noProducts.textContent = 'Nenhum produto nessa categoria';
+    noProducts.className = 'd-flex justify-content-center align-items-center text-muted';
+    noProducts.style.minHeight = '200px';
+    noProducts.style.display   = 'none';
+    document.querySelector('.row.g-4')?.appendChild(noProducts);
+  }
 
-    /* --- função que executa o filtro propriamente dito --- */
-    function aplicarFiltro(categoria) {
-      let algumVisivel = false;
+  /* --- Função que executa o filtro propriamente dito --- */
+  function aplicarFiltro(categoria) {
+    let algumVisivel = false;
 
-      productCards.forEach(card => {
-        const categoriaCard = card.dataset.categoria;
-        const mostrar       = categoria === 'todos' || categoria === categoriaCard;
+    productCards.forEach(card => {
+      const categoriaCard = card.dataset.categoria;
+      const mostrar       = categoria === 'todos' || categoria === categoriaCard;
 
-        card.style.display  = mostrar ? 'block' : 'none';
-        if (mostrar) algumVisivel = true;
-      });
-
-      /* Mostra a mensagem se nada ficou visível */
-      noProducts.style.display = algumVisivel ? 'none' : 'flex';
-    }
-
-    /* --- listeners dos botões de filtro --- */
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();   // impede o salto do link “#”
-
-        /* alterna a classe .active */
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        /* aplica o filtro escolhido */
-        aplicarFiltro(btn.dataset.categoria);
-      });
+      card.style.display  = mostrar ? 'block' : 'none';
+      if (mostrar) algumVisivel = true;
     });
 
-    /* --- filtro inicial ao carregar a página --- */
-    const activeBtn = document.querySelector('.filter-btn.active');
-    aplicarFiltro(activeBtn ? activeBtn.dataset.categoria : 'todos');
+    /* Mostra a mensagem se nada ficou visível */
+    noProducts.style.display = algumVisivel ? 'none' : 'flex';
+  }
+
+  /* --- Listeners dos botões de filtro --- */
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();   // Impede o salto do link “#”
+
+      /* Alterna a classe .active */
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      /* Aplica o filtro escolhido */
+      aplicarFiltro(btn.dataset.categoria);
+    });
+  });
+
+  /* --- Filtro inicial ao carregar a página --- */
+  const activeBtn = document.querySelector('.filter-btn.active');
+  aplicarFiltro(activeBtn ? activeBtn.dataset.categoria : 'todos');
+
+  /* --- Adicionar ao carrinho --- */
+   async function adicionarAoCarrinho(botao) {
+    const produtoId = botao.dataset.produtoId;
+
+    try {
+      const resposta = await fetch("<%= adicionar_ao_carrinho_store_carrinho_path  %>", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector("meta[name='csrf-token']").content
+        },
+        body: JSON.stringify({ produto_id: produtoId })
+      });
+
+      const resultado = await resposta.json();
+
+      if (resultado.success) {
+        // Atualiza o contador na navbar
+        const badge = document.querySelector('#carrinho-contador');
+        if (badge) {
+          badge.textContent = resultado.total_itens;
+        }
+
+        // Feedback visual
+        botao.classList.remove('btn-primary');
+        botao.classList.add('btn-success');
+        botao.textContent = 'Adicionado!';
+        setTimeout(() => {
+          botao.classList.remove('btn-success');
+          botao.classList.add('btn-primary');
+          botao.textContent = 'Adicionar ao Carrinho';
+        }, 1500);
+      } else {
+        alert('Erro ao adicionar: ' + resultado.message);
+      }
+
+    } catch (erro) {
+      console.error('Erro ao adicionar ao carrinho:', erro);
+      alert('Erro inesperado.');
+    }
+  }
+
+  // Substitui o evento do botão de adicionar ao carrinho
+  const botaoAdicionar = document.querySelectorAll('.product-item button');
+  botaoAdicionar.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      adicionarAoCarrinho(e.target);
+    });
+  });
   });
 </script>

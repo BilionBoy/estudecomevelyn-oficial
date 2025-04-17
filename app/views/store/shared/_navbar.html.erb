@@ -36,10 +36,18 @@
               >
             <i class="lucide-search"></i>
           </button>
-          <button class="btn btn-link position-relative">
+          <% if user_signed_in? %>
+            <% carrinho = current_user.i_carrinhos.find_by(status: 'ativo') %>
+            <% total_itens = carrinho&.i_itens_carrinhos&.sum(:quantidade) || 0 %>
+          <% else %>
+            <% total_itens = 0 %>
+          <% end %>
+          <%= link_to store_carrinho_path, class: "btn btn-link position-relative" do %>
             <i class="lucide-shopping-cart"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">0</span>
-          </button>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+              <%= total_itens %>
+            </span>
+          <% end %>
           <% if user_signed_in? %>
             <div class="dropdown">
               <button class="btn btn-primary rounded-pill d-none d-lg-block dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">

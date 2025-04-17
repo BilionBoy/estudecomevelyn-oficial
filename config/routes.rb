@@ -11,10 +11,14 @@ Rails.application.routes.draw do
   get '/cursos',    to: 'store#cursos',    as: :cursos
   
   # Carrinho de Compras
-  resource :carrinho, only: [:show, :create] do
-    resources :itens, only: [:create, :update, :destroy]
+  namespace :store do
+    resource :carrinho, only: [:show] do
+      post 'adicionar', on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
+    end
   end
-  
+  get 'carrinho', to: 'store/carrinho#show', as: :carrinho
+
+
   # Rotas Scaffold
   resources :users, only: %i[index show edit update destroy]
   resources :g_tipo_usuarios
