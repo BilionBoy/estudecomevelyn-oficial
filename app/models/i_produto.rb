@@ -1,4 +1,6 @@
 class IProduto < ApplicationRecord
+  before_validation :set_default_preco
+
   has_one_attached :arquivo
   has_one_attached :imagem
   has_many :i_promocoes, through: :i_promocao_produtos
@@ -18,5 +20,11 @@ class IProduto < ApplicationRecord
   # SEO-friendly
   def to_param
     slug
+  end
+ 
+  private
+  
+  def set_default_preco
+    self.preco ||= 0.0
   end
 end
