@@ -32,14 +32,6 @@
             <% else %>
               <span class="badge bg-primary">Geral</span>
             <% end %>
-            <div class="product-rating">
-              <div class="stars">
-                <% 5.times do |i| %>
-                  <i class="lucide-star"></i>
-                <% end %>
-              </div>
-              <span class="count">(<%= rand(10..50) %>)</span>
-            </div>
           </div>
           <!-- Título e descrição -->
           <h5 class="card-title"><%= produto.nome %></h5>

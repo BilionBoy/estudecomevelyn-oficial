@@ -21,7 +21,8 @@ class IProduto < ApplicationRecord
   def to_param
     slug
   end
- 
+
+  
   private
   
   def set_default_preco
