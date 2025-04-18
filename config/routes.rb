@@ -14,11 +14,9 @@ Rails.application.routes.draw do
   namespace :store do
     resource :carrinho, only: [:show], controller: 'carrinho' do
       post 'adicionar', on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
-      delete 'limpar', on: :collection, to: 'carrinho#limpar', as: :limpar
+      delete 'limpar',  on: :collection, to: 'carrinho#limpar',    as: :limpar
     end
   end
-  
-  
   get 'carrinho', to: 'store/carrinho#show', as: :carrinho
 
 
