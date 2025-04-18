@@ -1,6 +1,6 @@
 # app/controllers/store/carrinho_controller.rb
 class Store::CarrinhoController < ApplicationController
-  before_action :set_carrinho, only: [:show, :adicionar]
+  before_action :set_carrinho, only: [:show, :adicionar, :remover,  :limpar]
 
   def show
     @itens = @carrinho.i_itens_carrinhos
@@ -26,11 +26,26 @@ class Store::CarrinhoController < ApplicationController
     render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
 
+  def remover
+    produto = IProduto.find(params[:produto_id])
+    item = @carrinho.i_itens_carrinhos.find_by(i_produto: produto)
+
+    if item 
+      item.destroy
+      flash[:notice] = "Item removido com sucesso."
+    else
+      flash[:alert] = "Item não encontrado no carrinho."
+    end
+
+    redirect_to store_carrinho_path
+  end
+
   def limpar
     carrinho = current_user.i_carrinhos.find_by(status: 'ativo')
     carrinho.i_itens_carrinhos.destroy_all if carrinho
     redirect_to carrinho_path, notice: "Carrinho esvaziado com sucesso."
   end
+
   
 
   private

@@ -1,27 +1,61 @@
 <h2>Seu Carrinho</h2>
 <% if @itens.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Subtotal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @itens.each do |item| %>
+  <div class="carrinho-container">
+    <table class="table carrinho-tabela">
+      <thead>
         <tr>
-          <td><%= item.i_produto.nome %></td>
-          <td><%= item.quantidade %></td>
-          <td>R$ <%= number_to_currency(item.subtotal, unit: '', separator: ',', delimiter: '.') %></td>
+          <th>Produto</th>
+          <th>Imagem</th>
+          <th>Quantidade</th>
+          <th>Subtotal</th>
+          <th>Ações</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <p><strong>Total:</strong> R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></p>
-  <%= link_to "Finalizar Compra", "#", class: "botao-finalizar" %>
+      </thead>
+      <tbody>
+        <% @itens.each do |item| %>
+          <tr>
+            <td><%= item.i_produto.nome %></td>
+            <td>
+              <% if item.i_produto.imagem.attached? %>
+                <%= image_tag url_for(item.i_produto.imagem), class: "produto-imagem" %>
+              <% else %>
+                <div class="produto-imagem-placeholder">Sem Imagem</div>
+              <% end %>
+            </td>
+            <td>
+              <%= form_with url: store_carrinho_path, method: :put, local: true do |f| %>
+                <%= f.hidden_field :produto_id, value: item.i_produto.id %>
+                <%= f.number_field :quantidade, value: item.quantidade, min: 1, class: "quantidade-input" %>
+              <% end %>
+            </td>
+            <td>R$ <%= number_to_currency(item.subtotal, unit: '', separator: ',', delimiter: '.') %></td>
+            <td>
+              <%= button_to "Remover", remover_item_store_carrinho_path(produto_id: item.i_produto.id), method: :delete, data: { confirm: "Tem certeza que deseja remover este produto?" }, class: "btn btn-sm btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="carrinho-total">
+      <p><strong>Total:</strong> R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></p>
+    </div>
+    <div class="carrinho-actions d-flex gap-2">
+      <%= link_to "Continuar Comprando", root_path, class: "btn btn-secondary" %>
+      <%= link_to "Finalizar Compra", "#", class: "btn btn-primary" %>
+      <%= button_to "Limpar Carrinho", limpar_store_carrinho_path, method: :delete, data: { confirm: "Tem certeza que deseja esvaziar o carrinho?" }, class: "btn btn-danger" %>
+    </div>
+  </div>
 <% else %>
-  <p>Seu carrinho está vazio.</p>
+  <p>Seu carrinho está vazio. <%= link_to "Voltar à loja", root_path %></p>
 <% end %>
-<%= link_to "Continuar Comprando", root_path, class: "botao-continuar" %>
-<%= button_to "Limpar Carrinho", limpar_store_carrinho_path, method: :delete, data: { confirm: "Tem certeza que deseja esvaziar o carrinho?" }, class: "btn btn-danger" %>
+<style>
+  .produto-imagem{
+    width: 300px;
+  }
+
+
+  h2{
+  text-align: center;
+  margin-top: 30px;
+  }
+</style>
