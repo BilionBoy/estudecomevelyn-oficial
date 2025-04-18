@@ -14,10 +14,10 @@
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="row">
         <div class="col-12">
-          <%= f.association :i_promocao, input_html: { class: "capitalize"}, placeholder: "I promocao"  %>
+          <%= f.association :i_promocao, collection: IPromocao.all, value_method: :id, label_method: :nome, input_html: { class: "capitalize" }, placeholder: "I promoção" %>
         </div>
         <div class="col-12">
-          <%= f.association :i_produto, input_html: { class: "capitalize"}, placeholder: "I produto"  %>
+          <%= f.association :i_produto,  collection: IProduto.all,  value_method: :id,  label_method: :nome,  input_html: { class: "capitalize" },  placeholder: "I produto" %>
         </div>
         <div class="col-12">
           <%= f.input :preco_promocional, input_html: { class: "capitalize"}, placeholder: "Preco promocional"  %>

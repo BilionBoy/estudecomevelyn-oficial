@@ -99954,3 +99954,419 @@ Causes:
 ActionDispatch::MissingController (uninitialized constant Store::CarrinhosController)
 NameError (uninitialized constant Store::CarrinhosController)
   
+Started GET "/" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:17:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 58.4ms | GC: 2.7ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 59.8ms | GC: 2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:39
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 2], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:40
+  [1m[36mIItemCarrinho Sum (0.3ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:41
+  Rendered store/shared/_navbar.html.erb (Duration: 26.5ms | GC: 1.8ms)
+  Rendered layout layouts/home_application.erb (Duration: 147.8ms | GC: 25.7ms)
+Completed 200 OK in 216ms (Views: 132.9ms | ActiveRecord: 25.3ms (17 queries, 2 cached) | GC: 48.1ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjQsInB1ciI6ImJsb2JfaWQifX0=--208b878b1f3d2a8635e197f05bab5e721ec8fbab/_%20(1).jpeg" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjIsInB1ciI6ImJsb2JfaWQifX0=--85c009674fcbf0ce7b88bd7a43827fb3cd5c0095/_.jpeg" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--6208b7fff27927515298adc521e9cc740e62cfdd/tec.jpg" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MjQsInB1ciI6ImJsb2JfaWQifX0=--208b878b1f3d2a8635e197f05bab5e721ec8fbab", "filename"=>"_ (1)"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: manxxloredlyo9xzcupr0ltp9bek (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJtYW54eGxvcmVkbHlvOXh6Y3VwcjBsdHA5YmVrIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiXyAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydfJTIwJTI4MSUyOS5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMThUMDY6MTQ6NTQuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0b73dac0012ed96fa1f508c12c900d59264e363e/_%20(1).jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJtYW54eGxvcmVkbHlvOXh6Y3VwcjBsdHA5YmVrIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiXyAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydfJTIwJTI4MSUyOS5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMThUMDY6MTQ6NTQuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0b73dac0012ed96fa1f508c12c900d59264e363e/_%20(1).jpeg
+Completed 302 Found in 25ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 17.3ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJtYW54eGxvcmVkbHlvOXh6Y3VwcjBsdHA5YmVrIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiXyAlMjgxJTI5LmpwZWdcIjsgZmlsZW5hbWUqPVVURi04JydfJTIwJTI4MSUyOS5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMThUMDY6MTQ6NTQuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0b73dac0012ed96fa1f508c12c900d59264e363e/_%20(1).jpeg" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MjIsInB1ciI6ImJsb2JfaWQifX0=--85c009674fcbf0ce7b88bd7a43827fb3cd5c0095", "filename"=>"_"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[36m  Disk Storage (1.6ms) [0m[34mGenerated URL for file at key: cxdto3y9mh6w2uob0scib6wxb6kl (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjeGR0bzN5OW1oNncydW9iMHNjaWI2d3hiNmtsIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiXy5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnXy5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMThUMDY6MTQ6NTQuODc3WiIsInB1ciI6ImJsb2Jfa2V5In19--6dab7344b12a8fbe5ae27d5a9417d3711f9ba2c1/_.jpeg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjeGR0bzN5OW1oNncydW9iMHNjaWI2d3hiNmtsIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiXy5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnXy5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMThUMDY6MTQ6NTQuODc3WiIsInB1ciI6ImJsb2Jfa2V5In19--6dab7344b12a8fbe5ae27d5a9417d3711f9ba2c1/_.jpeg
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 6.1ms)
+
+
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjeGR0bzN5OW1oNncydW9iMHNjaWI2d3hiNmtsIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiXy5qcGVnXCI7IGZpbGVuYW1lKj1VVEYtOCcnXy5qcGVnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDQtMThUMDY6MTQ6NTQuODc3WiIsInB1ciI6ImJsb2Jfa2V5In19--6dab7344b12a8fbe5ae27d5a9417d3711f9ba2c1/_.jpeg" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTYsInB1ciI6ImJsb2JfaWQifX0=--6208b7fff27927515298adc521e9cc740e62cfdd", "filename"=>"tec"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: gd213jycxdvb3k5ktc5syukpa6eu (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xOFQwNjoxNDo1NC45MDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--70d5e45d00f8e8da725cb5e2407a40b4314aaef4/tec.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xOFQwNjoxNDo1NC45MDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--70d5e45d00f8e8da725cb5e2407a40b4314aaef4/tec.jpg
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 10.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJnZDIxM2p5Y3hkdmIzazVrdGM1c3l1a3BhNmV1IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwidGVjLmpwZ1wiOyBmaWxlbmFtZSo9VVRGLTgnJ3RlYy5qcGciLCJjb250ZW50X3R5cGUiOiJpbWFnZS9qcGVnIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNC0xOFQwNjoxNDo1NC45MDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--70d5e45d00f8e8da725cb5e2407a40b4314aaef4/tec.jpg" for 127.0.0.1 at 2025-04-18 02:09:54 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"_ (1)"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"_"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"tec"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4M2Zxc2poaTJ3eHowNXl0ZjZkYmtlaWNlMHVqIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiaC5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydoLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA0LTE4VDA2OjEwOjM0LjM5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--7ddb2153f52f5b9129b0ebd25993564a9455e4db/h.jpg" for 127.0.0.1 at 2025-04-18 02:09:55 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"h"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-04-18 02:09:56 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 10.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 1.3ms)
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 3.5ms (2 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/i_promocoes" for 127.0.0.1 at 2025-04-18 02:09:59 -0400
+Processing by IPromocoesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocao Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocoes"[0m
+  ↳ app/controllers/i_promocoes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocoes/index.html.erb within layouts/application
+  [1m[36mIPromocao Load (0.1ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocoes/index.html.erb:43
+  Rendered i_promocoes/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | GC: 15.0ms)
+Completed 200 OK in 32ms (Views: 23.3ms | ActiveRecord: 2.1ms (4 queries, 0 cached) | GC: 15.0ms)
+
+
+Started GET "/i_promocoes/new" for 127.0.0.1 at 2025-04-18 02:10:00 -0400
+Processing by IPromocoesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocoes/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered i_promocoes/_form.html.erb (Duration: 13.0ms | GC: 0.7ms)
+  Rendered i_promocoes/new.html.erb within layouts/application (Duration: 13.5ms | GC: 0.7ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 0.7ms)
+Completed 200 OK in 24ms (Views: 16.7ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 1.1ms)
+
+
+Started POST "/i_promocoes" for 127.0.0.1 at 2025-04-18 02:10:29 -0400
+Processing by IPromocoesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "i_promocao"=>{"nome"=>"Relampago", "descricao"=>"Promo pra livros", "ativo"=>"1", "slug"=>"Promoção para livros"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/i_promocoes_controller.rb:22:in `create'
+  [1m[36mIPromocao Create (1.9ms)[0m  [1m[32mINSERT INTO "i_promocoes" ("nome", "descricao", "ativo", "slug", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["nome", "Relampago"], ["descricao", "Promo pra livros"], ["ativo", true], ["slug", "Promoção para livros"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-04-18 06:10:29.873910"], ["updated_at", "2025-04-18 06:10:29.873910"]]
+  ↳ app/controllers/i_promocoes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/i_promocoes_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/i_promocoes
+Completed 302 Found in 9ms (ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/i_promocoes" for 127.0.0.1 at 2025-04-18 02:10:29 -0400
+Processing by IPromocoesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocao Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocoes"[0m
+  ↳ app/controllers/i_promocoes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocoes/index.html.erb within layouts/application
+  [1m[36mIPromocao Load (0.4ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocoes/index.html.erb:43
+  Rendered i_promocoes/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:10:35 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mIPromocaoProduto Load (0.2ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.9ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.9ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 2.2ms (4 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/i_promocao_produtos/new" for 127.0.0.1 at 2025-04-18 02:10:36 -0400
+Processing by IPromocaoProdutosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mIPromocao Load (0.4ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes"[0m
+  ↳ app/views/i_promocao_produtos/_form.html.erb:17
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos"[0m
+  ↳ app/views/i_promocao_produtos/_form.html.erb:20
+  Rendered i_promocao_produtos/_form.html.erb (Duration: 7.3ms | GC: 0.3ms)
+  Rendered i_promocao_produtos/new.html.erb within layouts/application (Duration: 8.1ms | GC: 0.3ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 0.5ms)
+Completed 200 OK in 19ms (Views: 10.9ms | ActiveRecord: 2.0ms (4 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/i_promocao_produtos/new" for 127.0.0.1 at 2025-04-18 02:11:30 -0400
+Processing by IPromocaoProdutosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mIPromocao Load (0.2ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes"[0m
+  ↳ app/views/i_promocao_produtos/_form.html.erb:17
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
+  [1m[36mIProduto Load (0.5ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos"[0m
+  ↳ app/views/i_promocao_produtos/_form.html.erb:20
+  Rendered i_promocao_produtos/_form.html.erb (Duration: 35.4ms | GC: 7.5ms)
+  Rendered i_promocao_produtos/new.html.erb within layouts/application (Duration: 35.8ms | GC: 7.5ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 27.3ms | GC: 18.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | GC: 25.8ms)
+Completed 200 OK in 81ms (Views: 59.6ms | ActiveRecord: 10.8ms (4 queries, 0 cached) | GC: 25.8ms)
+
+
+Started POST "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:11:37 -0400
+Processing by IPromocaoProdutosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "i_promocao_produto"=>{"i_promocao_id"=>"1", "i_produto_id"=>"3", "preco_promocional"=>"34.56"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:22:in `create'
+  [1m[36mIPromocao Load (0.2ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" WHERE "i_promocoes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/i_promocao_produtos_controller.rb:22:in `create'
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/i_promocao_produtos_controller.rb:22:in `create'
+  [1m[36mIPromocaoProduto Create (2.1ms)[0m  [1m[32mINSERT INTO "i_promocao_produtos" ("i_promocao_id", "i_produto_id", "preco_promocional", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["i_promocao_id", 1], ["i_produto_id", 3], ["preco_promocional", "34.56"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-04-18 06:11:37.106744"], ["updated_at", "2025-04-18 06:11:37.106744"]]
+  ↳ app/controllers/i_promocao_produtos_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/i_promocao_produtos
+Completed 302 Found in 52ms (ActiveRecord: 4.7ms (4 queries, 0 cached) | GC: 35.4ms)
+
+
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:11:37 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mIPromocaoProduto Load (0.2ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  [1m[36mIPromocao Load (0.2ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" WHERE "i_promocoes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:63
+  [1m[36mIProduto Load (0.5ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:64
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 12.8ms | GC: 1.7ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | GC: 1.7ms)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 1.5ms (6 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:12:15 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.3ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
+  [1m[36mIPromocaoProduto Load (0.3ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  [1m[36mIPromocao Load (0.2ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" WHERE "i_promocoes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:63
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:64
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 48.0ms | GC: 10.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 9.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 60.1ms | GC: 10.2ms)
+Completed 200 OK in 72ms (Views: 50.1ms | ActiveRecord: 13.6ms (6 queries, 0 cached) | GC: 10.2ms)
+
+
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:12:31 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
+  [1m[36mIPromocaoProduto Load (0.4ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  [1m[36mIPromocao Load (0.2ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" WHERE "i_promocoes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:63
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:64
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 43.8ms | GC: 8.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | GC: 8.2ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 9.5ms (5 queries, 0 cached) | GC: 8.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of BigDecimal):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of BigDecimal)
+    62:               </td>
+    63:               <td><%= i_promocao_produto.i_promocao.nome %></td>
+    64:               <td><%= i_promocao_produto.i_produto.nome %></td>
+    65:               <td><%= i_promocao_produto.preco_promocional.nome %></td>
+    66:             </tr>
+    67:           <% end %>
+    68:         </tbody>
+  
+app/views/i_promocao_produtos/index.html.erb:65
+app/views/i_promocao_produtos/index.html.erb:45
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:12:31 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mIPromocaoProduto Load (0.3ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  [1m[36mIPromocao Load (0.4ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" WHERE "i_promocoes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:63
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:64
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 8.2ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms (5 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of BigDecimal):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of BigDecimal)
+    62:               </td>
+    63:               <td><%= i_promocao_produto.i_promocao.nome %></td>
+    64:               <td><%= i_promocao_produto.i_produto.nome %></td>
+    65:               <td><%= i_promocao_produto.preco_promocional.nome %></td>
+    66:             </tr>
+    67:           <% end %>
+    68:         </tbody>
+  
+app/views/i_promocao_produtos/index.html.erb:65
+app/views/i_promocao_produtos/index.html.erb:45
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-04-18 02:12:34 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
+  [1m[36mIPromocaoProduto Load (0.5ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  [1m[36mIPromocao Load (0.2ms)[0m  [1m[34mSELECT "i_promocoes".* FROM "i_promocoes" WHERE "i_promocoes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:63
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:64
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 36.9ms | GC: 1.9ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:10
+  Rendered shared/_navbar.html.erb (Duration: 11.7ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | GC: 2.6ms)
+Completed 200 OK in 72ms (Views: 42.8ms | ActiveRecord: 14.1ms (6 queries, 0 cached) | GC: 6.6ms)
+
+
