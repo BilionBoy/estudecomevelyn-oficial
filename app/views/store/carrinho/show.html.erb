@@ -23,4 +23,5 @@
 <% else %>
   <p>Seu carrinho está vazio.</p>
 <% end %>
-<%= link_to "Continuar Comprando", produtos_path, class: "botao-continuar" %>
+<%= link_to "Continuar Comprando", root_path, class: "botao-continuar" %>
+<%= button_to "Limpar Carrinho", limpar_store_carrinho_path, method: :delete, data: { confirm: "Tem certeza que deseja esvaziar o carrinho?" }, class: "btn btn-danger" %>

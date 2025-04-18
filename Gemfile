@@ -93,3 +93,6 @@ gem 'paranoia'
 
 # Imagens
 gem 'image_processing', '>= 1.2'
+
+# Pagamentos
+gem 'stripe'
