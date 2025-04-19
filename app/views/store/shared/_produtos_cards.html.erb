@@ -101,6 +101,26 @@
     });
   });
 
+  /* --- Clique nos cards de imagem de categoria --- */
+  const categoriaCards = document.querySelectorAll('.filter-card[data-categoria]');
+  categoriaCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const slug = card.dataset.categoria;
+
+    // Remove .active dos botões e adiciona no botão correspondente
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    filterButtons.forEach(btn => {
+      if (btn.dataset.categoria === slug) {
+        btn.classList.add('active');
+      }
+    });
+
+    // Aplica o filtro normalmente
+    aplicarFiltro(slug);
+  });
+  });
+
+
   /* --- Filtro inicial ao carregar a página --- */
   const activeBtn = document.querySelector('.filter-btn.active');
   aplicarFiltro(activeBtn ? activeBtn.dataset.categoria : 'todos');

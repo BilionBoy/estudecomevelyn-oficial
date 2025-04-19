@@ -11,6 +11,10 @@
     margin-top: 0;
     margin-bottom: 1rem;
   }
+
+  .filter-card {
+  cursor: pointer;
+  }
 </style>
 <!-- Page Header -->
 <section class="page-header">
@@ -38,7 +42,7 @@
     <div class="row">
       <% @g_categorias.each do |categoria| %>
         <div class="col-lg-3 col-md-6">
-          <div class="category-card position-relative overflow-hidden">
+          <div class="category-card position-relative overflow-hidden filter-card" data-categoria="<%= categoria.slug %>">
             <% if categoria.foto_categoria.attached? %>
               <%= image_tag categoria.foto_categoria.variant(resize_to_fill: [800, 500]), class: "category-img", alt: categoria.nome %>
             <% else %>
@@ -77,3 +81,45 @@
   </div>
 </section>
 <%= render 'shared/notice' %>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const filterCards = document.querySelectorAll(".filter-card");
+    const produtoCards = document.querySelectorAll(".produto-card"); // ou .product-card dependendo do seu HTML
+
+    function aplicarFiltro(slug) {
+      produtoCards.forEach(card => {
+        const cardSlug = card.dataset.categoria;
+        if (slug === "todos" || cardSlug === slug) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // Atualiza botões
+      filterBtns.forEach(btn => btn.classList.remove("active"));
+      filterBtns.forEach(btn => {
+        if (btn.dataset.categoria === slug) {
+          btn.classList.add("active");
+        }
+      });
+    }
+
+    // Clique nos botões
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const slug = btn.dataset.categoria;
+        aplicarFiltro(slug);
+      });
+    });
+
+    // Clique nas imagens (cards)
+    filterCards.forEach(card => {
+      card.addEventListener("click", () => {
+        const slug = card.dataset.categoria;
+        aplicarFiltro(slug);
+      });
+    });
+  });
+</script>
