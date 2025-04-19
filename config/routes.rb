@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/blog',                                        to: 'store#blog',          as: :blog
   get '/cursos',                                      to: 'store#cursos',        as: :cursos
   get 'g_admin',                                      to: 'g_admin#index',       as: :g_admin
+  get '/store/categorias/:slug', to: 'store#categoria', as: :store_categoria
 
 
   resources :users, only: %i[index show edit update destroy]
