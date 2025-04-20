@@ -1,61 +1,488 @@
-<h2>Seu Carrinho</h2>
-<% if @itens.any? %>
-  <div class="carrinho-container">
-    <table class="table carrinho-tabela">
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Imagem</th>
-          <th>Quantidade</th>
-          <th>Subtotal</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @itens.each do |item| %>
-          <tr>
-            <td><%= item.i_produto.nome %></td>
-            <td>
-              <% if item.i_produto.imagem.attached? %>
-                <%= image_tag url_for(item.i_produto.imagem), class: "produto-imagem" %>
-              <% else %>
-                <div class="produto-imagem-placeholder">Sem Imagem</div>
-              <% end %>
-            </td>
-            <td>
-              <%= form_with url: store_carrinho_path, method: :put, local: true do |f| %>
-                <%= f.hidden_field :produto_id, value: item.i_produto.id %>
-                <%= f.number_field :quantidade, value: item.quantidade, min: 1, class: "quantidade-input" %>
-              <% end %>
-            </td>
-            <td>R$ <%= number_to_currency(item.subtotal, unit: '', separator: ',', delimiter: '.') %></td>
-            <td>
-              <%= button_to "Remover", remover_item_store_carrinho_path(produto_id: item.i_produto.id), method: :delete, data: { confirm: "Tem certeza que deseja remover este produto?" }, class: "btn btn-sm btn-danger" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <div class="carrinho-total">
-      <p><strong>Total:</strong> R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></p>
-    </div>
-    <div class="carrinho-actions d-flex gap-2">
-      <%= link_to "Continuar Comprando", root_path, class: "btn btn-secondary" %>
-      <%= link_to "Finalizar Compra", "#", class: "btn btn-primary" %>
-      <%= button_to "Limpar Carrinho", limpar_store_carrinho_path, method: :delete, data: { confirm: "Tem certeza que deseja esvaziar o carrinho?" }, class: "btn btn-danger" %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="cart-title">Seu Carrinho</h1>
+      <% if @itens.any? %>
+        <div class="cart-container">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="cart-items-container">
+                <% @itens.each do |item| %>
+                  <div class="cart-item">
+                    <div class="cart-item-image">
+                      <% if item.i_produto.imagem.attached? %>
+                        <%= image_tag url_for(item.i_produto.imagem), class: "img-fluid" %>
+                      <% else %>
+                        <div class="no-image-placeholder">
+                          <i class="fas fa-image"></i>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="cart-item-details">
+                      <h3 class="cart-item-title"><%= item.i_produto.nome %></h3>
+                      <div class="cart-item-price">
+                        <span class="current-price">R$ <%= number_to_currency(item.i_produto.preco, unit: '', separator: ',', delimiter: '.') %></span>
+                      </div>
+                    </div>
+                    <div class="cart-item-quantity">
+                      <%= form_with url: store_carrinho_path, method: :put, local: true, class: "quantity-form" do |f| %>
+                        <%= f.hidden_field :produto_id, value: item.i_produto.id %>
+                        <div class="quantity-control">
+                          <button type="button" class="quantity-btn minus">-</button>
+                          <%= f.number_field :quantidade, value: item.quantidade, min: 1, class: "quantity-input", onchange: "this.form.submit()" %>
+                          <button type="button" class="quantity-btn plus">+</button>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="cart-item-subtotal">
+                      <span>R$ <%= number_to_currency(item.subtotal, unit: '', separator: ',', delimiter: '.') %></span>
+                    </div>
+                    <div class="cart-item-remove">
+                      <td>
+                        <%= button_to "Remover", remover_item_store_carrinho_path(produto_id: item.i_produto.id), method: :delete, data: { confirm: "Tem certeza que deseja remover este produto?" }, class: "btn btn-sm btn-danger" %>
+                      </td>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="cart-actions mt-4">
+                <%= link_to root_path, class: "btn btn-outline-secondary" do %>
+                  <i class="fas fa-arrow-left me-2"></i> Continuar Comprando
+                <% end %>
+                <%= button_to limpar_store_carrinho_path, method: :delete, class: "btn btn-outline-danger", data: { confirm: "Tem certeza que deseja esvaziar o carrinho?" } do %>
+                  <i class="fas fa-trash me-2"></i> Limpar Carrinho
+                <% end %>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="cart-summary">
+                <h3 class="summary-title">Resumo do Pedido</h3>
+                <div class="summary-items">
+                  <div class="summary-item">
+                    <span class="summary-item-label">Subtotal</span>
+                    <span class="summary-item-value">R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-item-label">Frete</span>
+                    <span class="summary-item-value">Calculado no próximo passo</span>
+                  </div>
+                </div>
+                <div class="summary-total">
+                  <span class="summary-total-label">Total</span>
+                  <span class="summary-total-value">R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></span>
+                </div>
+                <div class="summary-actions">
+                  <%= link_to "#", class: "btn btn-primary btn-block" do %>
+                    <i class="fas fa-lock me-2"></i> Finalizar Compra
+                  <% end %>
+                </div>
+                <div class="summary-info mt-4">
+                  <div class="payment-methods">
+                    <h4>Métodos de Pagamento</h4>
+                    <div class="payment-icons">
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                      <i class="fab fa-pix"></i>
+                    </div>
+                  </div>
+                  <div class="secure-checkout mt-3">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    <span>Compra 100% Segura</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="empty-cart">
+          <div class="empty-cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h2>Seu carrinho está vazio</h2>
+          <p>Parece que você ainda não adicionou nenhum produto ao seu carrinho.</p>
+          <%= link_to "Voltar à loja", root_path, class: "btn btn-primary mt-3" %>
+        </div>
+      <% end %>
     </div>
   </div>
-<% else %>
-  <p>Seu carrinho está vazio. <%= link_to "Voltar à loja", root_path %></p>
-<% end %>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Manipuladores para os botões de quantidade
+    const minusBtns = document.querySelectorAll('.quantity-btn.minus');
+    const plusBtns = document.querySelectorAll('.quantity-btn.plus');
+
+    minusBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const input = this.parentNode.querySelector('.quantity-input');
+        const value = parseInt(input.value);
+        if (value > 1) {
+          input.value = value - 1;
+          input.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+
+    plusBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const input = this.parentNode.querySelector('.quantity-input');
+        const value = parseInt(input.value);
+        input.value = value + 1;
+        input.dispatchEvent(new Event('change'));
+      });
+    });
+  });
+</script>
 <style>
-  .produto-imagem{
-    width: 300px;
+  /* Estilos para o Carrinho de Compras */
+
+  /* Título principal */
+  .cart-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  text-align: center;
+  margin-bottom: 2rem;
   }
 
+  /* Container do carrinho */
+  .cart-container {
+  margin-top: 2rem;
+  }
 
-  h2{
+  /* Item do carrinho */
+  .cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: all 0.3s ease;
+  }
+
+  .cart-item:hover {
+  box-shadow: 0 8px 25px rgba(228, 34, 120, 0.1);
+  transform: translateY(-3px);
+  }
+
+  /* Imagem do produto */
+  .cart-item-image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  }
+
+  .cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+
+  .no-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8a8a;
+  font-size: 2rem;
+  }
+
+  /* Detalhes do produto */
+  .cart-item-details {
+  flex: 1;
+  margin-right: 1.5rem;
+  }
+
+  .cart-item-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+  }
+
+  .cart-item-price {
+  font-family: "Montserrat", sans-serif;
+  color: #8a8a8a;
+  font-size: 0.9rem;
+  }
+
+  .current-price {
+  font-weight: 600;
+  color: #e42278;
+  }
+
+  /* Controle de quantidade */
+  .cart-item-quantity {
+  margin-right: 1.5rem;
+  }
+
+  .quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  overflow: hidden;
+  }
+
+  .quantity-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #f5f5f5;
+  border: none;
+  color: #1a1a2e;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+
+  .quantity-btn:hover {
+  background-color: #e42278;
+  color: #ffffff;
+  }
+
+  .quantity-input {
+  width: 50px;
+  height: 36px;
+  border: none;
   text-align: center;
-  margin-top: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #1a1a2e;
+  -moz-appearance: textfield;
+  }
+
+  .quantity-input::-webkit-outer-spin-button,
+  .quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+
+  /* Subtotal */
+  .cart-item-subtotal {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-right: 1.5rem;
+  min-width: 100px;
+  text-align: right;
+  }
+
+  /* Botão remover */
+  .cart-item-remove {
+  margin-left: auto;
+  }
+
+  .remove-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: none;
+  color: #8a8a8a;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+
+  .remove-btn:hover {
+  background-color: #e42278;
+  color: #ffffff;
+  }
+
+  /* Ações do carrinho */
+  .cart-actions {
+  display: flex;
+  gap: 1rem;
+  }
+
+  /* Resumo do pedido */
+  .cart-summary {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  }
+
+  .summary-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  }
+
+  .summary-items {
+  margin-bottom: 1.5rem;
+  }
+
+  .summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  }
+
+  .summary-item-label {
+  font-family: "Montserrat", sans-serif;
+  color: #8a8a8a;
+  }
+
+  .summary-item-value {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #1a1a2e;
+  }
+
+  .summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e1e1;
+  margin-bottom: 1.5rem;
+  }
+
+  .summary-total-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  }
+
+  .summary-total-value {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #e42278;
+  }
+
+  .summary-actions .btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  }
+
+  /* Informações adicionais */
+  .summary-info {
+  font-family: "Montserrat", sans-serif;
+  color: #8a8a8a;
+  font-size: 0.9rem;
+  }
+
+  .payment-methods h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  }
+
+  .payment-icons {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  }
+
+  .secure-checkout {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  }
+
+  /* Carrinho vazio */
+  .empty-cart {
+  text-align: center;
+  padding: 3rem 0;
+  }
+
+  .empty-cart-icon {
+  font-size: 4rem;
+  color: #e1e1e1;
+  margin-bottom: 1.5rem;
+  }
+
+  .empty-cart h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+  }
+
+  .empty-cart p {
+  font-family: "Montserrat", sans-serif;
+  color: #8a8a8a;
+  margin-bottom: 1.5rem;
+  }
+
+  /* Responsividade */
+  @media (max-width: 991.98px) {
+  .cart-summary {
+    margin-top: 2rem;
+  }
+  }
+
+  @media (max-width: 767.98px) {
+  .cart-item {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item-details {
+    flex: 1;
+    margin-right: 0;
+  }
+
+  .cart-item-quantity {
+    order: 3;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
+
+  .cart-item-subtotal {
+    order: 4;
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .cart-item-remove {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  }
+
+  @media (max-width: 575.98px) {
+  .cart-title {
+    font-size: 2rem;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+  }
+
+  .cart-actions .btn {
+    width: 100%;
+  }
   }
 </style>
