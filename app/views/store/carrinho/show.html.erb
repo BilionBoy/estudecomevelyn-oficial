@@ -24,19 +24,6 @@
                         <span class="current-price">R$ <%= number_to_currency(item.i_produto.preco, unit: '', separator: ',', delimiter: '.') %></span>
                       </div>
                     </div>
-                    <div class="cart-item-quantity">
-                      <%= form_with url: store_carrinho_path, method: :put, local: true, class: "quantity-form" do |f| %>
-                        <%= f.hidden_field :produto_id, value: item.i_produto.id %>
-                        <div class="quantity-control">
-                          <button type="button" class="quantity-btn minus">-</button>
-                          <%= f.number_field :quantidade, value: item.quantidade, min: 1, class: "quantity-input", onchange: "this.form.submit()" %>
-                          <button type="button" class="quantity-btn plus">+</button>
-                        </div>
-                      <% end %>
-                    </div>
-                    <div class="cart-item-subtotal">
-                      <span>R$ <%= number_to_currency(item.subtotal, unit: '', separator: ',', delimiter: '.') %></span>
-                    </div>
                     <div class="cart-item-remove">
                       <td>
                         <%= button_to "Remover", remover_item_store_carrinho_path(produto_id: item.i_produto.id), method: :delete, data: { confirm: "Tem certeza que deseja remover este produto?" }, class: "btn btn-sm btn-danger" %>
@@ -108,33 +95,6 @@
     </div>
   </div>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Manipuladores para os botões de quantidade
-    const minusBtns = document.querySelectorAll('.quantity-btn.minus');
-    const plusBtns = document.querySelectorAll('.quantity-btn.plus');
-
-    minusBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const input = this.parentNode.querySelector('.quantity-input');
-        const value = parseInt(input.value);
-        if (value > 1) {
-          input.value = value - 1;
-          input.dispatchEvent(new Event('change'));
-        }
-      });
-    });
-
-    plusBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const input = this.parentNode.querySelector('.quantity-input');
-        const value = parseInt(input.value);
-        input.value = value + 1;
-        input.dispatchEvent(new Event('change'));
-      });
-    });
-  });
-</script>
 <style>
   /* Estilos para o Carrinho de Compras */
 
@@ -221,63 +181,6 @@
   .current-price {
   font-weight: 600;
   color: #e42278;
-  }
-
-  /* Controle de quantidade */
-  .cart-item-quantity {
-  margin-right: 1.5rem;
-  }
-
-  .quantity-control {
-  display: flex;
-  align-items: center;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  overflow: hidden;
-  }
-
-  .quantity-btn {
-  width: 36px;
-  height: 36px;
-  background-color: #f5f5f5;
-  border: none;
-  color: #1a1a2e;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  }
-
-  .quantity-btn:hover {
-  background-color: #e42278;
-  color: #ffffff;
-  }
-
-  .quantity-input {
-  width: 50px;
-  height: 36px;
-  border: none;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  color: #1a1a2e;
-  -moz-appearance: textfield;
-  }
-
-  .quantity-input::-webkit-outer-spin-button,
-  .quantity-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-  }
-
-  /* Subtotal */
-  .cart-item-subtotal {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #1a1a2e;
-  margin-right: 1.5rem;
-  min-width: 100px;
-  text-align: right;
   }
 
   /* Botão remover */
