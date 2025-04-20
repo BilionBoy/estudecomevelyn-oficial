@@ -122642,3 +122642,4 @@ enum :status, {:inativo=>0, :ativo=>1}
  (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
   [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
   ↳ config/sitemap.rb:13:in `block in run'
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
