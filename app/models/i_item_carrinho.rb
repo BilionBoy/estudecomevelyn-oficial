@@ -2,11 +2,11 @@ class IItemCarrinho < ApplicationRecord
   belongs_to :i_carrinho
   belongs_to :i_produto
 
-  validates :quantidade,numericality: {  only_integer: true, greater_than: 0, message: "deve ser um número inteiro maior que zero"}
-
-  validates :preco_unitario, numericality: { greater_than: 0,message: "deve ser maior que zero"}
+  validates :quantidade, numericality: { only_integer: true, greater_than: 0, message: "deve ser um número inteiro maior que zero" }
+  validates :preco_unitario, numericality: { greater_than: 0, message: "deve ser maior que zero" }
 
   before_validation :set_preco_from_product
+  before_save :calcular_subtotal
 
   private
 
@@ -17,8 +17,8 @@ class IItemCarrinho < ApplicationRecord
   end
 
   def calcular_subtotal
-    return unless preco_unitario && quantity
-    
-    self.subtotal = (preco_unitario * quantity).round(2)
+    return unless preco_unitario && quantidade
+
+    self.subtotal = (preco_unitario * quantidade).round(2)
   end
 end
