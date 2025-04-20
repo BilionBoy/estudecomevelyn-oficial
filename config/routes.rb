@@ -26,5 +26,23 @@ Rails.application.routes.draw do
   resources :i_promocoes
   resources :i_promocao_produtos
   
-  get 'up' => 'rails/health#show', as: :rails_health_check
+
+  # config/routes.rb
+  get '/robots.txt', to: proc { |env|
+  [
+    200,
+    { 'Content-Type' => 'text/plain' },
+    [File.read(Rails.root.join('public', 'robots.txt'))]
+  ]
+  }
+  
+  get '/sitemap.xml.gz', to: proc { |env|
+  [
+    200,
+    { 'Content-Type' => 'application/gzip' },
+    [File.read(Rails.root.join('public', 'sitemap.xml.gz'))]
+  ]
+  }
+  
+    get 'up' => 'rails/health#show', as: :rails_health_check
 end
