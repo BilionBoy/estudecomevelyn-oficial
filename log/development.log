@@ -122629,3 +122629,16 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  ↳ config/sitemap.rb:14:in `block in run'
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  ↳ config/sitemap.rb:13:in `block in run'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:10)
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" ORDER BY "g_categorias"."id" ASC LIMIT $1[0m  [["LIMIT", 1000]]
+  ↳ config/sitemap.rb:13:in `block in run'

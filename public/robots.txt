@@ -1,1 +1,14 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+Disallow: /g_admin
+Disallow: /users
+Disallow: /segmentos
+Disallow: /i_produtos
+Disallow: /i_promocoes
+Disallow: /i_promocao_produtos
+Disallow: /g_categorias
+Disallow: /g_tipo_usuarios
+Disallow: /store/carrinho
+Disallow: /devise
+Allow: /
+
+Sitemap: https://estudecomevelyn.com.br/sitemap.xml

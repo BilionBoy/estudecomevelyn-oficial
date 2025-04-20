@@ -96,3 +96,6 @@ gem 'image_processing', '>= 1.2'
 
 # Pagamentos
 gem 'stripe'
+
+# SEO
+gem 'sitemap_generator'
