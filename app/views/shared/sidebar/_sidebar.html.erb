@@ -36,19 +36,23 @@
             <span class="tooltip top">Clientes</span>
           </a>
         </li>
-        <li class="sidebar-menu-item">
-          <a href="<%= g_tipo_usuarios_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Tipos de Usuários">
-            <span class="sidebar-menu-icon"><i class="ph-user-circle"></i></span>
-            <span class="sidebar-menu-text">Tipos de Usuários</span>
-            <span class="tooltip top">Tipos de Usuários</span>
-          </a>
+        <% if can? :manage, GTipoUsuario %>
+          <li class="sidebar-menu-item">
+            <a href="<%= g_tipo_usuarios_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Tipos de Usuários">
+              <span class="sidebar-menu-icon"><i class="ph-user-circle"></i></span>
+              <span class="sidebar-menu-text">Tipos de Usuários</span>
+              <span class="tooltip top">Tipos de Usuários</span>
+            </a>
+          <%end%>
         </li>
-        <li class="sidebar-menu-item">
-          <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Gerenciar Usuários">
-            <span class="sidebar-menu-icon"><i class="ph-address-book"></i></span>
-            <span class="sidebar-menu-text">Gerenciar Usuários</span>
-            <span class="tooltip top">Gerenciar Usuários</span>
-          </a>
+        <% if can? :manage, GTipoUsuario %>
+          <li class="sidebar-menu-item">
+            <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Gerenciar Usuários">
+              <span class="sidebar-menu-icon"><i class="ph-address-book"></i></span>
+              <span class="sidebar-menu-text">Gerenciar Usuários</span>
+              <span class="tooltip top">Gerenciar Usuários</span>
+            </a>
+          <%end%>
         </li>
         <div class="sidebar-section-title">Segmentos</div>
         <li class="sidebar-menu-item">
