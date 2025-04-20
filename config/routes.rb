@@ -36,13 +36,14 @@ Rails.application.routes.draw do
   ]
   }
   
-  get '/sitemap.xml.gz', to: proc { |env|
+  get '/sitemap.xml', to: proc { |env|
   [
     200,
-    { 'Content-Type' => 'application/gzip' },
-    [File.read(Rails.root.join('public', 'sitemap.xml.gz'))]
+    { 'Content-Type' => 'application/xml' },  # Mudança para XML e não GZIP
+    [Zlib::GzipReader.new(File.open(Rails.root.join('public', 'sitemap.xml.gz'))).read]
   ]
-  }
+}
+
   
     get 'up' => 'rails/health#show', as: :rails_health_check
 end
