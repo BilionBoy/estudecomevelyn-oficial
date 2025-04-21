@@ -12,6 +12,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'i_item_carrinho',     'i_itens_carrinhos'
   inflect.irregular 'i_pedido',            'i_pedidos'
   inflect.irregular 'i_item_pedido',       'i_itens_pedidos'
+  inflect.irregular 'i_cupom' ,            'i_cupons'
 
 end
 

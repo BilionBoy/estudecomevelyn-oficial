@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_21_020452) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_21_020712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +77,21 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_21_020452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["usuario_id"], name: "index_i_carrinhos_on_usuario_id"
+  end
+
+  create_table "i_cupons", force: :cascade do |t|
+    t.string "codigo", null: false
+    t.string "tipo_desconto"
+    t.decimal "valor", precision: 10, scale: 2
+    t.datetime "validade"
+    t.boolean "status"
+    t.datetime "criado_em"
+    t.datetime "atualizado_em"
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "i_itens_carrinhos", force: :cascade do |t|
