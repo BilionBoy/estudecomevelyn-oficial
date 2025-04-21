@@ -4,7 +4,7 @@ class CreateIPedidos < ActiveRecord::Migration[7.2]
   def up
     create_table :i_pedidos do |t|
       t.references :usuario, null: false, foreign_key: { to_table: :users }
-      t.decimal    :total
+      t.decimal    :total,   precision: 10, scale: 2
       t.string     :status
       t.datetime   :criado_em
       t.datetime   :atualizado_em

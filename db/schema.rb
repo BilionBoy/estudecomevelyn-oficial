@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_21_020230) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_21_020452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -96,9 +96,26 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_21_020230) do
     t.index ["i_produto_id"], name: "index_i_itens_carrinhos_on_i_produto_id"
   end
 
+  create_table "i_itens_pedidos", force: :cascade do |t|
+    t.bigint "i_pedido_id", null: false
+    t.bigint "i_produto_id", null: false
+    t.integer "quantidade"
+    t.decimal "preco_unitario", precision: 10, scale: 2
+    t.decimal "subtotal", precision: 10, scale: 2
+    t.datetime "criado_em"
+    t.datetime "atualizado_em"
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["i_pedido_id"], name: "index_i_itens_pedidos_on_i_pedido_id"
+    t.index ["i_produto_id"], name: "index_i_itens_pedidos_on_i_produto_id"
+  end
+
   create_table "i_pedidos", force: :cascade do |t|
     t.bigint "usuario_id", null: false
-    t.decimal "total"
+    t.decimal "total", precision: 10, scale: 2
     t.string "status"
     t.datetime "criado_em"
     t.datetime "atualizado_em"
@@ -184,6 +201,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_21_020230) do
   add_foreign_key "i_carrinhos", "users", column: "usuario_id"
   add_foreign_key "i_itens_carrinhos", "i_carrinhos"
   add_foreign_key "i_itens_carrinhos", "i_produtos"
+  add_foreign_key "i_itens_pedidos", "i_pedidos"
+  add_foreign_key "i_itens_pedidos", "i_produtos"
   add_foreign_key "i_pedidos", "users", column: "usuario_id"
   add_foreign_key "i_produtos", "g_categorias"
   add_foreign_key "i_promocao_produtos", "i_produtos"

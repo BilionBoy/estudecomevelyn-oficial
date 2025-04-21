@@ -4,18 +4,18 @@ one:
   usuario: one
   total: 9.99
   status: MyString
-  criado_em: 2025-04-20 22:02:30
-  atualizado_em: 2025-04-20 22:02:30
+  criado_em: 2025-04-20 22:04:21
+  atualizado_em: 2025-04-20 22:04:21
   created_by: MyString
   updated_by: MyString
-  deleted_at: 2025-04-20 22:02:30
+  deleted_at: 2025-04-20 22:04:21
 
 two:
   usuario: two
   total: 9.99
   status: MyString
-  criado_em: 2025-04-20 22:02:30
-  atualizado_em: 2025-04-20 22:02:30
+  criado_em: 2025-04-20 22:04:21
+  atualizado_em: 2025-04-20 22:04:21
   created_by: MyString
   updated_by: MyString
-  deleted_at: 2025-04-20 22:02:30
+  deleted_at: 2025-04-20 22:04:21
