@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'store#index'
   
   namespace :store do
+    get "pedidos/show"
+    get "pedidos/index"
+    get "checkout/new"
+    get "checkout/create"
     resource :carrinho, only: [:show], controller: 'carrinho' do
       post   'adicionar',           on: :collection,  to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
       delete 'limpar',              on: :collection,  to: 'carrinho#limpar',    as: :limpar
@@ -18,6 +22,11 @@ Rails.application.routes.draw do
   get '/store/categorias/:slug', to: 'store#categoria', as: :store_categoria
 
 
+  namespace :store do
+    resource :checkout, only: [:new, :create]
+    resources :pedidos, only: [:index, :show]
+  end
+
   resources :users, only: %i[index show edit update destroy]
   resources :g_tipo_usuarios
   resources :g_categorias
@@ -28,21 +37,8 @@ Rails.application.routes.draw do
   
 
   # config/routes.rb
-  get '/robots.txt', to: proc { |env|
-  [
-    200,
-    { 'Content-Type' => 'text/plain' },
-    [File.read(Rails.root.join('public', 'robots.txt'))]
-  ]
-  }
-  
-  get '/sitemap.xml', to: proc { |env|
-  [
-    200,
-    { 'Content-Type' => 'application/xml' },  # Tipo MIME como XML
-    [File.read(Rails.root.join('public', 'sitemap.xml'))]  # Lê o arquivo XML sem descompactar
-  ]
-}
+  get '/robots.txt',  to: proc { |env| [200, { 'Content-Type' => 'text/plain' }, [File.read(Rails.root.join('public', 'robots.txt'))]] }
+  get '/sitemap.xml', to: proc { |env| [200, { 'Content-Type' => 'application/xml' }, [File.read(Rails.root.join('public', 'sitemap.xml'))]] }
 
 
   

@@ -1,0 +1,9 @@
+<h1>Meus Pedidos</h1>
+<% @pedidos.each do |pedido| %>
+  <div>
+    <h2>Pedido <%= pedido.id %></h2>
+    <p>Status: <%= pedido.status %></p>
+    <p>Total: <%= number_to_currency(pedido.total) %></p>
+    <%= link_to "Detalhes", store_pedido_path(pedido) %>
+  </div>
+<% end %>
