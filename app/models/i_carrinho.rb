@@ -24,6 +24,7 @@ class ICarrinho < ApplicationRecord
     raise
   end
 
+
   def total
     i_itens_carrinhos.sum(:subtotal)
   end

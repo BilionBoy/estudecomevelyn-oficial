@@ -1,0 +1,29 @@
+<div class="resumo-carrinho">
+  <% if carrinho.present? && carrinho.i_itens_carrinhos.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Preço Unitário</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% carrinho.i_itens_carrinhos.each do |item| %>
+          <tr>
+            <td><%= item.i_produto.nome %></td>
+            <td><%= item.quantidade %></td>
+            <td><%= number_to_currency(item.preco_unitario, unit: "R$") %></td>
+            <td><%= number_to_currency(item.subtotal, unit: "R$") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-end">
+      <strong>Total:</strong> <%= number_to_currency(carrinho.total, unit: "R$") %>
+    </div>
+  <% else %>
+    <p>Seu carrinho está vazio.</p>
+  <% end %>
+</div>

@@ -22,6 +22,7 @@ class StoreController < ApplicationController
     end
   end
 
+
   def papelaria
     @g_categorias = GCategoria.order(:nome)
   
