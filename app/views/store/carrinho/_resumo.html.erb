@@ -1,29 +1,423 @@
-<div class="resumo-carrinho">
-  <% if carrinho.present? && carrinho.i_itens_carrinhos.any? %>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Quantidade</th>
-          <th>Preço Unitário</th>
-          <th>Subtotal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% carrinho.i_itens_carrinhos.each do |item| %>
-          <tr>
-            <td><%= item.i_produto.nome %></td>
-            <td><%= item.quantidade %></td>
-            <td><%= number_to_currency(item.preco_unitario, unit: "R$") %></td>
-            <td><%= number_to_currency(item.subtotal, unit: "R$") %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <div class="text-end">
-      <strong>Total:</strong> <%= number_to_currency(carrinho.total, unit: "R$") %>
+<style>
+  /* Estilos para a página de checkout */
+  .checkout-container {
+    font-family: "Poppins", "Montserrat", sans-serif;
+    margin: 2rem 0;
+  }
+
+  .checkout-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .checkout-subtitle {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f5d3dd;
+  }
+
+  .checkout-section {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .checkout-section:hover {
+    box-shadow: 0 8px 25px rgba(228, 34, 120, 0.1);
+  }
+
+  /* Estilos para o resumo do pedido */
+  .order-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .order-item:last-child {
+    border-bottom: none;
+  }
+
+  .order-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
+
+  .order-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .order-item-details {
+    flex: 1;
+  }
+
+  .order-item-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
+  }
+
+  .order-item-info {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #8a8a8a;
+  }
+
+  .order-item-price {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1rem;
+    text-align: right;
+  }
+
+  .order-item-remove {
+    color: #8a8a8a;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-top: 0.25rem;
+    display: inline-block;
+  }
+
+  .order-item-remove:hover {
+    color: var(--primary);
+  }
+
+  /* Estilos para o resumo de valores */
+  .order-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .order-summary-label {
+    color: #8a8a8a;
+  }
+
+  .order-summary-value {
+    font-weight: 500;
+  }
+
+  .order-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 2px solid #f5d3dd;
+    margin-top: 1rem;
+  }
+
+  .order-total-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a2e;
+  }
+
+  .order-total-value {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary);
+  }
+
+  /* Estilos para formulários */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #1a1a2e;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(228, 34, 120, 0.1);
+    outline: none;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  /* Estilos para métodos de pagamento */
+  .payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .payment-method {
+    flex: 1;
+    min-width: 120px;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .payment-method:hover {
+    border-color: var(--primary);
+    background-color: rgba(228, 34, 120, 0.05);
+  }
+
+  .payment-method.active {
+    border-color: var(--primary);
+    background-color: rgba(228, 34, 120, 0.1);
+  }
+
+  .payment-method-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+  }
+
+  .payment-method-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Botão de finalizar */
+  .btn-checkout {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-checkout:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(228, 34, 120, 0.3);
+  }
+
+  /* Informações de segurança */
+  .security-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: #8a8a8a;
+    font-size: 0.85rem;
+  }
+
+  /* Responsividade */
+  @media (max-width: 767.98px) {
+    .form-row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .payment-method {
+      min-width: 100px;
+    }
+  }
+</style>
+<div class="checkout-container">
+  <h1 class="checkout-title">Finalizar Compra</h1>
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Informações do Cliente -->
+      <div class="checkout-section">
+        <h2 class="checkout-subtitle">Informações Pessoais</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="nome">Nome Completo</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="telefone">Telefone</label>
+            <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+      </div>
+      <!-- Método de Pagamento -->
+      <div class="checkout-section">
+        <h2 class="checkout-subtitle">Método de Pagamento</h2>
+        <div class="payment-methods">
+          <div class="payment-method active">
+            <div class="payment-method-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div class="payment-method-name">Cartão de Crédito</div>
+          </div>
+          <div class="payment-method">
+            <div class="payment-method-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="payment-method-name">Boleto</div>
+          </div>
+          <div class="payment-method">
+            <div class="payment-method-icon">
+              <i class="fab fa-pix"></i>
+            </div>
+            <div class="payment-method-name">PIX</div>
+          </div>
+        </div>
+        <!-- Formulário de Cartão de Crédito -->
+        <div id="credit-card-form">
+          <div class="form-group">
+            <label class="form-label" for="card-number">Número do Cartão</label>
+            <input type="text" class="form-control" id="card-number" placeholder="0000 0000 0000 0000">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="card-name">Nome no Cartão</label>
+              <input type="text" class="form-control" id="card-name" placeholder="Nome como está no cartão">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="card-expiry">Data de Validade</label>
+              <input type="text" class="form-control" id="card-expiry" placeholder="MM/AA">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="card-cvv">CVV</label>
+              <input type="text" class="form-control" id="card-cvv" placeholder="123">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="card-installments">Parcelas</label>
+              <select class="form-control" id="card-installments">
+                <option value="1">1x de R$ 402,00 sem juros</option>
+                <option value="2">2x de R$ 201,00 sem juros</option>
+                <option value="3">3x de R$ 134,00 sem juros</option>
+                <option value="4">4x de R$ 100,50 sem juros</option>
+                <option value="5">5x de R$ 80,40 sem juros</option>
+                <option value="6">6x de R$ 67,00 sem juros</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% else %>
-    <p>Seu carrinho está vazio.</p>
-  <% end %>
+    <div class="col-lg-4">
+      <div class="checkout-section">
+        <h2 class="checkout-subtitle">Resumo do Pedido</h2>
+        <div class="order-items">
+          <% if carrinho.present? && carrinho.i_itens_carrinhos.any? %>
+            <% carrinho.i_itens_carrinhos.each do |item| %>
+              <div class="order-item">
+                <div class="order-item-image">
+                  <% if item.i_produto.respond_to?(:imagem) && item.i_produto.imagem.attached? %>
+                    <%= image_tag url_for(item.i_produto.imagem), alt: item.i_produto.nome %>
+                  <% else %>
+                    <div class="no-image-placeholder">
+                      <i class="fas fa-box"></i>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="order-item-details">
+                  <h4 class="order-item-title"><%= item.i_produto.nome %></h4>
+                  <div class="order-item-info">
+                    <span>Quantidade: <%= item.quantidade %></span>
+                    <span>Preço: <%= number_to_currency(item.preco_unitario, unit: "R$") %></span>
+                  </div>
+                  <a href="#" class="order-item-remove">
+                    <i class="fas fa-times"></i> Remover
+                  </a>
+                </div>
+                <div class="order-item-price">
+                  <%= number_to_currency(item.subtotal, unit: "R$") %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="order-summary">
+          <div class="order-summary-row">
+            <span class="order-summary-label">Subtotal</span>
+            <span class="order-summary-value"><%= number_to_currency(carrinho.total, unit: "R$") %></span>
+          </div>
+          <div class="order-summary-row">
+            <span class="order-summary-label">Frete</span>
+            <span class="order-summary-value">Grátis</span>
+          </div>
+          <div class="order-summary-row">
+            <span class="order-summary-label">Desconto</span>
+            <span class="order-summary-value">R$ 0,00</span>
+          </div>
+          <div class="order-total">
+            <span class="order-total-label">Total</span>
+            <span class="order-total-value"><%= number_to_currency(carrinho.total, unit: "R$") %></span>
+          </div>
+        </div>
+        <!-- Cupom de Desconto -->
+        <div class="form-group mt-3">
+          <label class="form-label" for="coupon">Cupom de Desconto</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="coupon" placeholder="Digite seu cupom">
+            <button class="btn btn-outline-secondary" type="button">Aplicar</button>
+          </div>
+        </div>
+        <!-- Botão de Finalizar -->
+        <button type="submit" class="btn-checkout mt-4">
+          <i class="fas fa-lock me-2"></i> Finalizar Pagamento
+        </button>
+        <div class="security-info">
+          <i class="fas fa-shield-alt"></i>
+          <span>Compra 100% Segura</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
