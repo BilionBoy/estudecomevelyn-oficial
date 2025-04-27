@@ -1,0 +1,124 @@
+<div class="row g-4">
+  <% cursos.each do |curso| %>
+    <div class="col-lg-4 col-md-6 mb-4 product-item" data-categoria="<%= curso.g_categoria&.slug %>">
+      <div class="card h-100 product-card">
+        <% if curso.created_at && curso.created_at >= 30.days.ago %>
+          <span class="badge bg-success product-badge">NOVO</span>
+        <% elsif rand(10) > 7 %> <!-- Simulando alguns cursos com desconto -->
+          <span class="badge bg-danger product-badge">-<%= rand(10..30) %>%</span>
+        <% end %>
+        <!-- Botões de ação -->
+        <div class="product-actions">
+          <a href="#" class="product-action-btn">
+            <i class="lucide-heart"></i>
+          </a>
+          <a href="<%= i_curso_path(curso) %>" class="product-action-btn">
+            <i class="lucide-eye"></i>
+          </a>
+        </div>
+        <!-- Imagem do curso -->
+        <% if curso.imagem_capa.attached? %>
+          <%= image_tag url_for(curso.imagem_capa), class: "card-img-top", alt: curso.nome %>
+        <% else %>
+          <div class="card-img-top d-flex align-items-center justify-content-center bg-light">
+            <i class="lucide-image text-muted" style="font-size: 3rem;"></i>
+          </div>
+        <% end %>
+        <div class="card-body">
+          <!-- Categoria e avaliação -->
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <% if curso.g_categoria.present? %>
+              <span class="badge bg-primary"><%= curso.g_categoria.nome %></span>
+            <% else %>
+              <span class="badge bg-prim\ary">Geral</span>
+            <% end %>
+          </div>
+          <h5 class="card-title"><%= curso.nome %></h5>
+          <!-- Preço (com desconto simulado para alguns cursos) -->
+          <div class="product-price">
+            <% if rand(10) > 7 %> <!-- Simulando alguns cursos com preço original -->
+              <% preco_original = curso.preco * (1 + rand(0.1..0.3)) %>
+              <span class="original-price">R$ <%= number_to_currency(preco_original, unit: "", separator: ",", delimiter: ".") %></span>
+            <% end %>
+            <span>R$ <%= number_to_currency(curso.preco, unit: "", separator: ",", delimiter: ".") %></span>
+          </div>
+          <a href="<%= curso.url_externa %>" class="btn btn-primary rounded-pill w-100" target="_blank">
+            Saiba Mais
+          </a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* --- Filtro de cursos --- */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const courseCards  = document.querySelectorAll('.product-item[data-categoria]');
+
+    /* --- Cria (ou reaproveita) o placeholder "nenhum curso" --- */
+    let noProducts = document.getElementById('no-products');
+    if (!noProducts) {
+      noProducts = document.createElement('div');
+      noProducts.id        = 'no-products';
+      noProducts.textContent = 'Nenhum curso nessa categoria';
+      noProducts.className = 'd-flex justify-content-center align-items-center text-muted';
+      noProducts.style.minHeight = '200px';
+      noProducts.style.display   = 'none';
+      document.querySelector('.row.g-4')?.appendChild(noProducts);
+    }
+
+    /* --- Função que executa o filtro propriamente dito --- */
+    function aplicarFiltro(categoria) {
+      let algumVisivel = false;
+
+      courseCards.forEach(card => {
+        const categoriaCard = card.dataset.categoria;
+        const mostrar       = categoria === 'todos' || categoria === categoriaCard;
+
+        card.style.display  = mostrar ? 'block' : 'none';
+        if (mostrar) algumVisivel = true;
+      });
+
+      /* Mostra a mensagem se nada ficou visível */
+      noProducts.style.display = algumVisivel ? 'none' : 'flex';
+    }
+
+    /* --- Listeners dos botões de filtro --- */
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();   // Impede o salto do link “#”
+
+        /* Alterna a classe .active */
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        /* Aplica o filtro escolhido */
+        aplicarFiltro(btn.dataset.categoria);
+      });
+    });
+
+    /* --- Clique nos cards de imagem de categoria --- */
+    const categoriaCards = document.querySelectorAll('.filter-card[data-categoria]');
+    categoriaCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const slug = card.dataset.categoria;
+
+        // Remove .active dos botões e adiciona no botão correspondente
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        filterButtons.forEach(btn => {
+          if (btn.dataset.categoria === slug) {
+            btn.classList.add('active');
+          }
+        });
+
+        // Aplica o filtro normalmente
+        aplicarFiltro(slug);
+      });
+    });
+
+    /* --- Filtro inicial ao carregar a página --- */
+    const activeBtn = document.querySelector('.filter-btn.active');
+    aplicarFiltro(activeBtn ? activeBtn.dataset.categoria : 'todos');
+  });
+</script>

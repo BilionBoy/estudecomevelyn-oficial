@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_21_020712) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_27_172532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,6 +92,23 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_21_020712) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "i_cursos", force: :cascade do |t|
+    t.string "nome"
+    t.string "slug"
+    t.text "descricao"
+    t.decimal "preco", precision: 10, scale: 2
+    t.bigint "g_categoria_id", null: false
+    t.string "url_externa"
+    t.string "status"
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["g_categoria_id"], name: "index_i_cursos_on_g_categoria_id"
+    t.index ["slug"], name: "index_i_cursos_on_slug", unique: true
   end
 
   create_table "i_itens_carrinhos", force: :cascade do |t|
@@ -214,6 +231,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_21_020712) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "g_categorias", "segmentos"
   add_foreign_key "i_carrinhos", "users", column: "usuario_id"
+  add_foreign_key "i_cursos", "g_categorias"
   add_foreign_key "i_itens_carrinhos", "i_carrinhos"
   add_foreign_key "i_itens_carrinhos", "i_produtos"
   add_foreign_key "i_itens_pedidos", "i_pedidos"

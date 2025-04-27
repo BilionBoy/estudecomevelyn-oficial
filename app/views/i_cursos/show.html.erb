@@ -1,0 +1,57 @@
+<div class="container">
+  <%= render "shared/notice" %>
+  <div class="card border-0 shadow shadow-sm">
+    <div class="card-header border-0 d-flex justify-content-between">
+      <span class="fs-4">Visualizar I Curso</span>
+    </div>
+    <div class="card-body">
+      <div id="<%= dom_id @i_curso %>">
+          <p>
+            <strong>Nome:</strong>
+            <%= @i_curso.nome %>
+          </p>
+          <p>
+            <strong>Slug:</strong>
+            <%= @i_curso.slug %>
+          </p>
+          <p>
+            <strong>Descricao:</strong>
+            <%= @i_curso.descricao %>
+          </p>
+          <p>
+            <strong>Preco:</strong>
+            <%= @i_curso.preco %>
+          </p>
+          <p>
+            <strong>G Categoria:</strong>
+            <%= @i_curso.g_categoria %>
+          </p>
+          <p>
+            <strong>Url Externa:</strong>
+            <%= @i_curso.url_externa %>
+          </p>
+          <p>
+            <strong>Status:</strong>
+            <%= @i_curso.status %>
+          </p>
+          <p>
+            <strong>Created By:</strong>
+            <%= @i_curso.created_by %>
+          </p>
+          <p>
+            <strong>Updated By:</strong>
+            <%= @i_curso.updated_by %>
+          </p>
+      </div>
+    </div>
+    <div class="card-footer border-0 d-flex justify-content-between">
+      <div>
+        <%= link_to edit_i_curso_path(@i_curso), class: "btn btn-primary" do %>
+        <i class="bi bi-pencil-square"></i> Editar
+        <% end %>
+        <%= link_to "Voltar", i_cursos_path, class: "btn btn-secondary" %>
+      </div>
+      <%= button_to "Deletar", @i_curso, method: :delete, class: "btn btn-outline-danger border-0" %>
+    </div>
+  </div>
+</div>

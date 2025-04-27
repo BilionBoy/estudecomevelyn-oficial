@@ -30,6 +30,9 @@ pt-BR:
       i_promocao_produto:
         one: "Promoção Produto"
         other: "Promoções Produtos"
+      i_curso:
+        one: "Curso"
+        other: "Cursos"
     attributes:
       user:
         nome: "Nome"
@@ -63,6 +66,14 @@ pt-BR:
       i_promocao_produto:
         i_produto: "Produto"
         i_promocao: "Promoção"
+      i_curso:
+        nome: "Nome"
+        descricao: "Descrição"
+        preco: "Preço"
+        g_categoria: "Categoria"
+        url_externa: "Link Plataforma Eduzz"
+        imagem_url: "Imagem de Capa"
+        status: "Status"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"
