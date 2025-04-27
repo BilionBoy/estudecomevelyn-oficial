@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   end
   
   # Links extras da loja
-  get 'carrinho',                      to: 'store/carrinho#show', as: :carrinho
-  get 'papelaria',                     to: 'store#papelaria',     as: :papelaria
-  get 'blog',                          to: 'store#blog',          as: :blog
-  get 'cursos',                        to: 'store#cursos',        as: :cursos
+  get 'carrinho',                       to: 'store/carrinho#show', as: :carrinho
+  get 'papelaria',                      to: 'store#papelaria',     as: :papelaria
+  get 'blog',                           to: 'store#blog',          as: :blog
+  get 'cursos',                         to: 'store#cursos',        as: :cursos
   get 'store/categorias/:slug',         to: 'store#categoria',     as: :store_categoria
   
   # Admin
