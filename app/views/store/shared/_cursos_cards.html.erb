@@ -33,7 +33,6 @@
               <span class="badge bg-prim\ary">Geral</span>
             <% end %>
           </div>
-          <!-- Título e descrição -->
           <h5 class="card-title"><%= curso.nome %></h5>
           <!-- Preço (com desconto simulado para alguns cursos) -->
           <div class="product-price">
@@ -43,8 +42,7 @@
             <% end %>
             <span>R$ <%= number_to_currency(curso.preco, unit: "", separator: ",", delimiter: ".") %></span>
           </div>
-          <!-- Botão "Saiba Mais" -->
-          <a href="<%= i_curso_path(curso) %>" class="btn btn-primary rounded-pill w-100">
+          <a href="<%= curso.url_externa %>" class="btn btn-primary rounded-pill w-100" target="_blank">
             Saiba Mais
           </a>
         </div>
