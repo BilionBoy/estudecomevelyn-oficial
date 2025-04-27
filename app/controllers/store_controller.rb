@@ -49,7 +49,34 @@ class StoreController < ApplicationController
     end
   end
   def cursos
+    segmento_cursos = Segmento.find_by(nome: "Cursos")
+    @g_categorias = segmento_cursos.present? ? segmento_cursos.g_categorias.order(:nome) : []
+  
+    # Para cada categoria, buscamos os cursos
+    if params[:categoria].present?
+      categoria = GCategoria.find_by(slug: params[:categoria])
+      if categoria.present?
+        @pagy, @cursos = pagy(
+          categoria.i_cursos.where(status: :ativo).order(created_at: :desc),
+          items: 6
+        )
+      else
+        @cursos = []
+      end
+    else
+      @pagy, @cursos = pagy(
+        ICurso.where(status: :ativo).order(created_at: :desc),
+        items: 6
+      )
+    end
+  
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+  
+  
 
   def blog
   end

@@ -38,3 +38,25 @@
     </div>
   </div>
 </section>
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <% @g_categorias.each do |categoria| %>
+        <div class="col-lg-3 col-md-6">
+          <div class="category-card position-relative overflow-hidden filter-card" data-categoria="<%= categoria.slug %>">
+            <% if categoria.foto_categoria.attached? %>
+              <%= image_tag categoria.foto_categoria.variant(resize_to_fill: [800, 500]), class: "category-img", alt: categoria.nome %>
+            <% else %>
+              <%= image_tag "https://via.placeholder.com/800x500", class: "category-img", alt: "Imagem não disponível" %>
+            <% end %>
+            <div class="category-overlay"></div>
+            <div class="category-content">
+              <h3 class="category-title"><%= categoria.nome %></h3>
+              <p class="category-count"><%= categoria.i_cursos.count %> produtos</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

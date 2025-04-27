@@ -26,7 +26,7 @@
           <%= f.input :preco, input_html: { class: "capitalize"}, placeholder: "Preco"  %>
         </div>
         <div class="col-7">
-          <%= f.association :g_categoria, input_html: { class: "capitalize"}, placeholder: "G categoria"  %>
+          <%= f.input :g_categoria_id, collection: GCategoria.all.map { |c| [c.nome, c.id] }, prompt: "Selecione a categoria", input_html: { class: "capitalize" } %>
         </div>
         <div class="col-12">
           <%= f.input :url_externa, input_html: { class: "capitalize"}, placeholder: "Insira o Link de Venda"  %>

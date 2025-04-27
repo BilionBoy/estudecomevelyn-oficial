@@ -5,6 +5,7 @@ class GCategoria < ApplicationRecord
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
   belongs_to       :segmento
   has_many         :i_produtos
+  has_many         :i_cursos
   has_one_attached :foto_categoria
 
   
