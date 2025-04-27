@@ -70,7 +70,8 @@
       </div>
       <div class="d-flex flex-wrap">
         <%= button_tag 'Todos', class: 'filter-btn active', data: { categoria: 'todos' } %>
-        <% GCategoria.order(:nome).each do |g_categoria| %>
+        <% # Exclui as categorias do segmento "Cursos" %>
+        <% GCategoria.where.not(id: Segmento.find_by(nome: "Cursos")&.g_categorias&.pluck(:id)).order(:nome).each do |g_categoria| %>
           <%= button_tag g_categoria.nome, class: 'filter-btn', data: { categoria: g_categoria.slug } %>
         <% end %>
       </div>

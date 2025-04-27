@@ -25,13 +25,20 @@
         <div class="col-12">
           <%= f.association :segmento,  collection: Segmento.all,  label_method: :nome,  value_method: :id,  input_html: { class: "capitalize" },  placeholder: "Segmento" %>
         </div>
-        <div class="col-12">
+        <div class="form-group">
+          <%= f.label :foto_categoria, "Foto da Categoria" %>
+          <% if f.object.persisted? && f.object.foto_categoria.attached? %>
+            <p>Imagem de Capa já cadastrada. Você pode atualizar abaixo, se necessário.</p>
+          <% else %>
+            <%= f.file_field :foto_categoria, class: "form-control" %>
+          <% end %>
+        </div>
+        <div class="col-7">
           <% if f.object.foto_categoria.attached? %>
-            <%= image_tag url_for(f.object.foto_categoria), alt: "Foto da Categoria", class: "img-thumbnail" %>
+            <%= image_tag url_for(f.object.foto_categoria), alt: "Imagem de Capa", class: "img-thumbnail mb-2" %>
           <% else %>
             <p>Não há imagem cadastrada.</p>
           <% end %>
-          <%= f.file_field :foto_categoria %>
         </div>
         <div class="col-12">
           <%= f.input :created_at, input_html: { class: "capitalize"}, placeholder: "Created at"  %>

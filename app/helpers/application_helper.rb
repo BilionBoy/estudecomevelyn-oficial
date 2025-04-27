@@ -1,6 +1,18 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def image_for(object)
+    if object.is_a?(GCategoria) && object.foto_categoria.attached?
+      object.foto_categoria
+    elsif object.is_a?(IProduto) && object.imagem.attached?
+      object.imagem
+    elsif object.is_a?(ICurso) && object.imagem_capa.attached?
+      object.imagem_capa
+    else
+      nil
+    end
+  end
+
   def total_itens_no_carrinho
     return 0 unless user_signed_in?
 
@@ -11,6 +23,7 @@ module ApplicationHelper
   def uppercase(text)
     text.to_s.upcase
   end
+  
   
   def btn_submit(form)
     text = form.object.new_record? ? 'Incluir' : 'Atualizar'

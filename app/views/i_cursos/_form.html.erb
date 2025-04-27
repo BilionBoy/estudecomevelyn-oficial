@@ -34,8 +34,20 @@
         <div class="col-5">
           <%= f.input :status, collection: [['Ativo', 'ativo'], ['Inativo', 'inativo']], prompt: "Selecione o status", input_html: { class: "capitalize" } %>
         </div>
+        <div class="form-group">
+          <%= f.label :imagem_capa, "Foto da Categoria" %>
+          <% if f.object.persisted? && f.object.imagem_capa.attached? %>
+            <p>Imagem de Capa já cadastrada. Você pode atualizar abaixo, se necessário.</p>
+          <% else %>
+            <%= f.file_field :imagem_capa, class: "form-control" %>
+          <% end %>
+        </div>
         <div class="col-7">
-          <%= f.input :imagem_capa, as: :file, label: "Imagem de capa" %>
+          <% if f.object.imagem_capa.attached? %>
+            <%= image_tag url_for(f.object.imagem_capa), alt: "Imagem de Capa", class: "img-thumbnail mb-2" %>
+          <% else %>
+            <p>Não há imagem cadastrada.</p>
+          <% end %>
         </div>
       </div>
     </div>
