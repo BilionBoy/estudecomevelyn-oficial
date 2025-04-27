@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class GCategoria < ApplicationRecord
-  self.table_name = "g_categorias"
 
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
   belongs_to       :segmento
