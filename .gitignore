@@ -33,16 +33,5 @@
 !/tmp/storage/.keep
 
 
-
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/config/database.yml
-nohup.out
-start.sh
-stop.sh
-.byebug_history
-/coverage/
-Gemfile.lock
-.env
-docker-compose.yml
-/config/environments/production.rb
