@@ -1,0 +1,23 @@
+# config/database.yml.example
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV["DATABASE_USERNAME"] %> # exemplo: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %> # exemplo: senha123
+  host: <%= ENV["DATABASE_HOST"] %>          # exemplo: localhost
+  port: 5432
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME_DEVELOPMENT"] %> # exemplo: meuapp_development
+
+test:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME_TEST"] %> # exemplo: meuapp_test
+
+production:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME_PRODUCTION"] %> # exemplo: meuapp_production
