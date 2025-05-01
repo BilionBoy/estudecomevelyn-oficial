@@ -5,28 +5,24 @@ class ICarrinho < ApplicationRecord
   validates :status, inclusion: { in: %w[ativo inativo cancelado] }
 
   
-  def adicionar_item(produto, quantidade)
+  def adicionar_item(produto)
+
+    validar_produto!(produto)
+    return i_itens_carrinhos.find_by(i_produto_id: produto.id) if i_itens_carrinhos.exists?(i_produto_id: produto.id)
+  
+    i_itens_carrinhos.create!(i_produto: produto, quantidade: 1, preco_unitario: produto.preco.to_d)
+  end
+  
+  
+    def total
+      i_itens_carrinhos.sum(:subtotal)
+    end
+    
+  private
+  
+  def validar_produto!(produto)
     raise ArgumentError, "Produto inválido" unless produto.is_a?(IProduto)
     raise ArgumentError, "Produto sem preço válido" if produto.preco.blank? || produto.preco <= 0
-  
-    quantidade = quantidade.to_i
-    raise ArgumentError, "Quantidade inválida" if quantidade < 1
-  
-    item = i_itens_carrinhos.find_or_initialize_by(i_produto: produto)
-    item.quantidade = (item.quantidade || 0) + quantidade
-    item.preco_unitario = produto.preco.to_d
-    item.subtotal = (item.quantidade * item.preco_unitario).round(2)
-    item.save!
-    
-    item
-  rescue => e
-    Rails.logger.error "Falha ao adicionar item: #{e.message}\n#{e.backtrace.join("\n")}"
-    raise
-  end
-
-
-  def total
-    i_itens_carrinhos.sum(:subtotal)
   end
   
 end

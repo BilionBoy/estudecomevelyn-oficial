@@ -56,6 +56,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
   /* --- Filtro de produtos --- */
+
   const filterButtons = document.querySelectorAll('.filter-btn');
   const productCards  = document.querySelectorAll('.product-item[data-categoria]');
 
@@ -127,44 +128,47 @@
 
   /* --- Adicionar ao carrinho --- */
    async function adicionarAoCarrinho(botao) {
-    const produtoId = botao.dataset.produtoId;
+  const produtoId = botao.dataset.produtoId;
 
-    try {
-      const resposta = await fetch("<%= adicionar_ao_carrinho_store_carrinho_path  %>", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': document.querySelector("meta[name='csrf-token']").content
-        },
-        body: JSON.stringify({ produto_id: produtoId })
-      });
+  try {
+    const resposta = await fetch("<%= adicionar_ao_carrinho_store_carrinho_path %>", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': document.querySelector("meta[name='csrf-token']").content
+      },
+      body: JSON.stringify({ produto_id: produtoId })
+    });
 
-      const resultado = await resposta.json();
+    const resultado = await resposta.json();
 
-      if (resultado.success) {
-        // Atualiza o contador na navbar
-        const badge = document.querySelector('#carrinho-contador');
-        if (badge) {
-          badge.textContent = resultado.total_itens;
-        }
-
-        // Feedback visual
-        botao.classList.remove('btn-primary');
-        botao.classList.add('btn-success');
-        botao.textContent = 'Adicionado!';
-        setTimeout(() => {
-          botao.classList.remove('btn-success');
-          botao.classList.add('btn-primary');
-          botao.textContent = 'Adicionar ao Carrinho';
-        }, 1500);
-      } else {
-        alert('Erro ao adicionar: ' + resultado.message);
+    if (resultado.success) {
+      // Atualiza o contador na navbar
+      const badge = document.querySelector('#carrinho-contador');
+      if (badge) {
+        badge.textContent = resultado.total_itens;
       }
 
-    } catch (erro) {
-      console.error('Erro ao adicionar ao carrinho:', erro);
-      alert('Você precisa se registrar para adicionar ao carirnho.');
+      // Armazenar produto no localStorage
+      let produtosNoCarrinho = JSON.parse(localStorage.getItem('produtosCarrinho')) || [];
+      if (!produtosNoCarrinho.includes(produtoId)) {
+        produtosNoCarrinho.push(produtoId);
+        localStorage.setItem('produtosCarrinho', JSON.stringify(produtosNoCarrinho));
+      }
+
+      // Feedback visual
+      botao.classList.remove('btn-primary');
+      botao.classList.add('btn-success');
+      botao.textContent = 'Adicionado!';
+      botao.disabled = true;
+    } else {
+      alert('Erro ao adicionar: ' + resultado.message);
     }
+
+  } catch (erro) {
+    console.error('Erro ao adicionar ao carrinho:', erro);
+    alert('Você precisa se registrar para adicionar ao carrinho.');
+  }
   }
 
   // Substitui o evento do botão de adicionar ao carrinho

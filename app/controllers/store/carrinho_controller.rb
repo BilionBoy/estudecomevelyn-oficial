@@ -10,18 +10,25 @@ class Store::CarrinhoController < ApplicationController
 
   def adicionar
     produto = IProduto.find(params[:produto_id])
-    carrinho = current_user.i_carrinhos.find_or_create_by(status: 'ativo')
   
-    carrinho.adicionar_item(produto, 1)
+    ja_existia = @carrinho.i_itens_carrinhos.exists?(i_produto_id: produto.id)
+    @carrinho.adicionar_item(produto)
   
-    total_itens = carrinho.i_itens_carrinhos.sum(:quantidade)
+    total_itens = @carrinho.i_itens_carrinhos.count
   
     respond_to do |format|
-      format.json { render json: { success: true, total_itens: total_itens } }
+      format.json do
+        render json: {
+          success: true,
+          total_itens: total_itens,
+          ja_adicionado: ja_existia
+        }
+      end
     end
   rescue => e
     render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
+  
   
   def remover
     produto = IProduto.find(params[:produto_id])
