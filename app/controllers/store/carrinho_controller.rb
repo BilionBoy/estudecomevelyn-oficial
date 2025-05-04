@@ -7,24 +7,23 @@ class Store::CarrinhoController < ApplicationController
     @total = @carrinho.total
   end
 
-
   def adicionar
     produto = IProduto.find(params[:produto_id])
   
-    ja_existia = @carrinho.i_itens_carrinhos.exists?(i_produto_id: produto.id)
+    item_ja_existe = @carrinho.item_presente?(produto)
     @carrinho.adicionar_item(produto)
-  
-    total_itens = @carrinho.i_itens_carrinhos.count
-  
+    
     respond_to do |format|
       format.json do
         render json: {
           success: true,
-          total_itens: total_itens,
-          ja_adicionado: ja_existia
+          total_itens: @carrinho.total_itens,
+          item_ja_estava_no_carrinho: item_ja_existe
         }
       end
     end
+  rescue ActiveRecord::RecordNotFound
+    render json: { success: false, message: "Produto não encontrado." }, status: :not_found
   rescue => e
     render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
@@ -45,11 +44,10 @@ class Store::CarrinhoController < ApplicationController
   end
 
   def limpar
-    carrinho = current_user.i_carrinhos.find_by(status: 'ativo')
-    carrinho.i_itens_carrinhos.destroy_all if carrinho
-    redirect_to carrinho_path, notice: "Carrinho esvaziado com sucesso."
+    @carrinho.i_itens_carrinhos.destroy_all
+    redirect_to store_carrinho_path, notice: "Carrinho esvaziado com sucesso."
   end
-
+  
   
 
   private
