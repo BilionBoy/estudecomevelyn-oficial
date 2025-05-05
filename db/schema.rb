@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_27_172532) do
   end
 
   create_table "g_tipo_usuarios", force: :cascade do |t|
-    t.string "nome", null: false
+    t.string "nome"
     t.text "descricao"
     t.string "created_by"
     t.string "updated_by"
