@@ -1,3 +1,4 @@
+# app/models/i_carrinho.rb
 class ICarrinho < ApplicationRecord
   belongs_to :usuario, class_name: 'User'
   has_many   :i_itens_carrinhos
@@ -7,7 +8,12 @@ class ICarrinho < ApplicationRecord
   def adicionar_item(produto)
     validar_produto!(produto)
     return i_itens_carrinhos.find_by(i_produto_id: produto.id) if item_presente?(produto)
-    i_itens_carrinhos.create!(i_produto: produto, quantidade: 1, preco_unitario: produto.preco.to_d)
+
+    i_itens_carrinhos.create!(
+      i_produto: produto,
+      quantidade: 1,
+      preco_unitario: produto.preco.to_d
+    )
   end
 
   def item_presente?(produto)
@@ -18,7 +24,11 @@ class ICarrinho < ApplicationRecord
     i_itens_carrinhos.sum(:subtotal)
   end
 
-  def total_itens
+  def quantidade_total_itens
+    i_itens_carrinhos.sum(:quantidade)
+  end
+
+  def quantidade_itens_distintos
     i_itens_carrinhos.count
   end
 

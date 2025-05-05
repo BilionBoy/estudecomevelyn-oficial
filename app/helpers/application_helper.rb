@@ -13,11 +13,8 @@ module ApplicationHelper
     end
   end
 
-  def total_itens_no_carrinho
-    return 0 unless user_signed_in?
-
-    carrinho = current_user.i_carrinhos.find_by(status: 'ativo')
-    carrinho&.i_itens_carrinhos&.sum(:quantidade) || 0
+  def quantidade_total_itens_no_carrinho
+    user_signed_in? ? current_user.quantidade_total_itens_no_carrinho : 0
   end
 
   def uppercase(text)

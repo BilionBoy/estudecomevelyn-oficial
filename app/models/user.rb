@@ -11,8 +11,14 @@ class User < ApplicationRecord
   validates :g_tipo_usuario_id, presence: true 
 
 
-  def carrinho_atual
-    i_carrinhos.find_by(status: 'ativo')
+
+  def carrinho_ativo
+    i_carrinhos.find_or_create_by(status: 'ativo')
+  end
+
+  def quantidade_total_itens_no_carrinho
+    carrinho = i_carrinhos.find_by(status: 'ativo')
+    carrinho&.quantidade_total_itens || 0
   end
 
 end

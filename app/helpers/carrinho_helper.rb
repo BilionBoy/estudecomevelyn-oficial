@@ -1,10 +1,10 @@
 module CarrinhoHelper
-  def total_carrinho
-    total = 0
-    session[:carrinho].each do |produto_id, quantidade|
-      produto = IProduto.find(produto_id)
-      total += produto.preco * quantidade
+  def total_carrinho_anonimo
+    return 0 unless session[:carrinho]
+
+    session[:carrinho].sum do |produto_id, quantidade|
+      produto = IProduto.find_by(id: produto_id)
+      produto ? produto.preco * quantidade : 0
     end
-    total
   end
 end
