@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :g_tipo_usuario_id, presence: true 
 
 
-
   def carrinho_ativo
     i_carrinhos.find_or_create_by(status: 'ativo')
   end

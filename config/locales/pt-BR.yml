@@ -41,15 +41,23 @@ pt-BR:
         password: "Senha"
         password_confirmation: "Confirmação de Senha"
         g_tipo_usuario: "Tipo de Usuário"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       g_tipo_usuario:
         papel: "Papel"
         descricao: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       segmento:
         nome: "Nome"
         descricao: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       g_categoria:
         nome: "Nome"
         descricao: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       i_produto:
         nome: "Nome"
         descricao: "Descrição"
@@ -58,14 +66,20 @@ pt-BR:
         arquivo_url: "Arquivo"
         imagem_url: "Imagem"
         status: "Status"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       i_promocao:
         nome: "Nome"
         descricao: "Descrição"
         ativo: "Ativo"
         slug: "Slug"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       i_promocao_produto:
         i_produto: "Produto"
         i_promocao: "Promoção"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
       i_curso:
         nome: "Nome"
         descricao: "Descrição"
@@ -74,6 +88,8 @@ pt-BR:
         url_externa: "Link Plataforma Eduzz"
         imagem_url: "Imagem de Capa"
         status: "Status"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

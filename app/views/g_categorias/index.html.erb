@@ -33,7 +33,6 @@
           <tr>
             <th class="text-center">Ações</th>
             <th><%= sort_link(@q, :nome, t("activerecord.attributes.g_categoria.nome")) %></th>
-            <th><%= sort_link(@q, :slug, t("activerecord.attributes.g_categoria.slug")) %></th>
             <th><%= sort_link(@q, :descricao, t("activerecord.attributes.g_categoria.descricao")) %></th>
             <th><%= sort_link(@q, :segmento, t("activerecord.attributes.g_categoria.segmento")) %></th>
             <th><%= sort_link(@q, :created_at, t("activerecord.attributes.g_categoria.created_at")) %></th>
@@ -59,7 +58,6 @@
                 </div>
               </td>
               <td><%= g_categoria.nome %></td>
-              <td><%= g_categoria.slug %></td>
               <td><%= g_categoria.descricao %></td>
               <td><%= g_categoria.segmento&.nome || '-' %></td>
               <td><%= g_categoria.created_at.strftime('%d/%m/%Y') %></td>
