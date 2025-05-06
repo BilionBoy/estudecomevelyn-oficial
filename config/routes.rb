@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # Store Público
   namespace :store do
     resource :carrinho, only: [:show], controller: 'carrinho' do
-      post   :adicionar,           on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
-      delete :limpar,              on: :collection, to: 'carrinho#limpar',    as: :limpar
+      post   :adicionar,            on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
+      delete :limpar,               on: :collection, to: 'carrinho#limpar',    as: :limpar
       delete 'remover/:produto_id', on: :collection, to: 'carrinho#remover',   as: :remover_item
     end
     resource :checkout, only: [:new, :create]
