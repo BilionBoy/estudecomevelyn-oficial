@@ -8,7 +8,11 @@ class Store::CarrinhoController < ApplicationController
   end
 
   def adicionar
-    produto = IProduto.find(params[:produto_id])
+    produto = IProduto.find_by(id: params[:produto_id])
+    unless produto
+      return render json: { success: false, message: "Produto não encontrado." }, status: :not_found
+    end
+    
     item_ja_existe = @carrinho.item_presente?(produto)
     @carrinho.adicionar_item(produto)
 
@@ -17,14 +21,17 @@ class Store::CarrinhoController < ApplicationController
       total_itens: @carrinho.quantidade_total_itens,
       item_ja_estava_no_carrinho: item_ja_existe
     }
-  rescue ActiveRecord::RecordNotFound
-    render json: { success: false, message: "Produto não encontrado." }, status: :not_found
   rescue => e
     render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
 
   def remover
-    produto = IProduto.find(params[:produto_id])
+    produto = IProduto.find_by(id: params[:produto_id])
+    unless produto
+      flash[:alert] = "Produto não encontrado."
+      return redirect_to store_carrinho_path
+    end
+    
     item = @carrinho.i_itens_carrinhos.find_by(i_produto: produto)
 
     if item
@@ -38,8 +45,13 @@ class Store::CarrinhoController < ApplicationController
   end
 
   def limpar
-    @carrinho.i_itens_carrinhos.destroy_all
-    redirect_to store_carrinho_path, notice: "Carrinho esvaziado com sucesso."
+    if @carrinho.i_itens_carrinhos.empty?
+      flash[:alert] = "O carrinho já está vazio."
+    else
+      @carrinho.i_itens_carrinhos.destroy_all
+      flash[:notice] = "Carrinho esvaziado com sucesso."
+    end
+    redirect_to store_carrinho_path
   end
 
   private
