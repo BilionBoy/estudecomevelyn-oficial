@@ -14,5 +14,6 @@ class IItemPedido < ApplicationRecord
     return unless preco_unitario && quantidade
 
     self.subtotal = (preco_unitario * quantidade).round(2)
+  
   end
 end
