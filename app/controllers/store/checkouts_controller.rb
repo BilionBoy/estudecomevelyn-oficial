@@ -28,7 +28,7 @@ class Store::CheckoutsController < ApplicationController
     end,
     mode: 'payment',
     success_url: store_checkout_success_url,
-    cancel_url: store_checkout_cancel_url
+    cancel_url:  store_checkout_cancel_url
   })
 
   redirect_to session.url, allow_other_host: true
