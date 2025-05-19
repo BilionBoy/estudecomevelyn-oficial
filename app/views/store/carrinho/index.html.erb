@@ -29,5 +29,5 @@
   </table>
   <p><strong>Total: <%= number_to_currency(total_carrinho) %></strong></p>
   <%= link_to 'Limpar Carrinho', store_carrinho_clear_path, method: :delete, class: 'btn btn-danger' %>
-  <%= link_to 'Finalizar Compra', checkout_path, class: 'btn btn-success' %>
+  <%= button_to "Finalizar Compra", finalizar_compra_store_carrinho_path, method: :post, class: "btn btn-primary" %>
 <% end %>

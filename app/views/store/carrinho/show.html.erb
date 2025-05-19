@@ -59,7 +59,7 @@
                   <span class="summary-total-value">R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></span>
                 </div>
                 <div class="summary-actions">
-                  <%= link_to new_store_checkout_path, class: "btn btn-primary btn-block" do %>
+                  <%= button_to finalizar_compra_store_carrinho_path, method: :post, class: "btn btn-primary w-100" do %>
                     <i class="fas fa-lock me-2"></i> Finalizar Compra
                   <% end %>
                 </div>

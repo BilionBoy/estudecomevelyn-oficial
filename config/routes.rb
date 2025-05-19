@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   namespace :store do
     resource :carrinho, only: [:show], controller: 'carrinho' do
       post   :adicionar,            on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
+      post   :finalizar_compra,     on: :collection # adiciona essa rota
       delete :limpar,               on: :collection, to: 'carrinho#limpar',    as: :limpar
       delete 'remover/:produto_id', on: :collection, to: 'carrinho#remover',   as: :remover_item
+
     end
-    resource :checkout, only: [:new,   :create]
     resources :pedidos, only: [:index, :show]
   end
   
