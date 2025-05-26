@@ -5,10 +5,10 @@ class Store::CheckoutsController < ApplicationController
   def success
     @pedido = IPedido.new(
       usuario: current_user,
-      total: @carrinho.total,
-      nome: current_user.nome,
-      email: current_user.email,
-      cpf: current_user.cpf,
+      total:    @carrinho.total,
+      nome:     current_user.nome,
+      email:    current_user.email,
+      cpf:      current_user.cpf,
       telefone: current_user.telefone,
       metodo_pagamento: 'cartao'
     )
