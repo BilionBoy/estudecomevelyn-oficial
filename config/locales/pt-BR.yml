@@ -21,6 +21,9 @@ pt-BR:
       g_categoria:
         one: "Categoria"
         other: "Categorias"
+      g_blog_categoria:
+        one: "Categoria de Blog"
+        other: "Categorias de Blog"
       i_produto:
         one: "Produto"
         other: "Produtos"
@@ -88,6 +91,10 @@ pt-BR:
         url_externa: "Link Plataforma Eduzz"
         imagem_url: "Imagem de Capa"
         status: "Status"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      g_blog_categoria:
+        descricao: "Descrição"
         created_at: "Criado em"
         updated_at: "Atualizado em"
     errors:

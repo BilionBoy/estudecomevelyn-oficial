@@ -186522,3 +186522,258 @@ Processing by GBlogCategoriasController#index as HTML
 Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:53:28 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.8ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 19.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | GC: 0.8ms)
+Completed 200 OK in 49ms (Views: 25.5ms | ActiveRecord: 5.0ms (4 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:53:28 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 9.1ms | GC: 6.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | GC: 6.3ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/g_blog_categorias/new" for 127.0.0.1 at 2025-05-27 12:53:31 -0400
+Processing by GBlogCategoriasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered g_blog_categorias/_form.html.erb (Duration: 6.4ms | GC: 0.9ms)
+  Rendered g_blog_categorias/new.html.erb within layouts/application (Duration: 7.4ms | GC: 0.9ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.9ms)
+Completed 200 OK in 23ms (Views: 10.7ms | ActiveRecord: 3.1ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:53:32 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.3ms)
+Completed 200 OK in 17ms (Views: 6.7ms | ActiveRecord: 1.9ms (4 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:53:47 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 15.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 19.9ms | ActiveRecord: 5.6ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias/new" for 127.0.0.1 at 2025-05-27 12:53:48 -0400
+Processing by GBlogCategoriasController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered g_blog_categorias/_form.html.erb (Duration: 5.0ms | GC: 0.3ms)
+  Rendered g_blog_categorias/new.html.erb within layouts/application (Duration: 5.5ms | GC: 0.3ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 17.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | GC: 0.3ms)
+Completed 200 OK in 45ms (Views: 23.9ms | ActiveRecord: 6.0ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:53:58 -0400
+Processing by GBlogCategoriasController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_blog_categoria"=>{"descricao"=>"Tutoriasi"}, "button"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:22:in `create'
+  [1m[36mGBlogCategoria Create (3.3ms)[0m  [1m[32mINSERT INTO "g_blog_categorias" ("descricao", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["descricao", "Tutoriasi"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-05-27 16:53:59.002576"], ["updated_at", "2025-05-27 16:53:59.002576"]]
+  ↳ app/controllers/g_blog_categorias_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/g_blog_categorias
+Completed 302 Found in 17ms (ActiveRecord: 5.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:53:59 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias/1/edit" for 127.0.0.1 at 2025-05-27 12:54:01 -0400
+Processing by GBlogCategoriasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Load (0.5ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_blog_categorias_controller.rb:48:in `set_g_blog_categoria'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered g_blog_categorias/_form.html.erb (Duration: 3.0ms | GC: 0.6ms)
+  Rendered g_blog_categorias/edit.html.erb within layouts/application (Duration: 3.7ms | GC: 0.6ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.6ms)
+Completed 200 OK in 21ms (Views: 9.0ms | ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started PATCH "/g_blog_categorias/1" for 127.0.0.1 at 2025-05-27 12:54:04 -0400
+Processing by GBlogCategoriasController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_blog_categoria"=>{"descricao"=>"Tutoriais"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_blog_categorias_controller.rb:48:in `set_g_blog_categoria'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:30:in `update'
+  [1m[36mGBlogCategoria Update (0.9ms)[0m  [1m[33mUPDATE "g_blog_categorias" SET "descricao" = $1, "updated_at" = $2 WHERE "g_blog_categorias"."id" = $3[0m  [["descricao", "Tutoriais"], ["updated_at", "2025-05-27 16:54:04.959274"], ["id", 1]]
+  ↳ app/controllers/g_blog_categorias_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:30:in `update'
+Redirected to http://127.0.0.1:3000/g_blog_categorias
+Completed 303 See Other in 9ms (ActiveRecord: 2.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:54:04 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.3ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.3ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.9ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Stripe inicializado. API Key presente: true
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:54:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 8.4ms | GC: 0.6ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 21.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | GC: 4.3ms)
+Completed 200 OK in 159ms (Views: 61.4ms | ActiveRecord: 34.0ms (4 queries, 0 cached) | GC: 48.3ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:54:20 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.7ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 7.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 17.7ms | ActiveRecord: 2.5ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
