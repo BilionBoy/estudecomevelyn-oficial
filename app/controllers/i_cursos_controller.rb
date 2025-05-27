@@ -51,7 +51,7 @@ class ICursosController < ApplicationController
 
   def i_curso_params
     permitted_attributes = ICurso.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
-    params.require(:i_curso).permit(permitted_attributes.map(&:to_sym), :imagem_capa)
+    params.require(:i_curso).permit(permitted_attributes.map(&:to_sym), :imagem_capa, :remove_imagem_capa)
   end
 
   def handle_not_found
