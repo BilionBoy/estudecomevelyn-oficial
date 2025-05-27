@@ -1,14 +1,16 @@
 class GCategoria < ApplicationRecord
   belongs_to        :segmento
-  has_many          :i_produtos,   dependent: :destroy
-  has_many          :i_cursos,     dependent: :destroy
+  has_many          :i_produtos, dependent: :destroy
+  has_many          :i_cursos,   dependent: :destroy
   has_one_attached  :foto_categoria
 
-  validates  :nome, presence: true, uniqueness: true
-  validates  :slug, presence: true
+  attr_accessor :remove_foto_categoria
 
+  validates :nome, presence: true, uniqueness: true
+  validates :slug, presence: true
 
   before_save :generate_slug
+  before_save :remove_foto_categoria_if_needed
 
   private
 
@@ -25,5 +27,9 @@ class GCategoria < ApplicationRecord
       self.slug = "#{original_slug}-#{count}"
       count += 1
     end
+  end
+
+  def remove_foto_categoria_if_needed
+    foto_categoria.purge if remove_foto_categoria == '1'
   end
 end
