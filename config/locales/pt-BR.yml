@@ -24,6 +24,9 @@ pt-BR:
       g_blog_categoria:
         one: "Categoria de Blog"
         other: "Categorias de Blog"
+      g_blog_post:
+        one: "Post de Blog"
+        other: "Posts de Blog"
       i_produto:
         one: "Produto"
         other: "Produtos"
@@ -95,6 +98,15 @@ pt-BR:
         updated_at: "Atualizado em"
       g_blog_categoria:
         descricao: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      g_blog_post:
+        titulo: "Título"
+        slug: "Slug"
+        conteudo: "Conteúdo"
+        g_blog_categoria: "Categoria do Blog"
+        imagem_url: "Imagem de Capa"
+        ativo: "Ativo"
         created_at: "Criado em"
         updated_at: "Atualizado em"
     errors:

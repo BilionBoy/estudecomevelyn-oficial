@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :g_blog_posts
   # Devise
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   

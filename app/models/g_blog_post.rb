@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+class GBlogPost < ApplicationRecord
+  # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
+  belongs_to :g_blog_categoria
+
+  validates :titulo, :resumo, :conteudo, :data_publicacao, presence: true
+
+end
