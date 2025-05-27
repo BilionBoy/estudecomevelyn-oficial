@@ -5,6 +5,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'g_tipo_usuario',      'g_tipo_usuarios'
   inflect.irregular 'segmento',            'segmentos'
   inflect.irregular 'g_categoria',         'g_categorias'
+  inflect.irregular 'g_blog_categoria',    'g_blog_categorias'
+  inflect.irregular 'g_blog_post',         'g_blog_posts'
   inflect.irregular 'i_produto',           'i_produtos'
   inflect.irregular 'i_promocao',          'i_promocoes'
   inflect.irregular 'i_promocao_produto',  'i_promocao_produtos'
@@ -14,7 +16,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'i_item_pedido',       'i_itens_pedidos'
   inflect.irregular 'i_cupom' ,            'i_cupons'
   inflect.irregular 'i_curso',             'i_cursos'
-  inflect.irregular  'g_blog_categoria',    'g_blog_categorias'
 
 end
 
