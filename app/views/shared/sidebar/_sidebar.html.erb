@@ -28,7 +28,7 @@
               <span class="tooltip top">Infoprodutos</span>
             </a>
           </li>
-        <%end%>
+        <% end %>
         <% if can? :manage, ICurso%>
           <li class="sidebar-menu-item">
             <a href="<%= i_cursos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Cursos">
@@ -37,7 +37,7 @@
               <span class="tooltip top">Cursos</span>
             </a>
           </li>
-        <%end%>
+        <% end %>
         <% if can? :manage, GTipoUsuario %>
           <div class="sidebar-section-title">Usuários</div>
           <li class="sidebar-menu-item">
@@ -47,7 +47,7 @@
               <span class="tooltip top">Tipos de Usuários</span>
             </a>
           </li>
-        <%end%>
+        <% end %>
         <% if can? :manage, GTipoUsuario %>
           <li class="sidebar-menu-item">
             <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Gerenciar Usuários">
@@ -55,7 +55,7 @@
               <span class="sidebar-menu-text">Gerenciar Usuários</span>
               <span class="tooltip top">Gerenciar Usuários</span>
             </a>
-          <%end%>
+          <% end %>
         </li>
         <% if can? :manage, Segmento%>
           <div class="sidebar-section-title">Segmentos</div>
@@ -66,7 +66,7 @@
               <span class="tooltip top">Segmentos</span>
             </a>
           </li>
-        <%end%>
+        <% end %>
       </ul>
       <% if can? :manage, GCategoria%>
         <div class="sidebar-section-title">Categorias</div>
@@ -77,7 +77,7 @@
             <span class="tooltip top">Categorias</span>
           </a>
         </li>
-      <%end%>
+      <% end %>
       <% if can? :manage, IPromocao%>
         <div class="sidebar-section-title">Promoções</div>
         <li class="sidebar-menu-item">
@@ -87,7 +87,7 @@
             <span class="tooltip top">Promoções</span>
           </a>
         </li>
-      <%end%>
+      <% end %>
       <% if can? :manage, IPromocaoProduto%>
         <li class="sidebar-menu-item">
           <a href="<%= i_promocao_produtos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
@@ -96,7 +96,17 @@
             <span class="tooltip top">Promoção Produtos</span>
           </a>
         </li>
-      <%end%>
+      <% end %>
+      <div class="sidebar-section-title">Blog</div>
+      <% if can? :manage, GBlogCategoria%>
+        <li class="sidebar-menu-item">
+          <a href="<%= g_blog_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+            <span class="sidebar-menu-icon"><i class="ph-book-open "></i></span>
+            <span class="sidebar-menu-text">Blog</span>
+            <span class="tooltip top">Blog</span>
+          </a>
+        </li>
+      <% end %>
     </div>
   </div>
 </aside>

@@ -10,7 +10,7 @@ class Ability
     else
       # cliente
       can :read, :all
-      cannot :manage, [GTipoUsuario, IProduto, ICurso, Segmento, GCategoria, IPromocao, IPromocaoProduto]
+      cannot :manage, [GTipoUsuario, IProduto, ICurso, Segmento, GCategoria, IPromocao, IPromocaoProduto, GBlogCategoria]
     end
   end
 end

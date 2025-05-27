@@ -186777,3 +186777,521 @@ Processing by GBlogCategoriasController#index as HTML
 Completed 200 OK in 31ms (Views: 17.7ms | ActiveRecord: 2.5ms (4 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:55:13 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.7ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 20.8ms | GC: 1.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | GC: 1.9ms)
+Completed 200 OK in 45ms (Views: 28.4ms | ActiveRecord: 6.6ms (4 queries, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:55:18 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 17.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 23.6ms | ActiveRecord: 6.0ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:55:57 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.4ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 17.9ms | GC: 0.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | GC: 1.6ms)
+Completed 200 OK in 42ms (Views: 24.7ms | ActiveRecord: 6.9ms (4 queries, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:56:37 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 24.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 32.9ms | ActiveRecord: 7.6ms (4 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:56:48 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.2ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 18.6ms | GC: 0.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | GC: 0.9ms)
+Completed 200 OK in 42ms (Views: 25.3ms | ActiveRecord: 7.0ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:58:12 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!-- Sidebar -->
+<aside class="sidebar collapsed" id="sidebar">
+  <div class="sidebar-header">
+    <a href="<%= root_path %>" class="sidebar-logo">
+      <i class="ph-pen"></i>
+      <span>Admin Panel</span>
+    </a>
+    <button class="sidebar-toggle d-block d-lg-none" id="sidebar-toggle" aria-label="Fechar menu">
+      <i class="ph-x"></i>
+    </button>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Principal</div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item">
+          <a href="<%= g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+            <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+            <span class="sidebar-menu-text">Dashboard</span>
+            <span class="tooltip top">Dashboard</span>
+          </a>
+        </li>
+        <% if can? :manage, IProduto%>
+          <li class="sidebar-menu-item">
+            <a href="<%= i_produtos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos">
+              <span class="sidebar-menu-icon"><i class="ph-bag"></i></span>
+              <span class="sidebar-menu-text">Produtos</span>
+              <span class="tooltip top">Infoprodutos</span>
+            </a>
+          </li>
+        <% end %>
+        <% if can? :manage, ICurso%>
+          <li class="sidebar-menu-item">
+            <a href="<%= i_cursos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Cursos">
+              <span class="sidebar-menu-icon"><i class="ph-book"></i></span>
+              <span class="sidebar-menu-text">Cursos</span>
+              <span class="tooltip top">Cursos</span>
+            </a>
+          </li>
+        <% end %>
+        <% if can? :manage, GTipoUsuario %>
+          <div class="sidebar-section-title">Usuários</div>
+          <li class="sidebar-menu-item">
+            <a href="<%= g_tipo_usuarios_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Tipos de Usuários">
+              <span class="sidebar-menu-icon"><i class="ph-user-circle"></i></span>
+              <span class="sidebar-menu-text">Tipos de Usuários</span>
+              <span class="tooltip top">Tipos de Usuários</span>
+            </a>
+          </li>
+        <% end %>
+        <% if can? :manage, GTipoUsuario %>
+          <li class="sidebar-menu-item">
+            <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Gerenciar Usuários">
+              <span class="sidebar-menu-icon"><i class="ph-address-book"></i></span>
+              <span class="sidebar-menu-text">Gerenciar Usuários</span>
+              <span class="tooltip top">Gerenciar Usuários</span>
+            </a>
+          <% end %>
+        </li>
+        <% if can? :manage, Segmento%>
+          <div class="sidebar-section-title">Segmentos</div>
+          <li class="sidebar-menu-item">
+            <a href="<%= segmentos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Segmentos">
+              <span class="sidebar-menu-icon"><i class="ph-circles-three-plus"></i></span>
+              <span class="sidebar-menu-text">Segmentos</span>
+              <span class="tooltip top">Segmentos</span>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+      <% if can? :manage, GCategoria%>
+        <div class="sidebar-section-title">Categorias</div>
+        <li class="sidebar-menu-item">
+          <a href="<%= g_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Categorias">
+            <span class="sidebar-menu-icon"><i class="ph-folders"></i></span>
+            <span class="sidebar-menu-text">Categorias</span>
+            <span class="tooltip top">Categorias</span>
+          </a>
+        </li>
+      <% end %>
+      <% if can? :manage, IPromocao%>
+        <div class="sidebar-section-title">Promoções</div>
+        <li class="sidebar-menu-item">
+          <a href="<%= i_promocoes_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Promoções">
+            <span class="sidebar-menu-icon"><i class="ph-percent"></i></span>
+            <span class="sidebar-menu-text">Promoções</span>
+            <span class="tooltip top">Promoções</span>
+          </a>
+        </li>
+      <% end %>
+      <% if can? :manage, IPromocaoProduto%>
+        <li class="sidebar-menu-item">
+          <a href="<%= i_promocao_produtos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+            <span class="sidebar-menu-icon"><i class="ph-tag"></i></span>
+            <span class="sidebar-menu-text">Promoção Produtos</span>
+            <span class="tooltip top">Promoção Produtos</span>
+          </a>
+        </li>
+      <% end %>
+      <div class="sidebar-section-title">Blog</div>
+      <% if can? :manage GBlogCategoria%>
+        <li class="sidebar-menu-item">
+          <a href="<%= g_blog_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+            <span class="sidebar-menu-icon"><i class="ph-book-open "></i></span>
+            <span class="sidebar-menu-text">Blog</span>
+            <span class="tooltip top">Blog</span>
+          </a>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</aside>
+<!-- Mobile Tooltip -->
+<div class="mobile-tooltip" id="mobile-tooltip"></div>
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/views/shared/sidebar/_sidebar.html.erb:101: syntax error, unexpected constant, expecting `then' or ';' or '\n'
+... if can? :manage GBlogCategoria
+...                 ^~~~~~~~~~~~~~
+)
+1:    <!-- Sidebar -->
+2:    <aside class="sidebar collapsed" id="sidebar">
+3:      <div class="sidebar-header">
+4:        <a href="<%= root_path %>" class="sidebar-logo">
+5:          <i class="ph-pen"></i>
+6:          <span>Admin Panel</span>
+7:        </a>
+8:        <button class="sidebar-toggle d-block d-lg-none" id="sidebar-toggle" aria-label="Fechar menu">
+9:          <i class="ph-x"></i>
+10:        </button>
+11:      </div>
+12:      <div class="sidebar-content">
+13:        <div class="sidebar-section">
+14:          <div class="sidebar-section-title">Principal</div>
+15:          <ul class="sidebar-menu">
+16:            <li class="sidebar-menu-item">
+17:              <a href="<%= g_admin_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Dashboard">
+18:                <span class="sidebar-menu-icon"><i class="ph-house"></i></span>
+19:                <span class="sidebar-menu-text">Dashboard</span>
+20:                <span class="tooltip top">Dashboard</span>
+21:              </a>
+22:            </li>
+23:            <% if can? :manage, IProduto%>
+24:              <li class="sidebar-menu-item">
+25:                <a href="<%= i_produtos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos">
+26:                  <span class="sidebar-menu-icon"><i class="ph-bag"></i></span>
+27:                  <span class="sidebar-menu-text">Produtos</span>
+28:                  <span class="tooltip top">Infoprodutos</span>
+29:                </a>
+30:              </li>
+31:            <% end %>
+32:            <% if can? :manage, ICurso%>
+33:              <li class="sidebar-menu-item">
+34:                <a href="<%= i_cursos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Cursos">
+35:                  <span class="sidebar-menu-icon"><i class="ph-book"></i></span>
+36:                  <span class="sidebar-menu-text">Cursos</span>
+37:                  <span class="tooltip top">Cursos</span>
+38:                </a>
+39:              </li>
+40:            <% end %>
+41:            <% if can? :manage, GTipoUsuario %>
+42:              <div class="sidebar-section-title">Usuários</div>
+43:              <li class="sidebar-menu-item">
+44:                <a href="<%= g_tipo_usuarios_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Tipos de Usuários">
+45:                  <span class="sidebar-menu-icon"><i class="ph-user-circle"></i></span>
+46:                  <span class="sidebar-menu-text">Tipos de Usuários</span>
+47:                  <span class="tooltip top">Tipos de Usuários</span>
+48:                </a>
+49:              </li>
+50:            <% end %>
+51:            <% if can? :manage, GTipoUsuario %>
+52:              <li class="sidebar-menu-item">
+53:                <a href="<%= users_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Gerenciar Usuários">
+54:                  <span class="sidebar-menu-icon"><i class="ph-address-book"></i></span>
+55:                  <span class="sidebar-menu-text">Gerenciar Usuários</span>
+56:                  <span class="tooltip top">Gerenciar Usuários</span>
+57:                </a>
+58:              <% end %>
+59:            </li>
+60:            <% if can? :manage, Segmento%>
+61:              <div class="sidebar-section-title">Segmentos</div>
+62:              <li class="sidebar-menu-item">
+63:                <a href="<%= segmentos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Segmentos">
+64:                  <span class="sidebar-menu-icon"><i class="ph-circles-three-plus"></i></span>
+65:                  <span class="sidebar-menu-text">Segmentos</span>
+66:                  <span class="tooltip top">Segmentos</span>
+67:                </a>
+68:              </li>
+69:            <% end %>
+70:          </ul>
+71:          <% if can? :manage, GCategoria%>
+72:            <div class="sidebar-section-title">Categorias</div>
+73:            <li class="sidebar-menu-item">
+74:              <a href="<%= g_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Categorias">
+75:                <span class="sidebar-menu-icon"><i class="ph-folders"></i></span>
+76:                <span class="sidebar-menu-text">Categorias</span>
+77:                <span class="tooltip top">Categorias</span>
+78:              </a>
+79:            </li>
+80:          <% end %>
+81:          <% if can? :manage, IPromocao%>
+82:            <div class="sidebar-section-title">Promoções</div>
+83:            <li class="sidebar-menu-item">
+84:              <a href="<%= i_promocoes_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Promoções">
+85:                <span class="sidebar-menu-icon"><i class="ph-percent"></i></span>
+86:                <span class="sidebar-menu-text">Promoções</span>
+87:                <span class="tooltip top">Promoções</span>
+88:              </a>
+89:            </li>
+90:          <% end %>
+91:          <% if can? :manage, IPromocaoProduto%>
+92:            <li class="sidebar-menu-item">
+93:              <a href="<%= i_promocao_produtos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+94:                <span class="sidebar-menu-icon"><i class="ph-tag"></i></span>
+95:                <span class="sidebar-menu-text">Promoção Produtos</span>
+96:                <span class="tooltip top">Promoção Produtos</span>
+97:              </a>
+98:            </li>
+99:          <% end %>
+100:          <div class="sidebar-section-title">Blog</div>
+101:          <% if can? :manage GBlogCategoria%>
+102:            <li class="sidebar-menu-item">
+103:              <a href="<%= g_blog_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+104:                <span class="sidebar-menu-icon"><i class="ph-book-open "></i></span>
+105:                <span class="sidebar-menu-text">Blog</span>
+106:                <span class="tooltip top">Blog</span>
+107:              </a>
+108:            </li>
+109:          <% end %>
+110:        </div>
+111:      </div>
+112:    </aside>
+113:    <!-- Mobile Tooltip -->
+114:    <div class="mobile-tooltip" id="mobile-tooltip"></div>
+  
+app/views/shared/sidebar/_sidebar.html.erb:101: syntax error, unexpected constant, expecting `then' or ';' or '\n'
+app/views/layouts/application.html.erb:27
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:58:32 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 10.0ms | GC: 3.5ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 24.2ms | GC: 3.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | GC: 7.8ms)
+Completed 200 OK in 49ms (Views: 34.9ms | ActiveRecord: 6.7ms (4 queries, 0 cached) | GC: 7.8ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:58:33 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.6ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.2ms)
+Completed 200 OK in 20ms (Views: 11.3ms | ActiveRecord: 2.0ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/i_promocao_produtos" for 127.0.0.1 at 2025-05-27 12:58:35 -0400
+Processing by IPromocaoProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIPromocaoProduto Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_promocao_produtos"[0m
+  ↳ app/controllers/i_promocao_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_promocao_produtos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mIPromocaoProduto Load (0.2ms)[0m  [1m[34mSELECT "i_promocao_produtos".* FROM "i_promocao_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_promocao_produtos/index.html.erb:45
+  Rendered i_promocao_produtos/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.1ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.1ms)
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 2.6ms (4 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/g_categorias" for 127.0.0.1 at 2025-05-27 12:58:36 -0400
+Processing by GCategoriasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGCategoria Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_categorias/index.html.erb within layouts/application
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_categorias/index.html.erb:43
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" WHERE "segmentos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/g_categorias/index.html.erb:62
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" WHERE "segmentos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/g_categorias/index.html.erb:62
+  Rendered g_categorias/index.html.erb within layouts/application (Duration: 14.4ms | GC: 0.1ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | GC: 0.2ms)
+Completed 200 OK in 27ms (Views: 14.1ms | ActiveRecord: 6.0ms (6 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/segmentos" for 127.0.0.1 at 2025-05-27 12:58:39 -0400
+Processing by SegmentosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/segmentos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering segmentos/index.html.erb within layouts/application
+  [1m[36mSegmento Load (0.1ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/segmentos/index.html.erb:40
+  Rendered segmentos/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/i_cursos" for 127.0.0.1 at 2025-05-27 12:58:41 -0400
+Processing by ICursosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICurso Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/i_cursos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_cursos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mICurso Load (0.5ms)[0m  [1m[34mSELECT "i_cursos".* FROM "i_cursos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_cursos/index.html.erb:49
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/i_cursos/index.html.erb:71
+  Rendered i_cursos/index.html.erb within layouts/application (Duration: 18.6ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 21.8ms | ActiveRecord: 4.6ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-27 12:58:43 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.6ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 11.3ms | ActiveRecord: 2.1ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
