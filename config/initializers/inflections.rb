@@ -14,6 +14,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'i_item_pedido',       'i_itens_pedidos'
   inflect.irregular 'i_cupom' ,            'i_cupons'
   inflect.irregular 'i_curso',             'i_cursos'
+  iflect.irregular  'g_blog_categoria',    'g_blog_categorias'
 
 end
 
