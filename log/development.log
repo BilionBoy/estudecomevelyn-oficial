@@ -194241,3 +194241,144 @@ Processing by ActiveStorage::DiskController#show as */*
 Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/blog" for ::1 at 2025-05-28 08:17:50 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:17:50.272353"]]
+  ↳ app/controllers/store_controller.rb:107:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  [1m[36mGBlogPost Load (0.8ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2 OFFSET $3[0m  [[nil, "2025-05-28 12:17:50.272353"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/blog.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" ORDER BY "g_blog_categorias"."descricao" ASC[0m
+  ↳ app/views/store/blog.html.erb:88
+  [1m[36mGBlogPost Load (0.2ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2[0m  [[nil, "2025-05-28 12:17:50.275988"], ["LIMIT", 3]]
+  ↳ app/views/store/blog.html.erb:125
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:129
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:129
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 21.6ms | GC: 2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:33
+  [1m[36mICarrinho Load (0.3ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 28.2ms | GC: 2.1ms)
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 4.0ms (11 queries, 2 cached) | GC: 2.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MTk6MjEuNDAzWiIsInB1ciI6ImJsb2Jfa2V5In19--694ec5a9a4473831b46ff7270388d1b351030f91/blog.avif" for ::1 at 2025-05-28 08:17:50 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"blog"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/blog" for ::1 at 2025-05-28 08:18:09 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:18:09.091470"]]
+  ↳ app/controllers/store_controller.rb:107:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  [1m[36mGBlogPost Load (0.1ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2 OFFSET $3[0m  [[nil, "2025-05-28 12:18:09.091470"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/blog.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:34
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:33
+  [1m[36mGBlogCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" ORDER BY "g_blog_categorias"."descricao" ASC[0m
+  ↳ app/views/store/blog.html.erb:93
+  [1m[36mGBlogPost Load (0.2ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2[0m  [[nil, "2025-05-28 12:18:09.095026"], ["LIMIT", 3]]
+  ↳ app/views/store/blog.html.erb:130
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:134
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:134
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 28.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:33
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 27.7ms | GC: 7.7ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 58.6ms | GC: 7.7ms)
+Completed 200 OK in 71ms (Views: 46.9ms | ActiveRecord: 15.5ms (11 queries, 2 cached) | GC: 7.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MTk6MjEuNDAzWiIsInB1ciI6ImJsb2Jfa2V5In19--694ec5a9a4473831b46ff7270388d1b351030f91/blog.avif" for ::1 at 2025-05-28 08:18:09 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"blog"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/blog/5" for ::1 at 2025-05-28 08:18:10 -0400
+  
+AbstractController::ActionNotFound (The action 'blog_post' could not be found for StoreController):
+  
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
