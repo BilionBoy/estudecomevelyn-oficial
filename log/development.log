@@ -189165,3 +189165,618 @@ Processing by GBlogPostsController#index as HTML
 Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 1.3ms (5 queries, 0 cached) | GC: 0.1ms)
 
 
+Stripe inicializado. API Key presente: true
+Started GET "/" for 127.0.0.1 at 2025-05-28 07:34:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mIProduto Count (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:18:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.6ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (4.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 75.3ms | GC: 2.3ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 80.5ms | GC: 2.7ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 6.0ms | GC: 0.7ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 162.0ms | GC: 22.4ms)
+Completed 200 OK in 266ms (Views: 148.1ms | ActiveRecord: 35.1ms (8 queries, 1 cached) | GC: 56.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--4077ba2633f4d35a0bf762ac8f7b802b01023f82/15_como_eu_era_antes_de_voce_c.webp" for 127.0.0.1 at 2025-05-28 07:34:56 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--7af7b3fa975c2a93036df1ed20beff502b5001bc/81LTEfXYgcL.jpg" for 127.0.0.1 at 2025-05-28 07:34:56 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--4077ba2633f4d35a0bf762ac8f7b802b01023f82", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: c9i3cl9jdppp90nqc5q7ly43zu4i (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDExOjM5OjU2LjUxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--77c3b3711d1414aa13c75cc6485d976fe551d8a9/15_como_eu_era_antes_de_voce_c.webp)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDExOjM5OjU2LjUxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--77c3b3711d1414aa13c75cc6485d976fe551d8a9/15_como_eu_era_antes_de_voce_c.webp
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDExOjM5OjU2LjUxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--77c3b3711d1414aa13c75cc6485d976fe551d8a9/15_como_eu_era_antes_de_voce_c.webp" for 127.0.0.1 at 2025-05-28 07:34:56 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--7af7b3fa975c2a93036df1ed20beff502b5001bc", "filename"=>"81LTEfXYgcL"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: b81bhtvzotbrldis023tp9cyujp1 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTE6Mzk6NTYuNTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--76e27e5491b6a0fd52d256d2259c68540d65c3f3/81LTEfXYgcL.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTE6Mzk6NTYuNTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--76e27e5491b6a0fd52d256d2259c68540d65c3f3/81LTEfXYgcL.jpg
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTE6Mzk6NTYuNTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--76e27e5491b6a0fd52d256d2259c68540d65c3f3/81LTEfXYgcL.jpg" for 127.0.0.1 at 2025-05-28 07:34:56 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Stripe inicializado. API Key presente: true
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-05-28 07:35:03 -0400
+Processing by Users::SessionsController#create as JSON
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 200 OK in 244ms (Views: 0.1ms | ActiveRecord: 4.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-05-28 07:35:03 -0400
+Processing by StoreController#index as HTML
+  [1m[36mIProduto Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:18:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 18.2ms | GC: 0.0ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 18.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:38
+  [1m[36mICarrinho Load (1.3ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:39
+  [1m[36mIItemCarrinho Sum (1.6ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:40
+  Rendered store/shared/_navbar.html.erb (Duration: 32.2ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 54.1ms | GC: 0.0ms)
+Completed 200 OK in 58ms (Views: 42.9ms | ActiveRecord: 12.8ms (11 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDExOjM5OjU2LjUxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--77c3b3711d1414aa13c75cc6485d976fe551d8a9/15_como_eu_era_antes_de_voce_c.webp" for 127.0.0.1 at 2025-05-28 07:35:03 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTE6Mzk6NTYuNTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--76e27e5491b6a0fd52d256d2259c68540d65c3f3/81LTEfXYgcL.jpg" for 127.0.0.1 at 2025-05-28 07:35:03 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/store/carrinho" for 127.0.0.1 at 2025-05-28 07:35:06 -0400
+Processing by Store::CarrinhoController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICarrinho Load (0.7ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `carrinho_ativo'
+  [1m[36mIItemCarrinho Sum (0.4ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."subtotal") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/models/i_carrinho.rb:24:in `total'
+  Rendering layout layouts/home_application.erb
+  Rendering store/carrinho/show.html.erb within layouts/home_application
+  [1m[36mIItemCarrinho Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1 LIMIT $2[0m  [["i_carrinho_id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:5
+  [1m[36mIItemCarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_itens_carrinhos".* FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:10
+  [1m[36mIProduto Load (0.6ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:14
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:14
+  Rendered store/carrinho/show.html.erb within layouts/home_application (Duration: 32.3ms | GC: 0.0ms)
+  [1m[36mCACHE ICarrinho Load (0.0ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:39
+  [1m[36mIItemCarrinho Sum (0.4ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:40
+  Rendered store/shared/_navbar.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 39.1ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 36.5ms | ActiveRecord: 4.8ms (13 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTE6Mzk6NTYuNTIyWiIsInB1ciI6ImJsb2Jfa2V5In19--76e27e5491b6a0fd52d256d2259c68540d65c3f3/81LTEfXYgcL.jpg" for 127.0.0.1 at 2025-05-28 07:35:06 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDExOjM5OjU2LjUxM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--77c3b3711d1414aa13c75cc6485d976fe551d8a9/15_como_eu_era_antes_de_voce_c.webp" for 127.0.0.1 at 2025-05-28 07:35:06 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/store/carrinho/finalizar_compra" for 127.0.0.1 at 2025-05-28 07:35:07 -0400
+Processing by Store::CarrinhoController#finalizar_compra as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `carrinho_ativo'
+  [1m[36mIItemCarrinho Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1 LIMIT $2[0m  [["i_carrinho_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/store/carrinho_controller.rb:58:in `finalizar_compra'
+  [1m[36mIItemCarrinho Load (0.1ms)[0m  [1m[34mSELECT "i_itens_carrinhos".* FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/controllers/store/carrinho_controller.rb:68:in `map'
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/store/carrinho_controller.rb:72:in `block in finalizar_compra'
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/store/carrinho_controller.rb:72:in `block in finalizar_compra'
+Redirected to https://checkout.stripe.com/c/pay/cs_test_b1JmfTay3sRLStC7Ts4jIL5Io64HNVDxMO2amch4j1UZrkm9m0ooiSNTfu#fidkdWxOYHwnPyd1blpxYHZxWjA0V0RzVUNJYDxVb3djYDJNVVx0R19paElxV19QZ3VHQElCRkA0Qlw0NU13YFM3UXN3RlJwQjxXZ1ZQY3FBZ0FGb3BsbU98VW9nVjdcczVwME5wUEpibF9nNTVKZnwydlVXbycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl
+Completed 302 Found in 1149ms (ActiveRecord: 1.1ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 07:35:11 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (1.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 68.6ms | GC: 39.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | GC: 39.7ms)
+Completed 200 OK in 82ms (Views: 72.2ms | ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 39.7ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:35:16 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.4ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (1.6ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 35.7ms | GC: 2.4ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | GC: 2.4ms)
+Completed 200 OK in 73ms (Views: 36.5ms | ActiveRecord: 12.5ms (5 queries, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-28 07:35:44 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 21.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 28.4ms | ActiveRecord: 6.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-28 07:36:15 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.2ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 22.3ms | GC: 0.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | GC: 1.0ms)
+Completed 200 OK in 47ms (Views: 30.3ms | ActiveRecord: 6.8ms (4 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-28 07:36:17 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.8ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 8.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.8ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 6.3ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | GC: 0.2ms)
+Completed 200 OK in 31ms (Views: 17.8ms | ActiveRecord: 3.0ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-28 07:36:25 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.7ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 7.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.8ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 8.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | GC: 0.6ms)
+Completed 200 OK in 32ms (Views: 21.7ms | ActiveRecord: 2.5ms (4 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-28 07:36:26 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 34.9ms | GC: 10.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | GC: 10.9ms)
+Completed 200 OK in 58ms (Views: 41.1ms | ActiveRecord: 8.0ms (4 queries, 0 cached) | GC: 10.9ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:36:27 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.3ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 13.6ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.6ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | GC: 0.5ms)
+Completed 200 OK in 35ms (Views: 17.1ms | ActiveRecord: 6.5ms (5 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:36:27 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.5ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.5ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 14.9ms | GC: 0.6ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | GC: 0.6ms)
+Completed 200 OK in 33ms (Views: 21.0ms | ActiveRecord: 2.5ms (5 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:38:10 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.4ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 18.7ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 37.3ms | GC: 11.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 58.9ms | GC: 11.7ms)
+Completed 200 OK in 72ms (Views: 53.4ms | ActiveRecord: 9.8ms (5 queries, 0 cached) | GC: 11.7ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:38:17 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.3ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 15.9ms | GC: 0.2ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 24.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | GC: 0.2ms)
+Completed 200 OK in 59ms (Views: 39.1ms | ActiveRecord: 10.1ms (5 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/g_blog_posts/5/g_blog_categorias/new" for 127.0.0.1 at 2025-05-28 07:38:19 -0400
+Processing by GBlogCategoriasController#new as HTML
+  Parameters: {"g_blog_post_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered g_blog_categorias/_form.html.erb (Duration: 9.4ms | GC: 0.0ms)
+  Rendered g_blog_categorias/new.html.erb within layouts/application (Duration: 10.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `g_blog_categorias_path' for an instance of #<Class:0x00007f858c089440>):
+
+Causes:
+NameError (undefined local variable or method `g_blog_categorias_path' for an instance of #<Class:0x00007f858c089440>)
+    30:       <div class="d-flex">
+    31:         <div class="breadcrumb py-2">
+    32:           <a href="/" class="breadcrumb-item"><i class="ph-house"></i></a>
+    33:           <%= yield %>
+    34:         </div>
+    35:       </div>
+    36:     </div>
+  
+app/views/g_blog_categorias/_form.html.erb:3
+app/views/shared/_context_nav.html.erb:33
+app/views/shared/_context_nav.html.erb:1
+app/views/g_blog_categorias/_form.html.erb:2
+app/views/g_blog_categorias/new.html.erb:1
+Started GET "/g_blog_posts/5/g_blog_categorias/new" for 127.0.0.1 at 2025-05-28 07:39:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/g_blog_posts/5/g_blog_categorias/new"):
+  
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:39:30 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.3ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 19.1ms | GC: 1.1ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 23.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | GC: 1.1ms)
+Completed 200 OK in 71ms (Views: 41.2ms | ActiveRecord: 13.7ms (5 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/g_blog_categorias/new" for 127.0.0.1 at 2025-05-28 07:39:32 -0400
+Processing by GBlogCategoriasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered g_blog_categorias/_form.html.erb (Duration: 29.1ms | GC: 0.0ms)
+  Rendered g_blog_categorias/new.html.erb within layouts/application (Duration: 30.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 39.6ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_blog_categorias" for 127.0.0.1 at 2025-05-28 07:39:34 -0400
+Processing by GBlogCategoriasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogCategoria Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_categorias"[0m
+  ↳ app/controllers/g_blog_categorias_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.7ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_categorias/index.html.erb:39
+  Rendered g_blog_categorias/index.html.erb within layouts/application (Duration: 28.1ms | GC: 12.8ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.9ms | GC: 1.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | GC: 13.8ms)
+Completed 200 OK in 47ms (Views: 35.5ms | ActiveRecord: 2.0ms (4 queries, 0 cached) | GC: 13.8ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:39:55 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.1ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 13.8ms | GC: 0.0ms)
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 19.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 31.1ms | ActiveRecord: 8.8ms (5 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/g_blog_posts/new" for 127.0.0.1 at 2025-05-28 07:39:57 -0400
+Processing by GBlogPostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  [1m[36mGBlogCategoria Load (0.6ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias"[0m
+  ↳ app/views/g_blog_posts/_form.html.erb:29
+  Rendered g_blog_posts/_form.html.erb (Duration: 26.9ms | GC: 0.0ms)
+  Rendered g_blog_posts/new.html.erb within layouts/application (Duration: 29.0ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 14.7ms | GC: 10.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | GC: 10.1ms)
+Completed 200 OK in 64ms (Views: 47.3ms | ActiveRecord: 1.5ms (3 queries, 0 cached) | GC: 10.1ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:39:58 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.9ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 11.5ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | GC: 1.0ms)
+Completed 200 OK in 30ms (Views: 18.7ms | ActiveRecord: 2.5ms (5 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/g_blog_categorias/new" for 127.0.0.1 at 2025-05-28 07:40:00 -0400
+Processing by GBlogCategoriasController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_categorias/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered g_blog_categorias/_form.html.erb (Duration: 3.3ms | GC: 0.5ms)
+  Rendered g_blog_categorias/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.5ms)
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.5ms)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/g_blog_posts" for 127.0.0.1 at 2025-05-28 07:40:02 -0400
+Processing by GBlogPostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGBlogPost Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_blog_posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_blog_posts/index.html.erb within layouts/application
+  [1m[36mGBlogPost Load (0.5ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  [1m[36mGBlogCategoria Load (0.6ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/g_blog_posts/index.html.erb:44
+  Rendered g_blog_posts/index.html.erb within layouts/application (Duration: 15.0ms | GC: 1.0ms)
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | GC: 1.0ms)
+Completed 200 OK in 32ms (Views: 21.0ms | ActiveRecord: 2.8ms (5 queries, 0 cached) | GC: 1.0ms)
+
+

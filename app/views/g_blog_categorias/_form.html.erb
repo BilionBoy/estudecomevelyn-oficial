@@ -1,30 +1,26 @@
-
 <%= render "shared/context_nav", title: t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.other") do  %>
-<span class="breadcrumb-item"><%= link_to t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.other"), g_blog_categorias_path, class: "text-dark" %></span>
-<span class="breadcrumb-item active"><%= t("helpers.submit.#{params[:action]}") %></span>
+  <span class="breadcrumb-item"><%= link_to t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.other"), g_blog_categorias_path, class: "text-dark" %></span>
+  <span class="breadcrumb-item active"><%= t("helpers.submit.#{params[:action]}") %></span>
 <% end %>
 <%= simple_form_for(@g_blog_categoria) do |f| %>
-<div class="card">
-  <div class="card-header">
-    <h5 class="my-0">
-      <%= @g_blog_categoria.new_record? ? "Incluir " : "Editar " %><%= t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.one") %>
-    </h5>
-  </div>
-  <div class="card-body">
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <div class="row">
-      
-        
-          <div class="col-12">
-            <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
-          </div>
-        
+  <div class="card">
+    <div class="card-header">
+      <h5 class="my-0">
+        <%= @g_blog_categoria.new_record? ? "Incluir " : "Editar " %><%= t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.one") %>
+      </h5>
+    </div>
+    <div class="card-body">
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="row">
+        <div class="col-12">
+          <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= btn_submit(f) %>
+      <%= link_to "Voltar", g_blog_posts_path, class: "btn btn-light" %>
     </div>
   </div>
-  <div class="card-footer">
-    <%= btn_submit(f) %>
-    <%= link_to "Voltar", g_blog_categorias_path, class: "btn btn-light" %>
-  </div>
-</div>
 <% end %>

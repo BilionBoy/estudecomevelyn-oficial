@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :g_blog_posts
   # Devise
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   
@@ -41,6 +40,7 @@ Rails.application.routes.draw do
   resources :i_cursos
   resources :i_promocoes
   resources :i_promocao_produtos
+  resources :g_blog_posts
   resources :g_blog_categorias
 
   # Robots.txt e Sitemap

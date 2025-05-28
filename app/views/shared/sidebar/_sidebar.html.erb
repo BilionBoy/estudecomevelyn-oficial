@@ -98,9 +98,9 @@
         </li>
       <% end %>
       <div class="sidebar-section-title">Blog</div>
-      <% if can? :manage, GBlogCategoria%>
+      <% if can? :manage, GBlogPost%>
         <li class="sidebar-menu-item">
-          <a href="<%= g_blog_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+          <a href="<%= g_blog_posts_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
             <span class="sidebar-menu-icon"><i class="ph-book-open "></i></span>
             <span class="sidebar-menu-text">Blog</span>
             <span class="tooltip top">Blog</span>

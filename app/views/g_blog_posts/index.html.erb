@@ -53,6 +53,9 @@
                     <%= link_to edit_g_blog_post_path(g_blog_post), class: "dropdown-item" do %>
                       <i class="ph-pen me-2"></i> Editar
                     <% end %>
+                    <%= link_to new_g_blog_categoria_path, class: "dropdown-item" do %>
+                      <i class="ph-plus me-2"></i> Nova Categoria
+                    <% end %>
                     <%= button_to g_blog_post_path(g_blog_post), method: :delete, data: { confirm: "Tem certeza que deseja excluir?" }, class: "dropdown-item text-danger" do %>
                       <i class="ph-trash-simple me-2"></i> Excluir
                     <% end %>
