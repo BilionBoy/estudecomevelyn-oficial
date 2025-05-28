@@ -51,7 +51,7 @@ class GBlogPostsController < ApplicationController
 
   def g_blog_post_params
     permitted_attributes = GBlogPost.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
-    params.require(:g_blog_post).permit(permitted_attributes.map(&:to_sym))
+    params.require(:g_blog_post).permit(permitted_attributes.map(&:to_sym), :imagem_blog)
   end
 
   def handle_not_found

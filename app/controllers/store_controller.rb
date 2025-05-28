@@ -24,30 +24,30 @@ class StoreController < ApplicationController
 
 
   def papelaria
-  @g_categorias = GCategoria.where.not(id: Segmento.find_by(nome: "Cursos")&.g_categorias&.pluck(:id)).order(:nome)
-
-  if params[:categoria].present?
-    categoria = GCategoria.find_by(slug: params[:categoria])
-    if categoria.present?
+    @g_categorias = GCategoria.where.not(id: Segmento.find_by(nome: "Cursos")&.g_categorias&.pluck(:id)).order(:nome)
+  
+    if params[:categoria].present?
+      categoria = GCategoria.find_by(slug: params[:categoria])
+      if categoria.present?
+        @pagy, @produtos = pagy(
+          categoria.i_produtos.where(status: :ativo).order(created_at: :desc),
+          items: 6
+        )
+      else
+        @produtos = []
+      end
+    else
       @pagy, @produtos = pagy(
-        categoria.i_produtos.where(status: :ativo).order(created_at: :desc),
+        IProduto.where(status: :ativo).order(created_at: :desc),
         items: 6
       )
-    else
-      @produtos = []
     end
-  else
-    @pagy, @produtos = pagy(
-      IProduto.where(status: :ativo).order(created_at: :desc),
-      items: 6
-    )
+  
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
-
-  respond_to do |format|
-    format.html
-    format.js
-  end
-end
 
   def cursos
     segmento_cursos = Segmento.find_by(nome: "Cursos")
@@ -79,6 +79,22 @@ end
   
   
 
-  def blog
+  
+ def blog
+  @blog_categorias = GBlogCategoria.order(:descricao)
+
+  posts_query = GBlogPost.published.includes(:g_blog_categoria)
+  
+  posts_query = posts_query.where(g_blog_categoria_id: params[:categoria]) if params[:categoria].present?
+
+  if params[:busca].present?
+    busca = "%#{params[:busca]}%"
+    posts_query = posts_query.where("titulo ILIKE :busca OR resumo ILIKE :busca OR conteudo ILIKE :busca", busca: busca)
   end
+
+  @pagy, @blog_posts = pagy(posts_query.order(data_publicacao: :desc), items: 6)
+
+  @posts_populares = GBlogPost.published.order(data_publicacao: :desc).limit(3)
+ end
+
 end

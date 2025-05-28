@@ -63,10 +63,10 @@
                 </div>
               </td>
               <td><%= g_blog_post.titulo %></td>
-              <td><%= g_blog_post.resumo %></td>
-              <td><%= g_blog_post.conteudo %></td>
+              <td><%= truncate(g_blog_post.resumo, length: 50) %></td>
+              <td><%= truncate(g_blog_post.conteudo, length: 50) %></td>
               <td><%= g_blog_post.data_publicacao %></td>
-              <td><%= g_blog_post.g_blog_categoria %></td>
+              <td><%= g_blog_post.g_blog_categoria.descricao %></td>
             </tr>
           <% end %>
         </tbody>

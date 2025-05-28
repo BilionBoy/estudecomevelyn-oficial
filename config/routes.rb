@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'carrinho',                       to: 'store/carrinho#show',     as: :carrinho
   get 'papelaria',                      to: 'store#papelaria',         as: :papelaria
   get 'blog',                           to: 'store#blog',              as: :blog
+  get 'blog/:id',                       to: 'store#blog_post',         as: :blog_post  # NOVA ROTA
   get 'cursos',                         to: 'store#cursos',            as: :cursos
   get 'store/categorias/:slug',         to: 'store#categoria',         as: :store_categoria
   
