@@ -209112,3 +209112,1109 @@ Processing by GAdminController#index as HTML
 Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 2.2ms (14 queries, 0 cached) | GC: 0.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Processing by StoreController#index as HTML
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:18:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 33.5ms | GC: 2.6ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 34.5ms | GC: 2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:33
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 2], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 16.1ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 53.0ms | GC: 2.7ms)
+Completed 200 OK in 55ms (Views: 42.1ms | ActiveRecord: 11.6ms (14 queries, 1 cached) | GC: 2.7ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NDksInB1ciI6ImJsb2JfaWQifX0=--2ade689b57e5203f6d1c7c2128c0ad157afba39e/para-o-lobo.jpg" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NDgsInB1ciI6ImJsb2JfaWQifX0=--aed2ea8c9c41f4f198bbd45f03f00a99edacf310/a-filha-do-rei-pirata.webp" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NDcsInB1ciI6ImJsb2JfaWQifX0=--56ed905c4cd15b2463923103455677b0533b7b2e/luzes-do-norte.webp" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NDksInB1ciI6ImJsb2JfaWQifX0=--2ade689b57e5203f6d1c7c2128c0ad157afba39e", "filename"=>"para-o-lobo"}
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NDgsInB1ciI6ImJsb2JfaWQifX0=--aed2ea8c9c41f4f198bbd45f03f00a99edacf310", "filename"=>"a-filha-do-rei-pirata"}
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NDcsInB1ciI6ImJsb2JfaWQifX0=--56ed905c4cd15b2463923103455677b0533b7b2e", "filename"=>"luzes-do-norte"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: z7x2qz92kg7zqn6u1axyd5konfx1 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ6N3gycXo5MmtnN3pxbjZ1MWF4eWQ1a29uZngxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGFyYS1vLWxvYm8uanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGFyYS1vLWxvYm8uanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMjM6NDI6MzkuODkyWiIsInB1ciI6ImJsb2Jfa2V5In19--735ddd75229d89a12488bc033485c34e72ea55fc/para-o-lobo.jpg)[0m
+[36m  Disk Storage (0.1ms) [0m[34mGenerated URL for file at key: xgt5zwc8bz6df6kr5wnpqoy9gqzn (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4Z3Q1endjOGJ6NmRmNmtyNXducHFveTlncXpuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYS1maWxoYS1kby1yZWktcGlyYXRhLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JydhLWZpbGhhLWRvLXJlaS1waXJhdGEud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDIzOjQyOjM5Ljg5M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b147a898ada070cd5e7af5431326934db8413329/a-filha-do-rei-pirata.webp)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ6N3gycXo5MmtnN3pxbjZ1MWF4eWQ1a29uZngxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGFyYS1vLWxvYm8uanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGFyYS1vLWxvYm8uanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMjM6NDI6MzkuODkyWiIsInB1ciI6ImJsb2Jfa2V5In19--735ddd75229d89a12488bc033485c34e72ea55fc/para-o-lobo.jpg
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4Z3Q1endjOGJ6NmRmNmtyNXducHFveTlncXpuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYS1maWxoYS1kby1yZWktcGlyYXRhLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JydhLWZpbGhhLWRvLXJlaS1waXJhdGEud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDIzOjQyOjM5Ljg5M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b147a898ada070cd5e7af5431326934db8413329/a-filha-do-rei-pirata.webp
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+[36m  Disk Storage (0.2ms) [0m[34mGenerated URL for file at key: wrr5aurtyab37zrhosq3zcxkc4hi (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3cnI1YXVydHlhYjM3enJob3NxM3pjeGtjNGhpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibHV6ZXMtZG8tbm9ydGUud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2x1emVzLWRvLW5vcnRlLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0yOFQyMzo0MjozOS44OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--301b60f2f697cc789df06675e7c98ae144a02cdc/luzes-do-norte.webp)[0m
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ6N3gycXo5MmtnN3pxbjZ1MWF4eWQ1a29uZngxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwicGFyYS1vLWxvYm8uanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcncGFyYS1vLWxvYm8uanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMjM6NDI6MzkuODkyWiIsInB1ciI6ImJsb2Jfa2V5In19--735ddd75229d89a12488bc033485c34e72ea55fc/para-o-lobo.jpg" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ4Z3Q1endjOGJ6NmRmNmtyNXducHFveTlncXpuIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYS1maWxoYS1kby1yZWktcGlyYXRhLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JydhLWZpbGhhLWRvLXJlaS1waXJhdGEud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDIzOjQyOjM5Ljg5M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b147a898ada070cd5e7af5431326934db8413329/a-filha-do-rei-pirata.webp" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3cnI1YXVydHlhYjM3enJob3NxM3pjeGtjNGhpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibHV6ZXMtZG8tbm9ydGUud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2x1emVzLWRvLW5vcnRlLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0yOFQyMzo0MjozOS44OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--301b60f2f697cc789df06675e7c98ae144a02cdc/luzes-do-norte.webp
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3cnI1YXVydHlhYjM3enJob3NxM3pjeGtjNGhpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwibHV6ZXMtZG8tbm9ydGUud2VicFwiOyBmaWxlbmFtZSo9VVRGLTgnJ2x1emVzLWRvLW5vcnRlLndlYnAiLCJjb250ZW50X3R5cGUiOiJpbWFnZS93ZWJwIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wNS0yOFQyMzo0MjozOS44OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--301b60f2f697cc789df06675e7c98ae144a02cdc/luzes-do-norte.webp" for 127.0.0.1 at 2025-05-28 19:37:39 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"para-o-lobo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"a-filha-do-rei-pirata"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"luzes-do-norte"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:37:41 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:522
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.9ms | GC: 1.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 1.1ms)
+Completed 200 OK in 32ms (Views: 5.5ms | ActiveRecord: 2.5ms (14 queries, 0 cached) | GC: 15.5ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:37:42 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 8.4ms | GC: 0.4ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.8ms)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 1.1ms (7 queries, 1 cached) | GC: 1.3ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:37:43 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:522
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.5ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.5ms)
+Completed 200 OK in 17ms (Views: 4.8ms | ActiveRecord: 2.1ms (14 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:37:44 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.7ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.7ms)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 1.0ms (7 queries, 1 cached) | GC: 0.7ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:37:45 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:522
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 3.6ms | ActiveRecord: 2.1ms (14 queries, 0 cached) | GC: 6.4ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:37:45 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.9ms (7 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:37:46 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:522
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 4.2ms | ActiveRecord: 2.3ms (14 queries, 0 cached) | GC: 11.1ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:37:48 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.3ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 0.7ms)
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 1.2ms (7 queries, 1 cached) | GC: 0.7ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:37:48 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.4ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:522
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.7ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 2.1ms (14 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:19 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:14)
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:aguardando_pagamento=>0, :pago=>1, :cancelado=>2}
+ (called from <class:IPedido> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_pedido.rb:9)
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.2ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:283
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 10.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 60ms (Views: 12.9ms | ActiveRecord: 14.6ms (14 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:20 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:283
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.7ms | ActiveRecord: 2.2ms (14 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:21 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 28.0ms | GC: 12.3ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.0ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | GC: 12.8ms)
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 2.4ms (7 queries, 1 cached) | GC: 12.8ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:22 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.5ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:283
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.6ms)
+Completed 200 OK in 17ms (Views: 4.8ms | ActiveRecord: 2.4ms (14 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:35 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:14)
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 18.9ms | GC: 0.4ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 12.5ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | GC: 0.5ms)
+Completed 200 OK in 53ms (Views: 29.0ms | ActiveRecord: 9.5ms (7 queries, 1 cached) | GC: 1.1ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:36 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:aguardando_pagamento=>0, :pago=>1, :cancelado=>2}
+ (called from <class:IPedido> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_pedido.rb:9)
+  [1m[36mIPedido Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:283
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 4.1ms | ActiveRecord: 6.8ms (14 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:36 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 1.0ms (7 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:37 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:283
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 2.1ms (14 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:38 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.8ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 12.6ms | GC: 1.1ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.5ms | GC: 1.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 2.2ms)
+Completed 200 OK in 40ms (Views: 18.7ms | ActiveRecord: 2.3ms (7 queries, 1 cached) | GC: 15.0ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:39 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.7ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 1.3ms)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 1.0ms (7 queries, 1 cached) | GC: 1.3ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:40 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:283
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.2ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.5ms)
+Completed 200 OK in 15ms (Views: 4.3ms | ActiveRecord: 2.1ms (14 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:48 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:14)
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:aguardando_pagamento=>0, :pago=>1, :cancelado=>2}
+ (called from <class:IPedido> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_pedido.rb:9)
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.2ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:278
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 10.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 1.4ms)
+Completed 200 OK in 60ms (Views: 13.9ms | ActiveRecord: 14.1ms (14 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:49 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 14.6ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 16.0ms | ActiveRecord: 2.3ms (7 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:50 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:278
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.4ms | ActiveRecord: 2.4ms (14 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:56 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_produto.rb:14)
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:aguardando_pagamento=>0, :pago=>1, :cancelado=>2}
+ (called from <class:IPedido> at /home/dhiogo/projetos/github/estudecomevelyn-oficial/app/models/i_pedido.rb:9)
+  [1m[36mIPedido Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.2ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:268
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.1ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 9.9ms | GC: 0.4ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 0.5ms)
+Completed 200 OK in 56ms (Views: 12.3ms | ActiveRecord: 13.4ms (14 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:57 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 14.2ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.3ms)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 2.1ms (7 queries, 1 cached) | GC: 0.4ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:38:58 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.2ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.9ms (7 queries, 1 cached) | GC: 0.3ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:38:59 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:268
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 3.5ms | ActiveRecord: 2.4ms (14 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/i_produtos" for 127.0.0.1 at 2025-05-28 19:39:00 -0400
+Processing by IProdutosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/i_produtos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_produtos/index.html.erb within layouts/application
+  [1m[36mIProduto Load (0.1ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_produtos/index.html.erb:46
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/i_produtos/index.html.erb:67
+  Rendered i_produtos/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 1.0ms (7 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:39:01 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.3ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:268
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 3.8ms | ActiveRecord: 2.2ms (14 queries, 0 cached) | GC: 10.7ms)
+
+
+Started GET "/i_cursos" for 127.0.0.1 at 2025-05-28 19:39:04 -0400
+Processing by ICursosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mICurso Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/i_cursos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering i_cursos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mICurso Load (0.2ms)[0m  [1m[34mSELECT "i_cursos".* FROM "i_cursos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/i_cursos/index.html.erb:49
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/i_cursos/index.html.erb:71
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/i_cursos/index.html.erb:71
+  Rendered i_cursos/index.html.erb within layouts/application (Duration: 12.1ms | GC: 0.9ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.0ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | GC: 1.3ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 2.0ms (6 queries, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/g_admin" for 127.0.0.1 at 2025-05-28 19:39:04 -0400
+Processing by GAdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/g_admin_controller.rb:4:in `index'
+  [1m[36mIProduto Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos"[0m
+  ↳ app/controllers/g_admin_controller.rb:5:in `index'
+  [1m[36mICurso Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_cursos"[0m
+  ↳ app/controllers/g_admin_controller.rb:6:in `index'
+  [1m[36mSegmento Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "segmentos"[0m
+  ↳ app/controllers/g_admin_controller.rb:7:in `index'
+  [1m[36mGCategoria Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_categorias"[0m
+  ↳ app/controllers/g_admin_controller.rb:8:in `index'
+  [1m[36mIPedido Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_pedidos"[0m
+  ↳ app/controllers/g_admin_controller.rb:9:in `index'
+  [1m[36mGBlogPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts"[0m
+  ↳ app/controllers/g_admin_controller.rb:10:in `index'
+  [1m[36mIPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_pedidos"."total") FROM "i_pedidos" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:13:in `index'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE (created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:16:in `index'
+  [1m[36mIItemPedido Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_pedidos"."quantidade") FROM "i_itens_pedidos" INNER JOIN "i_pedidos" ON "i_pedidos"."id" = "i_itens_pedidos"."i_pedido_id" WHERE (i_pedidos.created_at >= $1)[0m  [[nil, "2025-05-01"]]
+  ↳ app/controllers/g_admin_controller.rb:21:in `index'
+  [1m[36mIProduto Pluck (0.3ms)[0m  [1m[34mSELECT "i_produtos"."nome", SUM(i_itens_pedidos.quantidade) FROM "i_produtos" INNER JOIN "i_itens_pedidos" ON "i_itens_pedidos"."i_produto_id" = "i_produtos"."id" GROUP BY i_produtos.id, i_produtos.nome ORDER BY SUM(i_itens_pedidos.quantidade) DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/controllers/g_admin_controller.rb:33:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_admin/index.html.erb within layouts/application
+  [1m[36mIPedido Load (0.1ms)[0m  [1m[34mSELECT "i_pedidos".* FROM "i_pedidos" ORDER BY "i_pedidos"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/g_admin/index.html.erb:268
+  Rendered g_admin/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/ability.rb:8:in `initialize'
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.3ms | ActiveRecord: 2.1ms (14 queries, 0 cached) | GC: 1.1ms)
+
+
