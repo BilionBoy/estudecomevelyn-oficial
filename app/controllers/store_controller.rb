@@ -24,30 +24,30 @@ class StoreController < ApplicationController
 
 
   def papelaria
-  @g_categorias = GCategoria.where.not(id: Segmento.find_by(nome: "Cursos")&.g_categorias&.pluck(:id)).order(:nome)
-
-  if params[:categoria].present?
-    categoria = GCategoria.find_by(slug: params[:categoria])
-    if categoria.present?
+    @g_categorias = GCategoria.where.not(id: Segmento.find_by(nome: "Cursos")&.g_categorias&.pluck(:id)).order(:nome)
+  
+    if params[:categoria].present?
+      categoria = GCategoria.find_by(slug: params[:categoria])
+      if categoria.present?
+        @pagy, @produtos = pagy(
+          categoria.i_produtos.where(status: :ativo).order(created_at: :desc),
+          items: 6
+        )
+      else
+        @produtos = []
+      end
+    else
       @pagy, @produtos = pagy(
-        categoria.i_produtos.where(status: :ativo).order(created_at: :desc),
+        IProduto.where(status: :ativo).order(created_at: :desc),
         items: 6
       )
-    else
-      @produtos = []
     end
-  else
-    @pagy, @produtos = pagy(
-      IProduto.where(status: :ativo).order(created_at: :desc),
-      items: 6
-    )
+  
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
-
-  respond_to do |format|
-    format.html
-    format.js
-  end
-end
 
   def cursos
     segmento_cursos = Segmento.find_by(nome: "Cursos")
@@ -81,13 +81,11 @@ end
 
   
   def blog
-    # Buscar categorias de blog
     @blog_categorias = GBlogCategoria.all.order(:descricao)
-    # Buscar posts com filtros
     posts_query = GBlogPost.where('data_publicacao <= ?', Time.current)
     # Filtro por categoria
     if params[:categoria].present?
-      categoria = GBlogCategoria.find_by(slug: params[:categoria])
+      categoria = GBlogCategoria.find_by(id: params[:categoria])
       posts_query = posts_query.where(g_blog_categoria: categoria) if categoria.present?
     end
     # Filtro por busca
@@ -101,7 +99,6 @@ end
     end
     # Filtro por tag (se você implementar tags)
     if params[:tag].present?
-      # Implementar filtro por tag quando necessário
     end
     # Paginação
     @pagy, @blog_posts = pagy(
@@ -114,8 +111,7 @@ end
                                 .limit(3)
     
     # Tags (se você implementar)
-    @tags = [] # Implementar quando necessário
-    
+    @tags = [] 
     respond_to do |format|
       format.html
       format.js

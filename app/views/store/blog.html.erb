@@ -23,7 +23,6 @@
 <section class="py-5">
   <div class="container">
     <div class="row">
-      <!-- Blog Posts -->
       <div class="col-lg-8">
         <% if @blog_posts.present? %>
           <% @blog_posts.each do |post| %>
@@ -40,16 +39,12 @@
                 </div>
               </div>
               <h2 class="blog-post-title">
-                <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
                 <%= post.titulo %>
               </h2>
               <div class="blog-post-excerpt">
                 <p><%= post.resumo %></p>
               </div>
-              <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
-              <span class="blog-post-link text-muted">
-                Em breve <i class="lucide-arrow-right"></i>
-              </span>
+              <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
             </article>
           <% end %>
         <% else %>
@@ -68,7 +63,6 @@
       <!-- Sidebar -->
       <div class="col-lg-4">
         <aside class="blog-sidebar">
-          <!-- Search Widget -->
           <div class="sidebar-widget">
             <h4 class="sidebar-widget-title">Pesquisar</h4>
             <%= form_with url: blog_path, method: :get, local: true do |form| %>
@@ -88,36 +82,14 @@
             <h4 class="sidebar-widget-title">Categorias</h4>
             <ul class="sidebar-categories">
               <% if @blog_categorias.present? %>
-                <li>
-                  <%= link_to blog_path do %>
-                    Tutoriais <span class="count">12</span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to blog_path do %>
-                    Dicas & Truques <span class="count">8</span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to blog_path do %>
-                    Inspiração <span class="count">6</span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to blog_path do %>
-                    Materiais <span class="count">5</span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to blog_path do %>
-                    Negócios <span class="count">4</span>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to blog_path do %>
-                    Entrevistas <span class="count">3</span>
-                  <% end %>
-                </li>
+                <% @blog_categorias.each do |categoria| %>
+                  <li>
+                    <%= link_to blog_path(categoria: categoria.id) do %>
+                      <%= categoria.descricao %>
+                      <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+                    <% end %>
+                  </li>
+                <% end %>
               <% end %>
             </ul>
           </div>
