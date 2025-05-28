@@ -10,7 +10,9 @@ class Store::CheckoutsController < ApplicationController
       email:    current_user.email,
       cpf:      current_user.cpf,
       telefone: current_user.telefone,
-      metodo_pagamento: 'cartao'
+      metodo_pagamento: 'cartao',
+      status: 'confirmado' # <- ESSENCIAL para entrar na contagem!
+
     )
 
     @carrinho.i_itens_carrinhos.each do |item|

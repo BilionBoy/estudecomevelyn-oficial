@@ -3,6 +3,7 @@ class IPedido < ApplicationRecord
   belongs_to :usuario, class_name: 'User'
   has_many   :i_itens_pedidos
   has_many   :i_produtos, through: :i_itens_pedidos
+  scope :confirmados, -> { where(status: 'confirmado') }
 
   validates :total, numericality: { greater_than: 0 }
 
