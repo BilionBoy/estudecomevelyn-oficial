@@ -25,6 +25,18 @@
         <div class="col-12">
           <%= f.input :data_publicacao, input_html: { class: "capitalize"}, placeholder: "Data publicacao"  %>
         </div>
+        <div class="form-group col-7">
+          <%= f.label :imagem_blog, "Imagem de Capa" %>
+          <% if f.object.persisted? && f.object.imagem_blog.attached? %>
+            <p>Imagem atual:</p>
+            <%= image_tag url_for(f.object.imagem_blog), alt: "Imagem de Capa", size: "100x100", class: "img-thumbnail mb-2" %>
+            <div class="form-check mb-2">
+              <%= f.check_box :remove_imagem_blog, { class: 'form-check-input' }, '1', '0' %>
+              <%= f.label :remove_imagem_blog, "Remover imagem atual", class: 'form-check-label' %>
+            </div>
+          <% end %>
+          <%= f.file_field :imagem_blog, class: "form-control" %>
+        </div>
         <div class="col-12">
           <%= f.association :g_blog_categoria, collection: GBlogCategoria.all, label_method: :descricao, value_method: :id, input_html: { class: "form-select" }, prompt: "Selecione a Categoria" %>
         </div>

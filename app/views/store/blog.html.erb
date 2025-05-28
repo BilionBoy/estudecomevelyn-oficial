@@ -1,4 +1,200 @@
 <% content_for :title, "Blog – Estude com Evelyn" %>
 <% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
-<h1>Blog</h1>
-<!-- artigos etc -->
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Blog do Lettering</h1>
+        <p class="lead">
+          Dicas, tutoriais e inspiração para sua jornada criativa
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Blog Posts -->
+      <div class="col-lg-8">
+        <% if @blog_posts.present? %>
+          <% @blog_posts.each do |post| %>
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo) %>
+              </div>
+              <div class="blog-post-meta">
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span><%= l(post.data_publicacao, format: :short) %></span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+                <%= post.titulo %>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p><%= post.resumo %></p>
+              </div>
+              <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+              <span class="blog-post-link text-muted">
+                Em breve <i class="lucide-arrow-right"></i>
+              </span>
+            </article>
+          <% end %>
+        <% else %>
+          <div class="text-center py-5">
+            <h3>Nenhum post encontrado</h3>
+            <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+          </div>
+        <% end %>
+        <!-- Pagination -->
+        <% if @pagy.present? %>
+          <nav aria-label="Paginação do blog">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </nav>
+        <% end %>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <aside class="blog-sidebar">
+          <!-- Search Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Pesquisar</h4>
+            <%= form_with url: blog_path, method: :get, local: true do |form| %>
+              <div class="input-group">
+                <%= form.text_field :busca, 
+                    value: params[:busca], 
+                    class: "form-control", 
+                    placeholder: "Buscar artigos..." %>
+                <button class="btn btn-primary" type="submit">
+                  <i class="lucide-search"></i>
+                </button>
+              </div>
+            <% end %>
+          </div>
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Categorias</h4>
+            <ul class="sidebar-categories">
+              <% if @blog_categorias.present? %>
+                <li>
+                  <%= link_to blog_path do %>
+                    Tutoriais <span class="count">12</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to blog_path do %>
+                    Dicas & Truques <span class="count">8</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to blog_path do %>
+                    Inspiração <span class="count">6</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to blog_path do %>
+                    Materiais <span class="count">5</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to blog_path do %>
+                    Negócios <span class="count">4</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to blog_path do %>
+                    Entrevistas <span class="count">3</span>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Popular Posts Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Posts Populares</h4>
+            <% if @posts_populares.present? %>
+              <% @posts_populares.each do |post| %>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+                                  alt: post.titulo) %>
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+                      <%= post.titulo %>
+                    </h5>
+                    <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <!-- Posts estáticos de exemplo -->
+              <div class="popular-post">
+                <div class="popular-post-img">
+                  <%= image_tag "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+                                alt: "Post Popular" %>
+                </div>
+                <div class="popular-post-content">
+                  <h5 class="popular-post-title">
+                    5 Dicas para Melhorar seu Lettering Hoje Mesmo
+                  </h5>
+                  <span class="popular-post-date">12 Mar 2023</span>
+                </div>
+              </div>
+              <div class="popular-post">
+                <div class="popular-post-img">
+                  <%= image_tag "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=300&q=80", 
+                                alt: "Post Popular" %>
+                </div>
+                <div class="popular-post-content">
+                  <h5 class="popular-post-title">
+                    Como Monetizar sua Arte de Lettering em 2023
+                  </h5>
+                  <span class="popular-post-date">28 Fev 2023</span>
+                </div>
+              </div>
+              <div class="popular-post">
+                <div class="popular-post-img">
+                  <%= image_tag "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=300&q=80", 
+                                alt: "Post Popular" %>
+                </div>
+                <div class="popular-post-content">
+                  <h5 class="popular-post-title">
+                    Guia Completo de Materiais para Iniciantes
+                  </h5>
+                  <span class="popular-post-date">5 Mar 2023</span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <!-- Tags Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Tags</h4>
+            <div class="tag-cloud">
+              <%= link_to "Lettering", blog_path(tag: "lettering"), class: "tag" %>
+              <%= link_to "Caligrafia", blog_path(tag: "caligrafia"), class: "tag" %>
+              <%= link_to "Procreate", blog_path(tag: "procreate"), class: "tag" %>
+              <%= link_to "Brushes", blog_path(tag: "brushes"), class: "tag" %>
+              <%= link_to "Tipografia", blog_path(tag: "tipografia"), class: "tag" %>
+              <%= link_to "Digital", blog_path(tag: "digital"), class: "tag" %>
+              <%= link_to "Tradicional", blog_path(tag: "tradicional"), class: "tag" %>
+              <%= link_to "Inspiração", blog_path(tag: "inspiracao"), class: "tag" %>
+              <%= link_to "Negócios", blog_path(tag: "negocios"), class: "tag" %>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

@@ -4,12 +4,7 @@
       <a class="navbar-brand d-flex align-items-center d-none d-lg-block" href="#home">
         <%= image_tag('/layout/assets/img/NewLogo.png', alt: 'Logo', class: 'me-2') %>
       </a>
-      <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -24,7 +19,7 @@
             <a class="nav-link active" href="<%= cursos_path %>">Cursos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="<%= root_path %>">Blog</a>
+            <a class="nav-link active" href="<%= blog_path %>">Blog</a>
           </li>
         </ul>
         <div class="d-flex align-items-center gap-3">
