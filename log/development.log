@@ -194690,3 +194690,414 @@ Processing by ActiveStorage::DiskController#show as */*
 Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/store/carrinho" for ::1 at 2025-05-28 08:26:06 -0400
+Processing by Store::CarrinhoController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICarrinho Load (0.3ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `carrinho_ativo'
+  [1m[36mIItemCarrinho Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."subtotal") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/models/i_carrinho.rb:24:in `total'
+  Rendering layout layouts/home_application.erb
+  Rendering store/carrinho/show.html.erb within layouts/home_application
+  [1m[36mIItemCarrinho Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1 LIMIT $2[0m  [["i_carrinho_id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:5
+  [1m[36mIItemCarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_itens_carrinhos".* FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:10
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:14
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:14
+  Rendered store/carrinho/show.html.erb within layouts/home_application (Duration: 46.7ms | GC: 3.4ms)
+  [1m[36mCACHE ICarrinho Load (0.0ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 3.7ms | GC: 0.2ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 52.3ms | GC: 3.5ms)
+Completed 200 OK in 93ms (Views: 45.6ms | ActiveRecord: 14.2ms (13 queries, 1 cached) | GC: 19.4ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--4077ba2633f4d35a0bf762ac8f7b802b01023f82/15_como_eu_era_antes_de_voce_c.webp" for ::1 at 2025-05-28 08:26:06 -0400
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--7af7b3fa975c2a93036df1ed20beff502b5001bc/81LTEfXYgcL.jpg" for ::1 at 2025-05-28 08:26:06 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--4077ba2633f4d35a0bf762ac8f7b802b01023f82", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--7af7b3fa975c2a93036df1ed20beff502b5001bc", "filename"=>"81LTEfXYgcL"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: c9i3cl9jdppp90nqc5q7ly43zu4i (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjMxOjA2Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ca4d770d3c493ad8e2a7a33eabe507fa480e3d86/15_como_eu_era_antes_de_voce_c.webp)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjMxOjA2Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ca4d770d3c493ad8e2a7a33eabe507fa480e3d86/15_como_eu_era_antes_de_voce_c.webp
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjMxOjA2Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ca4d770d3c493ad8e2a7a33eabe507fa480e3d86/15_como_eu_era_antes_de_voce_c.webp" for ::1 at 2025-05-28 08:26:06 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: b81bhtvzotbrldis023tp9cyujp1 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MDYuOTkzWiIsInB1ciI6ImJsb2Jfa2V5In19--2427bff2598c2e2404d751e95fc27e153d1486d0/81LTEfXYgcL.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MDYuOTkzWiIsInB1ciI6ImJsb2Jfa2V5In19--2427bff2598c2e2404d751e95fc27e153d1486d0/81LTEfXYgcL.jpg
+Completed 302 Found in 20ms (ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MDYuOTkzWiIsInB1ciI6ImJsb2Jfa2V5In19--2427bff2598c2e2404d751e95fc27e153d1486d0/81LTEfXYgcL.jpg" for ::1 at 2025-05-28 08:26:06 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/store/carrinho" for ::1 at 2025-05-28 08:26:07 -0400
+Processing by Store::CarrinhoController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICarrinho Load (0.3ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `carrinho_ativo'
+  [1m[36mIItemCarrinho Sum (0.5ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."subtotal") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/models/i_carrinho.rb:24:in `total'
+  Rendering layout layouts/home_application.erb
+  Rendering store/carrinho/show.html.erb within layouts/home_application
+  [1m[36mIItemCarrinho Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1 LIMIT $2[0m  [["i_carrinho_id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:5
+  [1m[36mIItemCarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_itens_carrinhos".* FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:10
+  [1m[36mIProduto Load (0.3ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:14
+  [1m[36mIProduto Load (0.4ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:13
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:14
+  Rendered store/carrinho/show.html.erb within layouts/home_application (Duration: 18.2ms | GC: 0.2ms)
+  [1m[36mCACHE ICarrinho Load (0.0ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 7.0ms | GC: 2.5ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 26.6ms | GC: 2.7ms)
+Completed 200 OK in 35ms (Views: 24.4ms | ActiveRecord: 3.8ms (13 queries, 1 cached) | GC: 2.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjMxOjA2Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ca4d770d3c493ad8e2a7a33eabe507fa480e3d86/15_como_eu_era_antes_de_voce_c.webp" for ::1 at 2025-05-28 08:26:07 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MDYuOTkzWiIsInB1ciI6ImJsb2Jfa2V5In19--2427bff2598c2e2404d751e95fc27e153d1486d0/81LTEfXYgcL.jpg" for ::1 at 2025-05-28 08:26:07 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/store/carrinho/limpar" for ::1 at 2025-05-28 08:26:09 -0400
+Processing by Store::CarrinhoController#limpar as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICarrinho Load (0.3ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `carrinho_ativo'
+  [1m[36mIItemCarrinho Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1 LIMIT $2[0m  [["i_carrinho_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/store/carrinho_controller.rb:48:in `limpar'
+  [1m[36mIItemCarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_itens_carrinhos".* FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/controllers/store/carrinho_controller.rb:51:in `limpar'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/store/carrinho_controller.rb:51:in `limpar'
+  [1m[36mIItemCarrinho Destroy (2.0ms)[0m  [1m[31mDELETE FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/store/carrinho_controller.rb:51:in `limpar'
+  [1m[36mIItemCarrinho Destroy (0.2ms)[0m  [1m[31mDELETE FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/store/carrinho_controller.rb:51:in `limpar'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/store/carrinho_controller.rb:51:in `limpar'
+Redirected to http://localhost:3000/store/carrinho
+Completed 302 Found in 16ms (ActiveRecord: 5.2ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/store/carrinho" for ::1 at 2025-05-28 08:26:09 -0400
+Processing by Store::CarrinhoController#show as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mICarrinho Load (0.4ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `carrinho_ativo'
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."subtotal") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/models/i_carrinho.rb:24:in `total'
+  Rendering layout layouts/home_application.erb
+  Rendering store/carrinho/show.html.erb within layouts/home_application
+  [1m[36mIItemCarrinho Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1 LIMIT $2[0m  [["i_carrinho_id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/carrinho/show.html.erb:5
+  Rendered store/carrinho/show.html.erb within layouts/home_application (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mCACHE ICarrinho Load (0.0ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 1.6ms (6 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/papelaria" for ::1 at 2025-05-28 08:26:10 -0400
+Processing by StoreController#papelaria as HTML
+  [1m[36mSegmento Load (0.2ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" WHERE "segmentos"."nome" = $1 LIMIT $2[0m  [["nome", "Cursos"], ["LIMIT", 1]]
+  ↳ app/controllers/store_controller.rb:27:in `papelaria'
+  [1m[36mGCategoria Pluck (0.3ms)[0m  [1m[34mSELECT "g_categorias"."id" FROM "g_categorias" WHERE "g_categorias"."segmento_id" = $1[0m  [["segmento_id", 2]]
+  ↳ app/controllers/store_controller.rb:27:in `papelaria'
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:40:in `papelaria'
+  Rendering layout layouts/home_application.erb
+  Rendering store/papelaria.html.erb within layouts/home_application
+  [1m[36mGCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" != $1 ORDER BY "g_categorias"."nome" ASC[0m  [["id", 3]]
+  ↳ app/views/store/papelaria.html.erb:45
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "GCategoria"], ["name", "foto_categoria"], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:48
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:49
+  [1m[36mIProduto Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."g_categoria_id" = $1[0m  [["g_categoria_id", 1]]
+  ↳ app/views/store/papelaria.html.erb:56
+  [1m[36mCACHE Segmento Load (0.0ms)[0m  [1m[34mSELECT "segmentos".* FROM "segmentos" WHERE "segmentos"."nome" = $1 LIMIT $2[0m  [["nome", "Cursos"], ["LIMIT", 1]]
+  ↳ app/views/store/papelaria.html.erb:74
+  [1m[36mCACHE GCategoria Pluck (0.0ms)[0m  [1m[34mSELECT "g_categorias"."id" FROM "g_categorias" WHERE "g_categorias"."segmento_id" = $1[0m  [["segmento_id", 2]]
+  ↳ app/views/store/papelaria.html.erb:74
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" != $1 ORDER BY "g_categorias"."nome" ASC[0m  [["id", 3]]
+  ↳ app/views/store/papelaria.html.erb:74
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/papelaria.html.erb:79
+  [1m[36mGCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 8.4ms | GC: 0.4ms)
+  Rendered shared/_notice.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered store/papelaria.html.erb within layouts/home_application (Duration: 35.0ms | GC: 8.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:33
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.2ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 5.0ms | GC: 0.4ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 41.7ms | GC: 9.3ms)
+Completed 200 OK in 66ms (Views: 38.9ms | ActiveRecord: 11.8ms (20 queries, 4 cached) | GC: 9.3ms)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--fab9a62da96dff737b177dcdf78803677ed5783b/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fZmlsbCI6WzgwMCw1MDBdfSwicHVyIjoidmFyaWF0aW9uIn19--e37bf6bbcc3a5c4ff83000b119481b23c9c0c03d/catlogo.png" for ::1 at 2025-05-28 08:26:10 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjMxOjA2Ljk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ca4d770d3c493ad8e2a7a33eabe507fa480e3d86/15_como_eu_era_antes_de_voce_c.webp" for ::1 at 2025-05-28 08:26:10 -0400
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MDYuOTkzWiIsInB1ciI6ImJsb2Jfa2V5In19--2427bff2598c2e2404d751e95fc27e153d1486d0/81LTEfXYgcL.jpg" for ::1 at 2025-05-28 08:26:10 -0400
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6OSwicHVyIjoiYmxvYl9pZCJ9fQ==--fab9a62da96dff737b177dcdf78803677ed5783b", "variation_key"=>"[FILTERED]", "filename"=>"catlogo"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.3ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 9], ["variation_digest", "PJ8e58Slkm9hQknIuoub+6dfw3c="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: w9agu8pz2z9405v1em5i711v5bk8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3OWFndThwejJ6OTQwNXYxZW01aTcxMXY1Yms4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2F0bG9nby5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydjYXRsb2dvLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MTAuOTI4WiIsInB1ciI6ImJsb2Jfa2V5In19--94146e9cbe751a6decd36a36df48f4a458197644/catlogo.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3OWFndThwejJ6OTQwNXYxZW01aTcxMXY1Yms4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2F0bG9nby5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydjYXRsb2dvLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MTAuOTI4WiIsInB1ciI6ImJsb2Jfa2V5In19--94146e9cbe751a6decd36a36df48f4a458197644/catlogo.png
+Completed 302 Found in 18ms (ActiveRecord: 4.6ms (4 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJ3OWFndThwejJ6OTQwNXYxZW01aTcxMXY1Yms4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiY2F0bG9nby5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydjYXRsb2dvLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6MzE6MTAuOTI4WiIsInB1ciI6ImJsb2Jfa2V5In19--94146e9cbe751a6decd36a36df48f4a458197644/catlogo.png" for ::1 at 2025-05-28 08:26:10 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"catlogo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/blog" for ::1 at 2025-05-28 08:26:12 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:26:12.150975"]]
+  ↳ app/controllers/store_controller.rb:104:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  [1m[36mGBlogPost Load (0.3ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2 OFFSET $3[0m  [[nil, "2025-05-28 12:26:12.150975"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" ORDER BY "g_blog_categorias"."descricao" ASC[0m
+  ↳ app/views/store/blog.html.erb:84
+  [1m[36mGBlogPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE "g_blog_posts"."g_blog_categoria_id" = $1 AND (data_publicacao <= $2)[0m  [["g_blog_categoria_id", 1], [nil, "2025-05-28 12:26:12.167470"]]
+  ↳ app/views/store/blog.html.erb:89
+  [1m[36mGBlogPost Load (0.2ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2[0m  [[nil, "2025-05-28 12:26:12.154641"], ["LIMIT", 3]]
+  ↳ app/views/store/blog.html.erb:99
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 17.7ms | GC: 0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:33
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 4.0ms | GC: 0.1ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 23.2ms | GC: 0.6ms)
+Completed 200 OK in 33ms (Views: 19.9ms | ActiveRecord: 6.0ms (12 queries, 2 cached) | GC: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mjk6MTUuNjk2WiIsInB1ciI6ImJsb2Jfa2V5In19--8b651004225982aa9c00737bc346a7a6be700a27/blog.avif" for ::1 at 2025-05-28 08:26:12 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"blog"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/blog/5" for ::1 at 2025-05-28 08:26:17 -0400
+  
+AbstractController::ActionNotFound (The action 'blog_post' could not be found for StoreController):
+  
+actionpack (7.2.2.1) lib/abstract_controller/base.rb:158:in `process'
+actionview (7.2.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.8) lib/rack/etag.rb:29:in `call'
+rack (3.1.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.8) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/blog" for ::1 at 2025-05-28 08:28:12 -0400
+Processing by StoreController#blog as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+NoMethodError (undefined method `published' for class GBlogPost):
+  
+app/controllers/store_controller.rb:86:in `blog'
+Started GET "/blog" for ::1 at 2025-05-28 08:28:13 -0400
+Processing by StoreController#blog as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method `published' for class GBlogPost):
+  
+app/controllers/store_controller.rb:86:in `blog'
+Started GET "/blog" for ::1 at 2025-05-28 08:28:39 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:28:39.471260"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  [1m[36mGBlogPost Load (0.2ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2 OFFSET $3[0m  [[nil, "2025-05-28 12:28:39.471260"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mGBlogCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" ORDER BY "g_blog_categorias"."descricao" ASC[0m
+  ↳ app/views/store/blog.html.erb:84
+  [1m[36mGBlogPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE "g_blog_posts"."g_blog_categoria_id" = $1 AND (data_publicacao <= $2)[0m  [["g_blog_categoria_id", 1], [nil, "2025-05-28 12:28:39.501576"]]
+  ↳ app/views/store/blog.html.erb:89
+  [1m[36mGBlogPost Load (0.1ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2[0m  [[nil, "2025-05-28 12:28:39.473285"], ["LIMIT", 3]]
+  ↳ app/views/store/blog.html.erb:99
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 31.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:33
+  [1m[36mICarrinho Load (0.2ms)[0m  [1m[34mSELECT "i_carrinhos".* FROM "i_carrinhos" WHERE "i_carrinhos"."usuario_id" = $1 AND "i_carrinhos"."status" = $2 LIMIT $3[0m  [["usuario_id", 10], ["status", "ativo"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:34
+  [1m[36mIItemCarrinho Sum (0.1ms)[0m  [1m[34mSELECT SUM("i_itens_carrinhos"."quantidade") FROM "i_itens_carrinhos" WHERE "i_itens_carrinhos"."i_carrinho_id" = $1[0m  [["i_carrinho_id", 1]]
+  ↳ app/views/store/shared/_navbar.html.erb:35
+  Rendered store/shared/_navbar.html.erb (Duration: 18.3ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 51.8ms | GC: 0.0ms)
+Completed 200 OK in 64ms (Views: 40.0ms | ActiveRecord: 14.9ms (13 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mjk6MTUuNjk2WiIsInB1ciI6ImJsb2Jfa2V5In19--8b651004225982aa9c00737bc346a7a6be700a27/blog.avif" for ::1 at 2025-05-28 08:28:39 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"blog"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+

@@ -80,42 +80,21 @@ class StoreController < ApplicationController
   
 
   
-  def blog
-    @blog_categorias = GBlogCategoria.all.order(:descricao)
-    posts_query = GBlogPost.where('data_publicacao <= ?', Time.current)
-    # Filtro por categoria
-    if params[:categoria].present?
-      categoria = GBlogCategoria.find_by(id: params[:categoria])
-      posts_query = posts_query.where(g_blog_categoria: categoria) if categoria.present?
-    end
-    # Filtro por busca
-    if params[:busca].present?
-      posts_query = posts_query.where(
-        "titulo ILIKE ? OR resumo ILIKE ? OR conteudo ILIKE ?", 
-        "%#{params[:busca]}%", 
-        "%#{params[:busca]}%", 
-        "%#{params[:busca]}%"
-      )
-    end
-    # Filtro por tag (se você implementar tags)
-    if params[:tag].present?
-    end
-    # Paginação
-    @pagy, @blog_posts = pagy(
-      posts_query.order(data_publicacao: :desc),
-      items: 6
-    )
-    # Posts populares (últimos 3 mais recentes ou por visualizações se implementar)
-    @posts_populares = GBlogPost.where('data_publicacao <= ?', Time.current)
-                                .order(data_publicacao: :desc)
-                                .limit(3)
-    
-    # Tags (se você implementar)
-    @tags = [] 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+ def blog
+  @blog_categorias = GBlogCategoria.order(:descricao)
+
+  posts_query = GBlogPost.published.includes(:g_blog_categoria)
+  
+  posts_query = posts_query.where(g_blog_categoria_id: params[:categoria]) if params[:categoria].present?
+
+  if params[:busca].present?
+    busca = "%#{params[:busca]}%"
+    posts_query = posts_query.where("titulo ILIKE :busca OR resumo ILIKE :busca OR conteudo ILIKE :busca", busca: busca)
   end
+
+  @pagy, @blog_posts = pagy(posts_query.order(data_publicacao: :desc), items: 6)
+
+  @posts_populares = GBlogPost.published.order(data_publicacao: :desc).limit(3)
+ end
 
 end

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class GBlogPost < ApplicationRecord
+  scope :published, -> { where('data_publicacao <= ?', Time.current) }
+
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
   belongs_to        :g_blog_categoria
   has_one_attached  :imagem_blog
