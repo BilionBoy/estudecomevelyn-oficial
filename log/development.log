@@ -195101,3 +195101,1202 @@ Processing by ActiveStorage::DiskController#show as */*
 Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Stripe inicializado. API Key presente: true
+Stripe inicializado. API Key presente: true
+Started GET "/" for 127.0.0.1 at 2025-05-28 08:34:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+DEPRECATION WARNING: Defining enums with keyword arguments is deprecated and will be removed
+in Rails 8.0. Positional arguments should be used instead:
+
+enum :status, {:inativo=>0, :ativo=>1}
+ (called from <class:IProduto> at /home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/models/i_produto.rb:12)
+  [1m[36mIProduto Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "i_produtos" WHERE "i_produtos"."status" = $1[0m  [["status", 1]]
+  ↳ app/controllers/store_controller.rb:18:in `index'
+  Rendering layout layouts/home_application.erb
+  Rendering store/index.html.erb within layouts/home_application
+  [1m[36mIProduto Load (0.2ms)[0m  [1m[34mSELECT "i_produtos".* FROM "i_produtos" WHERE "i_produtos"."status" = $1 ORDER BY "i_produtos"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 1], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:2
+  [1m[36mGCategoria Load (0.3ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  [1m[36mCACHE GCategoria Load (0.0ms)[0m  [1m[34mSELECT "g_categorias".* FROM "g_categorias" WHERE "g_categorias"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "IProduto"], ["name", "imagem"], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:20
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/store/shared/_produtos_cards.html.erb:21
+  Rendered store/shared/_produtos_cards.html.erb (Duration: 47.8ms | GC: 4.3ms)
+  Rendered store/index.html.erb within layouts/home_application (Duration: 49.0ms | GC: 4.3ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 119.4ms | GC: 4.5ms)
+Completed 200 OK in 181ms (Views: 113.1ms | ActiveRecord: 13.2ms (8 queries, 1 cached) | GC: 19.9ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--4077ba2633f4d35a0bf762ac8f7b802b01023f82/15_como_eu_era_antes_de_voce_c.webp" for 127.0.0.1 at 2025-05-28 08:34:23 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--4077ba2633f4d35a0bf762ac8f7b802b01023f82", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: c9i3cl9jdppp90nqc5q7ly43zu4i (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjM5OjIzLjg4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--158bb330794c038c3cfb00d0b94bae63444bec79/15_como_eu_era_antes_de_voce_c.webp)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjM5OjIzLjg4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--158bb330794c038c3cfb00d0b94bae63444bec79/15_como_eu_era_antes_de_voce_c.webp
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJjOWkzY2w5amRwcHA5MG5xYzVxN2x5NDN6dTRpIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiMTVfY29tb19ldV9lcmFfYW50ZXNfZGVfdm9jZV9jLndlYnBcIjsgZmlsZW5hbWUqPVVURi04JycxNV9jb21vX2V1X2VyYV9hbnRlc19kZV92b2NlX2Mud2VicCIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3dlYnAiLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI1LTA1LTI4VDEyOjM5OjIzLjg4MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--158bb330794c038c3cfb00d0b94bae63444bec79/15_como_eu_era_antes_de_voce_c.webp" for 127.0.0.1 at 2025-05-28 08:34:23 -0400
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"15_como_eu_era_antes_de_voce_c"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--7af7b3fa975c2a93036df1ed20beff502b5001bc/81LTEfXYgcL.jpg" for 127.0.0.1 at 2025-05-28 08:34:24 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--7af7b3fa975c2a93036df1ed20beff502b5001bc", "filename"=>"81LTEfXYgcL"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: b81bhtvzotbrldis023tp9cyujp1 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjQuMDgyWiIsInB1ciI6ImJsb2Jfa2V5In19--efd9b3da72c23a360ab8b7023273cae420fa61ec/81LTEfXYgcL.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjQuMDgyWiIsInB1ciI6ImJsb2Jfa2V5In19--efd9b3da72c23a360ab8b7023273cae420fa61ec/81LTEfXYgcL.jpg
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJiODFiaHR2em90YnJsZGlzMDIzdHA5Y3l1anAxIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiODFMVEVmWFlnY0wuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnODFMVEVmWFlnY0wuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjQuMDgyWiIsInB1ciI6ImJsb2Jfa2V5In19--efd9b3da72c23a360ab8b7023273cae420fa61ec/81LTEfXYgcL.jpg" for 127.0.0.1 at 2025-05-28 08:34:24 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"81LTEfXYgcL"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/blog" for 127.0.0.1 at 2025-05-28 08:34:24 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:34:24.934522"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  [1m[36mGBlogPost Load (0.4ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2 OFFSET $3[0m  [[nil, "2025-05-28 12:34:24.934522"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mGBlogCategoria Load (0.2ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mGBlogCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" ORDER BY "g_blog_categorias"."descricao" ASC[0m
+  ↳ app/views/store/blog.html.erb:84
+  [1m[36mGBlogPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE "g_blog_posts"."g_blog_categoria_id" = $1 AND (data_publicacao <= $2)[0m  [["g_blog_categoria_id", 1], [nil, "2025-05-28 12:34:24.999007"]]
+  ↳ app/views/store/blog.html.erb:89
+  [1m[36mGBlogPost Load (0.2ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2[0m  [[nil, "2025-05-28 12:34:24.943285"], ["LIMIT", 3]]
+  ↳ app/views/store/blog.html.erb:99
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 61.6ms | GC: 25.3ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 2.1ms | GC: 0.6ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 66.0ms | GC: 25.9ms)
+Completed 200 OK in 90ms (Views: 60.5ms | ActiveRecord: 11.4ms (10 queries, 2 cached) | GC: 25.9ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTcsInB1ciI6ImJsb2JfaWQifX0=--a3b3eb929ffb934f5a8e08e9fb27ff4aa12e9cf4/blog.avif" for 127.0.0.1 at 2025-05-28 08:34:25 -0400
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MTcsInB1ciI6ImJsb2JfaWQifX0=--a3b3eb929ffb934f5a8e08e9fb27ff4aa12e9cf4", "filename"=>"blog"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: 8w34hf0ez3ncee8ob2byua0et4gx (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjUuMDM2WiIsInB1ciI6ImJsb2Jfa2V5In19--d3c2141a0dee9fd64fa8a33afcf4e8675b198770/blog.avif)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjUuMDM2WiIsInB1ciI6ImJsb2Jfa2V5In19--d3c2141a0dee9fd64fa8a33afcf4e8675b198770/blog.avif
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjUuMDM2WiIsInB1ciI6ImJsb2Jfa2V5In19--d3c2141a0dee9fd64fa8a33afcf4e8675b198770/blog.avif" for 127.0.0.1 at 2025-05-28 08:34:25 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"blog"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/blog" for 127.0.0.1 at 2025-05-28 08:34:43 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:34:43.164923"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 3.8ms | GC: 0.5ms)
+  Rendered layout layouts/home_application.erb (Duration: 4.0ms | GC: 0.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 3.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "Blog – Estude com Evelyn" %>
+<% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Blog do Lettering</h1>
+        <p class="lead">
+          Dicas, tutoriais e inspiração para sua jornada criativa
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <% if @blog_posts.present? %>
+          <% @blog_posts.each do |post| %>
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <%= link_to blog_post_path(post) do %>
+                  <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+                <% end %>
+              </div>
+              <div class="blog-post-meta">
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span><%= l(post.data_publicacao, format: :short) %></span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <%= post.titulo %>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p><%= post.resumo %></p>
+              </div>
+              <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+            </article>
+          <% end %>
+        <% else %>
+          <div class="text-center py-5">
+            <h3>Nenhum post encontrado</h3>
+            <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+          </div>
+        <% end %>
+        <!-- Pagination -->
+        <% if @pagy.present? %>
+          <nav aria-label="Paginação do blog">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </nav>
+        <% end %>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <aside class="blog-sidebar">
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Pesquisar</h4>
+            <%= form_with url: blog_path, method: :get, local: true do |form| %>
+              <div class="input-group">
+                <%= form.text_field :busca, 
+                    value: params[:busca], 
+                    class: "form-control", 
+                    placeholder: "Buscar artigos..." %>
+                <button class="btn btn-primary" type="submit">
+                  <i class="lucide-search"></i>
+                </button>
+              </div>
+            <% end %>
+          </div>
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Categorias</h4>
+            <ul class="sidebar-categories">
+              <% if @blog_categorias.present? %>
+                <% @blog_categorias.each do |categoria| %>
+                  <li>
+                    <%= link_to blog_path(categoria: categoria.id) do %>
+                      <%= categoria.descricao %>
+                      <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Popular Posts Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Posts Populares</h4>
+            <% if @posts_populares.present? %>
+              <% @posts_populares.each do |post| %>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+                                  alt: post.titulo) %>
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+                      <%= post.titulo %>
+                    </h5>
+                    <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/views/store/blog.html.erb:123: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <% content_for :title, "Blog – Estude com Evelyn" %>
+2:    <% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+3:    <!-- Page Header -->
+4:    <section class="page-header">
+5:      <div class="container">
+6:        <div class="row">
+7:          <div class="col-lg-8 page-header-content">
+8:            <nav aria-label="breadcrumb">
+9:              <ol class="breadcrumb">
+10:                <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+11:                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+12:              </ol>
+13:            </nav>
+14:            <h1 class="page-title">Blog do Lettering</h1>
+15:            <p class="lead">
+16:              Dicas, tutoriais e inspiração para sua jornada criativa
+17:            </p>
+18:          </div>
+19:        </div>
+20:      </div>
+21:    </section>
+22:    <!-- Blog Section -->
+23:    <section class="py-5">
+24:      <div class="container">
+25:        <div class="row">
+26:          <div class="col-lg-8">
+27:            <% if @blog_posts.present? %>
+28:              <% @blog_posts.each do |post| %>
+29:                <article class="blog-post">
+30:                  <div class="blog-post-img">
+31:                    <%= link_to blog_post_path(post) do %>
+32:                      <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+33:                    <% end %>
+34:                  </div>
+35:                  <div class="blog-post-meta">
+36:                    <div class="date">
+37:                      <i class="lucide-calendar"></i>
+38:                      <span><%= l(post.data_publicacao, format: :short) %></span>
+39:                    </div>
+40:                  </div>
+41:                  <h2 class="blog-post-title">
+42:                    <%= post.titulo %>
+43:                  </h2>
+44:                  <div class="blog-post-excerpt">
+45:                    <p><%= post.resumo %></p>
+46:                  </div>
+47:                  <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+48:                </article>
+49:              <% end %>
+50:            <% else %>
+51:              <div class="text-center py-5">
+52:                <h3>Nenhum post encontrado</h3>
+53:                <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+54:              </div>
+55:            <% end %>
+56:            <!-- Pagination -->
+57:            <% if @pagy.present? %>
+58:              <nav aria-label="Paginação do blog">
+59:                <%== pagy_bootstrap_nav(@pagy) %>
+60:              </nav>
+61:            <% end %>
+62:          </div>
+63:          <!-- Sidebar -->
+64:          <div class="col-lg-4">
+65:            <aside class="blog-sidebar">
+66:              <div class="sidebar-widget">
+67:                <h4 class="sidebar-widget-title">Pesquisar</h4>
+68:                <%= form_with url: blog_path, method: :get, local: true do |form| %>
+69:                  <div class="input-group">
+70:                    <%= form.text_field :busca, 
+71:                        value: params[:busca], 
+72:                        class: "form-control", 
+73:                        placeholder: "Buscar artigos..." %>
+74:                    <button class="btn btn-primary" type="submit">
+75:                      <i class="lucide-search"></i>
+76:                    </button>
+77:                  </div>
+78:                <% end %>
+79:              </div>
+80:              <!-- Categories Widget -->
+81:              <div class="sidebar-widget">
+82:                <h4 class="sidebar-widget-title">Categorias</h4>
+83:                <ul class="sidebar-categories">
+84:                  <% if @blog_categorias.present? %>
+85:                    <% @blog_categorias.each do |categoria| %>
+86:                      <li>
+87:                        <%= link_to blog_path(categoria: categoria.id) do %>
+88:                          <%= categoria.descricao %>
+89:                          <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+90:                        <% end %>
+91:                      </li>
+92:                    <% end %>
+93:                  <% end %>
+94:                </ul>
+95:              </div>
+96:              <!-- Popular Posts Widget -->
+97:              <div class="sidebar-widget">
+98:                <h4 class="sidebar-widget-title">Posts Populares</h4>
+99:                <% if @posts_populares.present? %>
+100:                  <% @posts_populares.each do |post| %>
+101:                    <div class="popular-post">
+102:                      <div class="popular-post-img">
+103:                        <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+104:                                      alt: post.titulo) %>
+105:                      </div>
+106:                      <div class="popular-post-content">
+107:                        <h5 class="popular-post-title">
+108:                          <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+109:                          <%= post.titulo %>
+110:                        </h5>
+111:                        <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+112:                      </div>
+113:                    </div>
+114:                  <% end %>
+115:                <% else %>
+116:                </div>
+117:              </aside>
+118:            </div>
+119:          </div>
+120:        </div>
+121:      </section>
+  
+app/views/store/blog.html.erb:123: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/blog" for 127.0.0.1 at 2025-05-28 08:34:44 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:34:44.026384"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "Blog – Estude com Evelyn" %>
+<% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Blog do Lettering</h1>
+        <p class="lead">
+          Dicas, tutoriais e inspiração para sua jornada criativa
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <% if @blog_posts.present? %>
+          <% @blog_posts.each do |post| %>
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <%= link_to blog_post_path(post) do %>
+                  <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+                <% end %>
+              </div>
+              <div class="blog-post-meta">
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span><%= l(post.data_publicacao, format: :short) %></span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <%= post.titulo %>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p><%= post.resumo %></p>
+              </div>
+              <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+            </article>
+          <% end %>
+        <% else %>
+          <div class="text-center py-5">
+            <h3>Nenhum post encontrado</h3>
+            <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+          </div>
+        <% end %>
+        <!-- Pagination -->
+        <% if @pagy.present? %>
+          <nav aria-label="Paginação do blog">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </nav>
+        <% end %>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <aside class="blog-sidebar">
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Pesquisar</h4>
+            <%= form_with url: blog_path, method: :get, local: true do |form| %>
+              <div class="input-group">
+                <%= form.text_field :busca, 
+                    value: params[:busca], 
+                    class: "form-control", 
+                    placeholder: "Buscar artigos..." %>
+                <button class="btn btn-primary" type="submit">
+                  <i class="lucide-search"></i>
+                </button>
+              </div>
+            <% end %>
+          </div>
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Categorias</h4>
+            <ul class="sidebar-categories">
+              <% if @blog_categorias.present? %>
+                <% @blog_categorias.each do |categoria| %>
+                  <li>
+                    <%= link_to blog_path(categoria: categoria.id) do %>
+                      <%= categoria.descricao %>
+                      <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Popular Posts Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Posts Populares</h4>
+            <% if @posts_populares.present? %>
+              <% @posts_populares.each do |post| %>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+                                  alt: post.titulo) %>
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+                      <%= post.titulo %>
+                    </h5>
+                    <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/views/store/blog.html.erb:123: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <% content_for :title, "Blog – Estude com Evelyn" %>
+2:    <% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+3:    <!-- Page Header -->
+4:    <section class="page-header">
+5:      <div class="container">
+6:        <div class="row">
+7:          <div class="col-lg-8 page-header-content">
+8:            <nav aria-label="breadcrumb">
+9:              <ol class="breadcrumb">
+10:                <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+11:                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+12:              </ol>
+13:            </nav>
+14:            <h1 class="page-title">Blog do Lettering</h1>
+15:            <p class="lead">
+16:              Dicas, tutoriais e inspiração para sua jornada criativa
+17:            </p>
+18:          </div>
+19:        </div>
+20:      </div>
+21:    </section>
+22:    <!-- Blog Section -->
+23:    <section class="py-5">
+24:      <div class="container">
+25:        <div class="row">
+26:          <div class="col-lg-8">
+27:            <% if @blog_posts.present? %>
+28:              <% @blog_posts.each do |post| %>
+29:                <article class="blog-post">
+30:                  <div class="blog-post-img">
+31:                    <%= link_to blog_post_path(post) do %>
+32:                      <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+33:                    <% end %>
+34:                  </div>
+35:                  <div class="blog-post-meta">
+36:                    <div class="date">
+37:                      <i class="lucide-calendar"></i>
+38:                      <span><%= l(post.data_publicacao, format: :short) %></span>
+39:                    </div>
+40:                  </div>
+41:                  <h2 class="blog-post-title">
+42:                    <%= post.titulo %>
+43:                  </h2>
+44:                  <div class="blog-post-excerpt">
+45:                    <p><%= post.resumo %></p>
+46:                  </div>
+47:                  <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+48:                </article>
+49:              <% end %>
+50:            <% else %>
+51:              <div class="text-center py-5">
+52:                <h3>Nenhum post encontrado</h3>
+53:                <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+54:              </div>
+55:            <% end %>
+56:            <!-- Pagination -->
+57:            <% if @pagy.present? %>
+58:              <nav aria-label="Paginação do blog">
+59:                <%== pagy_bootstrap_nav(@pagy) %>
+60:              </nav>
+61:            <% end %>
+62:          </div>
+63:          <!-- Sidebar -->
+64:          <div class="col-lg-4">
+65:            <aside class="blog-sidebar">
+66:              <div class="sidebar-widget">
+67:                <h4 class="sidebar-widget-title">Pesquisar</h4>
+68:                <%= form_with url: blog_path, method: :get, local: true do |form| %>
+69:                  <div class="input-group">
+70:                    <%= form.text_field :busca, 
+71:                        value: params[:busca], 
+72:                        class: "form-control", 
+73:                        placeholder: "Buscar artigos..." %>
+74:                    <button class="btn btn-primary" type="submit">
+75:                      <i class="lucide-search"></i>
+76:                    </button>
+77:                  </div>
+78:                <% end %>
+79:              </div>
+80:              <!-- Categories Widget -->
+81:              <div class="sidebar-widget">
+82:                <h4 class="sidebar-widget-title">Categorias</h4>
+83:                <ul class="sidebar-categories">
+84:                  <% if @blog_categorias.present? %>
+85:                    <% @blog_categorias.each do |categoria| %>
+86:                      <li>
+87:                        <%= link_to blog_path(categoria: categoria.id) do %>
+88:                          <%= categoria.descricao %>
+89:                          <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+90:                        <% end %>
+91:                      </li>
+92:                    <% end %>
+93:                  <% end %>
+94:                </ul>
+95:              </div>
+96:              <!-- Popular Posts Widget -->
+97:              <div class="sidebar-widget">
+98:                <h4 class="sidebar-widget-title">Posts Populares</h4>
+99:                <% if @posts_populares.present? %>
+100:                  <% @posts_populares.each do |post| %>
+101:                    <div class="popular-post">
+102:                      <div class="popular-post-img">
+103:                        <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+104:                                      alt: post.titulo) %>
+105:                      </div>
+106:                      <div class="popular-post-content">
+107:                        <h5 class="popular-post-title">
+108:                          <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+109:                          <%= post.titulo %>
+110:                        </h5>
+111:                        <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+112:                      </div>
+113:                    </div>
+114:                  <% end %>
+115:                <% else %>
+116:                </div>
+117:              </aside>
+118:            </div>
+119:          </div>
+120:        </div>
+121:      </section>
+  
+app/views/store/blog.html.erb:123: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/blog" for 127.0.0.1 at 2025-05-28 08:34:48 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:34:48.178841"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "Blog – Estude com Evelyn" %>
+<% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Blog do Lettering</h1>
+        <p class="lead">
+          Dicas, tutoriais e inspiração para sua jornada criativa
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <% if @blog_posts.present? %>
+          <% @blog_posts.each do |post| %>
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <%= link_to blog_post_path(post) do %>
+                  <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+                <% end %>
+              </div>
+              <div class="blog-post-meta">
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span><%= l(post.data_publicacao, format: :short) %></span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <%= post.titulo %>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p><%= post.resumo %></p>
+              </div>
+              <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+            </article>
+          <% end %>
+        <% else %>
+          <div class="text-center py-5">
+            <h3>Nenhum post encontrado</h3>
+            <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+          </div>
+        <% end %>
+        <!-- Pagination -->
+        <% if @pagy.present? %>
+          <nav aria-label="Paginação do blog">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </nav>
+        <% end %>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <aside class="blog-sidebar">
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Pesquisar</h4>
+            <%= form_with url: blog_path, method: :get, local: true do |form| %>
+              <div class="input-group">
+                <%= form.text_field :busca, 
+                    value: params[:busca], 
+                    class: "form-control", 
+                    placeholder: "Buscar artigos..." %>
+                <button class="btn btn-primary" type="submit">
+                  <i class="lucide-search"></i>
+                </button>
+              </div>
+            <% end %>
+          </div>
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Categorias</h4>
+            <ul class="sidebar-categories">
+              <% if @blog_categorias.present? %>
+                <% @blog_categorias.each do |categoria| %>
+                  <li>
+                    <%= link_to blog_path(categoria: categoria.id) do %>
+                      <%= categoria.descricao %>
+                      <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Popular Posts Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Posts Populares</h4>
+            <% if @posts_populares.present? %>
+              <% @posts_populares.each do |post| %>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+                                  alt: post.titulo) %>
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+                      <%= post.titulo %>
+                    </h5>
+                    <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/views/store/blog.html.erb:122: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <% content_for :title, "Blog – Estude com Evelyn" %>
+2:    <% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+3:    <!-- Page Header -->
+4:    <section class="page-header">
+5:      <div class="container">
+6:        <div class="row">
+7:          <div class="col-lg-8 page-header-content">
+8:            <nav aria-label="breadcrumb">
+9:              <ol class="breadcrumb">
+10:                <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+11:                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+12:              </ol>
+13:            </nav>
+14:            <h1 class="page-title">Blog do Lettering</h1>
+15:            <p class="lead">
+16:              Dicas, tutoriais e inspiração para sua jornada criativa
+17:            </p>
+18:          </div>
+19:        </div>
+20:      </div>
+21:    </section>
+22:    <!-- Blog Section -->
+23:    <section class="py-5">
+24:      <div class="container">
+25:        <div class="row">
+26:          <div class="col-lg-8">
+27:            <% if @blog_posts.present? %>
+28:              <% @blog_posts.each do |post| %>
+29:                <article class="blog-post">
+30:                  <div class="blog-post-img">
+31:                    <%= link_to blog_post_path(post) do %>
+32:                      <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+33:                    <% end %>
+34:                  </div>
+35:                  <div class="blog-post-meta">
+36:                    <div class="date">
+37:                      <i class="lucide-calendar"></i>
+38:                      <span><%= l(post.data_publicacao, format: :short) %></span>
+39:                    </div>
+40:                  </div>
+41:                  <h2 class="blog-post-title">
+42:                    <%= post.titulo %>
+43:                  </h2>
+44:                  <div class="blog-post-excerpt">
+45:                    <p><%= post.resumo %></p>
+46:                  </div>
+47:                  <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+48:                </article>
+49:              <% end %>
+50:            <% else %>
+51:              <div class="text-center py-5">
+52:                <h3>Nenhum post encontrado</h3>
+53:                <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+54:              </div>
+55:            <% end %>
+56:            <!-- Pagination -->
+57:            <% if @pagy.present? %>
+58:              <nav aria-label="Paginação do blog">
+59:                <%== pagy_bootstrap_nav(@pagy) %>
+60:              </nav>
+61:            <% end %>
+62:          </div>
+63:          <!-- Sidebar -->
+64:          <div class="col-lg-4">
+65:            <aside class="blog-sidebar">
+66:              <div class="sidebar-widget">
+67:                <h4 class="sidebar-widget-title">Pesquisar</h4>
+68:                <%= form_with url: blog_path, method: :get, local: true do |form| %>
+69:                  <div class="input-group">
+70:                    <%= form.text_field :busca, 
+71:                        value: params[:busca], 
+72:                        class: "form-control", 
+73:                        placeholder: "Buscar artigos..." %>
+74:                    <button class="btn btn-primary" type="submit">
+75:                      <i class="lucide-search"></i>
+76:                    </button>
+77:                  </div>
+78:                <% end %>
+79:              </div>
+80:              <!-- Categories Widget -->
+81:              <div class="sidebar-widget">
+82:                <h4 class="sidebar-widget-title">Categorias</h4>
+83:                <ul class="sidebar-categories">
+84:                  <% if @blog_categorias.present? %>
+85:                    <% @blog_categorias.each do |categoria| %>
+86:                      <li>
+87:                        <%= link_to blog_path(categoria: categoria.id) do %>
+88:                          <%= categoria.descricao %>
+89:                          <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+90:                        <% end %>
+91:                      </li>
+92:                    <% end %>
+93:                  <% end %>
+94:                </ul>
+95:              </div>
+96:              <!-- Popular Posts Widget -->
+97:              <div class="sidebar-widget">
+98:                <h4 class="sidebar-widget-title">Posts Populares</h4>
+99:                <% if @posts_populares.present? %>
+100:                  <% @posts_populares.each do |post| %>
+101:                    <div class="popular-post">
+102:                      <div class="popular-post-img">
+103:                        <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+104:                                      alt: post.titulo) %>
+105:                      </div>
+106:                      <div class="popular-post-content">
+107:                        <h5 class="popular-post-title">
+108:                          <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+109:                          <%= post.titulo %>
+110:                        </h5>
+111:                        <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+112:                      </div>
+113:                    </div>
+114:                  <% end %>
+115:                </div>
+116:              </aside>
+117:            </div>
+118:          </div>
+119:        </div>
+120:      </section>
+  
+app/views/store/blog.html.erb:122: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/blog" for 127.0.0.1 at 2025-05-28 08:35:15 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:35:15.117986"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/home_application.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "Blog – Estude com Evelyn" %>
+<% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 page-header-content">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Blog do Lettering</h1>
+        <p class="lead">
+          Dicas, tutoriais e inspiração para sua jornada criativa
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <% if @blog_posts.present? %>
+          <% @blog_posts.each do |post| %>
+            <article class="blog-post">
+              <div class="blog-post-img">
+                <%= link_to blog_post_path(post) do %>
+                  <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+                <% end %>
+              </div>
+              <div class="blog-post-meta">
+                <div class="date">
+                  <i class="lucide-calendar"></i>
+                  <span><%= l(post.data_publicacao, format: :short) %></span>
+                </div>
+              </div>
+              <h2 class="blog-post-title">
+                <%= post.titulo %>
+              </h2>
+              <div class="blog-post-excerpt">
+                <p><%= post.resumo %></p>
+              </div>
+              <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+            </article>
+          <% end %>
+        <% else %>
+          <div class="text-center py-5">
+            <h3>Nenhum post encontrado</h3>
+            <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+          </div>
+        <% end %>
+        <!-- Pagination -->
+        <% if @pagy.present? %>
+          <nav aria-label="Paginação do blog">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </nav>
+        <% end %>
+      </div>
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <aside class="blog-sidebar">
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Pesquisar</h4>
+            <%= form_with url: blog_path, method: :get, local: true do |form| %>
+              <div class="input-group">
+                <%= form.text_field :busca, 
+                    value: params[:busca], 
+                    class: "form-control", 
+                    placeholder: "Buscar artigos..." %>
+                <button class="btn btn-primary" type="submit">
+                  <i class="lucide-search"></i>
+                </button>
+              </div>
+            <% end %>
+          </div>
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Categorias</h4>
+            <ul class="sidebar-categories">
+              <% if @blog_categorias.present? %>
+                <% @blog_categorias.each do |categoria| %>
+                  <li>
+                    <%= link_to blog_path(categoria: categoria.id) do %>
+                      <%= categoria.descricao %>
+                      <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Popular Posts Widget -->
+          <div class="sidebar-widget">
+            <h4 class="sidebar-widget-title">Posts Populares</h4>
+            <% if @posts_populares.present? %>
+              <% @posts_populares.each do |post| %>
+                <div class="popular-post">
+                  <div class="popular-post-img">
+                    <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+                                  alt: post.titulo) %>
+                  </div>
+                  <div class="popular-post-content">
+                    <h5 class="popular-post-title">
+                      <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+                      <%= post.titulo %>
+                    </h5>
+                    <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/home/dhiogo/Projetos/repos/estudecomevelyn-oficial/app/views/store/blog.html.erb:123: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <% content_for :title, "Blog – Estude com Evelyn" %>
+2:    <% content_for :description, "Leia dicas de estudo, novidades e reflexões para impulsionar sua jornada educacional." %>
+3:    <!-- Page Header -->
+4:    <section class="page-header">
+5:      <div class="container">
+6:        <div class="row">
+7:          <div class="col-lg-8 page-header-content">
+8:            <nav aria-label="breadcrumb">
+9:              <ol class="breadcrumb">
+10:                <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+11:                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+12:              </ol>
+13:            </nav>
+14:            <h1 class="page-title">Blog do Lettering</h1>
+15:            <p class="lead">
+16:              Dicas, tutoriais e inspiração para sua jornada criativa
+17:            </p>
+18:          </div>
+19:        </div>
+20:      </div>
+21:    </section>
+22:    <!-- Blog Section -->
+23:    <section class="py-5">
+24:      <div class="container">
+25:        <div class="row">
+26:          <div class="col-lg-8">
+27:            <% if @blog_posts.present? %>
+28:              <% @blog_posts.each do |post| %>
+29:                <article class="blog-post">
+30:                  <div class="blog-post-img">
+31:                    <%= link_to blog_post_path(post) do %>
+32:                      <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80", alt: post.titulo ) %>
+33:                    <% end %>
+34:                  </div>
+35:                  <div class="blog-post-meta">
+36:                    <div class="date">
+37:                      <i class="lucide-calendar"></i>
+38:                      <span><%= l(post.data_publicacao, format: :short) %></span>
+39:                    </div>
+40:                  </div>
+41:                  <h2 class="blog-post-title">
+42:                    <%= post.titulo %>
+43:                  </h2>
+44:                  <div class="blog-post-excerpt">
+45:                    <p><%= post.resumo %></p>
+46:                  </div>
+47:                  <span class="blog-post-link text-muted"> Em breve <i class="lucide-arrow-right"></i></span>
+48:                </article>
+49:              <% end %>
+50:            <% else %>
+51:              <div class="text-center py-5">
+52:                <h3>Nenhum post encontrado</h3>
+53:                <p class="text-muted">Em breve teremos conteúdo incrível para você!</p>
+54:              </div>
+55:            <% end %>
+56:            <!-- Pagination -->
+57:            <% if @pagy.present? %>
+58:              <nav aria-label="Paginação do blog">
+59:                <%== pagy_bootstrap_nav(@pagy) %>
+60:              </nav>
+61:            <% end %>
+62:          </div>
+63:          <!-- Sidebar -->
+64:          <div class="col-lg-4">
+65:            <aside class="blog-sidebar">
+66:              <div class="sidebar-widget">
+67:                <h4 class="sidebar-widget-title">Pesquisar</h4>
+68:                <%= form_with url: blog_path, method: :get, local: true do |form| %>
+69:                  <div class="input-group">
+70:                    <%= form.text_field :busca, 
+71:                        value: params[:busca], 
+72:                        class: "form-control", 
+73:                        placeholder: "Buscar artigos..." %>
+74:                    <button class="btn btn-primary" type="submit">
+75:                      <i class="lucide-search"></i>
+76:                    </button>
+77:                  </div>
+78:                <% end %>
+79:              </div>
+80:              <!-- Categories Widget -->
+81:              <div class="sidebar-widget">
+82:                <h4 class="sidebar-widget-title">Categorias</h4>
+83:                <ul class="sidebar-categories">
+84:                  <% if @blog_categorias.present? %>
+85:                    <% @blog_categorias.each do |categoria| %>
+86:                      <li>
+87:                        <%= link_to blog_path(categoria: categoria.id) do %>
+88:                          <%= categoria.descricao %>
+89:                          <span class="count"><%= categoria.g_blog_posts.where('data_publicacao <= ?', Time.current).count %></span>
+90:                        <% end %>
+91:                      </li>
+92:                    <% end %>
+93:                  <% end %>
+94:                </ul>
+95:              </div>
+96:              <!-- Popular Posts Widget -->
+97:              <div class="sidebar-widget">
+98:                <h4 class="sidebar-widget-title">Posts Populares</h4>
+99:                <% if @posts_populares.present? %>
+100:                  <% @posts_populares.each do |post| %>
+101:                    <div class="popular-post">
+102:                      <div class="popular-post-img">
+103:                        <%= image_tag(post.imagem_blog.present? ? post.imagem_blog : "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=300&q=80", 
+104:                                      alt: post.titulo) %>
+105:                      </div>
+106:                      <div class="popular-post-content">
+107:                        <h5 class="popular-post-title">
+108:                          <!-- REMOVIDO O LINK TEMPORARIAMENTE -->
+109:                          <%= post.titulo %>
+110:                        </h5>
+111:                        <span class="popular-post-date"><%= l(post.data_publicacao, format: :short) %></span>
+112:                      </div>
+113:                    </div>
+114:                  <% end %>
+115:                <% else %>
+116:              </div>
+117:            </aside>
+118:          </div>
+119:        </div>
+120:      </div>
+121:    </section>
+  
+app/views/store/blog.html.erb:123: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/blog" for 127.0.0.1 at 2025-05-28 08:35:20 -0400
+Processing by StoreController#blog as HTML
+  [1m[36mGBlogPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE (data_publicacao <= $1)[0m  [[nil, "2025-05-28 12:35:20.315183"]]
+  ↳ app/controllers/store_controller.rb:95:in `blog'
+  Rendering layout layouts/home_application.erb
+  Rendering store/blog.html.erb within layouts/home_application
+  [1m[36mGBlogPost Load (0.3ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2 OFFSET $3[0m  [[nil, "2025-05-28 12:35:20.315183"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mGBlogCategoria Load (0.1ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" WHERE "g_blog_categorias"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/store/blog.html.erb:27
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:32
+  [1m[36mGBlogCategoria Load (0.4ms)[0m  [1m[34mSELECT "g_blog_categorias".* FROM "g_blog_categorias" ORDER BY "g_blog_categorias"."descricao" ASC[0m
+  ↳ app/views/store/blog.html.erb:84
+  [1m[36mGBlogPost Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_blog_posts" WHERE "g_blog_posts"."g_blog_categoria_id" = $1 AND (data_publicacao <= $2)[0m  [["g_blog_categoria_id", 1], [nil, "2025-05-28 12:35:20.348171"]]
+  ↳ app/views/store/blog.html.erb:89
+  [1m[36mGBlogPost Load (0.2ms)[0m  [1m[34mSELECT "g_blog_posts".* FROM "g_blog_posts" WHERE (data_publicacao <= $1) ORDER BY "g_blog_posts"."data_publicacao" DESC LIMIT $2[0m  [[nil, "2025-05-28 12:35:20.318229"], ["LIMIT", 3]]
+  ↳ app/views/store/blog.html.erb:99
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "GBlogPost"], ["name", "imagem_blog"], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/store/blog.html.erb:103
+  Rendered store/blog.html.erb within layouts/home_application (Duration: 34.3ms | GC: 0.1ms)
+  Rendered store/shared/_navbar.html.erb (Duration: 4.9ms | GC: 1.8ms)
+  Rendered store/shared/_footer.html.erb (Duration: 0.9ms | GC: 0.7ms)
+  Rendered layout layouts/home_application.erb (Duration: 43.4ms | GC: 3.1ms)
+Completed 200 OK in 55ms (Views: 34.6ms | ActiveRecord: 12.1ms (10 queries, 2 cached) | GC: 3.3ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI4dzM0aGYwZXozbmNlZThvYjJieXVhMGV0NGd4IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiYmxvZy5hdmlmXCI7IGZpbGVuYW1lKj1VVEYtOCcnYmxvZy5hdmlmIiwiY29udGVudF90eXBlIjoiaW1hZ2UvYXZpZiIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDUtMjhUMTI6Mzk6MjUuMDM2WiIsInB1ciI6ImJsb2Jfa2V5In19--d3c2141a0dee9fd64fa8a33afcf4e8675b198770/blog.avif" for 127.0.0.1 at 2025-05-28 08:35:20 -0400
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"blog"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.5ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
