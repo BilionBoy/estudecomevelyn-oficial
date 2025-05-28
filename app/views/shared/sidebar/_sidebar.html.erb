@@ -107,6 +107,15 @@
           </a>
         </li>
       <% end %>
+      <% if can? :manage, GBlogCategoria  %>
+        <li class="sidebar-menu-item">
+          <a href="<%= g_blog_categorias_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">
+            <span class="sidebar-menu-icon"><i class="ph-book "></i></span>
+            <span class="sidebar-menu-text">Criar Categoria Blog</span>
+            <span class="tooltip top">Criar Categoria Blog</span>
+          </a>
+        </li>
+      <% end %>
     </div>
   </div>
 </aside>

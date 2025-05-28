@@ -6,6 +6,7 @@ class IProduto < ApplicationRecord
   has_many :i_promocoes, through: :i_promocao_produtos
   has_many :i_promocao_produtos 
   has_many :i_itens_carrinhos
+  has_many :i_itens_pedidos
   belongs_to :g_categoria
 
   attr_accessor :remove_imagem

@@ -1,278 +1,578 @@
-  <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Lista de Clientes</h2>
-              <div>
-                <button class="btn btn-sm btn-secondary">
-                  <i class="lucide-filter"></i> Filtros
-                </button>
-                <button class="btn btn-sm btn-secondary">
-                  <i class="lucide-download"></i> Exportar
-                </button>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="admin-table">
-                  <thead>
-                    <tr>
-                      <th>Cliente</th>
-                      <th>Email</th>
-                      <th>Telefone</th>
-                      <th>Data de Cadastro</th>
-                      <th>Compras</th>
-                      <th>Valor Total</th>
-                      <th>Status</th>
-                      <th>Ações</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="client-info">
-                          <img
-                            src="https://randomuser.me/api/portraits/women/68.jpg"
-                            alt="Mariana Silva"
-                            class="client-avatar"
-                          />
-                          <div>
-                            <div class="client-name">Mariana Silva</div>
-                            <div class="client-email">
-                              mariana.silva@email.com
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>mariana.silva@email.com</td>
-                      <td>(11) 98765-4321</td>
-                      <td>15/03/2023</td>
-                      <td>5</td>
-                      <td>R$ 897,00</td>
-                      <td>
-                        <span class="status-badge success"
-                          ><i class="lucide-check"></i> Ativo</span
-                        >
-                      </td>
-                      <td>
-                        <div class="d-flex gap-1">
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Editar"
-                          >
-                            <i class="lucide-edit"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Ver detalhes"
-                          >
-                            <i class="lucide-eye"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-danger"
-                            aria-label="Excluir"
-                          >
-                            <i class="lucide-trash-2"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="client-info">
-                          <img
-                            src="https://randomuser.me/api/portraits/men/45.jpg"
-                            alt="Carlos Oliveira"
-                            class="client-avatar"
-                          />
-                          <div>
-                            <div class="client-name">Carlos Oliveira</div>
-                            <div class="client-email">
-                              carlos.oliveira@email.com
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>carlos.oliveira@email.com</td>
-                      <td>(21) 99876-5432</td>
-                      <td>10/03/2023</td>
-                      <td>3</td>
-                      <td>R$ 547,00</td>
-                      <td>
-                        <span class="status-badge success"
-                          ><i class="lucide-check"></i> Ativo</span
-                        >
-                      </td>
-                      <td>
-                        <div class="d-flex gap-1">
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Editar"
-                          >
-                            <i class="lucide-edit"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Ver detalhes"
-                          >
-                            <i class="lucide-eye"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-danger"
-                            aria-label="Excluir"
-                          >
-                            <i class="lucide-trash-2"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="client-info">
-                          <img
-                            src="https://randomuser.me/api/portraits/women/33.jpg"
-                            alt="Juliana Mendes"
-                            class="client-avatar"
-                          />
-                          <div>
-                            <div class="client-name">Juliana Mendes</div>
-                            <div class="client-email">
-                              juliana.mendes@email.com
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>juliana.mendes@email.com</td>
-                      <td>(31) 98765-1234</td>
-                      <td>05/03/2023</td>
-                      <td>7</td>
-                      <td>R$ 1.247,00</td>
-                      <td>
-                        <span class="status-badge success"
-                          ><i class="lucide-check"></i> Ativo</span
-                        >
-                      </td>
-                      <td>
-                        <div class="d-flex gap-1">
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Editar"
-                          >
-                            <i class="lucide-edit"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Ver detalhes"
-                          >
-                            <i class="lucide-eye"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-danger"
-                            aria-label="Excluir"
-                          >
-                            <i class="lucide-trash-2"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="client-info">
-                          <img
-                            src="https://randomuser.me/api/portraits/men/22.jpg"
-                            alt="Pedro Santos"
-                            class="client-avatar"
-                          />
-                          <div>
-                            <div class="client-name">Pedro Santos</div>
-                            <div class="client-email">
-                              pedro.santos@email.com
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>pedro.santos@email.com</td>
-                      <td>(41) 99876-4321</td>
-                      <td>01/03/2023</td>
-                      <td>2</td>
-                      <td>R$ 347,00</td>
-                      <td>
-                        <span class="status-badge warning"
-                          ><i class="lucide-alert-circle"></i> Inativo</span
-                        >
-                      </td>
-                      <td>
-                        <div class="d-flex gap-1">
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Editar"
-                          >
-                            <i class="lucide-edit"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Ver detalhes"
-                          >
-                            <i class="lucide-eye"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-danger"
-                            aria-label="Excluir"
-                          >
-                            <i class="lucide-trash-2"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="client-info">
-                          <img
-                            src="https://randomuser.me/api/portraits/women/56.jpg"
-                            alt="Fernanda Lima"
-                            class="client-avatar"
-                          />
-                          <div>
-                            <div class="client-name">Fernanda Lima</div>
-                            <div class="client-email">
-                              fernanda.lima@email.com
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>fernanda.lima@email.com</td>
-                      <td>(51) 98765-9876</td>
-                      <td>25/02/2023</td>
-                      <td>4</td>
-                      <td>R$ 697,00</td>
-                      <td>
-                        <span class="status-badge success"
-                          ><i class="lucide-check"></i> Ativo</span
-                        >
-                      </td>
-                      <td>
-                        <div class="d-flex gap-1">
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Editar"
-                          >
-                            <i class="lucide-edit"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-secondary"
-                            aria-label="Ver detalhes"
-                          >
-                            <i class="lucide-eye"></i>
-                          </button>
-                          <button
-                            class="btn btn-sm btn-icon btn-danger"
-                            aria-label="Excluir"
-                          >
-                            <i class="lucide-trash-2"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .admin-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-header {
+    padding: 24px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .sidebar-logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ec4899;
+    text-decoration: none;
+  }
+
+  .sidebar-content {
+    flex: 1;
+    padding: 24px 0;
+  }
+
+  .sidebar-section {
+    margin-bottom: 32px;
+  }
+
+  .sidebar-section-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 12px;
+    padding: 0 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .sidebar-menu {
+    list-style: none;
+  }
+
+  .sidebar-menu-item {
+    margin-bottom: 4px;
+  }
+
+  .sidebar-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .sidebar-menu-link:hover {
+    background-color: #f1f5f9;
+    color: #334155;
+  }
+
+  .sidebar-menu-link.active {
+    background-color: #fdf2f8;
+    color: #ec4899;
+    border-right: 3px solid #ec4899;
+  }
+
+  .sidebar-menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-menu-text {
+    flex: 1;
+  }
+
+  .sidebar-menu-badge {
+    background: #ec4899;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .sidebar-footer {
+    padding: 24px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .sidebar-user {
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  .sidebar-user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+  }
+
+  .sidebar-user-role {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .header-search {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 32px;
+    position: relative;
+  }
+
+  .header-search-input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #f8fafc;
+  }
+
+  .header-search-input:focus {
+    outline: none;
+    border-color: #ec4899;
+    background: white;
+  }
+
+  .header-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header-action-btn {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .header-action-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+  }
+
+  .header-action-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+  }
+
+  .header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  .header-user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+  }
+
+  .header-user-role {
+    font-size: 12px;
+    color: #94a3b8;
+  }
+
+  /* Content */
+  .content {
+    flex: 1;
+    padding: 32px;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+  }
+
+  .stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .stat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .stat-icon.pink { background: #ec4899; }
+  .stat-icon.green { background: #10b981; }
+  .stat-icon.yellow { background: #f59e0b; }
+  .stat-icon.red { background: #ef4444; }
+
+  .stat-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .stat-content p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .stat-change {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .stat-change.positive {
+    color: #10b981;
+  }
+
+  .stat-change.negative {
+    color: #ef4444;
+  }
+
+  /* Table */
+  .table-container {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+
+  .table-header {
+    padding: 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .table-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: #ec4899;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #db2777;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table th {
+    background: #f8fafc;
+    padding: 16px 24px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+  }
+
+  .table tr:hover {
+    background: #f8fafc;
+  }
+
+  .status-badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .status-badge.success {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .status-badge.warning {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .status-badge.danger {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      z-index: 1000;
+      transition: left 0.3s;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    .header {
+      padding: 16px;
+    }
+
+    .header-search {
+      display: none;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<!-- Stats Grid -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-header">
+      <div class="stat-icon pink">💰</div>
+      <div class="stat-content">
+        <h3><%= number_to_currency(@vendas_mes) %></h3>
+        <p>Vendas do mês</p>
+        <div class="stat-change positive">12% desde o mês passado</div>
+      </div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-header">
+      <div class="stat-icon green">👥</div>
+      <div class="stat-content">
+        <h3><%= @novos_usuarios_mes %></h3>
+        <p>Novos clientes</p>
+        <div class="stat-change positive">8% desde o mês passado</div>
+      </div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-header">
+      <div class="stat-icon yellow">📦</div>
+      <div class="stat-content">
+        <h3><%= @produtos_vendidos_mes %></h3>
+        <p>Produtos vendidos</p>
+        <div class="stat-change positive">5% desde o mês passado</div>
+      </div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-header">
+      <div class="stat-icon red">📊</div>
+      <div class="stat-content">
+        <h3><%= @total_pedidos %></h3>
+        <p>Total de pedidos</p>
+        <div class="stat-change positive">3% desde o mês passado</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Recent Sales Table -->
+<div class="table-container">
+  <div class="table-header">
+    <h2 class="table-title">Pedidos Recentes</h2>
+    <a href="#" class="btn btn-primary">Ver Todos</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Produtos</th>
+        <th>Data</th>
+        <th>Valor</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pedidos_recentes.each do |pedido| %>
+        <tr>
+          <td>#<%= pedido.id %></td>
+          <td><%= pedido.user.nome %></td>
+          <td>
+            <% if pedido.itens_pedidos.any? %>
+              <%= pedido.itens_pedidos.first.i_produto.nome %>
+              <% if pedido.itens_pedidos.count > 1 %>
+                <small>(+<%= pedido.itens_pedidos.count - 1 %> mais)</small>
+              <% end %>
+            <% else %>
+              -
+            <% end %>
+          </td>
+          <td><%= pedido.created_at.strftime("%d/%m/%Y") %></td>
+          <td><%= number_to_currency(pedido.total) %></td>
+          <td>
+            <% case pedido.status %>
+            <% when 'concluido' %>
+              <span class="status-badge success">Concluído</span>
+            <% when 'processando' %>
+              <span class="status-badge warning">Processando</span>
+            <% else %>
+              <span class="status-badge danger">Pendente</span>
+            <% end %>
+          </td>
+          <td>
+            <button class="btn btn-primary">Ver</button>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<!-- Produtos Populares -->
+<div class="table-container" style="margin-top: 32px;">
+  <div class="table-header">
+    <h2 class="table-title">Produtos Mais Vendidos</h2>
+    <a href="#" class="btn btn-primary">Ver Todos</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade Vendida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @produtos_populares.each do |produto_nome, quantidade| %>
+        <tr>
+          <td><%= produto_nome %></td>
+          <td><%= quantidade %> unidades</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
