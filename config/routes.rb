@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   namespace :store do
     resource :carrinho, only: [:show], controller: 'carrinho' do
       post   :adicionar,            on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
+      post   :finalizar_compra,     on: :collection # adiciona essa rota
       delete :limpar,               on: :collection, to: 'carrinho#limpar',    as: :limpar
       delete 'remover/:produto_id', on: :collection, to: 'carrinho#remover',   as: :remover_item
+      
     end
-    resource :checkout, only: [:new,   :create]
     resources :pedidos, only: [:index, :show]
   end
   
@@ -25,8 +26,8 @@ Rails.application.routes.draw do
   
   get 'checkout/success',               to: 'store/checkouts#success', as: :store_checkout_success
   get 'checkout/cancel',                to: 'store/checkouts#cancel',  as: :store_checkout_cancel
-
-
+  
+  
   # Admin
   get 'g_admin', to: 'g_admin#index', as: :g_admin
   
@@ -39,6 +40,8 @@ Rails.application.routes.draw do
   resources :i_cursos
   resources :i_promocoes
   resources :i_promocao_produtos
+  resources :g_blog_posts
+  resources :g_blog_categorias
 
   # Robots.txt e Sitemap
   get '/robots.txt',  to: proc { |env| [200, { 'Content-Type' => 'text/plain' }, [File.read(Rails.root.join('public', 'robots.txt'))]] }

@@ -7,6 +7,8 @@ class IProduto < ApplicationRecord
   has_many :i_promocao_produtos 
   belongs_to :g_categoria
 
+  attr_accessor :remove_imagem
+
   enum status: { inativo: 0, ativo: 1 }
 
   # Validações básicas
@@ -16,6 +18,8 @@ class IProduto < ApplicationRecord
 
   # Scopes úteis
   scope :disponiveis, -> { where(deleted_at: nil) }
+  
+  before_save :check_remove_imagem
 
   # SEO-friendly
   def to_param
@@ -27,5 +31,9 @@ class IProduto < ApplicationRecord
   
   def set_default_preco
     self.preco ||= 0.0
+  end
+
+  def check_remove_imagem
+   imagem.purge if remove_imagem == '1'
   end
 end

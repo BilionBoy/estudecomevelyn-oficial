@@ -52,7 +52,7 @@ class IProdutosController < ApplicationController
 
   def i_produto_params
     permitted_attributes = IProduto.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
-    params.require(:i_produto).permit(*permitted_attributes.map(&:to_sym), :arquivo, :imagem)
+    params.require(:i_produto).permit(*permitted_attributes.map(&:to_sym), :arquivo, :imagem, :remove_imagem)
   end
   
   def handle_not_found

@@ -37,10 +37,14 @@
         <div class="form-group">
           <%= f.label :imagem_capa, "Imagem de Capa" %>
           <% if f.object.persisted? && f.object.imagem_capa.attached? %>
-            <p>Imagem de Capa já cadastrada. Você pode atualizar abaixo, se necessário.</p>
-          <% else %>
-            <%= f.file_field :imagem_capa, class: "form-control" %>
+            <p>Imagem atual:</p>
+            <%= image_tag url_for(f.object.imagem_capa), alt: "Imagem de Capa", size: "100x100", class: "img-thumbnail mb-2" %>
+            <div class="form-check mb-2">
+              <%= f.check_box :remove_imagem_capa, { class: 'form-check-input' }, '1', '0' %>
+              <%= f.label :remove_imagem_capa, "Remover imagem atual", class: 'form-check-label' %>
+            </div>
           <% end %>
+          <%= f.file_field :imagem_capa, class: "form-control" %>
         </div>
         <div class="col-7">
           <% if f.object.imagem_capa.attached? %>

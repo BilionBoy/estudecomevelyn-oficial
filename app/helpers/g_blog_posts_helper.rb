@@ -1,0 +1,2 @@
+module GBlogPostsHelper
+end

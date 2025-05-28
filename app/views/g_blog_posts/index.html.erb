@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h2 class="card-title"><%= t("activerecord.models.#{GBlogPost.model_name.i18n_key}.other") %></h2>
+    <div>
+      <%= link_to new_g_blog_post_path, class: "btn btn-sm btn-primary" do %>
+        <i class="lucide-plus-circle"></i> Incluir 
+      <% end %>
+    </div>
+  </div>
+  <!-- Filtro com Ransack -->
+  <div class="card-body">
+    <%= search_form_for @q, url: g_blog_posts_path, method: :get, html: { class: "mb-3" } do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.label :titulo_cont, t("activerecord.attributes.g_blog_post.titulo") %>
+          <%= f.search_field :titulo_cont, class: "form-control", placeholder: "Pesquisar por Título" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.label :resumo_cont, t("activerecord.attributes.g_blog_post.resumo") %>
+          <%= f.search_field :resumo_cont, class: "form-control", placeholder: "Pesquisar por Resumo" %>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <%= f.submit "Filtrar", class: "btn btn-sm btn-primary me-2" %>
+          <%= link_to "Limpar", g_blog_posts_path, class: "btn btn-sm btn-secondary" if params[:q] %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- Tabela -->
+  <div class="card-body">
+    <div class="table-responsive" style="height: 400px; overflow-y: auto;">
+      <table class="table table-sm table-bordered table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">Ações</th>
+            <th><%= sort_link(@q, :titulo, t("activerecord.attributes.g_blog_post.titulo")) %></th>
+            <th><%= sort_link(@q, :resumo, t("activerecord.attributes.g_blog_post.resumo")) %></th>
+            <th><%= sort_link(@q, :conteudo, t("activerecord.attributes.g_blog_post.conteudo")) %></th>
+            <th><%= sort_link(@q, :data_publicacao, t("activerecord.attributes.g_blog_post.data_publicacao")) %></th>
+            <th><%= sort_link(@q, :g_blog_categoria, t("activerecord.attributes.g_blog_post.g_blog_categoria")) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @g_blog_posts.each do |g_blog_post| %>
+            <tr>
+              <td class="text-center">
+                <div class="dropdown">
+                  <a href="#" class="dropdown-toggle text-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="ph-gear"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-header">Opções</div>
+                    <%= link_to edit_g_blog_post_path(g_blog_post), class: "dropdown-item" do %>
+                      <i class="ph-pen me-2"></i> Editar
+                    <% end %>
+                    <%= link_to new_g_blog_categoria_path, class: "dropdown-item" do %>
+                      <i class="ph-plus me-2"></i> Nova Categoria
+                    <% end %>
+                    <%= button_to g_blog_post_path(g_blog_post), method: :delete, data: { confirm: "Tem certeza que deseja excluir?" }, class: "dropdown-item text-danger" do %>
+                      <i class="ph-trash-simple me-2"></i> Excluir
+                    <% end %>
+                  </div>
+                </div>
+              </td>
+              <td><%= g_blog_post.titulo %></td>
+              <td><%= g_blog_post.resumo %></td>
+              <td><%= g_blog_post.conteudo %></td>
+              <td><%= g_blog_post.data_publicacao %></td>
+              <td><%= g_blog_post.g_blog_categoria %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Paginação -->
+  <div class="card-footer">
+    <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
+  </div>
+</div>
+<!-- Estilo -->
+<style>
+  .table-responsive {
+    height: 400px;
+    overflow-y: auto;
+  }
+</style>
