@@ -6,12 +6,6 @@ class Store::CheckoutsController < ApplicationController
     @pedido = IPedido.new(
       usuario: current_user,
       total:    @carrinho.total,
-      nome:     current_user.nome,
-      email:    current_user.email,
-      cpf:      current_user.cpf,
-      telefone: current_user.telefone,
-      metodo_pagamento: 'cartao',
-      status: 'confirmado' # <- ESSENCIAL para entrar na contagem!
 
     )
 

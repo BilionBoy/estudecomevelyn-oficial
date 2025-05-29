@@ -264,39 +264,6 @@
         <th>Ações</th>
       </tr>
     </thead>
-    <tbody>
-      <% @pedidos_recentes.each do |pedido| %>
-        <tr>
-          <td>#<%= pedido.id %></td>
-          <td><%= pedido.user.nome %></td>
-          <td>
-            <% if pedido.itens_pedidos.any? %>
-              <%= pedido.itens_pedidos.first.i_produto.nome %>
-              <% if pedido.itens_pedidos.count > 1 %>
-                <small>(+<%= pedido.itens_pedidos.count - 1 %> mais)</small>
-              <% end %>
-            <% else %>
-              -
-            <% end %>
-          </td>
-          <td><%= pedido.created_at.strftime("%d/%m/%Y") %></td>
-          <td><%= number_to_currency(pedido.total) %></td>
-          <td>
-            <% case pedido.status %>
-            <% when 'concluido' %>
-              <span class="status-badge success">Concluído</span>
-            <% when 'processando' %>
-              <span class="status-badge warning">Processando</span>
-            <% else %>
-              <span class="status-badge danger">Pendente</span>
-            <% end %>
-          </td>
-          <td>
-            <button class="btn btn-primary">Ver</button>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
   </table>
 </div>
 <!-- Produtos Populares -->

@@ -76,7 +76,7 @@ class Store::CarrinhoController < ApplicationController
           }
         end,
         mode: 'payment',
-        success_url: store_pedidos_url, # ou outra rota que mostra pedido ou confirmação
+        success_url: store_checkout_success_url, # ou outra rota que mostra pedido ou confirmação
         cancel_url: store_carrinho_url,
         customer_email: current_user.email,
       )

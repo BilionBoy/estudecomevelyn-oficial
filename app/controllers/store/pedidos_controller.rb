@@ -3,9 +3,18 @@ class Store::PedidosController < ApplicationController
     @pedidos = current_user.i_pedidos
   end
 
-  def show
-    @pedido = current_user.i_pedidos.find(params[:id])
-  end
+   def show
+    @i_pedido = current_user.i_pedidos.find_by(id: params[:id])
+    
+    # Se não encontrar o pedido, redirecionar
+    if @i_pedido.nil?
+      redirect_to store_pedidos_path, alert: "Pedido não encontrado."
+      return
+    end
+    
+    @itens = @i_pedido.i_itens_pedidos
+    @total = @i_pedido.total
+   end
 
   def create
     carrinho = current_user.i_carrinho
