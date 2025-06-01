@@ -6,13 +6,8 @@ class Store::CheckoutsController < ApplicationController
     @pedido = IPedido.new(
       usuario: current_user,
       total:    @carrinho.total,
-      nome:     current_user.nome,
-      email:    current_user.email,
-      cpf:      current_user.cpf,
-      telefone: current_user.telefone,
-      metodo_pagamento: 'cartao'
-    )
 
+    )
     @carrinho.i_itens_carrinhos.each do |item|
       @pedido.i_itens_pedidos.build(
         i_produto: item.i_produto,

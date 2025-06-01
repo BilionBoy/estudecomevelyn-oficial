@@ -1,7 +1,6 @@
-# app/models/i_carrinho.rb
 class ICarrinho < ApplicationRecord
-  belongs_to :usuario, class_name: 'User'
-  has_many   :i_itens_carrinhos
+  belongs_to :usuario,           class_name: 'User'
+  has_many   :i_itens_carrinhos, dependent: :destroy
 
   validates :status, inclusion: { in: %w[ativo inativo cancelado] }
 

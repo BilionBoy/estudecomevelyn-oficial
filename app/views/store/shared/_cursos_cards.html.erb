@@ -1,124 +1,103 @@
-<div class="row g-4">
+<div class="row" id="cursos-container">
   <% cursos.each do |curso| %>
-    <div class="col-lg-4 col-md-6 mb-4 product-item" data-categoria="<%= curso.g_categoria&.slug %>">
-      <div class="card h-100 product-card">
-        <% if curso.created_at && curso.created_at >= 30.days.ago %>
-          <span class="badge bg-success product-badge">NOVO</span>
-        <% elsif rand(10) > 7 %> <!-- Simulando alguns cursos com desconto -->
-          <span class="badge bg-danger product-badge">-<%= rand(10..30) %>%</span>
-        <% end %>
-        <!-- Botões de ação -->
-        <div class="product-actions">
-          <a href="#" class="product-action-btn">
-            <i class="lucide-heart"></i>
-          </a>
-          <a href="<%= i_curso_path(curso) %>" class="product-action-btn">
-            <i class="lucide-eye"></i>
-          </a>
+    <div class="col-lg-4 col-md-6 mb-4 curso-item" data-categoria="<%= curso.g_categoria.slug %>">
+      <div class="card border-0 shadow-sm h-100 curso-card" style="border-radius: 20px; overflow: hidden; transition: all 0.3s ease;">
+        <!-- Imagem do Curso -->
+        <div class="position-relative" style="height: 250px;">
+          <% if curso.imagem_capa.attached? %>
+            <%= image_tag curso.imagem_capa.variant(resize_to_fill: [400, 250]), 
+                class: "card-img-top w-100 h-100", 
+                style: "object-fit: cover; opacity: 0.9;", 
+                alt: curso.nome %>
+          <% else %>
+            <div class="w-100 h-100 d-flex align-items-center justify-content-center text-white">
+              <i class="fas fa-graduation-cap fa-3x opacity-50"></i>
+            </div>
+          <% end %>
+          <!-- Badge da Categoria -->
+          <span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 fw-bold text-uppercase" 
+                style="background: <%= curso.g_categoria.nome.downcase == 'treinos' ? '#ec4899' : '#f97316' %>; border-radius: 20px;">
+            <%= curso.g_categoria.nome %>
+          </span>
         </div>
-        <!-- Imagem do curso -->
-        <% if curso.imagem_capa.attached? %>
-          <%= image_tag url_for(curso.imagem_capa), class: "card-img-top", alt: curso.nome %>
-        <% else %>
-          <div class="card-img-top d-flex align-items-center justify-content-center bg-light">
-            <i class="lucide-image text-muted" style="font-size: 3rem;"></i>
+        <!-- Conteúdo do Card -->
+        <div class="card-body p-4 d-flex flex-column">
+          <h5 class="card-title fw-bold mb-3" style="color: #1a1a1a; line-height: 1.3;">
+            <%= curso.nome %>
+          </h5>
+          <p class="card-text text-muted mb-4 flex-grow-1" style="font-size: 14px; line-height: 1.6;">
+            <%= truncate(curso.descricao, length: 120) %>
+          </p>
+          <!-- Preço e Botão -->
+          <div class="mt-auto">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h4 class="fw-bold text-primary mb-0"><%= number_to_currency(curso.preco) %></h4>
+                <small class="text-muted">ou 12x sem juros</small>
+              </div>
+            </div>
+            <button class="btn btn-primary w-100 py-3 fw-bold saiba-mais-btn" 
+                    data-curso-id="<%= curso.id %>"
+                    data-curso-nome="<%= curso.nome %>"
+                    data-curso-descricao="<%= curso.descricao %>"
+                    data-curso-preco="<%= number_to_currency(curso.preco) %>"
+                    data-curso-categoria="<%= curso.g_categoria.nome %>"
+                    data-curso-url="<%= curso.url_externa %>"
+                    data-curso-imagem="<%= curso.imagem_capa.attached? ? url_for(curso.imagem_capa.variant(resize_to_fill: [800, 400])) : '' %>"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#cursoModal">
+              Saiba Mais
+            </button>
           </div>
-        <% end %>
-        <div class="card-body">
-          <!-- Categoria e avaliação -->
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <% if curso.g_categoria.present? %>
-              <span class="badge bg-primary"><%= curso.g_categoria.nome %></span>
-            <% else %>
-              <span class="badge bg-prim\ary">Geral</span>
-            <% end %>
-          </div>
-          <h5 class="card-title"><%= curso.nome %></h5>
-          <!-- Preço (com desconto simulado para alguns cursos) -->
-          <div class="product-price">
-            <% if rand(10) > 7 %> <!-- Simulando alguns cursos com preço original -->
-              <% preco_original = curso.preco * (1 + rand(0.1..0.3)) %>
-              <span class="original-price">R$ <%= number_to_currency(preco_original, unit: "", separator: ",", delimiter: ".") %></span>
-            <% end %>
-            <span>R$ <%= number_to_currency(curso.preco, unit: "", separator: ",", delimiter: ".") %></span>
-          </div>
-          <a href="<%= curso.url_externa %>" class="btn btn-primary rounded-pill w-100" target="_blank">
-            Saiba Mais
-          </a>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+<style>
+  .curso-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+  }
+
+  .saiba-mais-btn:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+  }
+
+  @media (max-width: 768px) {
+    .curso-card {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    /* --- Filtro de cursos --- */
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const courseCards  = document.querySelectorAll('.product-item[data-categoria]');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Manipular clique nos botões "Saiba Mais"
+    document.querySelectorAll('.saiba-mais-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Pegar dados do curso
+        const cursoNome = this.dataset.cursoNome;
+        const cursoDescricao = this.dataset.cursoDescricao;
+        const cursoPreco = this.dataset.cursoPreco;
+        const cursoCategoria = this.dataset.cursoCategoria;
+        const cursoUrl = this.dataset.cursoUrl;
+        const cursoImagem = this.dataset.cursoImagem;
 
-    /* --- Cria (ou reaproveita) o placeholder "nenhum curso" --- */
-    let noProducts = document.getElementById('no-products');
-    if (!noProducts) {
-      noProducts = document.createElement('div');
-      noProducts.id        = 'no-products';
-      noProducts.textContent = 'Nenhum curso nessa categoria';
-      noProducts.className = 'd-flex justify-content-center align-items-center text-muted';
-      noProducts.style.minHeight = '200px';
-      noProducts.style.display   = 'none';
-      document.querySelector('.row.g-4')?.appendChild(noProducts);
-    }
+        // Preencher modal
+        document.getElementById('modal-curso-titulo').textContent = cursoNome;
+        document.getElementById('modal-curso-descricao').textContent = cursoDescricao;
+        document.getElementById('modal-curso-preco').textContent = cursoPreco;
+        document.getElementById('modal-curso-categoria').textContent = cursoCategoria;
+        document.getElementById('modal-btn-comprar').href = cursoUrl;
 
-    /* --- Função que executa o filtro propriamente dito --- */
-    function aplicarFiltro(categoria) {
-      let algumVisivel = false;
+        if (cursoImagem) {
+          document.getElementById('modal-curso-imagem').src = cursoImagem;
+        }
 
-      courseCards.forEach(card => {
-        const categoriaCard = card.dataset.categoria;
-        const mostrar       = categoria === 'todos' || categoria === categoriaCard;
-
-        card.style.display  = mostrar ? 'block' : 'none';
-        if (mostrar) algumVisivel = true;
-      });
-
-      /* Mostra a mensagem se nada ficou visível */
-      noProducts.style.display = algumVisivel ? 'none' : 'flex';
-    }
-
-    /* --- Listeners dos botões de filtro --- */
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();   // Impede o salto do link “#”
-
-        /* Alterna a classe .active */
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        /* Aplica o filtro escolhido */
-        aplicarFiltro(btn.dataset.categoria);
+        // Esconder preço original já que não existe no schema
+        document.getElementById('modal-curso-preco-original').style.display = 'none';
       });
     });
-
-    /* --- Clique nos cards de imagem de categoria --- */
-    const categoriaCards = document.querySelectorAll('.filter-card[data-categoria]');
-    categoriaCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const slug = card.dataset.categoria;
-
-        // Remove .active dos botões e adiciona no botão correspondente
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        filterButtons.forEach(btn => {
-          if (btn.dataset.categoria === slug) {
-            btn.classList.add('active');
-          }
-        });
-
-        // Aplica o filtro normalmente
-        aplicarFiltro(slug);
-      });
-    });
-
-    /* --- Filtro inicial ao carregar a página --- */
-    const activeBtn = document.querySelector('.filter-btn.active');
-    aplicarFiltro(activeBtn ? activeBtn.dataset.categoria : 'todos');
   });
 </script>

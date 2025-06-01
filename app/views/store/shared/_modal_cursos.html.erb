@@ -1,0 +1,219 @@
+<!-- Modal de Detalhes do Curso -->
+<div class="modal fade" id="cursoModal" tabindex="-1" aria-labelledby="cursoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 20px; overflow: hidden; max-height: 90vh;">
+      <!-- Header Compacto -->
+      <div class="modal-header border-0 position-relative p-0" style="height: 200px;">
+        <div class="position-absolute w-100 h-100" style=" z-index: 1;"></div>
+        <img id="modal-curso-imagem" src="/placeholder.svg" alt="" class="position-absolute w-100 h-100" style="object-fit: cover; opacity: 0.3; z-index: 2;">
+        <!-- Botão Fechar -->
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3 bg-white rounded-circle p-2 shadow" data-bs-dismiss="modal" aria-label="Close" style="width: 40px; height: 40px; opacity: 1;">
+          <i class="fas fa-times text-dark"></i>
+        </button>
+        <!-- Conteúdo do Header -->
+        <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white" style="z-index: 3; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+          <span id="modal-curso-categoria" class="badge bg-white text-dark px-3 py-1 rounded-pill fw-bold mb-2 text-uppercase" style="font-size: 11px;"></span>
+          <h2 id="modal-curso-titulo" class="h4 fw-bold mb-2 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></h2>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-2">
+              <div class="d-flex text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <small class="text-white-50">4.9 (127)</small>
+            </div>
+            <h3 id="modal-curso-preco" class="h4 fw-bold text-white mb-0"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body p-0" style="max-height: calc(90vh - 200px); overflow-y: auto;">
+        <div class="row g-0">
+          <!-- Coluna Principal -->
+          <div class="col-lg-7 p-4">
+            <!-- Sobre o Curso -->
+            <div class="mb-4">
+              <h5 class="fw-bold text-dark mb-3">📚 Sobre este curso</h5>
+              <p id="modal-curso-descricao" class="text-muted" style="font-size: 14px; line-height: 1.5;"></p>
+            </div>
+            <!-- O que você vai aprender -->
+            <div class="mb-4">
+              <h5 class="fw-bold text-dark mb-3">✨ O que você vai aprender</h5>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="d-flex align-items-center p-2 bg-light rounded">
+                    <i class="fas fa-check text-success me-2"></i>
+                    <small class="fw-semibold">Técnicas Fundamentais</small>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center p-2 bg-light rounded">
+                    <i class="fas fa-palette text-primary me-2"></i>
+                    <small class="fw-semibold">Projetos Práticos</small>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center p-2 bg-light rounded">
+                    <i class="fas fa-video text-warning me-2"></i>
+                    <small class="fw-semibold">Aulas Interativas</small>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center p-2 bg-light rounded">
+                    <i class="fas fa-certificate text-info me-2"></i>
+                    <small class="fw-semibold">Certificado</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar de Compra -->
+          <div class="col-lg-5 bg-light border-start">
+            <div class="p-4 h-100 d-flex flex-column">
+              <!-- Informações do Curso -->
+              <div class="mb-3">
+                <h6 class="fw-bold text-dark mb-3">📋 Detalhes</h6>
+                <div class="space-y-2">
+                  <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                    <small class="text-muted">📅 Duração:</small>
+                    <small class="fw-bold">6 semanas</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                    <small class="text-muted">🎥 Aulas:</small>
+                    <small class="fw-bold">24 vídeos</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                    <small class="text-muted">⏱️ Carga horária:</small>
+                    <small class="fw-bold">12 horas</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                    <small class="text-muted">📱 Acesso:</small>
+                    <small class="fw-bold">Vitalício</small>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center py-2">
+                    <small class="text-muted">🏆 Certificado:</small>
+                    <small class="fw-bold">Incluído</small>
+                  </div>
+                </div>
+              </div>
+              <!-- Garantia -->
+              <div class="alert alert-success border-0 mb-3 py-2" style="font-size: 13px;">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-shield-alt text-success me-2"></i>
+                  <div>
+                    <strong>Aproveita a oferta!</strong><br>
+                  </div>
+                </div>
+              </div>
+              <!-- Botões de Ação -->
+              <div class="mt-auto">
+                <a id="modal-btn-comprar" href="<%= curso.url_externa %>" class="btn btn-lg w-100 mb-2 py-3 fw-bold text-white border-0 rounded-3 shadow" style="background: linear-gradient(135deg, #ec4899 ); transition: all 0.3s ease;" target="_blank">
+                  🛒 Comprar Agora
+                </a>
+                <button class="btn btn-outline-secondary w-100 py-2 rounded-3" data-bs-dismiss="modal">
+                  Continuar Navegando
+                </button>
+              </div>
+              <!-- Segurança -->
+              <div class="text-center mt-3">
+                <small class="text-muted">
+                  🔒 Compra 100% segura<br>
+                  <i class="fab fa-cc-visa me-1"></i>
+                  <i class="fab fa-cc-mastercard me-1"></i>
+                  <i class="fab fa-cc-paypal me-1"></i>
+                  <i class="fab fa-pix"></i>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .modal-content {
+    max-height: 90vh !important;
+  }
+
+  .btn-close {
+    filter: none !important;
+    opacity: 1 !important;
+    background: none !important;
+  }
+
+  .btn-close i {
+    font-size: 14px;
+  }
+
+  #modal-btn-comprar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.3) !important;
+  }
+
+  .space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 991px) {
+    .modal-dialog {
+      margin: 1rem;
+      max-width: calc(100vw - 2rem);
+    }
+
+    .modal-content {
+      max-height: 95vh !important;
+    }
+
+    .modal-header {
+      height: 150px !important;
+    }
+
+    .modal-body {
+      max-height: calc(95vh - 150px) !important;
+    }
+  }
+
+  @media (max-height: 700px) {
+    .modal-content {
+      max-height: 95vh !important;
+    }
+
+    .modal-header {
+      height: 120px !important;
+    }
+
+    .modal-body {
+      max-height: calc(95vh - 120px) !important;
+    }
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Manipular clique nos botões "Saiba Mais"
+    document.querySelectorAll('.saiba-mais-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Pegar dados do curso
+        const cursoNome = this.dataset.cursoNome;
+        const cursoDescricao = this.dataset.cursoDescricao;
+        const cursoPreco = this.dataset.cursoPreco;
+        const cursoCategoria = this.dataset.cursoCategoria;
+        const cursoUrl = this.dataset.cursoUrl;
+        const cursoImagem = this.dataset.cursoImagem;
+
+        // Preencher modal
+        document.getElementById('modal-curso-titulo').textContent = cursoNome;
+        document.getElementById('modal-curso-descricao').textContent = cursoDescricao;
+        document.getElementById('modal-curso-preco').textContent = cursoPreco;
+        document.getElementById('modal-curso-categoria').textContent = cursoCategoria;
+        document.getElementById('modal-btn-comprar').href = cursoUrl;
+
+        if (cursoImagem) {
+          document.getElementById('modal-curso-imagem').src = cursoImagem;
+        }
+      });
+    });
+  });
+</script>
