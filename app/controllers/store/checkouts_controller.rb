@@ -8,7 +8,6 @@ class Store::CheckoutsController < ApplicationController
       total:    @carrinho.total,
 
     )
-
     @carrinho.i_itens_carrinhos.each do |item|
       @pedido.i_itens_pedidos.build(
         i_produto: item.i_produto,

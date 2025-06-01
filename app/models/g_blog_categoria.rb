@@ -4,4 +4,7 @@ class GBlogCategoria < ApplicationRecord
   has_many :g_blog_posts, dependent: :destroy
 
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
+  validates :titulo,  presence: true
+  validates :resumo,  presence: true
+  validates :conteudo, presence: true
 end
