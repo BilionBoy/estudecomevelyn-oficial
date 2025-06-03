@@ -20,7 +20,7 @@ class IPromocoesController < ApplicationController
     @i_promocao = IPromocao.new(i_promocao_params)
 
     if @i_promocao.save
-      redirect_to i_promocoes_path, notice: t('messages.created_successfully')
+      redirect_to i_promocoes_path, notice: t('Criado com Sucesso!')
     else
       render :new, status: :unprocessable_entity
     end

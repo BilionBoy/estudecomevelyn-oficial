@@ -20,7 +20,7 @@ class GCategoriasController < ApplicationController
     @g_categoria = GCategoria.new(g_categoria_params)
 
     if @g_categoria.save
-      redirect_to g_categorias_path, notice: t('messages.created_successfully')
+      redirect_to g_categorias_path, notice: t('Criado com Sucesso!')
     else
       render :new, status: :unprocessable_entity
     end

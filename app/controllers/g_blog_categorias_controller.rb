@@ -20,7 +20,7 @@ class GBlogCategoriasController < ApplicationController
     @g_blog_categoria = GBlogCategoria.new(g_blog_categoria_params)
 
     if @g_blog_categoria.save
-      redirect_to g_blog_categorias_path, notice: t('messages.created_successfully')
+      redirect_to g_blog_categorias_path, notice: t('Criado com Sucesso!')
     else
       render :new, status: :unprocessable_entity
     end

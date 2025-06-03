@@ -1,4 +1,7 @@
 class ICurso < ApplicationRecord
+  extend FriendlyId
+  friendly_id :nome, use: :slugged
+
   belongs_to :g_categoria
   has_one_attached :imagem_capa
 
@@ -8,9 +11,8 @@ class ICurso < ApplicationRecord
   validates :descricao,   presence: true
   validates :g_categoria, presence: true
   validates :url_externa, presence: true
-  validates :slug,        presence: true
   validates :status,      inclusion: { in: ['ativo', 'inativo'] }
-
+  validates :slug,        uniqueness: true
 
   before_save :check_remove_imagem_capa
 
@@ -18,28 +20,13 @@ class ICurso < ApplicationRecord
     status == 'ativo'
   end
 
-  before_save :generate_slug
+  def should_generate_new_friendly_id?
+    slug.blank? || will_save_change_to_nome?
+  end
 
   private
-  
 
   def check_remove_imagem_capa
     imagem_capa.purge if remove_imagem_capa == '1'
-  end
-  
-  def generate_slug
-    if nome.downcase == "cursos"
-      self.slug = "cursos"
-    else
-      self.slug = nome.parameterize if slug.blank?
-    end
-
-    count = 1
-    original_slug = slug
-
-    while ICurso.exists?(slug: slug)
-      self.slug = "#{original_slug}-#{count}"
-      count += 1
-    end
   end
 end
