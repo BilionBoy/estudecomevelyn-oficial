@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   get 'blog/:id',                       to: 'store#blog_post',         as: :blog_post  # NOVA ROTA
   get 'cursos',                         to: 'store#cursos',            as: :cursos
   get 'store/categorias/:slug',         to: 'store#categoria',         as: :store_categoria
-  
   get 'checkout/success',               to: 'store/checkouts#success', as: :store_checkout_success
   get 'checkout/cancel',                to: 'store/checkouts#cancel',  as: :store_checkout_cancel
   
