@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class ICursosController < ApplicationController
   before_action :set_i_curso, only: %i[show edit update destroy]
-
+  load_and_authorize_resource
   rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
 
   def index
