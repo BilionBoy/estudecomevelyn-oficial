@@ -53,7 +53,7 @@ end
   private
 
   def set_i_produto
-    @i_produto = IProduto.find_by(slug: params[:id])
+    @i_produto = IProduto.friendly.find(params[:id])
     return redirect_to i_produtos_path, alert: t('messages.not_found') unless @i_produto
   end
 

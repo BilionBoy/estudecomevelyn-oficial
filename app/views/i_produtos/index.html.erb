@@ -37,8 +37,6 @@
             <th><%= sort_link(@q, :descricao, t("activerecord.attributes.i_produto.descricao")) %></th>
             <th><%= sort_link(@q, :preco, t("activerecord.attributes.i_produto.preco")) %></th>
             <th><%= t("activerecord.models.g_categoria.one") %></th>
-            <th><%= sort_link(@q, :arquivo_url, t("activerecord.attributes.i_produto.arquivo_url")) %></th>
-            <th><%= sort_link(@q, :imagem_url, t("activerecord.attributes.i_produto.imagem_url")) %></th>
             <th><%= sort_link(@q, :status, t("activerecord.attributes.i_produto.status")) %></th>
           </tr>
         </thead>
@@ -65,8 +63,6 @@
               <td><%= truncate(i_produto.descricao, length: 60) %></td>
               <td>R$ <%= number_to_currency(i_produto.preco, unit: "", separator: ",", delimiter: ".") %></td>
               <td><%= i_produto.g_categoria&.nome %></td>
-              <td><%= i_produto.arquivo_url.presence || "-" %></td>
-              <td><%= i_produto.imagem_url.presence || "-" %></td>
               <td><%= i_produto.status.capitalize %></td>
             </tr>
           <% end %>
