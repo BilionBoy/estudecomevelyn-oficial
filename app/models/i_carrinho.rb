@@ -6,14 +6,18 @@ class ICarrinho < ApplicationRecord
 
   def adicionar_item(produto)
     validar_produto!(produto)
-    return i_itens_carrinhos.find_by(i_produto_id: produto.id) if item_presente?(produto)
-
+  
+    if item_presente?(produto)
+      raise StandardError, "Este produto já está no carrinho."
+    end
+  
     i_itens_carrinhos.create!(
       i_produto: produto,
       quantidade: 1,
       preco_unitario: produto.preco.to_d
     )
   end
+
 
   def item_presente?(produto)
     i_itens_carrinhos.exists?(i_produto_id: produto.id)
