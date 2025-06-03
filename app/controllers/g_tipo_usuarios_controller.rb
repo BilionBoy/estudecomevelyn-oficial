@@ -20,7 +20,7 @@ class GTipoUsuariosController < ApplicationController
     @g_tipo_usuario = GTipoUsuario.new(g_tipo_usuario_params)
 
     if @g_tipo_usuario.save
-      redirect_to g_tipo_usuarios_path, notice: t('messages.created_successfully')
+      redirect_to g_tipo_usuarios_path, notice: t('Criado com Sucesso!')
     else
       render :new, status: :unprocessable_entity
     end

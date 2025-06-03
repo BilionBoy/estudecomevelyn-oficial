@@ -12,18 +12,19 @@ class Store::CarrinhoController < ApplicationController
     unless produto
       return render json: { success: false, message: "Produto não encontrado." }, status: :not_found
     end
-    
-    item_ja_existe = @carrinho.item_presente?(produto)
+  
+    ja_estava = @carrinho.item_presente?(produto)
     @carrinho.adicionar_item(produto)
-
+  
     render json: {
       success: true,
       total_itens: @carrinho.quantidade_total_itens,
-      item_ja_estava_no_carrinho: item_ja_existe
+      item_ja_estava_no_carrinho: ja_estava
     }
   rescue => e
     render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
+
 
   def remover
     produto = IProduto.find_by(id: params[:produto_id])

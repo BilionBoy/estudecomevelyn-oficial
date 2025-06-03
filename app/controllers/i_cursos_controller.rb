@@ -20,7 +20,7 @@ class ICursosController < ApplicationController
     @i_curso = ICurso.new(i_curso_params)
 
     if @i_curso.save
-      redirect_to i_cursos_path, notice: t('messages.created_successfully')
+      redirect_to i_cursos_path, notice: t('Criado com Sucesso')
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class ICursosController < ApplicationController
   private
 
   def set_i_curso
-    @i_curso = ICurso.find_by(id: params[:id])
+    @i_curso = ICurso.friendly.find(params[:id])
     return redirect_to i_cursos_path, alert: t('messages.not_found') unless @i_curso
   end
 

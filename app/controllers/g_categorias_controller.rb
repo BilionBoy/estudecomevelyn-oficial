@@ -20,7 +20,7 @@ class GCategoriasController < ApplicationController
     @g_categoria = GCategoria.new(g_categoria_params)
 
     if @g_categoria.save
-      redirect_to g_categorias_path, notice: t('messages.created_successfully')
+      redirect_to g_categorias_path, notice: t('Criado com Sucesso!')
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class GCategoriasController < ApplicationController
   private
 
   def set_g_categoria
-    @g_categoria = GCategoria.find_by(id: params[:id])
+    @g_categoria = GCategoria.friendly.find(params[:id])
     return redirect_to g_categorias_path, alert: t('messages.not_found') unless @g_categoria
   end
 

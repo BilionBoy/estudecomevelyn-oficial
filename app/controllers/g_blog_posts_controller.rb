@@ -20,7 +20,7 @@ class GBlogPostsController < ApplicationController
     @g_blog_post = GBlogPost.new(g_blog_post_params)
 
     if @g_blog_post.save
-      redirect_to g_blog_posts_path, notice: t('messages.created_successfully')
+      redirect_to g_blog_posts_path, notice: t('Criado com Sucesso!')
     else
       render :new, status: :unprocessable_entity
     end

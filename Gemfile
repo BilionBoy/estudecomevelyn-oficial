@@ -99,3 +99,6 @@ gem 'stripe'
 
 # SEO
 gem 'sitemap_generator'
+
+# SLUGS
+gem 'friendly_id', '~> 5.4.0'

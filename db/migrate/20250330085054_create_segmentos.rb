@@ -2,17 +2,17 @@
 
 class CreateSegmentos < ActiveRecord::Migration[7.2]
   def up
-    create_table :segmentos do |t|
-      t.string   :nome
-      t.text     :descricao
-      t.string   :created_by
-      t.string   :updated_by
-      t.datetime :deleted_at
-      t.timestamps
+    unless table_exists?(:segmentos)
+      create_table :segmentos do |t|
+        t.string   :nome
+        t.text     :descricao
+        t.datetime :deleted_at
+        t.timestamps
+      end
     end
   end
 
   def down
-    drop_table :segmentos
+    drop_table :segmentos if table_exists?(:segmentos)
   end
 end
