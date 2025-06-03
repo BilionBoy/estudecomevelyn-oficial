@@ -36,14 +36,14 @@ class IProdutosController < ApplicationController
 
 def destroy
   if @i_produto.status != "inativo"
-    redirect_to i_produtos_url, alert: "Só é possível excluir produtos com status 'inativo'."
+    redirect_to i_produtos_url, notice: "Só é possível excluir produtos com status 'inativo', altere o status do produto."
   else
     @i_produto.i_itens_carrinhos.destroy_all
 
     if @i_produto.destroy
       redirect_to i_produtos_url, notice: t('messages.deleted_successfully')
     else
-      redirect_to i_produtos_url, alert: t('messages.delete_failed_due_to_dependencies')
+      redirect_to i_produtos_url, notice: t('messages.delete_failed_due_to_dependencies')
     end
   end
 end
