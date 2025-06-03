@@ -45,7 +45,7 @@ class GCategoriasController < ApplicationController
   private
 
   def set_g_categoria
-    @g_categoria = GCategoria.find_by(id: params[:id])
+    @g_categoria = GCategoria.friendly.find(params[:id])
     return redirect_to g_categorias_path, alert: t('messages.not_found') unless @g_categoria
   end
 
