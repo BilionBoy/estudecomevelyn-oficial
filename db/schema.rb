@@ -69,19 +69,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.text "descricao"
     t.bigint "segmento_id"
     t.datetime "deleted_at"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["segmento_id"], name: "index_g_categorias_on_segmento_id"
-    t.index ["slug"], name: "index_g_categorias_on_slug", unique: true
+    t.index ["slug", "segmento_id"], name: "index_g_categorias_on_slug_and_segmento_id", unique: true
   end
 
   create_table "g_tipo_usuarios", force: :cascade do |t|
     t.string "nome", null: false
     t.text "descricao"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,8 +88,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.string "status"
     t.datetime "criado_em"
     t.datetime "atualizado_em"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -105,14 +99,13 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.string "tipo_desconto"
     t.decimal "valor", precision: 10, scale: 2
     t.datetime "validade"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "criado_em"
     t.datetime "atualizado_em"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["codigo"], name: "index_cupons_on_codigo", unique: true
   end
 
   create_table "i_cursos", force: :cascade do |t|
@@ -123,8 +116,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.bigint "g_categoria_id", null: false
     t.string "url_externa"
     t.string "status"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -140,11 +131,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.decimal "subtotal", precision: 10, scale: 2
     t.datetime "criado_em"
     t.datetime "atualizado_em"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["i_carrinho_id", "i_produto_id"], name: "index_itens_carrinho_unique", unique: true
     t.index ["i_carrinho_id"], name: "index_i_itens_carrinhos_on_i_carrinho_id"
     t.index ["i_produto_id"], name: "index_i_itens_carrinhos_on_i_produto_id"
   end
@@ -157,11 +147,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.decimal "subtotal", precision: 10, scale: 2
     t.datetime "criado_em"
     t.datetime "atualizado_em"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["i_pedido_id", "i_produto_id"], name: "index_itens_pedidos_unique", unique: true
     t.index ["i_pedido_id"], name: "index_i_itens_pedidos_on_i_pedido_id"
     t.index ["i_produto_id"], name: "index_i_itens_pedidos_on_i_produto_id"
   end
@@ -172,8 +161,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.string "status"
     t.datetime "criado_em"
     t.datetime "atualizado_em"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -181,16 +168,14 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
   end
 
   create_table "i_produtos", force: :cascade do |t|
-    t.string "nome"
-    t.string "slug"
+    t.string "nome", null: false
+    t.string "slug", null: false
     t.text "descricao"
     t.decimal "preco", precision: 10, scale: 2
     t.bigint "g_categoria_id", null: false
     t.string "arquivo_url"
     t.string "imagem_url"
-    t.integer "status", default: 1
-    t.string "created_by"
-    t.string "updated_by"
+    t.integer "status", default: 1, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -202,12 +187,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.bigint "i_promocao_id"
     t.bigint "i_produto_id"
     t.decimal "preco_promocional", precision: 10, scale: 2
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["i_produto_id"], name: "index_i_promocao_produtos_on_i_produto_id"
+    t.index ["i_promocao_id", "i_produto_id"], name: "index_promocao_produto_unique", unique: true
     t.index ["i_promocao_id"], name: "index_i_promocao_produtos_on_i_promocao_id"
   end
 
@@ -216,8 +200,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.text "descricao"
     t.boolean "ativo"
     t.string "slug"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -226,8 +208,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
   create_table "segmentos", force: :cascade do |t|
     t.string "nome"
     t.text "descricao"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

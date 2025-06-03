@@ -8,8 +8,6 @@ class <%= migration_class_name %> < ActiveRecord::Migration[<%= ActiveRecord::Mi
       t.<%= attribute.type %> :<%= attribute.name %>
 <% end -%>
 <% end -%>          
-      t.string :created_by
-      t.string :updated_by
       t.datetime :deleted_at
       t.timestamps
     end
