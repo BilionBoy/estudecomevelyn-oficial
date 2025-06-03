@@ -3,8 +3,8 @@ class GCategoria < ApplicationRecord
   friendly_id :nome, use: :slugged
 
   belongs_to        :segmento
-  has_many          :i_produtos, dependent: :destroy
-  has_many          :i_cursos,   dependent: :destroy
+  has_many          :i_produtos
+  has_many          :i_cursos
   has_one_attached  :foto_categoria
 
   attr_accessor :remove_foto_categoria

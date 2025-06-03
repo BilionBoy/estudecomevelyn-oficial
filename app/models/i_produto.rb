@@ -16,11 +16,10 @@ class IProduto < ApplicationRecord
 
   enum status: { inativo: 0, ativo: 1 }
 
-  validates :nome,  :preco, :g_categoria, presence: true
+  validates :nome,        presence: true
+  validates :g_categoria, presence: true
   validates :slug,  uniqueness: true
   validates :preco, numericality: { greater_than_or_equal_to: 0 }
-
-  scope :disponiveis, -> { where(deleted_at: nil) }
 
   before_save :check_remove_imagem
 
