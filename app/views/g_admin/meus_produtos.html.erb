@@ -1,0 +1,292 @@
+<% content_for :title, "Meus Produtos" %>
+<div class="container-fluid py-4">
+  <!-- Header da página -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+        <div class="card-body text-white py-5">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h1 class="display-5 fw-bold mb-2">Meus Produtos</h1>
+              <p class="lead mb-0 opacity-90">Acesse e baixe todos os seus produtos digitais</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+              <div class="d-flex gap-2 justify-content-md-end">
+                <%= link_to g_admin_meus_pedidos_path, class: "btn btn-light btn-lg rounded-pill shadow" do %>
+                  <i class="ph-list me-2"></i>Meus Pedidos
+                <% end %>
+                <%= link_to root_path, class: "btn btn-outline-light btn-lg rounded-pill" do %>
+                  <i class="ph-storefront me-2"></i>Loja
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cards de Estatísticas -->
+  <div class="row g-4 mb-5">
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-success bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-package text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1"><%= @total_produtos %></h3>
+          <p class="text-muted mb-0">Produtos Adquiridos</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-success" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-primary bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-download text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1"><%= @produtos_com_arquivo %></h3>
+          <p class="text-muted mb-0">Disponíveis para Download</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-primary" style="width: <%= @total_produtos > 0 ? (@produtos_com_arquivo.to_f / @total_produtos * 100).round : 0 %>%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-info bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-chart-line text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1"><%= @total_downloads %></h3>
+          <p class="text-muted mb-0">Total de Downloads</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-info" style="width: 75%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-warning bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-folders text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1 text-truncate">
+            <%= @categoria_favorita&.truncate(12) || '-' %>
+          </h3>
+          <p class="text-muted mb-0">Categoria Favorita</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-warning" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Grid de Produtos -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-white border-0 py-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="fw-bold mb-1">Biblioteca de Produtos</h4>
+              <p class="text-muted mb-0">Seus produtos digitais organizados e prontos para download</p>
+            </div>
+            <div class="d-flex gap-2">
+              <div class="dropdown">
+                <button class="btn btn-outline-secondary btn-sm rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  <i class="ph-funnel me-1"></i>Filtrar por Categoria
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Todos os Produtos</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <% @produtos_comprados.joins(:g_categoria).group('g_categorias.nome').count.each do |categoria, count| %>
+                    <li><a class="dropdown-item" href="#"><%= categoria %> (<%= count %>)</a></li>
+                  <% end %>
+                </ul>
+              </div>
+              <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                <i class="ph-squares-four me-1"></i>Grade
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body p-4">
+          <% if @produtos_comprados.any? %>
+            <div class="row g-4">
+              <% @produtos_comprados.each do |produto| %>
+                <div class="col-lg-4 col-md-6">
+                  <div class="card border-0 shadow-sm h-100 hover-lift product-card">
+                    <!-- Imagem do Produto -->
+                    <div class="position-relative overflow-hidden" style="height: 200px;">
+                      <% if produto.imagem.attached? %>
+                        <%= image_tag produto.imagem, class: "card-img-top h-100 w-100", style: "object-fit: cover;" %>
+                      <% else %>
+                        <div class="d-flex align-items-center justify-content-center h-100 bg-light">
+                          <i class="ph-image text-muted" style="font-size: 3rem;"></i>
+                        </div>
+                      <% end %>
+                      <!-- Badge de Categoria -->
+                      <div class="position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-dark bg-opacity-75 text-white px-3 py-2 rounded-pill">
+                          <%= produto.g_categoria.nome %>
+                        </span>
+                      </div>
+                      <!-- Status do Arquivo -->
+                      <div class="position-absolute top-0 end-0 m-3">
+                        <% if produto.arquivo.attached? %>
+                          <span class="badge bg-success text-white px-3 py-2 rounded-pill">
+                            <i class="ph-check me-1"></i>Disponível
+                          </span>
+                        <% else %>
+                          <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                            <i class="ph-clock me-1"></i>Em breve
+                          </span>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="card-body p-4">
+                      <h5 class="card-title fw-bold mb-2 text-truncate"><%= produto.nome %></h5>
+                      <p class="card-text text-muted small mb-3 line-clamp-2">
+                        <%= produto.descricao&.truncate(100) || "Descrição não disponível" %>
+                      </p>
+                      <!-- Informações do Arquivo -->
+                      <% if produto.arquivo.attached? %>
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                          <div class="d-flex align-items-center text-muted small">
+                            <i class="ph-file me-2"></i>
+                            <span><%= produto.arquivo.filename %></span>
+                          </div>
+                          <div class="text-muted small">
+                            <%= number_to_human_size(produto.arquivo.byte_size) %>
+                          </div>
+                        </div>
+                      <% end %>
+                      <!-- Botões de Ação -->
+                      <div class="d-grid gap-2">
+                        <% if produto.arquivo.attached? %>
+                          <%= link_to download_produto_path(produto), 
+                                      class: "btn btn-success rounded-pill fw-semibold",
+                                      method: :get do %>
+                            <i class="ph-download me-2"></i>Baixar Produto
+                          <% end %>
+                        <% else %>
+                          <button class="btn btn-outline-secondary rounded-pill fw-semibold" disabled>
+                            <i class="ph-clock me-2"></i>Arquivo em Preparação
+                          </button>
+                        <% end %>
+                        <button class="btn btn-outline-primary btn-sm rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#details-<%= produto.id %>">
+                          <i class="ph-info me-1"></i>Ver Detalhes
+                        </button>
+                      </div>
+                      <!-- Detalhes Expansíveis -->
+                      <div class="collapse mt-3" id="details-<%= produto.id %>">
+                        <div class="card card-body bg-light border-0 small">
+                          <div class="row g-2">
+                            <div class="col-6">
+                              <strong>Preço Pago:</strong><br>
+                              <span class="text-success fw-bold">R$ <%= number_with_precision(produto.preco, precision: 2, delimiter: '.', separator: ',') %></span>
+                            </div>
+                            <div class="col-6">
+                              <strong>Status:</strong><br>
+                              <span class="badge bg-<%= produto.ativo? ? 'success' : 'secondary' %> bg-opacity-10 text-<%= produto.ativo? ? 'success' : 'secondary' %>">
+                                <%= produto.status.humanize %>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <!-- Estado vazio -->
+            <div class="text-center py-5">
+              <div class="mb-4">
+                <div class="bg-light rounded-circle p-4 d-inline-flex">
+                  <i class="ph-package text-muted" style="font-size: 3rem;"></i>
+                </div>
+              </div>
+              <h4 class="fw-bold text-dark mb-3">Nenhum produto encontrado</h4>
+              <p class="text-muted mb-4 lead">Você ainda não possui produtos digitais. Explore nossa loja!</p>
+              <%= link_to root_path, class: "btn btn-success btn-lg rounded-pill shadow" do %>
+                <i class="ph-storefront me-2"></i>Explorar Produtos
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CSS Customizado -->
+<style>
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+  }
+
+  .product-card {
+    transition: all 0.3s ease;
+    border-radius: 15px !important;
+    overflow: hidden;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .progress {
+    border-radius: 10px;
+  }
+
+  .progress-bar {
+    border-radius: 10px;
+  }
+
+  .badge {
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .display-5 {
+      font-size: 2rem;
+    }
+
+    .hover-lift:hover,
+    .product-card:hover {
+      transform: none;
+    }
+
+    .col-lg-4 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .card-img-top {
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+</style>
