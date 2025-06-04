@@ -1,300 +1,654 @@
 <% content_for :title, "Meus Pedidos" %>
-<div class="container-fluid py-4">
-  <!-- Header da página com gradiente -->
-  <div class="row mb-4">
-    <div class="col-12">
-      <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-        <div class="card-body text-white py-5">
-          <div class="row align-items-center">
-            <div class="col-md-8">
-              <h1 class="display-5 fw-bold mb-2">Meus Pedidos</h1>
-              <p class="lead mb-0 opacity-90">Acompanhe seus pedidos e histórico de compras</p>
-            </div>
-            <div class="col-md-4 text-md-end">
-              <div class="d-flex gap-2 justify-content-md-end">
-                <%= link_to g_admin_meus_produtos_path, class: "btn btn-light btn-lg rounded-pill shadow" do %>
-                  <i class="ph-download me-2"></i>Meus Produtos
-                <% end %>
-                <%= link_to root_path, class: "btn btn-outline-light btn-lg rounded-pill" do %>
-                  <i class="ph-storefront me-2"></i>Voltar à Loja
-                <% end %>
-              </div>
-            </div>
-          </div>
+<div class="evelyn-container">
+  <!-- Header com Gradiente Rosa -->
+  <div class="evelyn-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1 class="evelyn-title">Meus Pedidos</h1>
+          <p class="evelyn-subtitle">Acompanhe seus pedidos e histórico de compras</p>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Cards de Estatísticas Melhorados -->
-  <div class="row g-4 mb-5">
-    <div class="col-lg-3 col-md-6">
-      <div class="card border-0 shadow-sm h-100 hover-lift">
-        <div class="card-body text-center p-4">
-          <div class="bg-primary bg-gradient rounded-circle p-3 d-inline-flex mb-3">
-            <i class="ph-shopping-bag text-white" style="font-size: 1.5rem;"></i>
-          </div>
-          <h3 class="fw-bold text-dark mb-1"><%= @total_pedidos %></h3>
-          <p class="text-muted mb-0">Total de Pedidos</p>
-          <div class="progress mt-2" style="height: 4px;">
-            <div class="progress-bar bg-primary" style="width: 100%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="card border-0 shadow-sm h-100 hover-lift">
-        <div class="card-body text-center p-4">
-          <div class="bg-success bg-gradient rounded-circle p-3 d-inline-flex mb-3">
-            <i class="ph-currency-dollar text-white" style="font-size: 1.5rem;"></i>
-          </div>
-          <h3 class="fw-bold text-dark mb-1">R$ <%= number_with_precision(@total_gasto, precision: 2, delimiter: '.', separator: ',') %></h3>
-          <p class="text-muted mb-0">Total Investido</p>
-          <div class="progress mt-2" style="height: 4px;">
-            <div class="progress-bar bg-success" style="width: 85%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="card border-0 shadow-sm h-100 hover-lift">
-        <div class="card-body text-center p-4">
-          <div class="bg-info bg-gradient rounded-circle p-3 d-inline-flex mb-3">
-            <i class="ph-calendar text-white" style="font-size: 1.5rem;"></i>
-          </div>
-          <h3 class="fw-bold text-dark mb-1">
-            <%= @pedido_recente&.created_at&.strftime('%d/%m') || '-' %>
-          </h3>
-          <p class="text-muted mb-0">Último Pedido</p>
-          <div class="progress mt-2" style="height: 4px;">
-            <div class="progress-bar bg-info" style="width: 70%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="card border-0 shadow-sm h-100 hover-lift">
-        <div class="card-body text-center p-4">
-          <div class="bg-warning bg-gradient rounded-circle p-3 d-inline-flex mb-3">
-            <i class="ph-star text-white" style="font-size: 1.5rem;"></i>
-          </div>
-          <h3 class="fw-bold text-dark mb-1 text-truncate">
-            <%= @produtos_favoritos.keys.first&.truncate(15) || '-' %>
-          </h3>
-          <p class="text-muted mb-0">Produto Favorito</p>
-          <div class="progress mt-2" style="height: 4px;">
-            <div class="progress-bar bg-warning" style="width: 90%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Lista de Pedidos Melhorada -->
-  <div class="row">
-    <div class="col-12">
-      <div class="card border-0 shadow-lg">
-        <div class="card-header bg-white border-0 py-4">
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <h4 class="fw-bold mb-1">Histórico de Pedidos</h4>
-              <p class="text-muted mb-0">Gerencie e acompanhe todos os seus pedidos</p>
-            </div>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-secondary btn-sm rounded-pill">
-                <i class="ph-funnel me-1"></i>Filtrar
-              </button>
-              <button class="btn btn-outline-secondary btn-sm rounded-pill">
-                <i class="ph-download-simple me-1"></i>Exportar
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body p-0">
-          <% if @pedidos.any? %>
-            <div class="table-responsive">
-              <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
-                  <tr>
-                    <th class="border-0 fw-semibold ps-4">Pedido</th>
-                    <th class="border-0 fw-semibold">Data & Hora</th>
-                    <th class="border-0 fw-semibold">Status</th>
-                    <th class="border-0 fw-semibold">Produtos</th>
-                    <th class="border-0 fw-semibold">Total</th>
-                    <th class="border-0 fw-semibold text-center pe-4">Ações</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @pedidos.each do |pedido| %>
-                    <tr class="border-bottom">
-                      <td class="ps-4">
-                        <div class="d-flex align-items-center">
-                          <div class="bg-primary bg-opacity-10 rounded-3 p-2 me-3">
-                            <i class="ph-package text-primary" style="font-size: 1.2rem;"></i>
-                          </div>
-                          <div>
-                            <h6 class="fw-bold mb-0">#<%= pedido.id.to_s.rjust(6, '0') %></h6>
-                            <small class="text-muted">ID: <%= pedido.id %></small>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div>
-                          <div class="fw-semibold text-dark"><%= pedido.created_at.strftime('%d/%m/%Y') %></div>
-                          <small class="text-muted"><%= pedido.created_at.strftime('%H:%M') %></small>
-                        </div>
-                      </td>
-                      <td>
-                        <%
-                          case pedido.status
-                          when 'confirmado'
-                            status_class = 'success'
-                            status_icon = 'ph-check-circle'
-                          when 'pendente'
-                            status_class = 'warning'
-                            status_icon = 'ph-clock'
-                          when 'cancelado'
-                            status_class = 'danger'
-                            status_icon = 'ph-x-circle'
-                          else
-                            status_class = 'secondary'
-                            status_icon = 'ph-question'
-                          end
-                        %>
-                        <span class="badge bg-<%= status_class %> bg-opacity-10 text-<%= status_class %> border border-<%= status_class %> border-opacity-25 px-3 py-2">
-                          <i class="<%= status_icon %> me-1"></i>
-                          <%= pedido.status.humanize %>
-                        </span>
-                      </td>
-                      <td>
-                        <div>
-                          <div class="fw-semibold text-dark">
-                            <%= pluralize(pedido.i_itens_pedidos.sum(:quantidade), 'item') %>
-                          </div>
-                          <small class="text-muted">
-                            <%= pedido.i_itens_pedidos.first&.i_produto&.nome&.truncate(30) %>
-                            <% if pedido.i_itens_pedidos.count > 1 %>
-                              <span class="badge bg-light text-dark ms-1">+<%= pedido.i_itens_pedidos.count - 1 %></span>
-                            <% end %>
-                          </small>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="fw-bold text-dark h5 mb-0">
-                          R$ <%= number_with_precision(pedido.total, precision: 2, delimiter: '.', separator: ',') %>
-                        </div>
-                      </td>
-                      <td class="text-center pe-4">
-                        <div class="dropdown">
-                          <button class="btn btn-outline-primary btn-sm rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <i class="ph-dots-three me-1"></i>Ações
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li>
-                              <%= link_to g_admin_pedido_detalhes_path(pedido), class: "dropdown-item" do %>
-                                <i class="ph-eye me-2"></i>Ver Detalhes
-                              <% end %>
-                            </li>
-                            <% if pedido.status == 'confirmado' %>
-                              <li>
-                                <a class="dropdown-item" href="#">
-                                  <i class="ph-download me-2"></i>Baixar Nota
-                                </a>
-                              </li>
-                            <% end %>
-                            <li><hr class="dropdown-divider"></li>
-                            <li>
-                              <a class="dropdown-item text-muted" href="#">
-                                <i class="ph-question me-2"></i>Suporte
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-            <!-- Paginação Melhorada -->
-            <% if @pagy.pages > 1 %>
-              <div class="card-footer bg-light border-0 py-4">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="text-muted">
-                    Mostrando <%= @pagy.from %> a <%= @pagy.to %> de <%= @pagy.count %> pedidos
-                  </div>
-                  <div>
-                    <%= pagy_bootstrap_nav(@pagy) %>
-                  </div>
-                </div>
-              </div>
+        <div class="col-md-4 text-end">
+          <div class="evelyn-nav-buttons">
+            <%= link_to g_admin_meus_produtos_path, class: "evelyn-btn evelyn-btn-light" do %>
+              <i class="ph-download"></i>
+              Meus Produtos
             <% end %>
-          <% else %>
-            <!-- Estado vazio melhorado -->
-            <div class="text-center py-5">
-              <div class="mb-4">
-                <div class="bg-light rounded-circle p-4 d-inline-flex">
-                  <i class="ph-shopping-bag text-muted" style="font-size: 3rem;"></i>
+            <%= link_to root_path, class: "evelyn-btn evelyn-btn-primary" do %>
+              <i class="ph-storefront"></i>
+              Loja
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cards de Estatísticas Compactos -->
+  <div class="evelyn-stats">
+    <div class="container-fluid">
+      <div class="row g-3">
+        <div class="col-lg-3 col-md-6">
+          <div class="evelyn-stat-card">
+            <div class="evelyn-stat-icon evelyn-icon-pink">
+              <i class="ph-shopping-bag"></i>
+            </div>
+            <div class="evelyn-stat-content">
+              <h3><%= @total_pedidos %></h3>
+              <p>Total de Pedidos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="evelyn-stat-card">
+            <div class="evelyn-stat-icon evelyn-icon-green">
+              <i class="ph-currency-dollar"></i>
+            </div>
+            <div class="evelyn-stat-content">
+              <h3>R$ <%= number_with_precision(@total_gasto, precision: 2, delimiter: '.', separator: ',') %></h3>
+              <p>Total Investido</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="evelyn-stat-card">
+            <div class="evelyn-stat-icon evelyn-icon-blue">
+              <i class="ph-calendar"></i>
+            </div>
+            <div class="evelyn-stat-content">
+              <h3><%= @pedido_recente&.created_at&.strftime('%d/%m') || '-' %></h3>
+              <p>Último Pedido</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="evelyn-stat-card">
+            <div class="evelyn-stat-icon evelyn-icon-yellow">
+              <i class="ph-star"></i>
+            </div>
+            <div class="evelyn-stat-content">
+              <h3><%= @produtos_favoritos.keys.first&.truncate(10) || '-' %></h3>
+              <p>Produto Favorito</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Lista de Pedidos Elegante -->
+  <div class="evelyn-orders-section">
+    <div class="container-fluid">
+      <!-- Header da Seção -->
+      <div class="evelyn-section-header">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h2 class="evelyn-section-title">Histórico de Pedidos</h2>
+            <p class="evelyn-section-subtitle">Gerencie e acompanhe todos os seus pedidos</p>
+          </div>
+          <div class="col-md-4 text-end">
+            <div class="evelyn-filter-buttons">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Lista de Pedidos -->
+      <% if @pedidos.any? %>
+        <div class="evelyn-orders-list">
+          <% @pedidos.each do |pedido| %>
+            <div class="evelyn-order-card">
+              <div class="evelyn-order-header">
+                <div class="evelyn-order-info">
+                  <div class="evelyn-order-icon">
+                    <i class="ph-package"></i>
+                  </div>
+                  <div class="evelyn-order-details">
+                    <h4 class="evelyn-order-number">#<%= pedido.id.to_s.rjust(6, '0') %></h4>
+                    <p class="evelyn-order-date">
+                      <%= pedido.created_at.strftime('%d/%m/%Y às %H:%M') %>
+                    </p>
+                  </div>
+                </div>
+                <div class="evelyn-order-status">
+                  <%
+                    case pedido.status
+                    when 'confirmado'
+                      status_class = 'success'
+                      status_icon = 'ph-check-circle'
+                    when 'pendente'
+                      status_class = 'warning'
+                      status_icon = 'ph-clock'
+                    when 'cancelado'
+                      status_class = 'danger'
+                      status_icon = 'ph-x-circle'
+                    else
+                      status_class = 'secondary'
+                      status_icon = 'ph-question'
+                    end
+                  %>
+                  <span class="evelyn-status evelyn-status-<%= status_class %>">
+                    <i class="<%= status_icon %>"></i>
+                    <%= pedido.status.humanize %>
+                  </span>
                 </div>
               </div>
-              <h4 class="fw-bold text-dark mb-3">Nenhum pedido encontrado</h4>
-              <p class="text-muted mb-4 lead">Você ainda não fez nenhum pedido. Que tal começar agora?</p>
-              <%= link_to root_path, class: "btn btn-primary btn-lg rounded-pill shadow" do %>
-                <i class="ph-shopping-cart me-2"></i>Começar a Comprar
-              <% end %>
+              <div class="evelyn-order-content">
+                <div class="evelyn-order-products">
+                  <div class="evelyn-products-info">
+                    <h5><%= pluralize(pedido.i_itens_pedidos.sum(:quantidade), 'item') %></h5>
+                    <p>
+                      <%= pedido.i_itens_pedidos.first&.i_produto&.nome&.truncate(40) %>
+                      <% if pedido.i_itens_pedidos.count > 1 %>
+                        <span class="evelyn-more-items">+<%= pedido.i_itens_pedidos.count - 1 %> mais</span>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+                <div class="evelyn-order-total">
+                  <span class="evelyn-total-label">Total</span>
+                  <span class="evelyn-total-value">R$ <%= number_with_precision(pedido.total, precision: 2, delimiter: '.', separator: ',') %></span>
+                </div>
+                <div class="evelyn-order-actions">
+                  <%= link_to g_admin_pedido_detalhes_path(pedido), class: "evelyn-btn evelyn-btn-outline-small" do %>
+                    <i class="ph-eye"></i>
+                    Ver Detalhes
+                  <% end %>
+                  <% if pedido.status == 'confirmado' %>
+                    <button class="evelyn-btn evelyn-btn-outline-small">
+                      <i class="ph-download"></i>
+                      Nota
+                    </button>
+                  <% end %>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
-      </div>
+        <!-- Paginação -->
+        <% if @pagy.pages > 1 %>
+          <div class="evelyn-pagination">
+            <div class="evelyn-pagination-info">
+              Mostrando <%= @pagy.from %> a <%= @pagy.to %> de <%= @pagy.count %> pedidos
+            </div>
+            <div class="evelyn-pagination-nav">
+              <%= pagy_bootstrap_nav(@pagy) %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <!-- Estado Vazio -->
+        <div class="evelyn-empty-state">
+          <div class="evelyn-empty-icon">
+            <i class="ph-shopping-bag"></i>
+          </div>
+          <h3 class="evelyn-empty-title">Nenhum pedido encontrado</h3>
+          <p class="evelyn-empty-description">
+            Você ainda não fez nenhum pedido. Que tal começar agora?
+          </p>
+          <%= link_to root_path, class: "evelyn-btn evelyn-btn-primary evelyn-btn-large" do %>
+            <i class="ph-shopping-cart"></i>
+            Começar a Comprar
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-<!-- CSS Customizado -->
+<!-- CSS Estilo Evelyn para Pedidos -->
 <style>
-  .hover-lift {
-    transition: all 0.3s ease;
+  /* Reset e Base */
+  .evelyn-container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fafbfc;
+    min-height: 100vh;
+    padding: 0;
   }
 
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+  /* Header com Gradiente Rosa */
+  .evelyn-header {
+    background: linear-gradient(135deg, #ff5bae 0%, #ef0a6a 100%);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
   }
 
-  .card {
-    transition: all 0.3s ease;
+  .evelyn-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    letter-spacing: -0.02em;
   }
 
-  .table tbody tr {
-    transition: all 0.2s ease;
+  .evelyn-subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
   }
 
-  .table tbody tr:hover {
-    background-color: rgba(102, 126, 234, 0.05);
-    transform: scale(1.01);
+  .evelyn-nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
   }
 
-  .badge {
+  /* Botões */
+  .evelyn-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
     font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .evelyn-btn-primary {
+    background: white;
+    color: #e91e63;
+  }
+
+  .evelyn-btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #e91e63;
+    transform: translateY(-1px);
+  }
+
+  .evelyn-btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .evelyn-btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+
+  .evelyn-btn-filter {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #e9ecef;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .evelyn-btn-filter:hover {
+    background: #e91e63;
+    color: white;
+    border-color: #e91e63;
+  }
+
+  .evelyn-btn-outline-small {
+    background: transparent;
+    color: #e91e63;
+    border: 1px solid #e91e63;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .evelyn-btn-outline-small:hover {
+    background: #e91e63;
+    color: white;
+  }
+
+  .evelyn-btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Cards de Estatísticas Compactos */
+  .evelyn-stats {
+    margin-bottom: 2rem;
+  }
+
+  .evelyn-stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .evelyn-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .evelyn-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .evelyn-icon-pink {
+    background: linear-gradient(135deg, #e91e63, #ec407a);
+    color: white;
+  }
+
+  .evelyn-icon-green {
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    color: white;
+  }
+
+  .evelyn-icon-blue {
+    background: linear-gradient(135deg, #2196f3, #42a5f5);
+    color: white;
+  }
+
+  .evelyn-icon-yellow {
+    background: linear-gradient(135deg, #ff9800, #ffb74d);
+    color: white;
+  }
+
+  .evelyn-stat-content {
+    flex-grow: 1;
+  }
+
+  .evelyn-stat-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 0.25rem 0;
+    line-height: 1;
+  }
+
+  .evelyn-stat-content p {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  /* Seção de Pedidos */
+  .evelyn-orders-section {
+    background: white;
+    border-radius: 16px;
+    margin: 0 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+
+  .evelyn-section-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .evelyn-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .evelyn-section-subtitle {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .evelyn-filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* Lista de Pedidos */
+  .evelyn-orders-list {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .evelyn-order-card {
+    background: #fafbfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+  }
+
+  .evelyn-order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    border-color: #e91e63;
+  }
+
+  .evelyn-order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .evelyn-order-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .evelyn-order-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #e91e63, #ec407a);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  .evelyn-order-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .evelyn-order-details p {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 0;
+  }
+
+  .evelyn-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
     font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 
-  .progress {
-    border-radius: 10px;
+  .evelyn-status-success {
+    background: #e8f5e8;
+    color: #4caf50;
   }
 
-  .progress-bar {
-    border-radius: 10px;
+  .evelyn-status-warning {
+    background: #fff3e0;
+    color: #ff9800;
   }
 
+  .evelyn-status-danger {
+    background: #ffebee;
+    color: #f44336;
+  }
+
+  .evelyn-status-secondary {
+    background: #f5f5f5;
+    color: #666;
+  }
+
+  .evelyn-order-content {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .evelyn-products-info h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .evelyn-products-info p {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin: 0;
+  }
+
+  .evelyn-more-items {
+    background: #e91e63;
+    color: white;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+  }
+
+  .evelyn-order-total {
+    text-align: right;
+  }
+
+  .evelyn-total-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin-bottom: 0.25rem;
+  }
+
+  .evelyn-total-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+
+  .evelyn-order-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* Paginação */
+  .evelyn-pagination {
+    padding: 1.5rem;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .evelyn-pagination-info {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+
+  /* Estado Vazio */
+  .evelyn-empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .evelyn-empty-icon {
+    width: 64px;
+    height: 64px;
+    background: #fce4ec;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #e91e63;
+    margin-bottom: 1.5rem;
+  }
+
+  .evelyn-empty-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+  }
+
+  .evelyn-empty-description {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Responsividade */
   @media (max-width: 768px) {
-    .table-responsive {
-      font-size: 0.875rem;
+    .evelyn-title {
+      font-size: 1.75rem;
     }
 
-    .display-5 {
-      font-size: 2rem;
+    .evelyn-nav-buttons {
+      justify-content: flex-start;
+      margin-top: 1rem;
     }
 
-    .hover-lift:hover {
-      transform: none;
+    .evelyn-order-content {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      text-align: left;
+    }
+
+    .evelyn-order-total {
+      text-align: left;
+    }
+
+    .evelyn-order-actions {
+      justify-content: flex-start;
+    }
+
+    .evelyn-section-header {
+      padding: 1rem;
+    }
+
+    .evelyn-orders-list {
+      padding: 1rem;
+    }
+
+    .evelyn-pagination {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .evelyn-header {
+      padding: 1.5rem 0;
+    }
+
+    .evelyn-filter-buttons {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .evelyn-order-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
     }
   }
 </style>
