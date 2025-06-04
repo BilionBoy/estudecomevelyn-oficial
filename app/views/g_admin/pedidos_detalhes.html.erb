@@ -1,0 +1,130 @@
+<% content_for :title, "Detalhes do Pedido ##{@pedido.id}" %>
+<div class="container-fluid py-4">
+  <div class="row">
+    <!-- Header -->
+    <div class="col-12 mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h2 class="fw-bold text-dark mb-1">Pedido #<%= @pedido.id %></h2>
+          <p class="text-muted mb-0">Realizado em <%= @pedido.created_at.strftime('%d/%m/%Y às %H:%M') %></p>
+        </div>
+        <%= link_to meus_pedidos_path, class: "btn btn-outline-primary rounded-pill" do %>
+          <i class="lucide-arrow-left me-2"></i>Voltar aos Pedidos
+        <% end %>
+      </div>
+    </div>
+    <!-- Informações do Pedido -->
+    <div class="col-lg-8 mb-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="fw-bold mb-0">Itens do Pedido</h5>
+        </div>
+        <div class="card-body">
+          <% @pedido.i_itens_pedidos.each do |item| %>
+            <div class="d-flex align-items-center py-3 <%= 'border-bottom' unless item == @pedido.i_itens_pedidos.last %>">
+              <div class="flex-shrink-0 me-3">
+                <% if item.i_produto.imagem.present? %>
+                  <%= image_tag item.i_produto.imagem, class: "rounded", style: "width: 60px; height: 60px; object-fit: cover;" %>
+                <% else %>
+                  <div class="bg-light rounded d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                    <i class="lucide-package text-muted"></i>
+                  </div>
+                <% end %>
+              </div>
+              <div class="flex-grow-1">
+                <h6 class="fw-semibold mb-1"><%= item.i_produto.nome %></h6>
+                <p class="text-muted small mb-1"><%= item.i_produto.descricao_curta if item.i_produto.respond_to?(:descricao_curta) %></p>
+                <div class="d-flex align-items-center">
+                  <span class="text-muted small">Quantidade: <%= item.quantidade %></span>
+                  <span class="mx-2 text-muted">•</span>
+                  <span class="text-muted small">Preço unitário: R$ <%= number_with_precision(item.preco_unitario, precision: 2, delimiter: '.', separator: ',') %></span>
+                </div>
+              </div>
+              <div class="text-end">
+                <div class="fw-bold text-dark">
+                  R$ <%= number_with_precision(item.preco_unitario * item.quantidade, precision: 2, delimiter: '.', separator: ',') %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- Resumo do Pedido -->
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="fw-bold mb-0">Resumo do Pedido</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal:</span>
+            <span>R$ <%= number_with_precision(@pedido.subtotal || @pedido.total, precision: 2, delimiter: '.', separator: ',') %></span>
+          </div>
+          <% if @pedido.desconto && @pedido.desconto > 0 %>
+            <div class="d-flex justify-content-between mb-2 text-success">
+              <span>Desconto:</span>
+              <span>- R$ <%= number_with_precision(@pedido.desconto, precision: 2, delimiter: '.', separator: ',') %></span>
+            </div>
+          <% end %>
+          <% if @pedido.frete && @pedido.frete > 0 %>
+            <div class="d-flex justify-content-between mb-2">
+              <span>Frete:</span>
+              <span>R$ <%= number_with_precision(@pedido.frete, precision: 2, delimiter: '.', separator: ',') %></span>
+            </div>
+          <% end %>
+          <hr>
+          <div class="d-flex justify-content-between fw-bold text-dark">
+            <span>Total:</span>
+            <span>R$ <%= number_with_precision(@pedido.total, precision: 2, delimiter: '.', separator: ',') %></span>
+          </div>
+        </div>
+      </div>
+      <!-- Status do Pedido -->
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-0 py-3">
+          <h5 class="fw-bold mb-0">Status do Pedido</h5>
+        </div>
+        <div class="card-body">
+          <% 
+            status_class = case @pedido.status
+                          when 'confirmado' then 'success'
+                          when 'pendente' then 'warning'
+                          when 'cancelado' then 'danger'
+                          when 'processando' then 'info'
+                          else 'secondary'
+                          end
+            status_text = case @pedido.status
+                         when 'confirmado' then 'Confirmado'
+                         when 'pendente' then 'Pendente'
+                         when 'cancelado' then 'Cancelado'
+                         when 'processando' then 'Processando'
+                         else @pedido.status.humanize
+                         end
+          %>
+          <div class="text-center">
+            <div class="mb-3">
+              <span class="badge bg-<%= status_class %> bg-opacity-10 text-<%= status_class %> border border-<%= status_class %> border-opacity-25 fs-6 py-2 px-3">
+                <%= status_text %>
+              </span>
+            </div>
+            <p class="text-muted small mb-0">
+              <% case @pedido.status %>
+              <% when 'confirmado' %>
+                Seu pedido foi confirmado e está sendo processado.
+              <% when 'pendente' %>
+                Aguardando confirmação do pagamento.
+              <% when 'cancelado' %>
+                Este pedido foi cancelado.
+              <% when 'processando' %>
+                Seu pedido está sendo preparado para envio.
+              <% else %>
+                Status atual do seu pedido.
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

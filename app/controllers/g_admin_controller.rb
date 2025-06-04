@@ -23,4 +23,33 @@ class GAdminController < ApplicationController
                               .limit(5)
                               .pluck('i_produtos.nome', 'SUM(i_itens_pedidos.quantidade)')
   end
+   
+
+ def meus_pedidos
+   @pagy, @pedidos = pagy(
+     current_user.i_pedidos
+                 .includes(i_itens_pedidos: :i_produto)
+                 .order(created_at: :desc),
+     items: 10
+   )
+ 
+   # Estatísticas do cliente
+   @total_pedidos = current_user.i_pedidos.count
+   @total_gasto = current_user.i_pedidos.confirmados.sum(:total)
+   @pedido_recente = current_user.i_pedidos.order(created_at: :desc).first
+   @produtos_favoritos = current_user.i_pedidos
+                                    .joins(i_itens_pedidos: :i_produto)
+                                    .group('i_produtos.nome')
+                                    .order(Arel.sql('COUNT(*) DESC'))
+                                    .limit(3)
+                                    .count
+ end
+
+
+  def pedido_detalhes
+    @pedido = current_user.i_pedidos.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to meus_pedidos_path, alert: 'Pedido não encontrado.'
+  end
+  
 end

@@ -4,8 +4,10 @@ class Store::CheckoutsController < ApplicationController
 
   def success
     @pedido = IPedido.new(
-      usuario: current_user,
+      usuario:  current_user,
       total:    @carrinho.total,
+      status:   :confirmado 
+
 
     )
     @carrinho.i_itens_carrinhos.each do |item|
