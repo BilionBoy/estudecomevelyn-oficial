@@ -1,173 +1,244 @@
 <% content_for :title, "Meus Pedidos" %>
 <div class="container-fluid py-4">
-  <div class="row">
-    <!-- Header da página -->
-    <div class="col-12 mb-4">
-      <div class="d-flex justify-content-between align-items-center">
-        <div>
-          <h2 class="fw-bold text-dark mb-1">Meus Pedidos</h2>
-          <p class="text-muted mb-0">Acompanhe seus pedidos e histórico de compras</p>
-        </div>
-        <div class="d-flex gap-2">
-          <%= link_to root_path, class: "btn btn-outline-primary rounded-pill" do %>
-            <i class="lucide-arrow-left me-2"></i>Voltar à Loja
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <!-- Cards de Estatísticas -->
-    <div class="col-12 mb-4">
-      <div class="row g-3">
-        <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center mb-2">
-                <div class="bg-primary bg-opacity-10 rounded-circle p-3">
-                  <i class="lucide-shopping-bag text-primary" style="width: 24px; height: 24px;"></i>
-                </div>
-              </div>
-              <h4 class="fw-bold text-dark mb-1"><%= @total_pedidos %></h4>
-              <p class="text-muted small mb-0">Total de Pedidos</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center mb-2">
-                <div class="bg-success bg-opacity-10 rounded-circle p-3">
-                  <i class="lucide-dollar-sign text-success" style="width: 24px; height: 24px;"></i>
-                </div>
-              </div>
-              <h4 class="fw-bold text-dark mb-1">R$ <%= number_with_precision(@total_gasto, precision: 2, delimiter: '.', separator: ',') %></h4>
-              <p class="text-muted small mb-0">Total Investido</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center mb-2">
-                <div class="bg-info bg-opacity-10 rounded-circle p-3">
-                  <i class="lucide-calendar text-info" style="width: 24px; height: 24px;"></i>
-                </div>
-              </div>
-              <h4 class="fw-bold text-dark mb-1">
-                <%= @pedido_recente&.created_at&.strftime('%d/%m') || '-' %>
-              </h4>
-              <p class="text-muted small mb-0">Último Pedido</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-              <div class="d-flex align-items-center justify-content-center mb-2">
-                <div class="bg-warning bg-opacity-10 rounded-circle p-3">
-                  <i class="lucide-star text-warning" style="width: 24px; height: 24px;"></i>
-                </div>
-              </div>
-              <h4 class="fw-bold text-dark mb-1"><%= @produtos_favoritos.keys.first || '-' %></h4>
-              <p class="text-muted small mb-0">Produto Favorito</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Lista de Pedidos -->
+  <!-- Header da página com gradiente -->
+  <div class="row mb-4">
     <div class="col-12">
-      <div class="card border-0 shadow-sm">
-        <div class="card-header bg-white border-0 py-3">
-          <h5 class="fw-bold mb-0">Histórico de Pedidos</h5>
+      <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="card-body text-white py-5">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h1 class="display-5 fw-bold mb-2">Meus Pedidos</h1>
+              <p class="lead mb-0 opacity-90">Acompanhe seus pedidos e histórico de compras</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+              <div class="d-flex gap-2 justify-content-md-end">
+                <%= link_to g_admin_meus_produtos_path, class: "btn btn-light btn-lg rounded-pill shadow" do %>
+                  <i class="ph-download me-2"></i>Meus Produtos
+                <% end %>
+                <%= link_to root_path, class: "btn btn-outline-light btn-lg rounded-pill" do %>
+                  <i class="ph-storefront me-2"></i>Voltar à Loja
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cards de Estatísticas Melhorados -->
+  <div class="row g-4 mb-5">
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-primary bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-shopping-bag text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1"><%= @total_pedidos %></h3>
+          <p class="text-muted mb-0">Total de Pedidos</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-primary" style="width: 100%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-success bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-currency-dollar text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1">R$ <%= number_with_precision(@total_gasto, precision: 2, delimiter: '.', separator: ',') %></h3>
+          <p class="text-muted mb-0">Total Investido</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-success" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-info bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-calendar text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1">
+            <%= @pedido_recente&.created_at&.strftime('%d/%m') || '-' %>
+          </h3>
+          <p class="text-muted mb-0">Último Pedido</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-info" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          <div class="bg-warning bg-gradient rounded-circle p-3 d-inline-flex mb-3">
+            <i class="ph-star text-white" style="font-size: 1.5rem;"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-1 text-truncate">
+            <%= @produtos_favoritos.keys.first&.truncate(15) || '-' %>
+          </h3>
+          <p class="text-muted mb-0">Produto Favorito</p>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-warning" style="width: 90%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Lista de Pedidos Melhorada -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-white border-0 py-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="fw-bold mb-1">Histórico de Pedidos</h4>
+              <p class="text-muted mb-0">Gerencie e acompanhe todos os seus pedidos</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                <i class="ph-funnel me-1"></i>Filtrar
+              </button>
+              <button class="btn btn-outline-secondary btn-sm rounded-pill">
+                <i class="ph-download-simple me-1"></i>Exportar
+              </button>
+            </div>
+          </div>
         </div>
         <div class="card-body p-0">
           <% if @pedidos.any? %>
             <div class="table-responsive">
-              <table class="table table-hover mb-0">
+              <table class="table table-hover align-middle mb-0">
                 <thead class="table-light">
                   <tr>
-                    <th class="border-0 fw-semibold">Pedido</th>
-                    <th class="border-0 fw-semibold">Data</th>
+                    <th class="border-0 fw-semibold ps-4">Pedido</th>
+                    <th class="border-0 fw-semibold">Data & Hora</th>
                     <th class="border-0 fw-semibold">Status</th>
-                    <th class="border-0 fw-semibold">Itens</th>
+                    <th class="border-0 fw-semibold">Produtos</th>
                     <th class="border-0 fw-semibold">Total</th>
-                    <th class="border-0 fw-semibold text-center">Ações</th>
+                    <th class="border-0 fw-semibold text-center pe-4">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% @pedidos.each do |pedido| %>
-                    <tr>
-                      <td class="align-middle">
+                    <tr class="border-bottom">
+                      <td class="ps-4">
                         <div class="d-flex align-items-center">
-                          <div class="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
-                            <i class="lucide-package text-primary" style="width: 16px; height: 16px;"></i>
+                          <div class="bg-primary bg-opacity-10 rounded-3 p-2 me-3">
+                            <i class="ph-package text-primary" style="font-size: 1.2rem;"></i>
                           </div>
                           <div>
-                            <h6 class="fw-semibold mb-0">#<%= pedido.id %></h6>
-                            <small class="text-muted">Pedido <%= pedido.id %></small>
+                            <h6 class="fw-bold mb-0">#<%= pedido.id.to_s.rjust(6, '0') %></h6>
+                            <small class="text-muted">ID: <%= pedido.id %></small>
                           </div>
                         </div>
                       </td>
-                      <td class="align-middle">
+                      <td>
                         <div>
-                          <div class="fw-medium"><%= pedido.created_at.strftime('%d/%m/%Y') %></div>
+                          <div class="fw-semibold text-dark"><%= pedido.created_at.strftime('%d/%m/%Y') %></div>
                           <small class="text-muted"><%= pedido.created_at.strftime('%H:%M') %></small>
                         </div>
                       </td>
-                      <td class="align-middle">
+                      <td>
                         <%
-                        status_class =  pedido.status
-                        status_text = (pedido.status || 'status desconhecido').humanize
+                          case pedido.status
+                          when 'confirmado'
+                            status_class = 'success'
+                            status_icon = 'ph-check-circle'
+                          when 'pendente'
+                            status_class = 'warning'
+                            status_icon = 'ph-clock'
+                          when 'cancelado'
+                            status_class = 'danger'
+                            status_icon = 'ph-x-circle'
+                          else
+                            status_class = 'secondary'
+                            status_icon = 'ph-question'
+                          end
                         %>
-                        <span class="badge bg-<%= status_class %> bg-opacity-10 text-<%= status_class %> border border-<%= status_class %> border-opacity-25">
-                          <%= status_text %>
+                        <span class="badge bg-<%= status_class %> bg-opacity-10 text-<%= status_class %> border border-<%= status_class %> border-opacity-25 px-3 py-2">
+                          <i class="<%= status_icon %> me-1"></i>
+                          <%= pedido.status.humanize %>
                         </span>
                       </td>
-                      <td class="align-middle">
+                      <td>
                         <div>
-                          <div class="fw-medium"><%= pedido.i_itens_pedidos.sum(:quantidade) %> item(s)</div>
+                          <div class="fw-semibold text-dark">
+                            <%= pluralize(pedido.i_itens_pedidos.sum(:quantidade), 'item') %>
+                          </div>
                           <small class="text-muted">
-                            <%= pedido.i_itens_pedidos.first&.i_produto&.nome %>
+                            <%= pedido.i_itens_pedidos.first&.i_produto&.nome&.truncate(30) %>
                             <% if pedido.i_itens_pedidos.count > 1 %>
-                              + <%= pedido.i_itens_pedidos.count - 1 %> mais
+                              <span class="badge bg-light text-dark ms-1">+<%= pedido.i_itens_pedidos.count - 1 %></span>
                             <% end %>
                           </small>
                         </div>
                       </td>
-                      <td class="align-middle">
-                        <div class="fw-bold text-dark">
+                      <td>
+                        <div class="fw-bold text-dark h5 mb-0">
                           R$ <%= number_with_precision(pedido.total, precision: 2, delimiter: '.', separator: ',') %>
                         </div>
                       </td>
-                      <td class="align-middle text-center">
-                        <%= link_to g_admin_pedido_detalhes_path(pedido), class: "btn btn-sm btn-outline-primary rounded-pill" do %>
-                          <i class="lucide-eye me-1" style="width: 14px; height: 14px;"></i>
-                          Ver Detalhes
-                        <% end %>
+                      <td class="text-center pe-4">
+                        <div class="dropdown">
+                          <button class="btn btn-outline-primary btn-sm rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="ph-dots-three me-1"></i>Ações
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <%= link_to g_admin_pedido_detalhes_path(pedido), class: "dropdown-item" do %>
+                                <i class="ph-eye me-2"></i>Ver Detalhes
+                              <% end %>
+                            </li>
+                            <% if pedido.status == 'confirmado' %>
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                  <i class="ph-download me-2"></i>Baixar Nota
+                                </a>
+                              </li>
+                            <% end %>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                              <a class="dropdown-item text-muted" href="#">
+                                <i class="ph-question me-2"></i>Suporte
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </td>
                     </tr>
                   <% end %>
                 </tbody>
               </table>
             </div>
-            <!-- Paginação -->
-            <% if @pedidos.respond_to?(:total_pages) && @pedidos.total_pages > 1 %>
-              <div class="card-footer bg-white border-0 py-3">
-                <div class="d-flex justify-content-center">
-                  <%= pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+            <!-- Paginação Melhorada -->
+            <% if @pagy.pages > 1 %>
+              <div class="card-footer bg-light border-0 py-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="text-muted">
+                    Mostrando <%= @pagy.from %> a <%= @pagy.to %> de <%= @pagy.count %> pedidos
+                  </div>
+                  <div>
+                    <%= pagy_bootstrap_nav(@pagy) %>
+                  </div>
                 </div>
               </div>
             <% end %>
           <% else %>
-            <!-- Estado vazio -->
+            <!-- Estado vazio melhorado -->
             <div class="text-center py-5">
               <div class="mb-4">
-                <i class="lucide-shopping-bag text-muted" style="width: 64px; height: 64px;"></i>
+                <div class="bg-light rounded-circle p-4 d-inline-flex">
+                  <i class="ph-shopping-bag text-muted" style="font-size: 3rem;"></i>
+                </div>
               </div>
-              <h5 class="fw-bold text-dark mb-2">Nenhum pedido encontrado</h5>
-              <p class="text-muted mb-4">Você ainda não fez nenhum pedido. Que tal começar agora?</p>
-              <%= link_to root_path, class: "btn btn-primary rounded-pill" do %>
-                <i class="lucide-shopping-cart me-2"></i>Começar a Comprar
+              <h4 class="fw-bold text-dark mb-3">Nenhum pedido encontrado</h4>
+              <p class="text-muted mb-4 lead">Você ainda não fez nenhum pedido. Que tal começar agora?</p>
+              <%= link_to root_path, class: "btn btn-primary btn-lg rounded-pill shadow" do %>
+                <i class="ph-shopping-cart me-2"></i>Começar a Comprar
               <% end %>
             </div>
           <% end %>
@@ -178,12 +249,17 @@
 </div>
 <!-- CSS Customizado -->
 <style>
-  .card {
+  .hover-lift {
     transition: all 0.3s ease;
   }
 
-  .card:hover {
-    transform: translateY(-2px);
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+  }
+
+  .card {
+    transition: all 0.3s ease;
   }
 
   .table tbody tr {
@@ -191,17 +267,21 @@
   }
 
   .table tbody tr:hover {
-    background-color: rgba(0, 123, 255, 0.05);
+    background-color: rgba(102, 126, 234, 0.05);
+    transform: scale(1.01);
   }
 
   .badge {
     font-weight: 500;
-    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
 
-  .btn-sm {
-    padding: 0.375rem 0.75rem;
-    font-size: 0.875rem;
+  .progress {
+    border-radius: 10px;
+  }
+
+  .progress-bar {
+    border-radius: 10px;
   }
 
   @media (max-width: 768px) {
@@ -209,8 +289,12 @@
       font-size: 0.875rem;
     }
 
-    .card-body {
-      padding: 1rem;
+    .display-5 {
+      font-size: 2rem;
+    }
+
+    .hover-lift:hover {
+      transform: none;
     }
   }
 </style>

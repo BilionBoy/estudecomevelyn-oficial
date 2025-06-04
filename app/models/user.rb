@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise     :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   belongs_to :g_tipo_usuario
   has_many   :i_carrinhos, foreign_key: :usuario_id
-  has_many   :i_pedidos,   foreign_key: :usuario_id, class_name: 'IPedido'
+  has_many :i_pedidos, foreign_key: :usuario_id
 
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
   validates :nome,              presence: true
