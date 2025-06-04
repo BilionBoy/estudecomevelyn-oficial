@@ -116,22 +116,9 @@
                       </td>
                       <td class="align-middle">
                         <%
-                        status_class = case pedido.status
-                                       when 'confirmado' then 'success'
-                                       when 'aguardando_pagamento' then 'warning'
-                                       when 'cancelado' then 'danger'
-                                       when 'processando' then 'info'
-                                       else 'secondary'
-                                       end
-                      
-                        status_text = case pedido.status
-                                      when 'confirmado' then 'Confirmado'
-                                      when 'aguardando_pagamento' then 'Pendente'
-                                      when 'cancelado' then 'Cancelado'
-                                      when 'processando' then 'Processando'
-                                      else (pedido.status || 'Status desconhecido').humanize
-                                      end
-                      %>
+                        status_class =  pedido.status
+                        status_text = (pedido.status || 'status desconhecido').humanize
+                        %>
                         <span class="badge bg-<%= status_class %> bg-opacity-10 text-<%= status_class %> border border-<%= status_class %> border-opacity-25">
                           <%= status_text %>
                         </span>

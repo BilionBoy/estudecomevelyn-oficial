@@ -4,15 +4,23 @@ class IPedido < ApplicationRecord
   has_many   :i_itens_pedidos
   has_many   :i_produtos, through: :i_itens_pedidos
   
-  # Ajustado para usar o status do enum
-  scope :confirmados, -> { where(status: :confirmado) }
+  scope :confirmados,          -> { where(status: :confirmado) }
+  scope :aguardando_pagamento, -> { where(status: :aguardando_pagamento) }
+  scope :cancelados,           -> { where(status: :cancelado) }
 
   validates :total, numericality: { greater_than: 0 }
 
-  # Inclui 'confirmado' no enum para que seja válido e consistente
   enum status: { aguardando_pagamento: 0, confirmado: 1, cancelado: 2 }
 
   def calcular_total
     i_itens_pedidos.sum(:subtotal)
+  end
+
+  def processando?
+    aguardando_pagamento?
+  end
+
+  def finalizado?
+    confirmado?
   end
 end
