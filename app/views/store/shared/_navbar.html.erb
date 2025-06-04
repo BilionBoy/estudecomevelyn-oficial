@@ -61,6 +61,9 @@
             </div>
           <% else %>
             <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary rounded-pill d-none d-sm-block" data-bs-toggle="modal" data-bs-target="#registerModal">
+                Cadastrar
+              </button>
               <button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#loginModal">
                 Entrar
               </button>
@@ -74,55 +77,38 @@
 <!-- Modal de Login -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h5 class="modal-title" id="loginModalLabel">Entrar na sua conta</h5>
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0 pb-2">
+        <h5 class="modal-title fw-bold" id="loginModalLabel">Entrar na sua conta</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body pt-0 px-4">
         <div class="text-center mb-4">
-          <%= image_tag('/layout/assets/img/LogoEstudeComEvelyn.png', alt: 'Logo', style: 'max-width: 150px;') %>
+          <%= image_tag('/layout/assets/img/LogoEstudeComEvelyn.png', alt: 'Logo', style: 'max-width: 140px;') %>
           <p class="mt-3 text-muted">Acesse sua conta para continuar</p>
         </div>
         <div id="login-error-message" class="alert alert-danger d-none"></div>
         <%= form_with(url: user_session_path, method: :post, id: "login-form", class: "login-form") do |f| %>
           <div class="mb-3">
-            <%= f.label :email, "Email", class: "form-label" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "seu@email.com", name: "user[email]" %>
+            <%= f.label :email, "Email", class: "form-label fw-medium" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg", placeholder: "seu@email.com", name: "user[email]" %>
           </div>
           <div class="mb-3">
-            <%= f.label :password, "Senha", class: "form-label" %>
-            <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Sua senha", name: "user[password]" %>
+            <%= f.label :password, "Senha", class: "form-label fw-medium" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-lg", placeholder: "Sua senha", name: "user[password]" %>
           </div>
-          <div class="mb-3 form-check">
+          <div class="mb-4 form-check">
             <%= f.check_box :remember_me, class: "form-check-input", name: "user[remember_me]", id: "user_remember_me" %>
             <%= f.label :remember_me, "Lembrar de mim", class: "form-check-label", for: "user_remember_me" %>
           </div>
-          <div class="d-grid gap-2 mb-3">
-            <%= f.submit "Entrar", class: "btn btn-primary rounded-pill", id: "login-button" %>
+          <div class="d-grid mb-4">
+            <%= f.submit "Entrar", class: "btn btn-primary btn-lg rounded-pill", id: "login-button" %>
           </div>
         <% end %>
-        <div class="text-center mt-3">
-          <p><%= link_to "Esqueceu sua senha?", new_user_password_path, class: "text-decoration-none text-primary" %></p>
-          <p>Não tem uma conta? <a href="#" class="text-decoration-none fw-bold text-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Cadastre-se</a></p>
+        <div class="text-center">
+          <p class="mb-2"><%= link_to "Esqueceu sua senha?", new_user_password_path, class: "text-decoration-none text-primary" %></p>
+          <p class="mb-0">Não tem uma conta? <a href="#" class="text-decoration-none fw-bold text-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Cadastre-se</a></p>
         </div>
-        <% if defined?(User) && User.respond_to?(:omniauth_providers) && User.omniauth_providers.any? %>
-          <div class="social-login mt-4">
-            <p class="text-center text-muted mb-3">Ou entre com</p>
-            <div class="d-flex justify-content-center gap-3">
-              <% if User.omniauth_providers.include?(:google_oauth2) %>
-                <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-outline-secondary rounded-pill", method: :post do %>
-                  <i class="lucide-google"></i> Google
-                <% end %>
-              <% end %>
-              <% if User.omniauth_providers.include?(:facebook) %>
-                <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-outline-secondary rounded-pill", method: :post do %>
-                  <i class="lucide-facebook"></i> Facebook
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
@@ -130,68 +116,151 @@
 <!-- Modal de Registro -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h5 class="modal-title" id="registerModalLabel">Criar sua conta</h5>
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0 pb-2">
+        <h5 class="modal-title fw-bold" id="registerModalLabel">Criar sua conta</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body pt-0 px-4">
         <div class="text-center mb-4">
-          <%= image_tag('/layout/assets/img/LogoEstudeComEvelyn.png', alt: 'Logo', style: 'max-width: 150px;') %>
+          <%= image_tag('/layout/assets/img/LogoEstudeComEvelyn.png', alt: 'Logo', style: 'max-width: 140px;') %>
           <p class="mt-3 text-muted">Crie sua conta para começar</p>
         </div>
         <div id="register-error-message" class="alert alert-danger d-none"></div>
         <div id="register-success-message" class="alert alert-success d-none"></div>
         <%= form_with(url: user_registration_path, method: :post, id: "register-form", class: "register-form") do |f| %>
           <div class="mb-3">
-            <%= f.label :nome, "Nome", class: "form-label" %>
-            <%= f.text_field :nome, autofocus: true, class: "form-control", placeholder: "Seu nome completo", name: "user[nome]" %>
+            <%= f.label :nome, "Nome", class: "form-label fw-medium" %>
+            <%= f.text_field :nome, autofocus: true, class: "form-control form-control-lg", placeholder: "Seu nome completo", name: "user[nome]" %>
           </div>
           <div class="mb-3">
-            <%= f.label :email, "Email", class: "form-label" %>
-            <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "seu@email.com", name: "user[email]" %>
+            <%= f.label :email, "Email", class: "form-label fw-medium" %>
+            <%= f.email_field :email, autocomplete: "email", class: "form-control form-control-lg", placeholder: "seu@email.com", name: "user[email]" %>
           </div>
-          <div class="mb-3">
-            <%= f.label :password, "Senha", class: "form-label" %>
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Mínimo 6 caracteres", name: "user[password]" %>
-            <div class="form-text">A senha deve ter pelo menos 6 caracteres</div>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="terms_agreement" required>
-            <label class="form-check-label" for="terms_agreement">
-              Concordo com os <a href="#" class="text-decoration-none text-primary">Termos de Uso</a> e <a href="#" class="text-decoration-none text-primary">Política de Privacidade</a>
-            </label>
-          </div>
-          <div class="d-grid gap-2 mb-3">
-            <%= f.submit "Criar Conta", class: "btn btn-primary rounded-pill", id: "register-button" %>
-          </div>
-        <% end %>
-        <div class="text-center mt-3">
-          <p>Já tem uma conta? <a href="#" class="text-decoration-none fw-bold text-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar</a></p>
-        </div>
-        <% if defined?(User) && User.respond_to?(:omniauth_providers) && User.omniauth_providers.any? %>
-          <div class="social-login mt-4">
-            <p class="text-center text-muted mb-3">Ou cadastre-se com</p>
-            <div class="d-flex justify-content-center gap-3">
-              <% if User.omniauth_providers.include?(:google_oauth2) %>
-                <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-outline-secondary rounded-pill", method: :post do %>
-                  <i class="lucide-google"></i> Google
-                <% end %>
-              <% end %>
-              <% if User.omniauth_providers.include?(:facebook) %>
-                <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-outline-secondary rounded-pill", method: :post do %>
-                  <i class="lucide-facebook"></i> Facebook
-                <% end %>
-              <% end %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <%= f.label :password, "Senha", class: "form-label fw-medium" %>
+                <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Mínimo 6 caracteres", name: "user[password]", id: "register_password" %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <%= f.label :password_confirmation, "Confirmar Senha", class: "form-label fw-medium" %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Confirme sua senha", name: "user[password_confirmation]", id: "register_password_confirmation" %>
+              </div>
             </div>
           </div>
+          <div class="mb-4">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="terms_agreement" required>
+              <label class="form-check-label" for="terms_agreement">
+                Concordo com os <a href="#" class="text-decoration-none text-primary">Termos de Uso</a> e <a href="#" class="text-decoration-none text-primary">Política de Privacidade</a>
+              </label>
+            </div>
+          </div>
+          <div class="d-grid mb-4">
+            <%= f.submit "Criar Conta", class: "btn btn-primary btn-lg rounded-pill", id: "register-button" %>
+          </div>
         <% end %>
+        <div class="text-center">
+          <p class="mb-0">Já tem uma conta? <a href="#" class="text-decoration-none fw-bold text-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar</a></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<!-- CSS Customizado -->
+<style>
+  .modal-content {
+    border-radius: 20px;
+  }
+
+  .form-control-lg {
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+  }
+
+  .form-control-lg:focus {
+    border-color: #e91e63;
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #ad1457, #880e4f);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+  }
+
+  .btn-outline-primary {
+    border: 2px solid #e91e63;
+    color: #e91e63;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #e91e63;
+    border-color: #e91e63;
+    transform: translateY(-2px);
+  }
+
+  .form-label {
+    color: #495057;
+    margin-bottom: 8px;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 0.5rem;
+  }
+
+  .modal-body {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .modal-dialog {
+      margin: 1rem;
+    }
+
+    .modal-content {
+      border-radius: 15px;
+    }
+
+    .form-control-lg {
+      padding: 10px 14px;
+    }
+
+    .row .col-md-6 {
+      margin-bottom: 0;
+    }
+
+    .row .col-md-6:first-child .mb-3 {
+      margin-bottom: 1rem !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .d-none.d-sm-block {
+      display: none !important;
+    }
+
+    .gap-2 {
+      gap: 0.25rem !important;
+    }
+  }
+</style>
 <script>
-  // Ativar link de navegação com base na seção visível
   document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
@@ -234,6 +303,31 @@
       });
     });
 
+    // Validação de confirmação de senha em tempo real
+    function setupPasswordValidation() {
+      const password = document.getElementById('register_password');
+      const passwordConfirmation = document.getElementById('register_password_confirmation');
+
+      if (password && passwordConfirmation) {
+        function validatePasswords() {
+          if (passwordConfirmation.value && password.value !== passwordConfirmation.value) {
+            passwordConfirmation.classList.add('is-invalid');
+            passwordConfirmation.classList.remove('is-valid');
+          } else if (passwordConfirmation.value) {
+            passwordConfirmation.classList.add('is-valid');
+            passwordConfirmation.classList.remove('is-invalid');
+          } else {
+            passwordConfirmation.classList.remove('is-invalid', 'is-valid');
+          }
+        }
+
+        password.addEventListener('input', validatePasswords);
+        passwordConfirmation.addEventListener('input', validatePasswords);
+      }
+    }
+
+    setupPasswordValidation();
+
     // Configurar o formulário de login para usar AJAX
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
@@ -243,18 +337,14 @@
         const loginButton = document.getElementById('login-button');
         const errorMessage = document.getElementById('login-error-message');
 
-        // Desabilitar o botão e mostrar loading
         loginButton.disabled = true;
         loginButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Entrando...';
 
-        // Limpar mensagens de erro anteriores
         errorMessage.classList.add('d-none');
         errorMessage.textContent = '';
 
-        // Obter o token CSRF
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        // Enviar o formulário via AJAX
         fetch(loginForm.action, {
           method: 'POST',
           body: new FormData(loginForm),
@@ -269,14 +359,12 @@
           if (response.ok) {
             return response.json().then(data => {
               if (data.success) {
-                // Login bem-sucedido, redirecionar para o painel
                 window.location.href = '<%= root_path %>';
               } else {
                 throw new Error('Falha na autenticação');
               }
             });
           } else if (response.status === 401) {
-            // Credenciais inválidas
             return response.json().then(data => {
               throw new Error(data.error || 'Email ou senha inválidos');
             });
@@ -285,11 +373,9 @@
           }
         })
         .catch(error => {
-          // Mostrar mensagem de erro
           errorMessage.textContent = error.message || 'Ocorreu um erro ao tentar fazer login. Por favor, tente novamente.';
           errorMessage.classList.remove('d-none');
 
-          // Resetar o botão
           loginButton.disabled = false;
           loginButton.innerHTML = 'Entrar';
 
@@ -308,7 +394,7 @@
         const errorMessage = document.getElementById('register-error-message');
         const successMessage = document.getElementById('register-success-message');
 
-        // Validar se os termos foram aceitos
+        // Validações
         const termsCheckbox = document.getElementById('terms_agreement');
         if (!termsCheckbox.checked) {
           errorMessage.textContent = 'Você deve concordar com os Termos de Uso e Política de Privacidade.';
@@ -316,20 +402,24 @@
           return;
         }
 
-        // Desabilitar o botão e mostrar loading
+        const password = document.getElementById('register_password');
+        const passwordConfirmation = document.getElementById('register_password_confirmation');
+        if (password.value !== passwordConfirmation.value) {
+          errorMessage.textContent = 'As senhas não coincidem.';
+          errorMessage.classList.remove('d-none');
+          return;
+        }
+
         registerButton.disabled = true;
         registerButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Criando conta...';
 
-        // Limpar mensagens anteriores
         errorMessage.classList.add('d-none');
         successMessage.classList.add('d-none');
         errorMessage.textContent = '';
         successMessage.textContent = '';
 
-        // Obter o token CSRF
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        // Enviar o formulário via AJAX
         fetch(registerForm.action, {
           method: 'POST',
           body: new FormData(registerForm),
@@ -344,11 +434,9 @@
           if (response.ok) {
             return response.json().then(data => {
               if (data.success) {
-                // Registro bem-sucedido
                 successMessage.textContent = 'Conta criada com sucesso! Redirecionando...';
                 successMessage.classList.remove('d-none');
 
-                // Redirecionar após 2 segundos
                 setTimeout(() => {
                   window.location.href = '<%= root_path %>';
                 }, 2000);
@@ -357,7 +445,6 @@
               }
             });
           } else if (response.status === 422) {
-            // Erros de validação
             return response.json().then(data => {
               const errors = data.errors || {};
               let errorText = 'Erro ao criar conta:\n';
@@ -373,11 +460,9 @@
           }
         })
         .catch(error => {
-          // Mostrar mensagem de erro
           errorMessage.textContent = error.message || 'Ocorreu um erro ao tentar criar a conta. Por favor, tente novamente.';
           errorMessage.classList.remove('d-none');
 
-          // Resetar o botão
           registerButton.disabled = false;
           registerButton.innerHTML = 'Criar Conta';
 
