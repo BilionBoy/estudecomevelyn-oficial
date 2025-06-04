@@ -59,7 +59,7 @@ end
 
 
   def download_produto
-    produto = IProduto.find(params[:id])
+    produto = IProduto.friendly.find(params[:id])
     
     # Verificar se o usuário comprou este produto
     pedido_confirmado = current_user.i_pedidos
