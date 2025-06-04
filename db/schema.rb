@@ -158,7 +158,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
   create_table "i_pedidos", force: :cascade do |t|
     t.bigint "usuario_id", null: false
     t.decimal "total", precision: 10, scale: 2
-    t.string "status"
+    t.integer "status", default: 0, null: false
     t.datetime "criado_em"
     t.datetime "atualizado_em"
     t.datetime "deleted_at"

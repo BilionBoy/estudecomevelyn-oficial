@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   
   # Admin
   get 'g_admin', to: 'g_admin#index', as: :g_admin
+  get 'g_admin/meus_pedidos',         to: 'g_admin#meus_pedidos',    as: :g_admin_meus_pedidos
+  get 'g_admin/pedido_detalhes/:id',  to: 'g_admin#pedido_detalhes', as: :g_admin_pedido_detalhes
   
   # Recursos do Admin
   resources :users, only: %i[index show edit update destroy]
