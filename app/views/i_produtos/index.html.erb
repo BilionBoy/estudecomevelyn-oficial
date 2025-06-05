@@ -53,6 +53,9 @@
                     <%= link_to edit_i_produto_path(i_produto), class: "dropdown-item" do %>
                       <i class="ph-pen me-2"></i> Editar
                     <% end %>
+                    <%= link_to new_i_produto_i_promocao_path(i_produto), class: "dropdown-item" do %>
+                      <i class="ph-tag me-2"></i> Cadastrar promoção
+                    <% end %>
                     <%= button_to i_produto_path(i_produto), method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class: "dropdown-item text-danger" do %><i class="ph-trash-simple me-2"></i> Excluir
                     <% end %>
                   </div>

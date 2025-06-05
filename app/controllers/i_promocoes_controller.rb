@@ -11,6 +11,7 @@ class IPromocoesController < ApplicationController
 
   def new
     @i_promocao = IPromocao.new
+    @i_promocao.i_produto_id = params[:produto_id] if params[:produto_id].present?
   end
 
   def edit

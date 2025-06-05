@@ -39,9 +39,11 @@ Rails.application.routes.draw do
   resources :g_tipo_usuarios
   resources :g_categorias
   resources :segmentos
-  resources :i_produtos
-  resources :i_cursos
+  resources :i_produtos do
+    resources :i_promocoes
+  end
   resources :i_promocoes
+  resources :i_cursos
   resources :i_promocao_produtos
   resources :g_blog_posts
   resources :g_blog_categorias
