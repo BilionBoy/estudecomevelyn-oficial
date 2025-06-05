@@ -7,7 +7,6 @@ class CreateIPromocoes < ActiveRecord::Migration[7.2]
         t.string   :nome
         t.text     :descricao
         t.boolean  :ativo
-        t.string   :slug
         t.datetime :deleted_at
         t.timestamps
       end
