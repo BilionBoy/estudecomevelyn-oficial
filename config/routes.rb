@@ -32,16 +32,19 @@ Rails.application.routes.draw do
   get 'g_admin', to: 'g_admin#index', as: :g_admin
   get 'g_admin/meus_pedidos',         to: 'g_admin#meus_pedidos',    as: :g_admin_meus_pedidos
   get 'g_admin/pedido_detalhes/:id',  to: 'g_admin#pedido_detalhes', as: :g_admin_pedido_detalhes
-  get 'g_admin/meus_produtos', to: 'g_admin#meus_produtos'
-  get 'download_produto/:id', to: 'g_admin#download_produto', as: 'download_produto'
+  get 'g_admin/meus_produtos',        to: 'g_admin#meus_produtos'
+  get 'download_produto/:id',         to: 'g_admin#download_produto', as: 'download_produto'
+  
   # Recursos do Admin
   resources :users, only: %i[index show edit update destroy]
   resources :g_tipo_usuarios
   resources :g_categorias
   resources :segmentos
-  resources :i_produtos
-  resources :i_cursos
+  resources :i_produtos do
+    resources :i_promocoes
+  end
   resources :i_promocoes
+  resources :i_cursos
   resources :i_promocao_produtos
   resources :g_blog_posts
   resources :g_blog_categorias
