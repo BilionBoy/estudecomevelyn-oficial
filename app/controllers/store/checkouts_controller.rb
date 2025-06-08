@@ -25,7 +25,7 @@ class Store::CheckoutsController < ApplicationController
 
       # Opcional: Enviar e-mail de confirmação aqui (future step)
 
-      redirect_to store_pedido_path(@pedido), notice: 'Pedido confirmado após pagamento!'
+    redirect_to g_admin_meus_pedidos_path, notice: 'Pedido confirmado após pagamento!'
     else
       Rails.logger.error "Erro ao salvar pedido: #{@pedido.errors.full_messages.to_sentence}"
       redirect_to store_cart_path, alert: 'Erro ao salvar o pedido após pagamento.'

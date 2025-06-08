@@ -77,8 +77,8 @@ end
   end
 
   def pedido_detalhes
-    @pedido = current_user.i_pedidos.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect_to meus_pedidos_path, alert: 'Pedido não encontrado.'
+    pedido_id = params[:id]
+    redirect_to store_pedido_path(pedido_id)
   end
+
 end

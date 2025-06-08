@@ -20,7 +20,7 @@ class IProdutosController < ApplicationController
     @i_produto = IProduto.new(i_produto_params)
 
     if @i_produto.save
-      redirect_to i_produtos_path, notice: t('Criado com Sucesso!')
+      redirect_to i_produtos_path, notice: t('pagy.notice.created_successfully')
     else
       render :new, status: :unprocessable_entity
     end

@@ -147,7 +147,7 @@
                   <span class="evelyn-total-value">R$ <%= number_with_precision(pedido.total, precision: 2, delimiter: '.', separator: ',') %></span>
                 </div>
                 <div class="evelyn-order-actions">
-                  <%= link_to g_admin_pedido_detalhes_path(pedido), class: "evelyn-btn evelyn-btn-outline-small" do %>
+                  <%= link_to store_pedido_path(pedido), class: "evelyn-btn evelyn-btn-outline-small" do %>
                     <i class="ph-eye"></i>
                     Ver Detalhes
                   <% end %>
