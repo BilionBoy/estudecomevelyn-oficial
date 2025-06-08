@@ -1,7 +1,6 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12">
-      <h1 class="cart-title">Seu Carrinho</h1>
       <% if @itens.any? %>
         <div class="cart-container">
           <div class="row">
@@ -17,17 +16,27 @@
                           <i class="fas fa-image"></i>
                         </div>
                       <% end %>
+                      <div class="digital-badge">
+                        <i class="fas fa-download"></i>
+                        <span>Digital</span>
+                      </div>
                     </div>
                     <div class="cart-item-details">
                       <h3 class="cart-item-title"><%= item.i_produto.nome %></h3>
+                      <div class="cart-item-type">
+                        <i class="fas fa-file-pdf text-danger me-1"></i>
+                        <span>Produto Digital - PDF</span>
+                      </div>
                       <div class="cart-item-price">
                         <span class="current-price">R$ <%= number_to_currency(item.i_produto.preco, unit: '', separator: ',', delimiter: '.') %></span>
                       </div>
+                      <div class="delivery-info">
+                        <i class="fas fa-clock text-success me-1"></i>
+                        <small class="text-success">Entrega imediata por email</small>
+                      </div>
                     </div>
                     <div class="cart-item-remove">
-                      <td>
-                        <%= button_to "Remover", remover_item_store_carrinho_path(produto_id: item.i_produto.id), method: :delete, data: { confirm: "Tem certeza que deseja remover este produto?" }, class: "btn btn-sm btn-danger" %>
-                      </td>
+                      <%= button_to "Remover", remover_item_store_carrinho_path(produto_id: item.i_produto.id), method: :delete, data: { confirm: "Tem certeza que deseja remover este produto?" }, class: "btn btn-sm btn-danger" %>
                     </div>
                   </div>
                 <% end %>
@@ -49,14 +58,37 @@
                     <span class="summary-item-label">Subtotal</span>
                     <span class="summary-item-value">R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></span>
                   </div>
-                  <div class="summary-item">
-                    <span class="summary-item-label">Frete</span>
-                    <span class="summary-item-value">Calculado no próximo passo</span>
-                  </div>
                 </div>
                 <div class="summary-total">
                   <span class="summary-total-label">Total</span>
                   <span class="summary-total-value">R$ <%= number_to_currency(@total, unit: '', separator: ',', delimiter: '.') %></span>
+                </div>
+                <!-- Processo de Entrega -->
+                <div class="delivery-process mt-4">
+                  <h4>📋 Como funciona:</h4>
+                  <div class="process-steps">
+                    <div class="process-step">
+                      <div class="step-number">1</div>
+                      <div class="step-content">
+                        <strong>Finalize sua compra</strong>
+                        <small>Confirme o pagamento</small>
+                      </div>
+                    </div>
+                    <div class="process-step">
+                      <div class="step-number">2</div>
+                      <div class="step-content">
+                        <strong>Acesse sua conta</strong>
+                        <small>Download disponível no painel do cliente</small>
+                      </div>
+                    </div>
+                    <div class="process-step">
+                      <div class="step-number">3</div>
+                      <div class="step-content">
+                        <strong>Receba por email</strong>
+                        <small>Links de download enviado pelo e-mail</small>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="summary-actions">
                   <%= button_to finalizar_compra_store_carrinho_path, method: :post, class: "btn btn-primary w-100" do %>
@@ -64,18 +96,13 @@
                   <% end %>
                 </div>
                 <div class="summary-info mt-4">
-                  <div class="payment-methods">
-                    <h4>Métodos de Pagamento</h4>
-                    <div class="payment-icons">
-                      <i class="fab fa-cc-visa"></i>
-                      <i class="fab fa-cc-mastercard"></i>
-                      <i class="fab fa-cc-amex"></i>
-                      <i class="fab fa-pix"></i>
-                    </div>
-                  </div>
                   <div class="secure-checkout mt-3">
                     <i class="fas fa-shield-alt me-2"></i>
                     <span>Compra 100% Segura</span>
+                  </div>
+                  <div class="customer-support mt-3">
+                    <i class="fas fa-headset me-2"></i>
+                    <span>Suporte 24/7 disponível</span>
                   </div>
                 </div>
               </div>
@@ -95,3 +122,408 @@
     </div>
   </div>
 </div>
+<style>
+  .cart-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  /* Seção de Informações sobre Entrega Digital */
+  .digital-delivery-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  }
+
+  .info-card {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 3px;
+    border-radius: 17px;
+    padding: 2rem;
+  }
+
+  .info-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .info-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  }
+
+  .info-icon i {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .info-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-content p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin: 0;
+  }
+
+  .info-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .feature-icon i {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .feature-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-text strong {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-text span {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+
+  /* Itens do Carrinho */
+  .cart-items-container {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .cart-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .cart-item-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-right: 1.5rem;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .digital-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .cart-item-details {
+    flex: 1;
+  }
+
+  .cart-item-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-item-type {
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .cart-item-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e91e63;
+    margin-bottom: 0.5rem;
+  }
+
+  .delivery-info {
+    font-size: 0.9rem;
+  }
+
+  /* Resumo do Carrinho */
+  .cart-summary {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 2rem;
+  }
+
+  .summary-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .summary-item.digital-delivery {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    margin: 0.5rem 0;
+  }
+
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    border-top: 2px solid #e91e63;
+    margin-top: 1rem;
+  }
+
+  .summary-total-value {
+    color: #e91e63;
+  }
+
+  /* Processo de Entrega */
+  .delivery-process {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .delivery-process h4 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .process-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-content strong {
+    color: #2c3e50;
+    font-size: 0.9rem;
+  }
+
+  .step-content small {
+    color: #6c757d;
+    font-size: 0.8rem;
+  }
+
+  /* Botões */
+  .btn-primary {
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #ad1457, #880e4f);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+  }
+
+  /* Métodos de Pagamento */
+  .payment-methods h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .payment-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .payment-icons i {
+    font-size: 2rem;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+
+  .payment-icons i:hover {
+    color: #e91e63;
+  }
+
+  .secure-checkout,
+  .customer-support {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #28a745;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  /* Carrinho Vazio */
+  .empty-cart {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .empty-cart-icon {
+    font-size: 5rem;
+    color: #e9ecef;
+    margin-bottom: 2rem;
+  }
+
+  .empty-cart h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .empty-cart p {
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .info-features {
+      grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cart-item-image {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .process-steps {
+      gap: 0.75rem;
+    }
+
+    .feature-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .feature-icon {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
