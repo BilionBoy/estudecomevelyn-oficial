@@ -1,5 +1,5 @@
-# app/controllers/store/carrinho_controller.rb
 class Store::CarrinhoController < ApplicationController
+  include ErrorHandler
   before_action :authenticate_user!
   before_action :set_carrinho, only: [:show, :adicionar, :remover, :limpar, :finalizar_compra]
   def show
