@@ -8,42 +8,31 @@ class Store::CarrinhoController < ApplicationController
   end
 
   def adicionar
-    produto = IProduto.find_by(id: params[:produto_id])
-    unless produto
-      return render json: { success: false, message: "Produto não encontrado." }, status: :not_found
-    end
+    service = Store::Carrinho::AdicionarItemAoCarrinhoService.new(carrinho: @carrinho,produto_id: params[:produto_id])
+    resultado = service.call
   
-    ja_estava = @carrinho.item_presente?(produto)
-    @carrinho.adicionar_item(produto)
-  
-    render json: {
-      success: true,
-      total_itens: @carrinho.quantidade_total_itens,
-      item_ja_estava_no_carrinho: ja_estava
-    }
+    render json: resultado
+  rescue Store::Carrinho::AdicionarItemAoCarrinhoService::ProdutoNaoEncontrado => e
+    render json: { success: false, message: e.message }, status: :not_found
   rescue => e
     render json: { success: false, message: e.message }, status: :unprocessable_entity
   end
 
 
+
   def remover
-    produto = IProduto.find_by(id: params[:produto_id])
-    unless produto
-      flash[:alert] = "Produto não encontrado."
-      return redirect_to store_carrinho_path
-    end
-    
-    item = @carrinho.i_itens_carrinhos.find_by(i_produto: produto)
-
-    if item
-      item.destroy
-      flash[:notice] = "Item removido com sucesso."
-    else
-      flash[:alert] = "Item não encontrado no carrinho."
-    end
-
+    service   = Store::Carrinho::RemoverItemDoCarrinhoService.new(carrinho: @carrinho,produto_id: params[:produto_id])
+    resultado = service.call
+     
+    flash[:notice] = resultado[:message]
+  
+  rescue Store::Carrinho::RemoverItemDoCarrinhoService::ProdutoNaoEncontrado,
+         Store::Carrinho::RemoverItemDoCarrinhoService::ItemNaoEncontrado => e
+    flash[:alert] = e.message
+  ensure
     redirect_to store_carrinho_path
   end
+
 
   def limpar
     if @carrinho.i_itens_carrinhos.empty?
