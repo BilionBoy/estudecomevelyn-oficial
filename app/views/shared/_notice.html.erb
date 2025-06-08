@@ -1,5 +1,21 @@
 <% if notice %>
-  <div class="alert alert-info">
-    <%= notice %>
+  <div id="flash-container">
+    <% if notice %>
+      <div id="notice" class="alert alert-info">
+        <%= notice %>
+      </div>
+    <% end %>
   </div>
+  <script>
+    setTimeout(function() {
+      var notice = document.getElementById('notice');
+      if (notice) {
+        notice.style.transition = "opacity 0.5s ease";
+        notice.style.opacity = '0';
+        setTimeout(function() {
+          notice.style.display = 'none';
+        }, 500); // espera meio segundo para completar o fade out
+      }
+    }, 3000);
+  </script>
 <% end %>

@@ -3,6 +3,11 @@ pt-BR:
     items:
       one: "item"
       other: "itens"
+    notice:
+      created_successfully: "Criado com sucesso!"
+  messages:
+    deleted_successfully: "Removido com sucesso!"
+    delete_failed_due_to_dependencies: "Falha ao excluir: existem dependências vinculadas"
     page:
       one: "Página"
       other: "Páginas"
@@ -115,6 +120,7 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+
       models:
         funcao:
           one: "Funcao"

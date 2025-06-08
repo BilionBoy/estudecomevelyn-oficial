@@ -20,7 +20,7 @@ class SegmentosController < ApplicationController
     @segmento = Segmento.new(segmento_params)
 
     if @segmento.save
-      redirect_to segmentos_path, notice: t('Criado com Sucesso!')
+      redirect_to segmentos_path, notice: t('pagy.notice.created_successfully')
     else
       render :new, status: :unprocessable_entity
     end
