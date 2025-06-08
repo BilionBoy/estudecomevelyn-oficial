@@ -280,6 +280,7 @@ header {
   transition: var(--transition);
 }
 
+
 /* Botão principal usando Rosa Vibrante */
 .btn-primary {
   background-color: var(--primary);

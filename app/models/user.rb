@@ -1,16 +1,15 @@
-# frozen_string_literal: true
-
+# app/models/user.rb
 class User < ApplicationRecord
-  devise     :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
-  belongs_to :g_tipo_usuario
-  has_many   :i_carrinhos, foreign_key: :usuario_id
-  has_many :i_pedidos, foreign_key: :usuario_id
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  belongs_to :g_tipo_usuario,   optional: true
+  has_many   :i_carrinhos,      foreign_key: :usuario_id
+  has_many   :i_pedidos,        foreign_key: :usuario_id
 
-  # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
   validates :nome,              presence: true
   validates :email,             presence: true, uniqueness: true
-  validates :g_tipo_usuario_id, presence: true 
-
+  validates :g_tipo_usuario_id, presence: true
+  
+  before_validation :set_default_g_tipo_usuario, on: :create
 
   def carrinho_ativo
     i_carrinhos.find_or_create_by(status: 'ativo')
@@ -23,5 +22,19 @@ class User < ApplicationRecord
   
   def admin?
     g_tipo_usuario&.nome == 'ADMIN'
+  end
+
+  private
+
+  def set_default_g_tipo_usuario
+    return if g_tipo_usuario_id.present?
+    
+    cliente_tipo = GTipoUsuario.find_by(nome: 'CLIENTE')
+    if cliente_tipo
+      self.g_tipo_usuario = cliente_tipo
+    else
+      # Se não encontrar, cria um erro personalizado
+      errors.add(:g_tipo_usuario_id, 'Tipo de usuário CLIENTE não encontrado no sistema')
+    end
   end
 end

@@ -78,16 +78,6 @@
           </a>
         </li>
       <% end %>
-      <% if can? :manage, IPromocao%>
-        <div class="sidebar-section-title">Promoções</div>
-        <li class="sidebar-menu-item">
-          <a href="<%= i_promocoes_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Promoções">
-            <span class="sidebar-menu-icon"><i class="ph-percent"></i></span>
-            <span class="sidebar-menu-text">Promoções</span>
-            <span class="tooltip top">Promoções</span>
-          </a>
-        </li>
-      <% end %>
       <% if can? :manage, IPromocaoProduto%>
         <li class="sidebar-menu-item">
           <a href="<%= i_promocao_produtos_path %>" class="sidebar-menu-link has-tooltip" data-tooltip="Produtos em Promoção">

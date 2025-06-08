@@ -584,6 +584,7 @@ a:hover {
   transition: var(--transition-fast);
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn:active {

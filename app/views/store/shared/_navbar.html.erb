@@ -37,7 +37,6 @@
             <% total_itens = 0 %>
           <% end %>
           <%= link_to store_carrinho_path, class: "btn btn-link position-relative" do %>
-            <!-- Ícone de carrinho mais bonito -->
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-shopping-cart">
               <circle cx="8" cy="21" r="1"></circle>
               <circle cx="19" cy="21" r="1"></circle>
@@ -53,8 +52,8 @@
                 <%= current_user.email.split('@').first %>
               </button>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                <li><%= link_to "Minha Conta", g_admin_path, class: "dropdown-item" %></li>
-                <li><%= link_to "Meus Pedidos", g_admin_path, class: "dropdown-item" %></li>
+                <li><%= link_to "Minha Conta", g_admin_meus_pedidos_path, class: "dropdown-item" %></li>
+                <li><%= link_to "Meus Pedidos", g_admin_meus_pedidos_path, class: "dropdown-item" %></li>
                 <li><hr class="dropdown-divider"></li>
                 <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </ul>
@@ -146,14 +145,6 @@
                 <%= f.label :password_confirmation, "Confirmar Senha", class: "form-label fw-medium" %>
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Confirme sua senha", name: "user[password_confirmation]", id: "register_password_confirmation" %>
               </div>
-            </div>
-          </div>
-          <div class="mb-4">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="terms_agreement" required>
-              <label class="form-check-label" for="terms_agreement">
-                Concordo com os <a href="#" class="text-decoration-none text-primary">Termos de Uso</a> e <a href="#" class="text-decoration-none text-primary">Política de Privacidade</a>
-              </label>
             </div>
           </div>
           <div class="d-grid mb-4">
@@ -353,21 +344,13 @@
           credentials: 'same-origin'
         })
         .then(response => {
-          if (response.ok) {
-            return response.json().then(data => {
-              if (data.success) {
-                window.location.href = '<%= root_path %>';
-              } else {
-                throw new Error('Falha na autenticação');
-              }
-            });
-          } else if (response.status === 401) {
-            return response.json().then(data => {
+          return response.json().then(data => {
+            if (response.ok && data.success) {
+              window.location.href = data.redirect_url || '<%= root_path %>';
+            } else {
               throw new Error(data.error || 'Email ou senha inválidos');
-            });
-          } else {
-            throw new Error('Erro no servidor');
-          }
+            }
+          });
         })
         .catch(error => {
           errorMessage.textContent = error.message || 'Ocorreu um erro ao tentar fazer login. Por favor, tente novamente.';
@@ -391,14 +374,7 @@
         const errorMessage = document.getElementById('register-error-message');
         const successMessage = document.getElementById('register-success-message');
 
-        // Validações
-        const termsCheckbox = document.getElementById('terms_agreement');
-        if (!termsCheckbox.checked) {
-          errorMessage.textContent = 'Você deve concordar com os Termos de Uso e Política de Privacidade.';
-          errorMessage.classList.remove('d-none');
-          return;
-        }
-
+        // Validação de confirmação de senha
         const password = document.getElementById('register_password');
         const passwordConfirmation = document.getElementById('register_password_confirmation');
         if (password.value !== passwordConfirmation.value) {
@@ -428,33 +404,22 @@
           credentials: 'same-origin'
         })
         .then(response => {
-          if (response.ok) {
-            return response.json().then(data => {
-              if (data.success) {
-                successMessage.textContent = 'Conta criada com sucesso! Redirecionando...';
-                successMessage.classList.remove('d-none');
+          return response.json().then(data => {
+            if (response.ok && data.success) {
+              successMessage.textContent = data.message || 'Conta criada com sucesso! Redirecionando...';
+              successMessage.classList.remove('d-none');
 
-                setTimeout(() => {
-                  window.location.href = '<%= root_path %>';
-                }, 2000);
-              } else {
-                throw new Error(data.error || 'Erro ao criar conta');
+              setTimeout(() => {
+                window.location.href = data.redirect_url || '<%= root_path %>';
+              }, 2000);
+            } else {
+              let errorText = data.error || 'Erro ao criar conta';
+              if (data.errors && Array.isArray(data.errors)) {
+                errorText = data.errors.join(', ');
               }
-            });
-          } else if (response.status === 422) {
-            return response.json().then(data => {
-              const errors = data.errors || {};
-              let errorText = 'Erro ao criar conta:\n';
-
-              Object.keys(errors).forEach(field => {
-                errorText += `${field}: ${errors[field].join(', ')}\n`;
-              });
-
               throw new Error(errorText);
-            });
-          } else {
-            throw new Error('Erro no servidor');
-          }
+            }
+          });
         })
         .catch(error => {
           errorMessage.textContent = error.message || 'Ocorreu um erro ao tentar criar a conta. Por favor, tente novamente.';
