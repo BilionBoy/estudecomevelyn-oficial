@@ -52,8 +52,11 @@
                 <%= current_user.email.split('@').first %>
               </button>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                <li><%= link_to "Minha Conta", g_admin_meus_pedidos_path, class: "dropdown-item" %></li>
-                <li><%= link_to "Meus Pedidos", g_admin_meus_pedidos_path, class: "dropdown-item" %></li>
+                <% if current_user.g_tipo_usuario.nome == "ADMIN" %>
+                  <li><%= link_to "Minha Conta", g_admin_path, class: "dropdown-item" %></li>
+                <% elsif current_user.g_tipo_usuario.nome == "CLIENTE" %>
+                  <li><%= link_to "Meus Pedidos", g_admin_meus_pedidos_path, class: "dropdown-item" %></li>
+                <% end %>
                 <li><hr class="dropdown-divider"></li>
                 <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </ul>

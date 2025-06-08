@@ -7,8 +7,8 @@ class Store::CheckoutsController < ApplicationController
     @pedido = IPedido.new(
       usuario: current_user,
       total: @carrinho.total,
-      status: :confirmado
-    )
+      )
+      @pedido.status = :confirmado
 
     # Copia os itens do carrinho para os itens do pedido
     @carrinho.i_itens_carrinhos.each do |item|

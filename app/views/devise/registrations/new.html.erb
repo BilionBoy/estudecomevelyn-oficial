@@ -20,8 +20,6 @@
             </div>
             <!-- Confirmação de Senha -->
             <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: "password-field form-control" } %>
-            <!-- Tipo de Usuário -->
-            <%= f.input :g_tipo_usuario_id, collection: GTipoUsuario.all.map { |t| [t.nome, t.id] }, prompt: "Selecione um tipo", input_html: { class: "form-control" } %>
           </div>
           <!-- Botão de cadastro -->
           <div class="card-footer">
