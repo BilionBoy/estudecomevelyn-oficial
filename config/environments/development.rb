@@ -8,6 +8,8 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   #
   #
+  config.active_job.queue_adapter = :async
+
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   #
   config.enable_reloading = true
