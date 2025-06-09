@@ -1,0 +1,12 @@
+<h2>Olá, <%= @usuario.nome %>!</h2>
+<p>Obrigado por sua compra na nossa loja de papelaria digital 🎉</p>
+<p>Segue abaixo os infoprodutos adquiridos, anexados a este e-mail:</p>
+<ul>
+  <% @pedido.i_itens_pedidos.each do |item| %>
+    <li><strong><%= item.i_produto.nome %></strong> — <%= number_to_currency(item.preco_unitario) %></li>
+  <% end %>
+</ul>
+<p>Esperamos que você aproveite o material! 💌</p>
+<p>Se tiver dúvidas, estamos à disposição.</p>
+<hr>
+<p><em>Este é um e-mail automático. Não responda.</em></p>
