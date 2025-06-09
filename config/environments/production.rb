@@ -15,6 +15,18 @@ config.active_storage.service = :amazon
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   address:              'smtp.mailersend.net',
+   port:                 587,
+   domain:               'estudecomevelyn.com.br',
+   user_name:            Rails.application.credentials.dig(:mailersend, :smtp_username),
+   password:             Rails.application.credentials.dig(:mailersend, :smtp_password),
+   authentication:       'plain',
+   enable_starttls_auto: true
+  }
+
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
