@@ -9,8 +9,6 @@ class CreateIProdutos < ActiveRecord::Migration[7.2]
         t.text       :descricao
         t.decimal    :preco, precision: 10, scale: 2
         t.references :g_categoria, null: false, foreign_key: true
-        t.string     :arquivo_url
-        t.string     :imagem_url
         t.integer    :status, default: 1, null: false  
         t.datetime   :deleted_at
         t.timestamps
