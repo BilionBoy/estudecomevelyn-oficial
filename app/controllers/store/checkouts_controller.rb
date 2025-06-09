@@ -22,7 +22,8 @@ class Store::CheckoutsController < ApplicationController
 
     if @pedido.save
       @carrinho.update(status: :finalizado)
-       
+      @carrinho.i_itens_carrinhos.destroy_all
+      ICarrinho.create(usuario: current_user, status: :ativo)
 
     redirect_to g_admin_meus_pedidos_path, notice: 'Pedido confirmado após pagamento!'
     else
