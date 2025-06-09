@@ -8,6 +8,24 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   #
   #
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   address:              'smtp.mailersend.net',
+   port:                 587,
+   domain:               'estudecomevelyn.com.br',
+   user_name:            Rails.application.credentials.dig(:mailersend, :smtp_username),
+   password:             Rails.application.credentials.dig(:mailersend, :smtp_password),
+   authentication:       'plain',
+   enable_starttls_auto: true
+  }
+
+  # Opcional, para ver os erros em desenvolvimento
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+
+  config.active_job.queue_adapter = :async
+
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   #
   config.enable_reloading = true
