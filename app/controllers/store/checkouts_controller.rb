@@ -23,9 +23,6 @@ class Store::CheckoutsController < ApplicationController
     if @pedido.save
       @carrinho.update(status: :finalizado)
        
-      # Opcional: Enviar e-mail de confirmação aqui (future step)
-      # ✅ Envia o e-mail com o(s) produto(s) em anexo
-      PedidoMailer.enviar_infoprodutos(@pedido.id).deliver_now
 
     redirect_to g_admin_meus_pedidos_path, notice: 'Pedido confirmado após pagamento!'
     else
