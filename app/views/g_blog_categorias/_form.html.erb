@@ -6,21 +6,21 @@
   <div class="card">
     <div class="card-header">
       <h5 class="my-0">
-        <%= @g_blog_categoria.new_record? ? "Incluir " : "Editar " %><%= t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.one") %>
+        <%= @g_blog_categoria.new_record? ? "Incluir" : "Editar" %> <%= t("activerecord.models.#{GBlogCategoria.model_name.i18n_key}.one") %>
       </h5>
     </div>
     <div class="card-body">
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="row">
-        <div class="col-12">
-          <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
+        <div class="col-md-12">
+          <%= f.input :descricao, placeholder: "Descrição da categoria" %>
         </div>
       </div>
     </div>
     <div class="card-footer">
       <%= btn_submit(f) %>
-      <%= link_to "Voltar", g_blog_posts_path, class: "btn btn-light" %>
+      <%= link_to "Voltar", g_blog_categorias_path, class: "btn btn-light" %>
     </div>
   </div>
 <% end %>
