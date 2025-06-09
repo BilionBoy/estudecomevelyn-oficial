@@ -1,272 +1,509 @@
-<style>
-  .header-action-badge {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background: #ef4444;
-    color: white;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 10px;
-    min-width: 16px;
-    text-align: center;
-  }
+<% if current_user.g_tipo_usuario&.nome == "ADMIN" %>
+  <!-- LAYOUT ADMIN -->
+  <style>
+    .header-action-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: #ef4444;
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 10px;
+      min-width: 16px;
+      text-align: center;
+    }
 
+    .header-user-role {
+      font-size: 12px;
+      color: #94a3b8;
+    }
 
-  .header-user-role {
-    font-size: 12px;
-    color: #94a3b8;
-  }
+    .content {
+      flex: 1;
+      padding: 32px;
+    }
 
-  /* Content */
-  .content {
-    flex: 1;
-    padding: 32px;
-  }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
 
-  /* Stats Grid */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-bottom: 32px;
-  }
+    .stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
 
-  .stat-card {
-    background: white;
-    border-radius: 12px;
-    padding: 24px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.2s;
-  }
+    .stat-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-  .stat-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
+    .stat-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
 
-  .stat-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-  }
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      color: white;
+      font-size: 20px;
+    }
 
-  .stat-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px;
-    color: white;
-    font-size: 20px;
-  }
+    .stat-icon.pink { background: #ec4899; }
+    .stat-icon.green { background: #10b981; }
+    .stat-icon.yellow { background: #f59e0b; }
+    .stat-icon.red { background: #ef4444; }
 
-  .stat-icon.pink { background: #ec4899; }
-  .stat-icon.green { background: #10b981; }
-  .stat-icon.yellow { background: #f59e0b; }
-  .stat-icon.red { background: #ef4444; }
+    .stat-content h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
 
-  .stat-content h3 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 4px;
-  }
+    .stat-content p {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
 
-  .stat-content p {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
+    .stat-change {
+      font-size: 12px;
+      font-weight: 500;
+    }
 
-  .stat-change {
-    font-size: 12px;
-    font-weight: 500;
-  }
+    .stat-change.positive {
+      color: #10b981;
+    }
 
-  .stat-change.positive {
-    color: #10b981;
-  }
+    .stat-change.negative {
+      color: #ef4444;
+    }
 
-  .stat-change.negative {
-    color: #ef4444;
-  }
+    .table-container {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
 
-  /* Table */
-  .table-container {
-    background: white;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    overflow: hidden;
-  }
+    .table-header {
+      padding: 24px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .table-header {
-    padding: 24px;
-    border-bottom: 1px solid #e2e8f0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    .table-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e293b;
+    }
 
-  .table-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1e293b;
-  }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-  .btn {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
+    .btn-primary {
+      background: #ec4899;
+      color: white;
+    }
 
-  .btn-primary {
-    background: #ec4899;
-    color: white;
-  }
+    .btn-primary:hover {
+      background: #db2777;
+    }
 
-  .btn-primary:hover {
-    background: #db2777;
-  }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+    .table th {
+      background: #f8fafc;
+      padding: 16px 24px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e2e8f0;
+    }
 
-  .table th {
-    background: #f8fafc;
-    padding: 16px 24px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid #e2e8f0;
-  }
+    .table td {
+      padding: 16px 24px;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 14px;
+    }
 
-  .table td {
-    padding: 16px 24px;
-    border-bottom: 1px solid #f1f5f9;
-    font-size: 14px;
-  }
+    .table tr:hover {
+      background: #f8fafc;
+    }
 
-  .table tr:hover {
-    background: #f8fafc;
-  }
+    .status-badge {
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+    }
 
-  .status-badge {
-    padding: 4px 12px;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: 500;
-  }
+    .status-badge.success {
+      background: #dcfce7;
+      color: #166534;
+    }
 
-  .status-badge.success {
-    background: #dcfce7;
-    color: #166534;
-  }
+    .status-badge.warning {
+      background: #fef3c7;
+      color: #92400e;
+    }
 
-  .status-badge.warning {
-    background: #fef3c7;
-    color: #92400e;
-  }
-
-  .status-badge.danger {
-    background: #fee2e2;
-    color: #991b1b;
-  }
-</style>
-<!-- Stats Grid -->
-<div class="stats-grid">
-  <div class="stat-card">
-    <div class="stat-header">
-      <div class="stat-icon pink">💰</div>
-      <div class="stat-content">
-        <h3><%= number_to_currency(@vendas_mes) %></h3>
-        <p>Vendas do mês</p>
+    .status-badge.danger {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+  </style>
+  <!-- Stats Grid Admin -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-header">
+        <div class="stat-icon pink">💰</div>
+        <div class="stat-content">
+          <h3><%= number_to_currency(@vendas_mes) %></h3>
+          <p>Vendas do mês</p>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-header">
+        <div class="stat-icon green">👥</div>
+        <div class="stat-content">
+          <h3><%= @novos_usuarios_mes %></h3>
+          <p>Novos clientes</p>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-header">
+        <div class="stat-icon yellow">📦</div>
+        <div class="stat-content">
+          <h3><%= @produtos_vendidos_mes %></h3>
+          <p>Produtos vendidos</p>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-header">
+        <div class="stat-icon red">📊</div>
+        <div class="stat-content">
+          <h3><%= @total_pedidos %></h3>
+          <p>Total de pedidos</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="stat-card">
-    <div class="stat-header">
-      <div class="stat-icon green">👥</div>
-      <div class="stat-content">
-        <h3><%= @novos_usuarios_mes %></h3>
-        <p>Novos clientes</p>
-      </div>
+  <!-- Recent Sales Table -->
+  <div class="table-container">
+    <div class="table-header">
+      <h2 class="table-title">Pedidos Recentes</h2>
+      <a href="#" class="btn btn-primary">Ver Todos</a>
     </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-header">
-      <div class="stat-icon yellow">📦</div>
-      <div class="stat-content">
-        <h3><%= @produtos_vendidos_mes %></h3>
-        <p>Produtos vendidos</p>
-      </div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-header">
-      <div class="stat-icon red">📊</div>
-      <div class="stat-content">
-        <h3><%= @total_pedidos %></h3>
-        <p>Total de pedidos</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Recent Sales Table -->
-<div class="table-container">
-  <div class="table-header">
-    <h2 class="table-title">Pedidos Recentes</h2>
-    <a href="#" class="btn btn-primary">Ver Todos</a>
-  </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Cliente</th>
-        <th>Produtos</th>
-        <th>Data</th>
-        <th>Valor</th>
-        <th>Status</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-<!-- Produtos Populares -->
-<div class="table-container" style="margin-top: 32px;">
-  <div class="table-header">
-    <h2 class="table-title">Produtos Mais Vendidos</h2>
-    <a href="#" class="btn btn-primary">Ver Todos</a>
-  </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Quantidade Vendida</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @produtos_populares.each do |produto_nome, quantidade| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= produto_nome %></td>
-          <td><%= quantidade %> unidades</td>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Produtos</th>
+          <th>Data</th>
+          <th>Valor</th>
+          <th>Status</th>
+          <th>Ações</th>
         </tr>
+      </thead>
+    </table>
+  </div>
+  <!-- Produtos Populares -->
+  <div class="table-container" style="margin-top: 32px;">
+    <div class="table-header">
+      <h2 class="table-title">Produtos Mais Vendidos</h2>
+      <a href="#" class="btn btn-primary">Ver Todos</a>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade Vendida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @produtos_populares.each do |produto_nome, quantidade| %>
+          <tr>
+            <td><%= produto_nome %></td>
+            <td><%= quantidade %> unidades</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <!-- LAYOUT CLIENTE -->
+  <style>
+    .client-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px;
+      background: #f8fafc;
+      min-height: 100vh;
+    }
+
+    .client-header {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 32px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .client-welcome {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .client-subtitle {
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .client-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+
+    .client-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .client-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .client-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .client-icon.blue { background: #3b82f6; }
+    .client-icon.purple { background: #8b5cf6; }
+    .client-icon.green { background: #10b981; }
+    .client-icon.orange { background: #f59e0b; }
+
+    .client-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .client-card p {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .client-btn {
+      background: #3b82f6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 16px;
+      transition: all 0.2s;
+    }
+
+    .client-btn:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .recent-orders {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .recent-orders h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 16px;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+    }
+
+    .order-info h4 {
+      font-weight: 500;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .order-info p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .order-status {
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .order-status.delivered {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .order-status.processing {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .order-status.shipped {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+  </style>
+  <div class="client-container">
+    <!-- Header de Boas-vindas -->
+    <div class="client-header">
+      <h1 class="client-welcome">Bem-vindo, <%= @usuario.nome %>!</h1>
+      <p class="client-subtitle">Gerencie seus pedidos e explore nossos produtos</p>
+    </div>
+    <!-- Cards de Ações Rápidas -->
+    <div class="client-grid">
+      <div class="client-card">
+        <div class="client-card-header">
+          <div class="client-icon blue">🛒</div>
+          <div>
+            <h3>Fazer Pedido</h3>
+            <p>Explore nosso catálogo e faça novos pedidos</p>
+          </div>
+        </div>
+        <a href="/produtos" class="client-btn">Ver Produtos</a>
+      </div>
+      <div class="client-card">
+        <div class="client-card-header">
+          <div class="client-icon purple">📦</div>
+          <div>
+            <h3>Meus Pedidos</h3>
+            <p>Acompanhe o status dos seus pedidos</p>
+          </div>
+        </div>
+        <a href="/meus-pedidos" class="client-btn">Ver Pedidos</a>
+      </div>
+      <div class="client-card">
+        <div class="client-card-header">
+          <div class="client-icon green">👤</div>
+          <div>
+            <h3>Meu Perfil</h3>
+            <p>Atualize suas informações pessoais</p>
+          </div>
+        </div>
+        <a href="/perfil" class="client-btn">Editar Perfil</a>
+      </div>
+      <div class="client-card">
+        <div class="client-card-header">
+          <div class="client-icon orange">💬</div>
+          <div>
+            <h3>Suporte</h3>
+            <p>Entre em contato conosco</p>
+          </div>
+        </div>
+        <a href="/suporte" class="client-btn">Falar Conosco</a>
+      </div>
+    </div>
+    <!-- Pedidos Recentes do Cliente -->
+    <div class="recent-orders">
+      <h3>Seus Pedidos Recentes</h3>
+      <% if @pedidos_cliente && @pedidos_cliente.any? %>
+        <% @pedidos_cliente.limit(5).each do |pedido| %>
+          <div class="order-item">
+            <div class="order-info">
+              <h4>Pedido #<%= pedido.id %></h4>
+              <p><%= pedido.created_at.strftime("%d/%m/%Y") %> - <%= number_to_currency(pedido.valor_total) %></p>
+            </div>
+            <span class="order-status <%= pedido.status.downcase %>">
+              <%= pedido.status.capitalize %>
+            </span>
+          </div>
+        <% end %>
+      <% else %>
+        <p style="color: #64748b; text-align: center; padding: 32px;">
+          Você ainda não fez nenhum pedido. Que tal explorar nossos produtos?
+        </p>
+        <div style="text-align: center;">
+          <a href="/produtos" class="client-btn">Ver Produtos</a>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-</div>
+    </div>
+  </div>
+<% end %>

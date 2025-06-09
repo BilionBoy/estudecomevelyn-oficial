@@ -1,7 +1,7 @@
 class GAdminController < ApplicationController
   def index
     inicio_do_mes = Time.zone.now.beginning_of_month
-
+    @usuario = current_user
     @total_usuarios       = User.count
     @total_produtos       = IProduto.count
     @total_cursos         = ICurso.count
