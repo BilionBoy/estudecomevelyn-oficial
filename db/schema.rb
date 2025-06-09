@@ -173,8 +173,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.text "descricao"
     t.decimal "preco", precision: 10, scale: 2
     t.bigint "g_categoria_id", null: false
-    t.string "arquivo_url"
-    t.string "imagem_url"
     t.integer "status", default: 1, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false

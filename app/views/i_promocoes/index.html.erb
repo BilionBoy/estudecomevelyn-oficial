@@ -36,7 +36,6 @@
             <th><%= sort_link(@q, :nome, t("activerecord.attributes.i_promocao.nome")) %></th>
             <th><%= sort_link(@q, :descricao, t("activerecord.attributes.i_promocao.descricao")) %></th>
             <th><%= sort_link(@q, :ativo, t("activerecord.attributes.i_promocao.ativo")) %></th>
-            <th><%= sort_link(@q, :slug, t("activerecord.attributes.i_promocao.slug")) %></th>
           </tr>
         </thead>
         <tbody>
@@ -61,7 +60,6 @@
               <td><%= i_promocao.nome %></td>
               <td><%= i_promocao.descricao %></td>
               <td><%= i_promocao.ativo %></td>
-              <td><%= i_promocao.slug %></td>
             </tr>
           <% end %>
         </tbody>
