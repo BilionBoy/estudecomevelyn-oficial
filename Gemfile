@@ -83,6 +83,8 @@ gem 'caxlsx_rails'
 # Nested Forms
 gem 'cocoon'
 
+
+gem "zip"
 # Identificador Unico Universal
 # gem "uuid"
 # Autorização de usuários
@@ -102,3 +104,7 @@ gem 'sitemap_generator'
 
 # SLUGS
 gem 'friendly_id', '~> 5.4.0'
+
+# GEM HTPP MIDLEWARE API PIX
+gem 'httparty'
+
