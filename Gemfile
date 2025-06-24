@@ -83,6 +83,8 @@ gem 'caxlsx_rails'
 # Nested Forms
 gem 'cocoon'
 
+
+gem "zip"
 # Identificador Unico Universal
 # gem "uuid"
 # Autorização de usuários

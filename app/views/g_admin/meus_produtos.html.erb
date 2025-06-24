@@ -132,13 +132,23 @@
                 <!-- Botão de Download -->
                 <div class="evelyn-product-actions">
                   <% if produto.arquivo.attached? %>
-                    <%= link_to download_produto_path(produto), 
-                                class: "evelyn-btn evelyn-btn-download",
-                                method: :get do %>
-                      <i class="ph-download"></i>
-                      Baixar
+                    <% if produto.arquivo.count > 1 %>
+                      <button class="evelyn-btn evelyn-btn-download" 
+                              data-bs-toggle="modal" 
+                              data-bs-target="#downloadModal<%= produto.id %>">
+                        <i class="ph-download"></i>
+                        Baixar
+                      </button>
+                    <% else %>
+                      <%= link_to download_produto_path(produto), 
+                            class: "evelyn-btn evelyn-btn-download",
+                            method: :get do %>
+                        <i class="ph-download"></i>
+                        Baixar
+                      <% end %>
                     <% end %>
-                    <button class="evelyn-btn-info" type="button" data-bs-toggle="tooltip" title="<%= number_to_human_size(produto.arquivo.byte_size) %>">
+                    <% total_size = produto.arquivo.sum(&:byte_size) %>
+                    <button class="evelyn-btn-info" type="button" data-bs-toggle="tooltip" title="<%= number_to_human_size(total_size) %>">
                       <i class="ph-info"></i>
                     </button>
                   <% else %>
@@ -150,6 +160,62 @@
                 </div>
               </div>
             </div>
+            <!-- Modal de Seleção de Arquivos (apenas para produtos com múltiplos arquivos) -->
+            <% if produto.arquivo.attached? && produto.arquivo.count > 1 %>
+              <div class="modal fade" id="downloadModal<%= produto.id %>" tabindex="-1" aria-labelledby="downloadModalLabel<%= produto.id %>" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="downloadModalLabel<%= produto.id %>">
+                        <i class="ph-download me-2"></i>
+                        Selecionar Arquivos - <%= produto.nome %>
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="text-muted mb-3">Selecione os arquivos que deseja baixar:</p>
+                      <form id="downloadForm<%= produto.id %>">
+                        <div class="evelyn-file-selection">
+                          <% produto.arquivo.each_with_index do |arquivo, index| %>
+                            <div class="evelyn-file-item">
+                              <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       value="<%= url_for(arquivo) %>" 
+                                       id="file<%= produto.id %>_<%= index %>"
+                                       data-filename="<%= arquivo.filename %>"
+                                       checked>
+                                <label class="form-check-label" for="file<%= produto.id %>_<%= index %>">
+                                  <div class="evelyn-file-info">
+                                    <div class="evelyn-file-icon">
+                                      <i class="ph-file-pdf"></i>
+                                    </div>
+                                    <div class="evelyn-file-details">
+                                      <div class="evelyn-file-name"><%= arquivo.filename %></div>
+                                      <div class="evelyn-file-size"><%= number_to_human_size(arquivo.byte_size) %></div>
+                                    </div>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          <% end %>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="ph-x me-2"></i>
+                        Cancelar
+                      </button>
+                      <button type="button" class="btn btn-primary" onclick="downloadSelectedFiles(<%= produto.id %>)">
+                        <i class="ph-download me-2"></i>
+                        Baixar Selecionados
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       <% else %>
@@ -518,6 +584,73 @@
     align-items: center;
   }
 
+  /* Modal de Seleção de Arquivos */
+  .evelyn-file-selection {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .evelyn-file-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    transition: all 0.2s ease;
+  }
+
+  .evelyn-file-item:hover {
+    border-color: #e91e63;
+    background-color: #fafafa;
+  }
+
+  .evelyn-file-item .form-check {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .evelyn-file-item .form-check-input {
+    margin-top: 0;
+  }
+
+  .evelyn-file-item .form-check-label {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .evelyn-file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 0.5rem;
+  }
+
+  .evelyn-file-icon {
+    width: 40px;
+    height: 40px;
+    background: #e91e63;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .evelyn-file-details {
+    flex-grow: 1;
+  }
+
+  .evelyn-file-name {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+  }
+
+  .evelyn-file-size {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+  }
+
   /* Estado Vazio */
   .evelyn-empty-state {
     text-align: center;
@@ -601,4 +734,30 @@
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
   });
+
+  // Função para baixar arquivos selecionados
+  function downloadSelectedFiles(produtoId) {
+    const form = document.getElementById(`downloadForm${produtoId}`);
+    const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+
+    if (checkboxes.length === 0) {
+      alert('Selecione pelo menos um arquivo para baixar.');
+      return;
+    }
+
+    // Baixar cada arquivo selecionado
+    checkboxes.forEach(checkbox => {
+      const link = document.createElement('a');
+      link.href = checkbox.value;
+      link.download = checkbox.dataset.filename;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    // Fechar o modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById(`downloadModal${produtoId}`));
+    modal.hide();
+  }
 </script>

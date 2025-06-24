@@ -319,6 +319,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.7.1)
+    zip (2.0.2)
 
 PLATFORMS
   aarch64-linux-gnu
@@ -366,6 +367,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   wicked_pdf
+  zip
 
 BUNDLED WITH
    2.5.23

@@ -44,37 +44,47 @@ class GAdminController < ApplicationController
                                      .count
   end
 
-def meus_produtos
-  @produtos_comprados = IProduto.joins(i_itens_pedidos: { i_pedido: :usuario })
-                                .where(i_pedidos: { usuario_id: current_user.id, status: 'confirmado' })
-                                .distinct
-                                .includes(:g_categoria, :imagem_attachment, :arquivo_attachment)
-
-  @total_produtos = @produtos_comprados.count
-  @total_downloads = 0 # contador futuro
-  @produtos_com_arquivo = @produtos_comprados.joins(:arquivo_attachment).count
-
-end
-
-
-
-  def download_produto
-    produto = IProduto.friendly.find(params[:id])
-    
-    # Verificar se o usuário comprou este produto
-    pedido_confirmado = current_user.i_pedidos
-                                   .confirmados
-                                   .joins(:i_itens_pedidos)
-                                   .where(i_itens_pedidos: { i_produto_id: produto.id })
-                                   .exists?
-
-    if pedido_confirmado && produto.arquivo.attached?
-      # Aqui você pode implementar um log de download se necessário
-      redirect_to rails_blob_path(produto.arquivo, disposition: "attachment")
-    else
-      redirect_to meus_produtos_path, alert: 'Produto não encontrado ou você não tem permissão para baixá-lo.'
-    end
+  def meus_produtos
+    @produtos_comprados = IProduto.joins(i_itens_pedidos: { i_pedido: :usuario })
+                                  .where(i_pedidos: { usuario_id: current_user.id, status: 'confirmado' })
+                                  .distinct
+                                  .includes(:g_categoria, :imagem_attachment, :arquivo_attachments) # plural aqui
+  
+    @total_produtos = @produtos_comprados.count
+    @total_downloads = 0 # contador futuro
+  
+    @produtos_com_arquivo = @produtos_comprados.joins(:arquivo_attachments).distinct.count
   end
+
+
+
+def download_produto
+  produto = IProduto.friendly.find(params[:id])
+  
+  # Verificar se o usuário tem permissão para baixar este produto
+  pedido_confirmado = current_user.i_pedidos.joins(:i_itens_pedidos)
+                                           .where(i_itens_pedidos: { i_produto_id: produto.id })
+                                           .where(status: 'confirmado')
+                                           .exists?
+  
+  if pedido_confirmado && produto.arquivo.attached?
+    # Se há apenas um arquivo, baixar diretamente
+    if produto.arquivo.count == 1
+      redirect_to rails_blob_path(produto.arquivo.first, disposition: "attachment")
+    else
+      # Se há múltiplos arquivos, você pode:
+      # Opção 1: Baixar todos os arquivos (um por vez via JavaScript no frontend)
+      # Opção 2: Criar um ZIP com todos os arquivos
+      # Opção 3: Redirecionar para seleção (que já está implementada no frontend)
+      
+      # Por enquanto, vamos baixar o primeiro arquivo como fallback
+      # Mas idealmente isso não deveria acontecer pois o frontend já trata múltiplos arquivos
+      redirect_to rails_blob_path(produto.arquivo.first, disposition: "attachment")
+    end
+  else
+    redirect_to meus_produtos_path, alert: 'Produto não encontrado ou você não tem permissão para baixá-lo.'
+  end
+end
 
   def pedido_detalhes
     pedido_id = params[:id]

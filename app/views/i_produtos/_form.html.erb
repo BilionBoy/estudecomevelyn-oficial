@@ -14,19 +14,37 @@
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="row">
         <div class="col-md-7">
-          <%= f.input :nome, input_html: { class: "capitalize"}, placeholder: "Nome"  %>
+          <%= f.input :nome, input_html: { class: "capitalize" }, placeholder: "Nome" %>
         </div>
         <div class="col-md-5">
-          <%= f.input :preco, input_html: { class: "capitalize"}, placeholder: "Preco"  %>
+          <%= f.input :preco, input_html: { class: "capitalize" }, placeholder: "Preco" %>
         </div>
         <div class="col-12">
-          <%= f.input :descricao, input_html: { class: "capitalize"}, placeholder: "Descricao"  %>
+          <%= f.input :descricao, input_html: { class: "capitalize" }, placeholder: "Descricao" %>
         </div>
         <div class="col-5">
           <%= f.input :g_categoria_id, collection: GCategoria.all.map { |c| [c.nome, c.id] }, prompt: "Selecione a categoria", input_html: { class: "capitalize" } %>
         </div>
         <div class="col-7">
-          <%= f.input :arquivo, as: :file, label: "Arquivo do Produto" %>
+          <label class="form-label">Arquivos do Produto (PDF)</label>
+          <div id="arquivos-container" class="mb-2">
+            <div class="arquivo-field d-flex align-items-center mb-2">
+              <%= f.file_field :arquivo, name: "i_produto[arquivo][]", class: "form-control me-2" %>
+              <button type="button" class="btn btn-sm btn-primary" id="add-arquivo" title="Adicionar outro arquivo">
+                &#43; Adicionar arquivo
+              </button>
+            </div>
+          </div>
+          <% if @i_produto.arquivo.attached? %>
+            <p>Arquivos já anexados:</p>
+            <ul class="list-group mb-3">
+              <% @i_produto.arquivo.each do |arq| %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <%= link_to arq.filename.to_s, url_for(arq), target: "_blank", class: "text-decoration-none" %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
         <div class="col-5">
           <%= f.input :status, collection: IProduto.statuses.map { |k, _| [k.titleize, k] }, prompt: "Selecione o status" %>
@@ -58,3 +76,20 @@
     </div>
   </div>
 <% end %>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("arquivos-container");
+    const addBtn = document.getElementById("add-arquivo");
+
+    addBtn.addEventListener("click", function () {
+      const newInput = document.createElement("div");
+      newInput.classList.add("arquivo-field", "d-flex", "align-items-center", "mb-2");
+
+      newInput.innerHTML = `
+        <input type="file" name="i_produto[arquivo][]" class="form-control me-2" />
+      `;
+
+      container.appendChild(newInput);
+    });
+  });
+</script>
