@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_26_170707) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
 
   create_table "g_blog_categorias", force: :cascade do |t|
     t.string "descricao"
+    t.string "created_by"
+    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -171,6 +173,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.text "descricao"
     t.decimal "preco", precision: 10, scale: 2
     t.bigint "g_categoria_id", null: false
+    t.string "arquivo_url"
+    t.string "imagem_url"
     t.integer "status", default: 1, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
@@ -218,6 +222,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_27_170155) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cpf"
+    t.string "asaas_customer_id"
+    t.index ["asaas_customer_id"], name: "index_users_on_asaas_customer_id", unique: true
+    t.index ["cpf"], name: "index_users_on_cpf", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["g_tipo_usuario_id"], name: "index_users_on_g_tipo_usuario_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
