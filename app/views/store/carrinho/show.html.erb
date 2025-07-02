@@ -86,37 +86,43 @@
                     </div>
                   </div>
                 </div>
-                <div class="summary-actions">
+                <div class="summary-actions d-grid gap-2">
                   <%= button_to finalizar_compra_store_carrinho_path, method: :post, class: "btn btn-primary w-100" do %>
-                    <i class="fas fa-lock me-2"></i> Finalizar Compra
+                    <i class="fas fa-lock me-2"></i> Finalizar Compra (Cartão)
+                  <% end %>
+                  <%= form_with url: pagar_store_carrinho_path, method: :post, local: true do |form| %>
+                    <%= hidden_field_tag :value, @total %>
+                    <%= hidden_field_tag :external_reference, "pedido_#{current_user.id}_#{Time.now.to_i}" %>
+                    <%= form.submit "Pagar com PIX", class: "btn btn-success w-100" %>
                   <% end %>
                 </div>
-                <div class="summary-info mt-4">
-                  <div class="secure-checkout mt-3">
-                    <i class="fas fa-shield-alt me-2"></i>
-                    <span>Compra 100% Segura</span>
-                  </div>
-                  <div class="customer-support mt-3">
-                    <i class="fas fa-headset me-2"></i>
-                    <span>Suporte disponível </span>
-                  </div>
+              </div>
+              <div class="summary-info mt-4">
+                <div class="secure-checkout mt-3">
+                  <i class="fas fa-shield-alt me-2"></i>
+                  <span>Compra 100% Segura</span>
+                </div>
+                <div class="customer-support mt-3">
+                  <i class="fas fa-headset me-2"></i>
+                  <span>Suporte disponível </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      <% else %>
-        <div class="empty-cart">
-          <div class="empty-cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </div>
-          <h2>Seu carrinho está vazio</h2>
-          <p>Parece que você ainda não adicionou nenhum produto ao seu carrinho.</p>
-          <%= link_to "Voltar à loja", root_path, class: "btn btn-primary mt-3" %>
+      </div>
+    <% else %>
+      <div class="empty-cart">
+        <div class="empty-cart-icon">
+          <i class="fas fa-shopping-cart"></i>
         </div>
-      <% end %>
-    </div>
+        <h2>Seu carrinho está vazio</h2>
+        <p>Parece que você ainda não adicionou nenhum produto ao seu carrinho.</p>
+        <%= link_to "Voltar à loja", root_path, class: "btn btn-primary mt-3" %>
+      </div>
+    <% end %>
   </div>
+</div>
 </div>
 <style>
   .cart-title {

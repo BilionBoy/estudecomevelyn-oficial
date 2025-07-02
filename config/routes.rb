@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # Store Público
   namespace :store do
     resource :carrinho, only: [:show], controller: 'carrinho' do
+      get :pagar,                   on: :collection    
+      post :pagar,                  on: :collection   
       post   :adicionar,            on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
       post   :finalizar_compra,     on: :collection # adiciona essa rota
       delete :limpar,               on: :collection, to: 'carrinho#limpar',    as: :limpar

@@ -35,7 +35,7 @@
               </button>
             </div>
           </div>
-          <% if @i_produto.arquivo.attached? %>
+          <% if @i_produto.persisted? && @i_produto.arquivo.attached? %>
             <p>Arquivos já anexados:</p>
             <ul class="list-group mb-3">
               <% @i_produto.arquivo.each do |arq| %>
@@ -62,7 +62,7 @@
           <%= f.file_field :imagem, class: "form-control" %>
         </div>
         <div class="col-7">
-          <% if f.object.imagem.attached? %>
+          <% if f.object.persisted? && f.object.imagem.attached? %>
             <%= image_tag url_for(f.object.imagem), alt: "Imagem de Capa", class: "img-thumbnail mb-2" %>
           <% else %>
             <p>Não há imagem cadastrada.</p>
