@@ -90,7 +90,7 @@
                   <%= button_to finalizar_compra_store_carrinho_path, method: :post, class: "btn btn-primary w-100" do %>
                     <i class="fas fa-lock me-2"></i> Finalizar Compra (Cartão)
                   <% end %>
-                  <%= form_with url: pagar_store_carrinho_path, method: :post, local: true do |form| %>
+                  <%= form_with url: pagar_store_pix_index_path, method: :post, local: true do |form| %>
                     <%= hidden_field_tag :value, @total %>
                     <%= hidden_field_tag :external_reference, "pedido_#{current_user.id}_#{Time.now.to_i}" %>
                     <%= form.submit "Pagar com PIX", class: "btn btn-success w-100" %>

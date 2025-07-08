@@ -3,7 +3,7 @@
 <p>Vencimento: <%= @payment["dueDate"] %></p>
 <% if @payment["pixQrCode"] %>
   <h2>QR Code</h2>
-  <img src="<%= @payment["pixQrCode"]["base64"] %>" alt="QR Code Pix" />
+  <img src="data:image/png;base64,<%= @payment["pixQrCode"]["base64"] %>" alt="QR Code Pix" />
 <% else %>
   <p>QR Code não disponível.</p>
 <% end %>

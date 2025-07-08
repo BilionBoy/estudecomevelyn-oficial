@@ -10,14 +10,22 @@ Rails.application.routes.draw do
     resource :carrinho, only: [:show], controller: 'carrinho' do
       get :pagar,                   on: :collection    
       post :pagar,                  on: :collection   
-      post   :adicionar,            on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
-      post   :finalizar_compra,     on: :collection # adiciona essa rota
-      delete :limpar,               on: :collection, to: 'carrinho#limpar',    as: :limpar
-      delete 'remover/:produto_id', on: :collection, to: 'carrinho#remover',   as: :remover_item
-      
+      post :adicionar,              on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
+      post :finalizar_compra,       on: :collection
+      delete :limpar,               on: :collection, to: 'carrinho#limpar', as: :limpar
+      delete 'remover/:produto_id', on: :collection, to: 'carrinho#remover', as: :remover_item
     end
+  
+    # Rotas de pagamento Pix
+    resources :pix, only: [] do
+      collection do
+        post :pagar
+      end
+    end
+  
     resources :pedidos, only: [:index, :show]
   end
+
   
   # Links extras da loja
   get 'carrinho',                       to: 'store/carrinho#show',     as: :carrinho
