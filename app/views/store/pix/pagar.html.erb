@@ -1,0 +1,12 @@
+<h1>Pagamento via Pix</h1>
+<p>Valor: R$ <%= number_to_currency(@payment["value"], unit: "R$", separator: ",", delimiter: ".") %></p>
+<p>Vencimento: <%= @payment["dueDate"] %></p>
+<% if @payment["pixQrCode"] %>
+  <h2>QR Code</h2>
+  <img src="data:image/png;base64,<%= @payment["pixQrCode"]["base64"] %>" alt="QR Code Pix" />
+<% else %>
+  <p>QR Code não disponível.</p>
+<% end %>
+<p>
+  <a href="<%= @payment["invoiceUrl"] %>" target="_blank">Abrir boleto / fatura</a>
+</p>

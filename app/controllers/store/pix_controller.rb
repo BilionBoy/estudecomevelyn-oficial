@@ -1,22 +1,31 @@
-class Store::PixController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_carrinho
+module Store
+  class PixController < ApplicationController
+    before_action :authenticate_user!
+    before_action :set_carrinho
 
-  def pagar
-    # 1. Verifica se o carrinho está válido
-    # 2. Cria cobrança Pix com Store::Pix::AsaasClient
-    # 3. Busca QR Code
-    # 4. Salva cobrança no banco (futuramente)
-    # 5. Renderiza view com QR Code
-  rescue Store::Pix::AsaasClient::RequestError => e
-    # Tratar erro de comunicação com Asaas
-    redirect_to store_carrinho_path, alert: "Erro ao gerar Pix: #{e.message}"
-  end
+    def pagar
+      customer_service = Store::Pix::CustomerService.new
+      payment_service  = Store::Pix::PaymentService.new
 
-  private
+      customer_service.create_customer_for(current_user)
 
-  def set_carrinho
-    @carrinho = current_user.carrinho_ativo
-    redirect_to store_carrinho_path, alert: 'Carrinho não encontrado.' unless @carrinho
+      @payment = payment_service.create_payment_for(
+        current_user,
+        value: @carrinho.total,
+        due_date: Date.tomorrow,
+        external_reference: "pedido_#{current_user.id}_#{Time.now.to_i}"
+      )
+
+      render :pagar
+    rescue Store::Pix::AsaasClient::RequestError => e
+      flash[:alert] = "Erro ao gerar PIX: #{e.message}"
+      redirect_to store_carrinho_path
+    end
+
+    private
+
+    def set_carrinho
+      @carrinho = current_user.carrinho_ativo
+    end
   end
 end
