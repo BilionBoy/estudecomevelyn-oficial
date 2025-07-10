@@ -14,7 +14,6 @@ module Store
     rescue JSON::ParserError
       head :bad_request
     end
-
     private
 
     def authenticate_webhook_request!
