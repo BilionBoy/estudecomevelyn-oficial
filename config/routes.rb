@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :carrinho, only: [:show], controller: 'carrinho' do
       get :pagar,                   on: :collection    
       post :pagar,                  on: :collection   
+      post 'pix_webhooks',                           to: 'pix_webhooks#receive'
       post :adicionar,              on: :collection, to: 'carrinho#adicionar', as: :adicionar_ao_carrinho
       post :finalizar_compra,       on: :collection
       delete :limpar,               on: :collection, to: 'carrinho#limpar', as: :limpar
