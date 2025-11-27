@@ -44,8 +44,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_26_170707) do
 
   create_table "g_blog_categorias", force: :cascade do |t|
     t.string "descricao"
-    t.string "created_by"
-    t.string "updated_by"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -173,8 +171,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_26_170707) do
     t.text "descricao"
     t.decimal "preco", precision: 10, scale: 2
     t.bigint "g_categoria_id", null: false
-    t.string "arquivo_url"
-    t.string "imagem_url"
     t.integer "status", default: 1, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
